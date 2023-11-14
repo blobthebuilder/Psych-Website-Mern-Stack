@@ -2,11 +2,11 @@ import React from "react";
 
 function PersonalityHeader() {
   return (
-    <header class="personalityHeader">
-      <h1 class="title">Personality Assessment</h1>
+    <header className="personalityHeader">
+      <h1 className="title">Personality Assessment</h1>
       <p
         id="sub"
-        class="instructions header">
+        className="instructions header">
         Instructions: This personality assessment will be used to develop your
         personal digital travel agent. Please answer all questions as honestly
         as possible so that your personal travel agent is able to recommend an
