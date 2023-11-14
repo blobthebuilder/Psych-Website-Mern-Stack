@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PersonalityHeader from "../components/PersonalityHeader";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>{message}</h1>
+      <PersonalityHeader></PersonalityHeader>
     </div>
   );
 }
