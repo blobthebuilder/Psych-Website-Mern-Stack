@@ -16,9 +16,11 @@ function Loading({ onNext }) {
         personal travel agent. Please continue to the next page to test the
         first version of the software.
       </p>
-      <div
-        class="loader"
-        id="loader"></div>
+      {!show && (
+        <div
+          class="loader"
+          id="loader"></div>
+      )}
       {show && (
         <button
           type="button"

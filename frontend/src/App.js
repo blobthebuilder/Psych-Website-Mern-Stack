@@ -31,9 +31,11 @@ import End from "./components/End.js";
 
 function App() {
   const [step, setStep] = useState(1);
+  const [showHeader, setShowHeader] = useState(false);
 
   const handleNext = () => {
     setStep(step + 1);
+    window.scrollTo(0, 0);
   };
 
   const handleBack = () => {
@@ -42,6 +44,11 @@ function App() {
 
   const reload = () => {
     window.location.reload(true);
+  };
+
+  const handleNextChangeHeader = () => {
+    handleNext();
+    setShowHeader(!showHeader);
   };
 
   // show alert when closing or refreshing
@@ -59,7 +66,7 @@ function App() {
 
   return (
     <div className="App">
-      <PersonalityHeader />
+      {showHeader && <PersonalityHeader />}
       {step === 1 && <LandingPage onNext={handleNext} />}
       {step === 2 && (
         <ConsentFormPage
@@ -85,15 +92,50 @@ function App() {
           onBack={handleBack}
         />
       )}
-      {step === 6 && <Introduction onNext={handleNext} />}
+      {step === 6 && <Introduction onNext={handleNextChangeHeader} />}
       {step === 7 && <Question1 onNext={handleNext} />}
-      {step === 8 && <GreenQuestion onNext={handleNext} />}
-      {step === 9 && <Question2A onNext={handleNext} />}
-      {step === 10 && <Question2B onNext={handleNext} />}
-      {step === 11 && <Question2C onNext={handleNext} />}
-      {step === 12 && <Question3 onNext={handleNext} />}
-      {step === 13 && <Question4 onNext={handleNext} />}
-      {step === 14 && <Demographics onNext={handleNext} />}
+      {step === 8 && (
+        <GreenQuestion
+          onNext={handleNext}
+          onBack={handleBack}
+        />
+      )}
+      {step === 9 && (
+        <Question2A
+          onNext={handleNext}
+          onBack={handleBack}
+        />
+      )}
+      {step === 10 && (
+        <Question2B
+          onNext={handleNext}
+          onBack={handleBack}
+        />
+      )}
+      {step === 11 && (
+        <Question2C
+          onNext={handleNext}
+          onBack={handleBack}
+        />
+      )}
+      {step === 12 && (
+        <Question3
+          onNext={handleNext}
+          onBack={handleBack}
+        />
+      )}
+      {step === 13 && (
+        <Question4
+          onNext={handleNext}
+          onBack={handleBack}
+        />
+      )}
+      {step === 14 && (
+        <Demographics
+          onNext={handleNextChangeHeader}
+          onBack={handleBack}
+        />
+      )}
       {step === 15 && <SubmitPage onNext={handleNext} />}
       {step === 16 && <Loading onNext={handleNext} />}
       {step === 17 && <Instructions1 onNext={handleNext} />}

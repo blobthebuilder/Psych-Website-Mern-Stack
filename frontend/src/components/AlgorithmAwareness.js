@@ -5,7 +5,7 @@ function AlgorithmAwareness({ onNext }) {
     <div className="algorithmAwareness">
       <p className="topMargin">‎</p>
       <p className="postInstructions">
-        Please answer the following questions about algorithms (not about
+        Please answer the following questions about algorithms (not about{" "}
         <i>Smart Traveler</i> specifically).
       </p>
       <p

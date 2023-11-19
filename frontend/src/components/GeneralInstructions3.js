@@ -15,6 +15,7 @@ function GeneralInstructions3({ onNext, onBack }) {
         Back
       </button>
       <button
+        style={{ marginLeft: "7px" }}
         type="button"
         onClick={onNext}
         className="button">

@@ -14,7 +14,7 @@ function Instructions2({ onNext }) {
       </p>
       <div>
         <img
-          src="../../public/Photos/itineraryScreenshot.png"
+          src="../../Photos/itineraryScreenshot.png"
           width="600px"
           alt="Example"
         />

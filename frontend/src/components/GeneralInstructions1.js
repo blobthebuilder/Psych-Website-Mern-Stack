@@ -7,13 +7,12 @@ function GeneralInstructions1({ onNext }) {
         Thank you for participating in the Smart Traveler beta testing survey.
       </p>
       <p className="instructions">
-        You will be testing a new virtual travel agent tool,
+        You will be testing a new virtual travel agent tool,{" "}
         <i>Smart Traveler</i>. The Smart Traveler technology uses artificial
-        intelligence (AI) to make travel recommendations.
-        <i>Smart Traveler</i> has been designed to help make planning for
-        upcoming trips easier by providing recommendations for your choice of
-        flights, hotels, transportation, restaurants, sightseeing, and
-        activities.
+        intelligence (AI) to make travel recommendations. <i>Smart Traveler</i>{" "}
+        has been designed to help make planning for upcoming trips easier by
+        providing recommendations for your choice of flights, hotels,
+        transportation, restaurants, sightseeing, and activities.
       </p>
       <button
         type="button"

@@ -3,10 +3,10 @@ import React from "react";
 function End() {
   return (
     <div className="end">
-      <h1>
+      <h3>
         Attention! Make sure to click on the link at the bottom of this page to
         receive SONA credit.
-      </h1>
+      </h3>
       <p className="instructions">
         Thank you for completing our Smart Traveler testing survey! Your
         responses have been recorded.

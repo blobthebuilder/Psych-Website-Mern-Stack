@@ -16,21 +16,21 @@ function GeneralInstructions2({ onNext, onBack }) {
         </li>
         <li>
           <strong>General Travel Agent:</strong> One version makes
-          recommendations based on
+          recommendations based on{" "}
           <strong>
             personality data from all previous testers, but NOT your own.
           </strong>
         </li>
         <li>
           <strong>Personal Travel Agent:</strong> One version will make
-          recommendations based on
+          recommendations based on{" "}
           <strong>YOUR own personality questionnaire</strong>, which you will
           complete shortly.
         </li>
       </ul>
       <p className="instructions">
         In other words, after you complete the personality questionnaire, one
-        version of Smart Traveler will recommend products
+        version of Smart Traveler will recommend products{" "}
         <strong>you are most likely to endorse.</strong>
       </p>
       <p className="instructions">
@@ -46,6 +46,7 @@ function GeneralInstructions2({ onNext, onBack }) {
         Back
       </button>
       <button
+        style={{ marginLeft: "7px" }}
         type="button"
         onClick={onNext}
         className="button">
