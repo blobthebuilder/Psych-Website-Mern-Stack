@@ -20,6 +20,7 @@ import Instructions1 from "./components/Instructions1.js";
 import Instructions2 from "./components/Instructions2.js";
 import AttentionCheck from "./components/AttentionCheck";
 import AttentionCheckAnswer from "./components/AttentionCheckAnswer";
+import ItineraryHeader from "./components/ItineraryHeader.js";
 import Itinerary from "./components/Itinerary.js";
 import FollowupQuestions1 from "./components/FollowupQuestions.js";
 import FollowupQuestions2 from "./components/FollowupQuestions2.js";
@@ -54,6 +55,7 @@ function App() {
   const [communicationArr, setCommunicationArr] = useState([]);
   const [cuisineArr, setCuisineArr] = useState([]);
 
+  const [showItineraryHeader, setShowItineraryHeader] = useState(false);
   const [itineraryFeatures, setItineraryFeatures] = useState([]);
   const [recommendedAndEco, setRecommendedAndEco] = useState([]);
 
@@ -62,8 +64,7 @@ function App() {
   const [agent3, setAgent3] = useState("Unprogrammed");
 
   const [curAgent, setCurAgent] = useState("Personal");
-  const [attentionCheckSelection, setAttentionCheckSelection] =
-    useState("null");
+  const [attentionCheckSelection, setAttentionCheckSelection] = useState("");
 
   const handleNext = () => {
     setStep(step + 1);
@@ -84,6 +85,10 @@ function App() {
     setShowHeader(!showHeader);
   };
 
+  const handleNextChangeItineraryHeader = () => {
+    handleNext();
+    setShowItineraryHeader(!showItineraryHeader);
+  };
   const handleAttentionCheckChange = (value) => {
     setAttentionCheckSelection(value);
   };
@@ -165,6 +170,7 @@ function App() {
     <div className="App">
       <p>Test: {totalUsers}</p>
       {showHeader && <PersonalityHeader />}
+      {showItineraryHeader && <ItineraryHeader agent={curAgent} />}
       {step === 1 && <LandingPage onNext={startSurvey} />}
       {step === 2 && (
         <ConsentFormPage
@@ -265,7 +271,7 @@ function App() {
       )}
       {step === 20 && (
         <AttentionCheckAnswer
-          onNext={handleNext}
+          onNext={handleNextChangeItineraryHeader}
           selection={attentionCheckSelection}
           curAgent={curAgent}
         />
@@ -482,7 +488,7 @@ function App() {
       )}
       {step === 48 && (
         <FollowupQuestionsGreen
-          onNext={handleNext}
+          onNext={handleNextChangeItineraryHeader}
           agent={agent1}
         />
       )}
