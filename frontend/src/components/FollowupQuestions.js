@@ -1,6 +1,50 @@
 import React from "react";
 
-function FollowupQuestions({ onNext, agent }) {
+function FollowupQuestions({
+  onNext,
+  agent,
+  onChooseChange,
+  onChargeChange,
+  onAccountChange,
+  onWaitChange,
+  onSenseChange,
+  onHelpChange,
+  onUnderstoodChange,
+  onListenChange,
+}) {
+  const handleChooseChange = (event) => {
+    const { value } = event.target;
+    onChooseChange(value);
+  };
+  const handleChargeChange = (event) => {
+    const { value } = event.target;
+    onChargeChange(value);
+  };
+  const handleAccountChange = (event) => {
+    const { value } = event.target;
+    onAccountChange(value);
+  };
+  const handleWaitChange = (event) => {
+    const { value } = event.target;
+    onWaitChange(value);
+  };
+  const handleSenseChange = (event) => {
+    const { value } = event.target;
+    onSenseChange(value);
+  };
+  const handleHelpChange = (event) => {
+    const { value } = event.target;
+    onHelpChange(value);
+  };
+  const handleUnderstoodChange = (event) => {
+    const { value } = event.target;
+    onUnderstoodChange(value);
+  };
+  const handleListenChange = (event) => {
+    const { value } = event.target;
+    onListenChange(value);
+  };
+
   return (
     <div className="followupQuestions">
       <p className="topMargin">‎</p>
@@ -81,6 +125,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Allowed me to choose what kind of information I was getting"
             value="Not at all"
+            onChange={handleChooseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -88,6 +133,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Allowed me to choose what kind of information I was getting"
             value="To some extent"
+            onChange={handleChooseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -95,6 +141,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Allowed me to choose what kind of information I was getting"
             value="To a moderate extent"
+            onChange={handleChooseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -102,6 +149,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Allowed me to choose what kind of information I was getting"
             value="To a great extent"
+            onChange={handleChooseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -109,6 +157,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Allowed me to choose what kind of information I was getting"
             value="To a very great extent"
+            onChange={handleChooseChange}
           />
         </div>
       </div>
@@ -121,6 +170,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Let me be in charge of getting what I wanted"
             value="Not at all"
+            onChange={handleChargeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -128,6 +178,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Let me be in charge of getting what I wanted"
             value="To some extent"
+            onChange={handleChargeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -135,6 +186,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Let me be in charge of getting what I wanted"
             value="To a moderate extent"
+            onChange={handleChargeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -142,6 +194,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Let me be in charge of getting what I wanted"
             value="To a great extent"
+            onChange={handleChargeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -149,6 +202,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Let me be in charge of getting what I wanted"
             value="To a very great extent"
+            onChange={handleChargeChange}
           />
         </div>
       </div>
@@ -161,6 +215,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Took account of my responses to the personality assessment"
             value="Not at all"
+            onChange={handleAccountChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -168,6 +223,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Took account of my responses to the personality assessment"
             value="To some extent"
+            onChange={handleAccountChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -175,6 +231,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Took account of my responses to the personality assessment"
             value="To a moderate extent"
+            onChange={handleAccountChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -182,6 +239,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Took account of my responses to the personality assessment"
             value="To a great extent"
+            onChange={handleAccountChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -189,6 +247,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Took account of my responses to the personality assessment"
             value="To a very great extent"
+            onChange={handleAccountChange}
           />
         </div>
       </div>
@@ -201,6 +260,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Didn't make me wait too long to get a recommendation"
             value="Not at all"
+            onChange={handleWaitChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -208,6 +268,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Didn't make me wait too long to get a recommendation"
             value="To some extent"
+            onChange={handleWaitChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -215,6 +276,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Didn't make me wait too long to get a recommendation"
             value="To a moderate extent"
+            onChange={handleWaitChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -222,6 +284,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Didn't make me wait too long to get a recommendation"
             value="To a great extent"
+            onChange={handleWaitChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -229,6 +292,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Didn't make me wait too long to get a recommendation"
             value="To a very great extent"
+            onChange={handleWaitChange}
           />
         </div>
       </div>
@@ -241,6 +305,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Gave me the sense of being watched out for"
             value="Not at all"
+            onChange={handleSenseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -248,6 +313,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Gave me the sense of being watched out for"
             value="To some extent"
+            onChange={handleSenseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -255,6 +321,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Gave me the sense of being watched out for"
             value="To a moderate extent"
+            onChange={handleSenseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -262,6 +329,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Gave me the sense of being watched out for"
             value="To a great extent"
+            onChange={handleSenseChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -269,6 +337,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Gave me the sense of being watched out for"
             value="To a very great extent"
+            onChange={handleSenseChange}
           />
         </div>
       </div>
@@ -281,6 +350,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone was helping me"
             value="Not at all"
+            onChange={handleHelpChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -288,6 +358,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone was helping me"
             value="To some extent"
+            onChange={handleHelpChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -295,6 +366,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone was helping me"
             value="To a moderate extent"
+            onChange={handleHelpChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -302,6 +374,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone was helping me"
             value="To a great extent"
+            onChange={handleHelpChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -309,6 +382,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone was helping me"
             value="To a very great extent"
+            onChange={handleHelpChange}
           />
         </div>
       </div>
@@ -321,6 +395,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone understood me"
             value="Not at all"
+            onChange={handleUnderstoodChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -328,6 +403,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone understood me"
             value="To some extent"
+            onChange={handleUnderstoodChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -335,6 +411,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone understood me"
             value="To a moderate extent"
+            onChange={handleUnderstoodChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -342,6 +419,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone understood me"
             value="To a great extent"
+            onChange={handleUnderstoodChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -349,6 +427,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Felt like someone understood me"
             value="To a very great extent"
+            onChange={handleUnderstoodChange}
           />
         </div>
       </div>
@@ -359,6 +438,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Made me feel listened to"
             value="Not at all"
+            onChange={handleListenChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -366,6 +446,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Made me feel listened to"
             value="To some extent"
+            onChange={handleListenChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -373,6 +454,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Made me feel listened to"
             value="To a moderate extent"
+            onChange={handleListenChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -380,6 +462,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Made me feel listened to"
             value="To a great extent"
+            onChange={handleListenChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -387,6 +470,7 @@ function FollowupQuestions({ onNext, agent }) {
             type="radio"
             name="Made me feel listened to"
             value="To a very great extent"
+            onChange={handleListenChange}
           />
         </div>
       </div>

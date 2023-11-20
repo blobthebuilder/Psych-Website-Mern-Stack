@@ -8,6 +8,17 @@ function Question3({
   accommodationArr,
   communicationArr,
   cuisinesArr,
+  onVacationChange,
+  onBudgetChange,
+  onActivitiesChange,
+  onAccommodationChange,
+  onCommunicationChange,
+  onCuisineChange,
+  onActivityLevelChange,
+  onCultureChange,
+  onPathChange,
+  onLanguageChange,
+  onRelaxationChange,
 }) {
   const vacationOneValue = vacationsArr[0][0].substring(
     0,
@@ -202,6 +213,46 @@ function Question3({
     __html: "<strong>" + cuisinesArr[5][0] + "</strong>" + cuisinesArr[5][1],
   };
 
+  const handleVacationChange = (event) => {
+    const { value } = event.target;
+    onVacationChange(value);
+  };
+  const handleBudgetChange = (event) => {
+    const { value } = event.target;
+    onBudgetChange(value);
+  };
+  const handleAccommodationChange = (event) => {
+    const { value } = event.target;
+    onAccommodationChange(value);
+  };
+  const handleActivityLevelChange = (event) => {
+    const { value } = event.target;
+    onActivityLevelChange(value);
+  };
+  const handleCultureChange = (event) => {
+    const { value } = event.target;
+    onCultureChange(value);
+  };
+  const handlePathChange = (event) => {
+    const { value } = event.target;
+    onPathChange(value);
+  };
+  const handleCommunicationChange = (event) => {
+    const { value } = event.target;
+    onCommunicationChange(value);
+  };
+  const handleLanguageChange = (event) => {
+    const { value } = event.target;
+    onLanguageChange(value);
+  };
+  const handleCuisineChange = (event) => {
+    const { value } = event.target;
+    onCuisineChange(value);
+  };
+  const handleRelaxationChange = (event) => {
+    const { value } = event.target;
+    onRelaxationChange(value);
+  };
   return (
     <div className="survey">
       <div className="q3">
@@ -216,6 +267,7 @@ function Question3({
               type="radio"
               name="preferredVacation"
               value={vacationOneValue}
+              onChange={handleVacationChange}
             />
             <label
               htmlFor="preferredVacationBtn1"
@@ -230,6 +282,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationTwoValue}
+                onChange={handleVacationChange}
               />
               <label
                 htmlFor="preferredVacationBtn2"
@@ -245,6 +298,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationThreeValue}
+                onChange={handleVacationChange}
               />
 
               <label
@@ -261,6 +315,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationFourValue}
+                onChange={handleVacationChange}
               />
 
               <label
@@ -277,6 +332,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationFiveValue}
+                onChange={handleVacationChange}
               />
 
               <label
@@ -293,6 +349,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationSixValue}
+                onChange={handleVacationChange}
               />
 
               <label
@@ -309,6 +366,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationSevenValue}
+                onChange={handleVacationChange}
               />
 
               <label
@@ -325,6 +383,7 @@ function Question3({
                 type="radio"
                 name="preferredVacation"
                 value={vacationEightValue}
+                onChange={handleVacationChange}
               />
 
               <label
@@ -343,6 +402,7 @@ function Question3({
               type="radio"
               name="budget"
               value="500"
+              onChange={handleBudgetChange}
             />
             <label
               htmlFor="500"
@@ -356,6 +416,7 @@ function Question3({
               type="radio"
               name="budget"
               value="500-1000"
+              onChange={handleBudgetChange}
             />
             <label
               htmlFor="500-1000"
@@ -369,6 +430,7 @@ function Question3({
               type="radio"
               name="budget"
               value="1000-2500"
+              onChange={handleBudgetChange}
             />
             <label
               htmlFor="1000-2500"
@@ -382,6 +444,7 @@ function Question3({
               type="radio"
               name="budget"
               value="2500-5000"
+              onChange={handleBudgetChange}
             />
             <label
               htmlFor="2500-5000"
@@ -395,6 +458,7 @@ function Question3({
               type="radio"
               name="budget"
               value="5000-10000"
+              onChange={handleBudgetChange}
             />
             <label
               htmlFor="5000-10000"
@@ -408,6 +472,7 @@ function Question3({
               type="radio"
               name="budget"
               value=">10000"
+              onChange={handleBudgetChange}
             />
             <label
               htmlFor=">10000"
@@ -428,6 +493,7 @@ function Question3({
               name="outdoor activities"
               value={activitiesOneValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn1"
@@ -443,6 +509,7 @@ function Question3({
               name="cultural experiences"
               value={activitiesTwoValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn2"
@@ -458,6 +525,7 @@ function Question3({
               className="smallCheckbox"
               name="relaxation"
               value={activitiesThreeValue}
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn3"
@@ -473,6 +541,7 @@ function Question3({
               className="smallCheckbox"
               name="adventure"
               value={activitiesFourValue}
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn4"
@@ -488,6 +557,7 @@ function Question3({
               name="sports"
               value={activitiesFiveValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn5"
@@ -503,6 +573,7 @@ function Question3({
               name="history and heritage"
               value={activitiesSixValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn6"
@@ -518,6 +589,7 @@ function Question3({
               name="food and wine"
               value={activitiesSevenValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn7"
@@ -533,6 +605,7 @@ function Question3({
               name="nightlife and entertainment"
               value={activitiesEightValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn8"
@@ -548,6 +621,7 @@ function Question3({
               name="shopping"
               value={activitiesNineValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn9"
@@ -563,6 +637,7 @@ function Question3({
               name="volunteer tourism"
               value={activitiesTenValue}
               className="smallCheckbox"
+              onChange={onActivitiesChange}
             />
             <label
               htmlFor="outdooractivitiesBtn10"
@@ -581,6 +656,7 @@ function Question3({
               type="radio"
               name="accomodation"
               value={accommodationOne}
+              onChange={handleAccommodationChange}
             />
             <label
               htmlFor="accomodationBtn1"
@@ -595,6 +671,7 @@ function Question3({
               type="radio"
               name="accomodation"
               value={accommodationTwo}
+              onChange={handleAccommodationChange}
             />
             <label
               htmlFor="accomodationBtn2"
@@ -609,6 +686,7 @@ function Question3({
               type="radio"
               name="accomodation"
               value={accommodationThree}
+              onChange={handleAccommodationChange}
             />
             <label
               htmlFor="accomodationBtn3"
@@ -623,6 +701,7 @@ function Question3({
               type="radio"
               name="accomodation"
               value={accommodationFour}
+              onChange={handleAccommodationChange}
             />
             <label
               htmlFor="accomodationBtn4"
@@ -637,6 +716,7 @@ function Question3({
               type="radio"
               name="accomodation"
               value={accommodationFive}
+              onChange={handleAccommodationChange}
             />
             <label
               htmlFor="accomodationBtn5"
@@ -656,6 +736,7 @@ function Question3({
               type="radio"
               name="activitylevel"
               value="low"
+              onChange={handleActivityLevelChange}
             />
             <label
               htmlFor="activityBtn1"
@@ -670,6 +751,7 @@ function Question3({
               type="radio"
               name="activitylevel"
               value="moderate"
+              onChange={handleActivityLevelChange}
             />
             <label
               htmlFor="activityBtn2"
@@ -684,6 +766,7 @@ function Question3({
               type="radio"
               name="activitylevel"
               value="high"
+              onChange={handleActivityLevelChange}
             />
             <label
               htmlFor="activityBtn3"
@@ -698,6 +781,7 @@ function Question3({
               type="radio"
               name="activitylevel"
               value="very high"
+              onChange={handleActivityLevelChange}
             />
             <label
               htmlFor="activityBtn4"
@@ -712,6 +796,7 @@ function Question3({
               type="radio"
               name="activitylevel"
               value="none"
+              onChange={handleActivityLevelChange}
             />
             <label
               htmlFor="activityBtn5"
@@ -733,6 +818,7 @@ function Question3({
               type="radio"
               name="culture"
               value="not at all"
+              onChange={handleCultureChange}
             />
             <label
               htmlFor="cultureBtn1"
@@ -747,6 +833,7 @@ function Question3({
               type="radio"
               name="culture"
               value="slightly important"
+              onChange={handleCultureChange}
             />
             <label
               htmlFor="cultureBtn2"
@@ -761,6 +848,7 @@ function Question3({
               type="radio"
               name="culture"
               value="moderately important"
+              onChange={handleCultureChange}
             />
             <label
               htmlFor="cultureBtn3"
@@ -775,6 +863,7 @@ function Question3({
               type="radio"
               name="culture"
               value="important"
+              onChange={handleCultureChange}
             />
             <label
               htmlFor="cultureBtn4"
@@ -789,6 +878,7 @@ function Question3({
               type="radio"
               name="culture"
               value="very important"
+              onChange={handleCultureChange}
             />
             <label
               htmlFor="cultureBtn5"
@@ -811,42 +901,49 @@ function Question3({
                   name="path"
                   value="1"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
                 <input
                   type="radio"
                   name="path"
                   value="2"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
                 <input
                   type="radio"
                   name="path"
                   value="3"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
                 <input
                   type="radio"
                   name="path"
                   value="4"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
                 <input
                   type="radio"
                   name="path"
                   value="5"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
                 <input
                   type="radio"
                   name="path"
                   value="6"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
                 <input
                   type="radio"
                   name="path"
                   value="7"
                   className="radioMargin"
+                  onChange={handlePathChange}
                 />
               </div>
               <p className="rightBox">Off-the-beaten-path destinations</p>
@@ -862,6 +959,7 @@ function Question3({
               type="radio"
               name="communication"
               value={communicationOne}
+              onChange={handleCommunicationChange}
             />
             <label
               htmlFor="communicationBtn1"
@@ -876,6 +974,7 @@ function Question3({
               type="radio"
               name="communication"
               value={communicationTwo}
+              onChange={handleCommunicationChange}
             />
             <label
               htmlFor="communicationBtn2"
@@ -890,6 +989,7 @@ function Question3({
               type="radio"
               name="communication"
               value={communicationThree}
+              onChange={handleCommunicationChange}
             />
             <label
               htmlFor="communicationBtn3"
@@ -904,6 +1004,7 @@ function Question3({
               type="radio"
               name="communication"
               value={communicationFour}
+              onChange={handleCommunicationChange}
             />
             <label
               htmlFor="communicationBtn4"
@@ -918,6 +1019,7 @@ function Question3({
               type="radio"
               name="communication"
               value={communicationFive}
+              onChange={handleCommunicationChange}
             />
             <label
               htmlFor="communicationBtn5"
@@ -938,6 +1040,7 @@ function Question3({
               type="radio"
               name="language"
               value="very uncomfortable"
+              onChange={handleLanguageChange}
             />
             <label
               htmlFor="languageBtn1"
@@ -951,6 +1054,7 @@ function Question3({
               type="radio"
               name="language"
               value="little uncomfortable"
+              onChange={handleLanguageChange}
             />
             <label
               htmlFor="languageBtn2"
@@ -964,6 +1068,7 @@ function Question3({
               type="radio"
               name="language"
               value="neither"
+              onChange={handleLanguageChange}
             />
             <label
               htmlFor="languageBtn3"
@@ -977,6 +1082,7 @@ function Question3({
               type="radio"
               name="language"
               value="somewhat comfortable"
+              onChange={handleLanguageChange}
             />
             <label
               htmlFor="languageBtn4"
@@ -990,6 +1096,7 @@ function Question3({
               type="radio"
               name="language"
               value="very comfortable"
+              onChange={handleLanguageChange}
             />
             <label
               htmlFor="languageBtn5"
@@ -1008,6 +1115,7 @@ function Question3({
               type="radio"
               name="cuisine"
               value={cuisineOneValue}
+              onChange={handleCuisineChange}
             />
             <label
               htmlFor="cuisineBtn1"
@@ -1021,6 +1129,7 @@ function Question3({
               type="radio"
               name="cuisine"
               value={cuisineTwoValue}
+              onChange={handleCuisineChange}
             />
             <label
               htmlFor="cuisineBtn2"
@@ -1034,6 +1143,7 @@ function Question3({
               type="radio"
               name="cuisine"
               value={cuisineThreeValue}
+              onChange={handleCuisineChange}
             />
             <label
               htmlFor="cuisineBtn3"
@@ -1047,6 +1157,7 @@ function Question3({
               type="radio"
               name="cuisine"
               value={cuisineFourValue}
+              onChange={handleCuisineChange}
             />
             <label
               htmlFor="cuisineBtn4"
@@ -1060,6 +1171,7 @@ function Question3({
               type="radio"
               name="cuisine"
               value={cuisineFiveValue}
+              onChange={handleCuisineChange}
             />
             <label
               htmlFor="cuisineBtn5"
@@ -1073,6 +1185,7 @@ function Question3({
               type="radio"
               name="cuisine"
               value={cuisineSixValue}
+              onChange={handleCuisineChange}
             />
             <label
               htmlFor="cuisineBtn6"
@@ -1091,6 +1204,7 @@ function Question3({
               type="radio"
               name="relaxation"
               value="not at all"
+              onChange={handleRelaxationChange}
             />
             <label
               htmlFor="relaxationBtn1"
@@ -1104,6 +1218,7 @@ function Question3({
               type="radio"
               name="relaxation"
               value="slightly"
+              onChange={handleRelaxationChange}
             />
             <label
               htmlFor="relaxationBtn2"
@@ -1117,6 +1232,7 @@ function Question3({
               type="radio"
               name="relaxation"
               value="moderately"
+              onChange={handleRelaxationChange}
             />
             <label
               htmlFor="relaxationBtn3"
@@ -1130,6 +1246,7 @@ function Question3({
               type="radio"
               name="relaxation"
               value="important"
+              onChange={handleRelaxationChange}
             />
             <label
               htmlFor="relaxationBtn4"
@@ -1143,6 +1260,7 @@ function Question3({
               type="radio"
               name="relaxation"
               value="very important"
+              onChange={handleRelaxationChange}
             />
             <label
               htmlFor="relaxationBtn5"

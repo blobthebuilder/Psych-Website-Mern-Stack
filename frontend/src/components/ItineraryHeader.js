@@ -4,11 +4,13 @@ function ItineraryHeader({ agent }) {
   return (
     <div>
       {agent.length === 8 && (
-        <header class="agentHeader">
-          <h1 class="title agentTitle">Personal Travel Agent Instructions</h1>
+        <header className="agentHeader">
+          <h1 className="title agentTitle">
+            Personal Travel Agent Instructions
+          </h1>
           <p
             id="agentSubTitle1"
-            class="instructions header">
+            className="instructions header">
             Below is your <strong>personalized travel itinerary</strong>.{" "}
             <i>Smart Traveler</i> has identified the top four options for
             flights, rental cars, hotels, restaurants, shopping, activities, and
@@ -16,7 +18,7 @@ function ItineraryHeader({ agent }) {
           </p>
           <p
             id="agentSubTitle2"
-            class="instructions header">
+            className="instructions header">
             The selection that is <strong>highlighted</strong> represents the
             selections that Smart Traveler recommends based on your personality
             assessment. In other words, the highlighted selection is the option
@@ -28,7 +30,7 @@ function ItineraryHeader({ agent }) {
           </p>
           <p
             id="agentSubTitle3"
-            class="instructions header">
+            className="instructions header">
             Please indicate whether you will choose to maintain the selection
             made by your <strong>personal travel agent</strong>, or click on an
             alternative option if you would prefer to make a different
@@ -37,11 +39,13 @@ function ItineraryHeader({ agent }) {
         </header>
       )}
       {agent.length === 7 && (
-        <header class="agentHeader">
-          <h1 class="title agentTitle">General Travel Agent Instructions</h1>
+        <header className="agentHeader">
+          <h1 className="title agentTitle">
+            General Travel Agent Instructions
+          </h1>
           <p
             id="agentSubTitle1"
-            class="instructions header">
+            className="instructions header">
             Below is the <strong>general travel itinerary</strong>.{" "}
             <i>Smart Traveler</i> has identified the top four options for
             flights, rental cars, hotels, restaurants, shopping, activities, and
@@ -49,7 +53,7 @@ function ItineraryHeader({ agent }) {
           </p>
           <p
             id="agentSubTitle2"
-            class="instructions header">
+            className="instructions header">
             The selection that is highlighted represents the selections that{" "}
             <i>Smart Traveler</i> recommends based on previous users'
             personality assessments. In other words, the highlighted selection
@@ -61,7 +65,7 @@ function ItineraryHeader({ agent }) {
           </p>
           <p
             id="agentSubTitle3"
-            class="instructions header">
+            className="instructions header">
             Please indicate whether you will choose to maintain the selection
             made by the <strong>general travel agent</strong>, or click on an
             alternative option if you would prefer to make a different
@@ -70,13 +74,13 @@ function ItineraryHeader({ agent }) {
         </header>
       )}
       {agent.length === 12 && (
-        <header class="agentHeader">
-          <h1 class="title agentTitle">
+        <header className="agentHeader">
+          <h1 className="title agentTitle">
             Unprogrammed Travel Agent Instructions
           </h1>
           <p
             id="agentSubTitle1"
-            class="instructions header">
+            className="instructions header">
             Below is the <strong>unprogrammed travel itinerary</strong>. Smart
             Traveler has identified the top four options for flights, rental
             cars, hotels, restaurants, shopping, activities, and more, for your
@@ -84,14 +88,14 @@ function ItineraryHeader({ agent }) {
           </p>
           <p
             id="agentSubTitle2"
-            class="instructions header">
+            className="instructions header">
             The selection that is highlighted was randomly selected by Smart
             Traveler. In other words, the highlighted selection is not related
             to any personal assessments.
           </p>
           <p
             id="agentSubTitle3"
-            class="instructions header">
+            className="instructions header">
             Please indicate whether you will choose to maintain the selection
             made by the <strong>unprogrammed travel agent</strong>, or click on
             an alternative option if you would prefer to make a different

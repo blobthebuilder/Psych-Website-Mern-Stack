@@ -1,6 +1,6 @@
 import React from "react";
 
-function Question4({ onNext, onBack }) {
+function Question4({ onNext, onBack, onInterestsChange }) {
   return (
     <div className="survey">
       <div className="q4">
@@ -17,6 +17,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="adventuretravel"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   className="typeTitle"
@@ -30,6 +31,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="art&design"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   className="typeTitle"
@@ -45,6 +47,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="arts&crafts"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   className="typeTitle"
@@ -58,6 +61,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="beauty&grooming"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="beauty&grooming"
@@ -73,6 +77,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="books"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="books"
@@ -86,6 +91,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="cameras"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="cameras"
@@ -101,6 +107,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="camping"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="camping"
@@ -114,6 +121,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="computers"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="computers"
@@ -129,6 +137,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="cooking"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="cooking"
@@ -142,6 +151,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="diy"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="diy"
@@ -157,6 +167,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="dogs"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="dogs"
@@ -170,6 +181,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="electronics"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="electronics"
@@ -185,6 +197,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="fallfashion"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="fallfashion"
@@ -198,6 +211,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="fashionaccessories"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="fashionaccessories"
@@ -213,6 +227,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="fitness"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="fitness"
@@ -226,6 +241,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="food&drink"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="food&drink"
@@ -241,6 +257,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="fun&hobbies"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="fun&hobbies"
@@ -254,6 +271,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="giftideas"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="giftideas"
@@ -269,6 +287,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="health&wellness"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="health&wellness"
@@ -282,6 +301,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="healthyfood"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="healthyfood"
@@ -297,6 +317,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="hiking"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="hiking"
@@ -310,6 +331,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="home&garden"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="home&garden"
@@ -325,6 +347,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="homedecor"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="homedecor"
@@ -338,6 +361,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="homeimprovement"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="homeimprovement"
@@ -353,6 +377,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="interiordesign"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="interiordesign"
@@ -366,6 +391,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="kids&parenting"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="kids&parenting"
@@ -381,6 +407,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="kitchens"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="kitchens"
@@ -394,6 +421,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="makeup"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="makeup"
@@ -409,6 +437,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="mensfashion"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="mensfashion"
@@ -422,6 +451,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="movies&tv"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="movies&tv"
@@ -437,6 +467,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="music"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="music"
@@ -450,6 +481,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="outdooractivities"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="outdooractivities"
@@ -465,6 +497,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="outdoors"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="outdoors"
@@ -478,6 +511,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="petcare"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="petcare"
@@ -493,6 +527,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="pets&animals"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="pets&animals"
@@ -506,6 +541,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="photography"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="photography"
@@ -521,6 +557,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="recipes"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="recipes"
@@ -534,6 +571,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="shoes"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="shoes"
@@ -549,6 +587,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="skincare"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="skincare"
@@ -562,6 +601,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="sport"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="sports"
@@ -577,6 +617,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="strangefinds"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="strangefinds"
@@ -590,6 +631,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="style&fashion"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="style&fashion"
@@ -605,6 +647,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="technology"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="technology"
@@ -618,6 +661,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="toys&games"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="toys&games"
@@ -633,6 +677,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="travel"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="travel"
@@ -646,6 +691,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="womensaccessories"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="womensaccessories"
@@ -661,6 +707,7 @@ function Question4({ onNext, onBack }) {
                   type="checkbox"
                   name="womensfashion"
                   className="smallCheckbox"
+                  onChange={onInterestsChange}
                 />
                 <label
                   htmlFor="womensfashion"

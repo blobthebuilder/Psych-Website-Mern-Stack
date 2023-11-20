@@ -1,6 +1,6 @@
 import React from "react";
 
-function Question2B({ onNext, onBack, arr }) {
+function Question2B({ onNext, onBack, arr, onAfternoonChange }) {
   const imageOne = arr[0];
   const imageTwo = arr[1];
   const imageThree = arr[2];
@@ -12,6 +12,11 @@ function Question2B({ onNext, onBack, arr }) {
   const imageThreeValue = arr[2].substring(0, arr[0].indexOf("."));
   const imageFourValue = arr[3].substring(0, arr[0].indexOf("."));
   const imageFiveValue = arr[4].substring(0, arr[0].indexOf("."));
+
+  const handleAfternoonChange = (event) => {
+    const { value } = event.target;
+    onAfternoonChange(value);
+  };
 
   return (
     <div className="survey">
@@ -29,6 +34,7 @@ function Question2B({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageTwo"
                 value={imageOneValue}
+                onChange={handleAfternoonChange}
               />
               <img
                 id="imageBOne"
@@ -44,6 +50,7 @@ function Question2B({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageTwo"
                 value={imageTwoValue}
+                onChange={handleAfternoonChange}
               />
               <img
                 id="imageBTwo"
@@ -59,6 +66,7 @@ function Question2B({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageTwo"
                 value={imageThreeValue}
+                onChange={handleAfternoonChange}
               />
               <img
                 id="imageBThree"
@@ -74,6 +82,7 @@ function Question2B({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageTwo"
                 value={imageFourValue}
+                onChange={handleAfternoonChange}
               />
               <img
                 id="imageBFour"
@@ -89,6 +98,7 @@ function Question2B({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageTwo"
                 value={imageFiveValue}
+                onChange={handleAfternoonChange}
               />
               <img
                 id="imageBFive"

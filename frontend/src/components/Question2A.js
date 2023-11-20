@@ -1,6 +1,6 @@
 import React from "react";
 
-function Question2A({ onNext, onBack, arr }) {
+function Question2A({ onNext, onBack, arr, onHotelChange }) {
   /*
   const [imageOne, setImageOne] = useState(null);
   const [imageTwo, setImageTwo] = useState(null);
@@ -43,6 +43,10 @@ function Question2A({ onNext, onBack, arr }) {
   const imageFourValue = arr[3].substring(0, arr[0].indexOf("."));
   const imageFiveValue = arr[4].substring(0, arr[0].indexOf("."));
 
+  const handleHotelChange = (event) => {
+    const { value } = event.target;
+    onHotelChange(value);
+  };
   return (
     <div className="survey">
       <div className="q2A">
@@ -59,6 +63,7 @@ function Question2A({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageOne"
                 value={imageOneValue}
+                onChange={handleHotelChange}
               />
               <img
                 id="imageAOne"
@@ -73,6 +78,7 @@ function Question2A({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageOne"
                 value={imageTwoValue}
+                onChange={handleHotelChange}
               />
               <img
                 id="imageATwo"
@@ -87,6 +93,7 @@ function Question2A({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageOne"
                 value={imageThreeValue}
+                onChange={handleHotelChange}
               />
               <img
                 id="imageAThree"
@@ -101,6 +108,7 @@ function Question2A({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageOne"
                 value={imageFourValue}
+                onChange={handleHotelChange}
               />
               <img
                 id="imageAFour"
@@ -115,6 +123,7 @@ function Question2A({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageOne"
                 value={imageFiveValue}
+                onChange={handleHotelChange}
               />
               <img
                 id="imageAFive"

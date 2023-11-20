@@ -1,6 +1,39 @@
 import React from "react";
 
-function GreenQuestion({ onNext, onBack }) {
+function GreenQuestion({
+  onNext,
+  onBack,
+  onProductsChange,
+  onEnvironDecisChange,
+  onPurchaseEnvironChange,
+  onResourcesChange,
+  onEnvironRespChange,
+  onInconvenienceChange,
+}) {
+  const handleProductsChange = (event) => {
+    const { value } = event.target;
+    onProductsChange(value);
+  };
+  const handleEnvironDecisChange = (event) => {
+    const { value } = event.target;
+    onEnvironDecisChange(value);
+  };
+  const handlePurchaseEnvironChange = (event) => {
+    const { value } = event.target;
+    onPurchaseEnvironChange(value);
+  };
+  const handleResourcesChange = (event) => {
+    const { value } = event.target;
+    onResourcesChange(value);
+  };
+  const handleEnvironRespChange = (event) => {
+    const { value } = event.target;
+    onEnvironRespChange(value);
+  };
+  const handleInconvenienceChange = (event) => {
+    const { value } = event.target;
+    onInconvenienceChange(value);
+  };
   return (
     <div className="survey">
       <div className="greenQuestion">
@@ -17,6 +50,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Strongly disagree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn1"
@@ -30,6 +64,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Disagree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn2"
@@ -43,6 +78,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Somewhat disagree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn3"
@@ -56,6 +92,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Neither agree nor disagree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn4"
@@ -69,6 +106,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Somewhat agree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn5"
@@ -82,6 +120,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Agree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn6"
@@ -95,6 +134,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="products"
               value="Strongly agree"
+              onChange={handleProductsChange}
             />
             <label
               htmlFor="productsBtn7"
@@ -113,6 +153,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Strongly disagree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn1"
@@ -126,6 +167,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Disagree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn2"
@@ -139,6 +181,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Somewhat disagree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn3"
@@ -152,6 +195,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Neither agree nor disagree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn4"
@@ -165,6 +209,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Somewhat agree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn5"
@@ -178,6 +223,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Agree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn6"
@@ -191,6 +237,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environDecis"
               value="Strongly agree"
+              onChange={handleEnvironDecisChange}
             />
             <label
               htmlFor="environDecisBtn7"
@@ -208,6 +255,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Strongly disagree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn1"
@@ -221,6 +269,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Disagree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn2"
@@ -234,6 +283,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Somewhat disagree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn3"
@@ -247,6 +297,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Neither agree nor disagree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn4"
@@ -260,6 +311,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Somewhat agree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn5"
@@ -273,6 +325,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Agree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn6"
@@ -286,6 +339,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="purchaseEviron"
               value="Strongly agree"
+              onChange={handlePurchaseEnvironChange}
             />
             <label
               htmlFor="purchaseEvironBtn7"
@@ -303,6 +357,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Strongly disagree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn1"
@@ -316,6 +371,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Disagree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn2"
@@ -329,6 +385,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Somewhat disagree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn3"
@@ -342,6 +399,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Neither agree nor disagree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn4"
@@ -355,6 +413,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Somewhat agree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn5"
@@ -368,6 +427,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Agree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn6"
@@ -381,6 +441,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="resources"
               value="Strongly agree"
+              onChange={handleResourcesChange}
             />
             <label
               htmlFor="resourcesBtn7"
@@ -398,6 +459,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Strongly disagree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn1"
@@ -411,6 +473,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Disagree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn2"
@@ -424,6 +487,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Somewhat disagree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn3"
@@ -437,6 +501,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Neither agree nor disagree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn4"
@@ -450,6 +515,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Somewhat agree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn5"
@@ -463,6 +529,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Agree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn6"
@@ -476,6 +543,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="environResp"
               value="Strongly agree"
+              onChange={handleEnvironRespChange}
             />
             <label
               htmlFor="environRespBtn7"
@@ -494,6 +562,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Strongly disagree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn1"
@@ -507,6 +576,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Disagree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn2"
@@ -520,6 +590,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Somewhat disagree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn3"
@@ -533,6 +604,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Neither agree nor disagree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn4"
@@ -546,6 +618,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Somewhat agree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn5"
@@ -559,6 +632,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Agree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn6"
@@ -572,6 +646,7 @@ function GreenQuestion({ onNext, onBack }) {
               type="radio"
               name="inconvenience"
               value="Strongly agree"
+              onChange={handleInconvenienceChange}
             />
             <label
               htmlFor="inconvenienceBtn7"

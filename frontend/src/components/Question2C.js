@@ -1,6 +1,6 @@
 import React from "react";
 
-function Question2C({ onNext, onBack, arr }) {
+function Question2C({ onNext, onBack, arr, onRestaurantChange }) {
   const imageOne = arr[0];
   const imageTwo = arr[1];
   const imageThree = arr[2];
@@ -12,6 +12,11 @@ function Question2C({ onNext, onBack, arr }) {
   const imageThreeValue = arr[2].substring(0, arr[0].indexOf("."));
   const imageFourValue = arr[3].substring(0, arr[0].indexOf("."));
   const imageFiveValue = arr[4].substring(0, arr[0].indexOf("."));
+
+  const handleRestaurantChange = (event) => {
+    const { value } = event.target;
+    onRestaurantChange(value);
+  };
   return (
     <div className="survey">
       <div className="q2C">
@@ -28,6 +33,7 @@ function Question2C({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageThree"
                 value={imageOneValue}
+                onChange={handleRestaurantChange}
               />
               <img
                 id="imageCOne"
@@ -42,6 +48,7 @@ function Question2C({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageThree"
                 value={imageTwoValue}
+                onChange={handleRestaurantChange}
               />
               <img
                 id="imageCTwo"
@@ -56,6 +63,7 @@ function Question2C({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageThree"
                 value={imageThreeValue}
+                onChange={handleRestaurantChange}
               />
               <img
                 id="imageCThree"
@@ -70,6 +78,7 @@ function Question2C({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageThree"
                 value={imageFourValue}
+                onChange={handleRestaurantChange}
               />
               <img
                 id="imageCFour"
@@ -84,6 +93,7 @@ function Question2C({ onNext, onBack, arr }) {
                 type="radio"
                 name="imageThree"
                 value={imageFiveValue}
+                onChange={handleRestaurantChange}
               />
               <img
                 id="imageCFive"

@@ -1,16 +1,20 @@
 import React from "react";
-import { useState, useEffect } from "react";
 
-function Itinerary({ onNext, type, features, recommendedAndEco }) {
+function Itinerary({
+  onNext,
+  type,
+  features,
+  recommendedAndEco,
+  onSelectionChange,
+}) {
   const typeFeatures = features[type];
   const recommended = recommendedAndEco[type][0];
   const eco = recommendedAndEco[type][1];
-  const [selectedButton, setSelectedButton] = useState(null);
 
-  useEffect(() => {
-    setSelectedButton(recommended);
-  }, []);
-
+  const handleSelectionChange = (event) => {
+    const { value } = event.target;
+    onSelectionChange(value);
+  };
   return (
     <div
       className="itinerary"
@@ -27,7 +31,8 @@ function Itinerary({ onNext, type, features, recommendedAndEco }) {
               type="radio"
               name="flightBtn"
               className="bigCheckbox"
-              checked={0 === recommended}
+              defaultChecked={0 === recommended}
+              onChange={handleSelectionChange}
             />
           </div>
           <div className="itineraryBox">
@@ -71,7 +76,8 @@ function Itinerary({ onNext, type, features, recommendedAndEco }) {
               type="radio"
               name="flightBtn"
               className="bigCheckbox"
-              checked={1 === recommended}
+              defaultChecked={1 === recommended}
+              onChange={handleSelectionChange}
             />
           </div>
           <div className="itineraryBox">
@@ -115,7 +121,8 @@ function Itinerary({ onNext, type, features, recommendedAndEco }) {
               type="radio"
               name="flightBtn"
               className="bigCheckbox"
-              checked={2 === recommended}
+              defaultChecked={2 === recommended}
+              onChange={handleSelectionChange}
             />
           </div>
           <div className="itineraryBox">
@@ -159,7 +166,8 @@ function Itinerary({ onNext, type, features, recommendedAndEco }) {
               type="radio"
               name="flightBtn"
               className="bigCheckbox"
-              checked={3 === recommended}
+              defaultChecked={3 === recommended}
+              onChange={handleSelectionChange}
             />
           </div>
           <div className="itineraryBox">

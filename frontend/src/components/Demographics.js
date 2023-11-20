@@ -1,6 +1,76 @@
 import React from "react";
 
-function Demographics({ onNext, onBack }) {
+function Demographics({
+  onNext,
+  onBack,
+  onGenderChange,
+  onGenderTextChange,
+  onIncomeChange,
+  onLadderChange,
+  onEducationChange,
+  onPoliticalChange,
+  onEconomicChange,
+  onSocialChange,
+  onAgeChange,
+  onRaceChange,
+  onRaceTextChange,
+  onResidenceChange,
+  onInternetAccessChange,
+  onInternetLookupChange,
+  onECommunicationUseChange,
+}) {
+  const handleGenderTextChange = (event) => {
+    const { value } = event.target;
+    onGenderTextChange(value);
+  };
+  const handleIncomeChange = (event) => {
+    const { value } = event.target;
+    onIncomeChange(value);
+  };
+  const handleLadderChange = (event) => {
+    const { value } = event.target;
+    onLadderChange(value);
+  };
+  const handleEducationChange = (event) => {
+    const { value } = event.target;
+    onEducationChange(value);
+  };
+  const handlePoliticalChange = (event) => {
+    const { value } = event.target;
+    onPoliticalChange(value);
+  };
+  const handleEconomicChange = (event) => {
+    const { value } = event.target;
+    onEconomicChange(value);
+  };
+  const handleSocialChange = (event) => {
+    const { value } = event.target;
+    onSocialChange(value);
+  };
+  const handleAgeChange = (event) => {
+    const { value } = event.target;
+    onAgeChange(value);
+  };
+  const handleRaceTextChange = (event) => {
+    const { value } = event.target;
+    onRaceTextChange(value);
+  };
+  const handleResidenceChange = (event) => {
+    const { value } = event.target;
+    onResidenceChange(value);
+  };
+  const handleInternetAccessChange = (event) => {
+    const { value } = event.target;
+    onInternetAccessChange(value);
+  };
+  const handleInternetLookupChange = (event) => {
+    const { value } = event.target;
+    onInternetLookupChange(value);
+  };
+  const handleECommunicationUseChange = (event) => {
+    const { value } = event.target;
+    onECommunicationUseChange(value);
+  };
   return (
     <div className="survey">
       <div className="demographics">
@@ -16,6 +86,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="female"
                 className="smallCheckbox"
+                onChange={onGenderChange}
               />
               <label
                 htmlFor="genderBtn1"
@@ -31,6 +102,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="male"
                 className="smallCheckbox"
+                onChange={onGenderChange}
               />
               <label
                 htmlFor="genderBtn2"
@@ -46,6 +118,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Genderqueer, gender non-binary, or gender fluid"
                 className="smallCheckbox"
+                onChange={onGenderChange}
               />
               <label
                 htmlFor="genderBtn3"
@@ -61,6 +134,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Transgender Female"
                 className="smallCheckbox"
+                onChange={onGenderChange}
               />
               <label
                 htmlFor="genderBtn4"
@@ -76,6 +150,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Transgender Male"
                 className="smallCheckbox"
+                onChange={onGenderChange}
               />
               <label
                 htmlFor="genderBtn5"
@@ -91,6 +166,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Prefer not to answer"
                 className="smallCheckbox"
+                onChange={onGenderChange}
               />
               <label
                 htmlFor="genderBtn6"
@@ -111,6 +187,7 @@ function Demographics({ onNext, onBack }) {
                 type="text"
                 name="gender"
                 className="smallTextbox"
+                onChange={handleGenderTextChange}
               />
             </div>
           </div>
@@ -125,6 +202,7 @@ function Demographics({ onNext, onBack }) {
               name="income"
               id="income"
               className="bigTextbox"
+              onChange={handleIncomeChange}
             />
           </div>
 
@@ -144,6 +222,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="1"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -157,6 +236,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="2"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -170,6 +250,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="3"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -183,6 +264,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="4"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -196,6 +278,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="5"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -209,6 +292,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="6"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -222,6 +306,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="7"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -235,6 +320,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="8"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -248,6 +334,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="9"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -261,6 +348,7 @@ function Demographics({ onNext, onBack }) {
                 name="ladder"
                 value="10"
                 className="radioLeftMargin"
+                onChange={handleLadderChange}
               />
               <div>
                 <img
@@ -282,6 +370,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="No schooling completed"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn1"
@@ -297,6 +386,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Nursery school to 8th grade"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn2"
@@ -312,6 +402,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Some high school no diploma"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn3"
@@ -327,6 +418,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="High school graduate, diploma or the equivalent (for example: GED)"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn4"
@@ -343,6 +435,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Some college credit no degree"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn5"
@@ -358,6 +451,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Trade/technical/vocational training"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn6"
@@ -373,6 +467,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Associate degree"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn7"
@@ -388,6 +483,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Bachelor's degree"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn8"
@@ -403,6 +499,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Master's degree"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn9"
@@ -418,6 +515,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Professional degree"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn10"
@@ -433,6 +531,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="degree"
                 value="Doctorate degree"
+                onChange={handleEducationChange}
               />
               <label
                 htmlFor="degreeBtn11"
@@ -454,6 +553,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="1"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">1</p>
 
@@ -462,6 +562,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="2"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">2</p>
 
@@ -470,6 +571,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="3"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">3</p>
 
@@ -478,6 +580,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="4"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">4</p>
 
@@ -486,6 +589,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="5"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">5</p>
 
@@ -494,6 +598,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="6"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">6</p>
 
@@ -502,6 +607,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="7"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">7</p>
 
@@ -510,6 +616,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="8"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">8</p>
 
@@ -518,6 +625,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="9"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">9</p>
 
@@ -526,6 +634,7 @@ function Demographics({ onNext, onBack }) {
                 name="political"
                 value="10"
                 className="radioLeftMargin"
+                onChange={handlePoliticalChange}
               />
               <p className="typeTitle">10</p>
             </div>
@@ -540,6 +649,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="1"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">1</p>
 
@@ -548,6 +658,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="2"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">2</p>
 
@@ -556,6 +667,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="3"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">3</p>
 
@@ -564,6 +676,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="4"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">4</p>
 
@@ -572,6 +685,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="5"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">5</p>
 
@@ -580,6 +694,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="6"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">6</p>
 
@@ -588,6 +703,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="7"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">7</p>
 
@@ -596,6 +712,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="8"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">8</p>
 
@@ -604,6 +721,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="9"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">9</p>
 
@@ -612,6 +730,7 @@ function Demographics({ onNext, onBack }) {
                 name="economic"
                 value="10"
                 className="radioLeftMargin"
+                onChange={handleEconomicChange}
               />
               <p className="typeTitle">10</p>
             </div>
@@ -626,6 +745,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="1"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">1</p>
 
@@ -634,6 +754,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="2"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">2</p>
 
@@ -642,6 +763,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="3"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">3</p>
 
@@ -650,6 +772,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="4"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">4</p>
 
@@ -658,6 +781,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="5"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">5</p>
 
@@ -666,6 +790,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="6"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">6</p>
 
@@ -674,6 +799,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="7"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">7</p>
 
@@ -682,6 +808,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="8"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">8</p>
 
@@ -690,6 +817,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="9"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">9</p>
 
@@ -698,6 +826,7 @@ function Demographics({ onNext, onBack }) {
                 name="social"
                 value="10"
                 className="radioLeftMargin"
+                onChange={handleSocialChange}
               />
               <p className="typeTitle">10</p>
             </div>
@@ -710,6 +839,7 @@ function Demographics({ onNext, onBack }) {
               name="age"
               id="age"
               className="bigTextbox"
+              onChange={handleAgeChange}
             />
           </div>
 
@@ -723,6 +853,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="American Indian or Alaska Native"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn1"
@@ -738,6 +869,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Asian"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn2"
@@ -753,6 +885,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Black or African American"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn3"
@@ -768,6 +901,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Hispanic, Latino, or Spanish"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn4"
@@ -783,6 +917,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Middle Eastern or Arab"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn5"
@@ -798,6 +933,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="Native Hawaiian or other Pacific Islander"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn6"
@@ -813,6 +949,7 @@ function Demographics({ onNext, onBack }) {
                 type="checkbox"
                 name="White"
                 className="smallCheckbox"
+                onChange={onRaceChange}
               />
               <label
                 htmlFor="raceBtn7"
@@ -833,6 +970,7 @@ function Demographics({ onNext, onBack }) {
                 name="race"
                 id="raceBtn8"
                 className="smallTextbox"
+                onChange={handleRaceTextChange}
               />
             </div>
           </div>
@@ -846,6 +984,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="residenceArea"
                 value="Rural"
+                onChange={handleResidenceChange}
               />
               <label
                 htmlFor="residenceAreaBtn1"
@@ -861,6 +1000,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="residenceArea"
                 value="Suburban"
+                onChange={handleResidenceChange}
               />
               <label
                 htmlFor="residenceAreaBtn2"
@@ -876,6 +1016,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="residenceArea"
                 value="Urban"
+                onChange={handleResidenceChange}
               />
               <label
                 htmlFor="residenceAreaBtn3"
@@ -893,6 +1034,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetAccess"
                 value="Yes"
+                onChange={handleInternetAccessChange}
               />
               <label
                 htmlFor="internetAccessBtn1"
@@ -908,6 +1050,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetAccess"
                 value="No"
+                onChange={handleInternetAccessChange}
               />
               <label
                 htmlFor="internetAccessBtn2"
@@ -927,6 +1070,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetLookup"
                 value="Almost every day"
+                onChange={handleInternetLookupChange}
               />
               <label
                 htmlFor="internetLookupBtn1"
@@ -942,6 +1086,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetLookup"
                 value="A few times each week"
+                onChange={handleInternetLookupChange}
               />
               <label
                 htmlFor="internetLookupBtn2"
@@ -957,6 +1102,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetLookup"
                 value="Between once a week and once a month"
+                onChange={handleInternetLookupChange}
               />
               <label
                 htmlFor="internetLookupBtn3"
@@ -972,6 +1118,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetLookup"
                 value="Less than once a month"
+                onChange={handleInternetLookupChange}
               />
               <label
                 htmlFor="internetLookupBtn4"
@@ -987,6 +1134,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="internetLookup"
                 value="Never"
+                onChange={handleInternetLookupChange}
               />
               <label
                 htmlFor="internetLookupBtn5"
@@ -1006,6 +1154,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="eCommunicationUse"
                 value="Almost every day"
+                onChange={handleECommunicationUseChange}
               />
               <label
                 htmlFor="eCommunicationUseBtn1"
@@ -1021,6 +1170,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="eCommunicationUse"
                 value="A few times each week"
+                onChange={handleECommunicationUseChange}
               />
               <label
                 htmlFor="eCommunicationUseBtn2"
@@ -1036,6 +1186,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="eCommunicationUse"
                 value="Between once a week and once a month"
+                onChange={handleECommunicationUseChange}
               />
               <label
                 htmlFor="eCommunicationUseBtn3"
@@ -1051,6 +1202,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="eCommunicationUse"
                 value="Less than once a month"
+                onChange={handleECommunicationUseChange}
               />
               <label
                 htmlFor="eCommunicationUseBtn4"
@@ -1066,6 +1218,7 @@ function Demographics({ onNext, onBack }) {
                 type="radio"
                 name="eCommunicationUse"
                 value="Never"
+                onChange={handleECommunicationUseChange}
               />
               <label
                 htmlFor="eCommunicationUseBtn5"
