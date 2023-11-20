@@ -199,8 +199,7 @@ function GreenQuestion({ onNext, onBack }) {
             </label>
           </div>
           <h3 className="leftQuestion">
-            My purchase habits are affected by my concern htmlFor our
-            environment.
+            My purchase habits are affected by my concern for our environment.
           </h3>
 
           <div className="vacationBox">

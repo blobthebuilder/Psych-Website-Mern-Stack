@@ -9,16 +9,16 @@ function Loading({ onNext }) {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div class="loading">
+    <div className="loading">
       <p>MAKING YOUR AGENT</p>
-      <p class="instructions">
+      <p className="instructions">
         Your answers to the personal assessment will be used to program your
         personal travel agent. Please continue to the next page to test the
         first version of the software.
       </p>
       {!show && (
         <div
-          class="loader"
+          className="loader"
           id="loader"></div>
       )}
       {show && (
@@ -26,7 +26,7 @@ function Loading({ onNext }) {
           type="button"
           onClick={onNext}
           id="loadingBtn"
-          class="button">
+          className="button">
           Next
         </button>
       )}

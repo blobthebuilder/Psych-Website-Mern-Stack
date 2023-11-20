@@ -20,7 +20,7 @@ function Question4({ onNext, onBack }) {
                 />
                 <label
                   className="typeTitle"
-                  for="adventuretravel">
+                  htmlFor="adventuretravel">
                   Adventure Travel
                 </label>
               </div>
@@ -33,7 +33,7 @@ function Question4({ onNext, onBack }) {
                 />
                 <label
                   className="typeTitle"
-                  for="art&design">
+                  htmlFor="art&design">
                   Art & Design
                 </label>
               </div>
@@ -48,7 +48,7 @@ function Question4({ onNext, onBack }) {
                 />
                 <label
                   className="typeTitle"
-                  for="arts&crafts">
+                  htmlFor="arts&crafts">
                   Arts & Crafts
                 </label>
               </div>
@@ -60,7 +60,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="beauty&grooming"
+                  htmlFor="beauty&grooming"
                   className="typeTitle">
                   Beauty & Grooming
                 </label>
@@ -75,7 +75,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="books"
+                  htmlFor="books"
                   className="typeTitle">
                   Books
                 </label>
@@ -88,7 +88,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="cameras"
+                  htmlFor="cameras"
                   className="typeTitle">
                   Cameras
                 </label>
@@ -103,7 +103,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="camping"
+                  htmlFor="camping"
                   className="typeTitle">
                   Camping
                 </label>
@@ -116,7 +116,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="computers"
+                  htmlFor="computers"
                   className="typeTitle">
                   Computers
                 </label>
@@ -131,7 +131,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="cooking"
+                  htmlFor="cooking"
                   className="typeTitle">
                   Cooking
                 </label>
@@ -144,7 +144,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="diy"
+                  htmlFor="diy"
                   className="typeTitle">
                   DIY
                 </label>
@@ -159,7 +159,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="dogs"
+                  htmlFor="dogs"
                   className="typeTitle">
                   Dogs
                 </label>
@@ -172,7 +172,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="electronics"
+                  htmlFor="electronics"
                   className="typeTitle">
                   Electronics
                 </label>
@@ -187,7 +187,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="fallfashion"
+                  htmlFor="fallfashion"
                   className="typeTitle">
                   Fall Fashion
                 </label>
@@ -200,7 +200,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="fashionaccessories"
+                  htmlFor="fashionaccessories"
                   className="typeTitle">
                   Fashion Accessories
                 </label>
@@ -215,7 +215,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="fitness"
+                  htmlFor="fitness"
                   className="typeTitle">
                   Fitness
                 </label>
@@ -228,7 +228,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="food&drink"
+                  htmlFor="food&drink"
                   className="typeTitle">
                   Food & Drink
                 </label>
@@ -243,7 +243,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="fun&hobbies"
+                  htmlFor="fun&hobbies"
                   className="typeTitle">
                   Fun & Hobbies
                 </label>
@@ -256,7 +256,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="giftideas"
+                  htmlFor="giftideas"
                   className="typeTitle">
                   Gift Ideas
                 </label>
@@ -271,7 +271,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="health&wellness"
+                  htmlFor="health&wellness"
                   className="typeTitle">
                   Health & Wellness
                 </label>
@@ -284,7 +284,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="healthyfood"
+                  htmlFor="healthyfood"
                   className="typeTitle">
                   Healthy Food
                 </label>
@@ -299,7 +299,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="hiking"
+                  htmlFor="hiking"
                   className="typeTitle">
                   Hiking
                 </label>
@@ -312,7 +312,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="home&garden"
+                  htmlFor="home&garden"
                   className="typeTitle">
                   Home & Garden
                 </label>
@@ -327,7 +327,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="homedecor"
+                  htmlFor="homedecor"
                   className="typeTitle">
                   Home Decor
                 </label>
@@ -340,7 +340,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="homeimprovement"
+                  htmlFor="homeimprovement"
                   className="typeTitle">
                   Home Improvement
                 </label>
@@ -355,7 +355,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="interiordesign"
+                  htmlFor="interiordesign"
                   className="typeTitle">
                   Interior Design
                 </label>
@@ -368,7 +368,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="kids&parenting"
+                  htmlFor="kids&parenting"
                   className="typeTitle">
                   Kids & Parenting
                 </label>
@@ -383,7 +383,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="kitchens"
+                  htmlFor="kitchens"
                   className="typeTitle">
                   Kitchens
                 </label>
@@ -396,7 +396,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="makeup"
+                  htmlFor="makeup"
                   className="typeTitle">
                   Makeup
                 </label>
@@ -411,7 +411,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="mensfashion"
+                  htmlFor="mensfashion"
                   className="typeTitle">
                   Men's Fashion
                 </label>
@@ -424,7 +424,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="movies&tv"
+                  htmlFor="movies&tv"
                   className="typeTitle">
                   Movies & TV
                 </label>
@@ -439,7 +439,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="music"
+                  htmlFor="music"
                   className="typeTitle">
                   Music
                 </label>
@@ -452,7 +452,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="outdooractivities"
+                  htmlFor="outdooractivities"
                   className="typeTitle">
                   Outdoor Activities
                 </label>
@@ -467,7 +467,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="outdoors"
+                  htmlFor="outdoors"
                   className="typeTitle">
                   Outdoors
                 </label>
@@ -480,7 +480,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="petcare"
+                  htmlFor="petcare"
                   className="typeTitle">
                   Pet Care
                 </label>
@@ -495,7 +495,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="pets&animals"
+                  htmlFor="pets&animals"
                   className="typeTitle">
                   Pets & Animals
                 </label>
@@ -508,7 +508,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="photography"
+                  htmlFor="photography"
                   className="typeTitle">
                   Photography
                 </label>
@@ -523,7 +523,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="recipes"
+                  htmlFor="recipes"
                   className="typeTitle">
                   Recipes
                 </label>
@@ -536,7 +536,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="shoes"
+                  htmlFor="shoes"
                   className="typeTitle">
                   Shoes
                 </label>
@@ -551,7 +551,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="skincare"
+                  htmlFor="skincare"
                   className="typeTitle">
                   Skin Care
                 </label>
@@ -564,7 +564,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="sports"
+                  htmlFor="sports"
                   className="typeTitle">
                   Sports
                 </label>
@@ -579,7 +579,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="strangefinds"
+                  htmlFor="strangefinds"
                   className="typeTitle">
                   Strange Finds
                 </label>
@@ -592,7 +592,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="style&fashion"
+                  htmlFor="style&fashion"
                   className="typeTitle">
                   Style & Fashion
                 </label>
@@ -607,7 +607,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="technology"
+                  htmlFor="technology"
                   className="typeTitle">
                   Technology
                 </label>
@@ -620,7 +620,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="toys&games"
+                  htmlFor="toys&games"
                   className="typeTitle">
                   Toys & Games
                 </label>
@@ -635,7 +635,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="travel"
+                  htmlFor="travel"
                   className="typeTitle">
                   Travel
                 </label>
@@ -648,7 +648,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="womensaccessories"
+                  htmlFor="womensaccessories"
                   className="typeTitle">
                   Women's Accessories
                 </label>
@@ -663,7 +663,7 @@ function Question4({ onNext, onBack }) {
                   className="smallCheckbox"
                 />
                 <label
-                  for="womensfashion"
+                  htmlFor="womensfashion"
                   className="typeTitle">
                   Women's Fashion
                 </label>

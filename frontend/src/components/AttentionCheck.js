@@ -1,6 +1,10 @@
 import React from "react";
 
-function AttentionCheck({ onNext }) {
+function AttentionCheck({ onNext, onRadioChange }) {
+  const handleRadioChangeLocal = (event) => {
+    const { value } = event.target;
+    onRadioChange(value); // Call the callback function with the selected value
+  };
   return (
     <div className="attentionCheck">
       <p className="instructions">
@@ -15,9 +19,10 @@ function AttentionCheck({ onNext }) {
               type="radio"
               name="attentionCheck"
               value="Personal"
+              onChange={handleRadioChangeLocal}
             />
             <label
-              for="personalTravelAgentCheck"
+              htmlFor="personalTravelAgentCheck"
               className="labelMargin">
               Personal Travel Agent
             </label>
@@ -30,9 +35,10 @@ function AttentionCheck({ onNext }) {
               type="radio"
               name="attentionCheck"
               value="General"
+              onChange={handleRadioChangeLocal}
             />
             <label
-              for="generalTravelAgentCheck"
+              htmlFor="generalTravelAgentCheck"
               className="labelMargin">
               General Travel Agent
             </label>
@@ -44,10 +50,11 @@ function AttentionCheck({ onNext }) {
               id="controlTravelAgentCheck"
               type="radio"
               name="attentionCheck"
-              value="Control"
+              value="Unprogrammed"
+              onChange={handleRadioChangeLocal}
             />
             <label
-              for="controlTravelAgentCheck"
+              htmlFor="controlTravelAgentCheck"
               className="labelMargin">
               Unprogrammed Travel Agent
             </label>

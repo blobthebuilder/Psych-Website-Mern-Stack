@@ -18,7 +18,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="genderBtn1"
+                htmlFor="genderBtn1"
                 className="labelMargin">
                 Female
               </label>
@@ -33,7 +33,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="genderBtn2"
+                htmlFor="genderBtn2"
                 className="labelMargin">
                 Male
               </label>
@@ -48,7 +48,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="genderBtn3"
+                htmlFor="genderBtn3"
                 className="labelMargin">
                 Genderqueer, gender non-binary, or gender fluid
               </label>
@@ -63,7 +63,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="genderBtn4"
+                htmlFor="genderBtn4"
                 className="labelMargin">
                 Transgender Female
               </label>
@@ -78,7 +78,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="genderBtn5"
+                htmlFor="genderBtn5"
                 className="labelMargin">
                 Transgender Male
               </label>
@@ -93,7 +93,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="genderBtn6"
+                htmlFor="genderBtn6"
                 className="labelMargin">
                 Prefer not to answer
               </label>
@@ -102,7 +102,7 @@ function Demographics({ onNext, onBack }) {
           <div className="vacationContainer">
             <div className="vacationBox">
               <label
-                for="genderBtn7"
+                htmlFor="genderBtn7"
                 className="labelMargin">
                 Other
               </label>
@@ -284,7 +284,7 @@ function Demographics({ onNext, onBack }) {
                 value="No schooling completed"
               />
               <label
-                for="degreeBtn1"
+                htmlFor="degreeBtn1"
                 className="labelMargin">
                 No schooling completed
               </label>
@@ -299,7 +299,7 @@ function Demographics({ onNext, onBack }) {
                 value="Nursery school to 8th grade"
               />
               <label
-                for="degreeBtn2"
+                htmlFor="degreeBtn2"
                 className="labelMargin">
                 Nursery school to 8th grade
               </label>
@@ -314,7 +314,7 @@ function Demographics({ onNext, onBack }) {
                 value="Some high school no diploma"
               />
               <label
-                for="degreeBtn3"
+                htmlFor="degreeBtn3"
                 className="labelMargin">
                 Some high school, no diploma
               </label>
@@ -329,7 +329,7 @@ function Demographics({ onNext, onBack }) {
                 value="High school graduate, diploma or the equivalent (for example: GED)"
               />
               <label
-                for="degreeBtn4"
+                htmlFor="degreeBtn4"
                 className="labelMargin">
                 High school graduate, diploma or the equivalent (for example:
                 GED)
@@ -345,7 +345,7 @@ function Demographics({ onNext, onBack }) {
                 value="Some college credit no degree"
               />
               <label
-                for="degreeBtn5"
+                htmlFor="degreeBtn5"
                 className="labelMargin">
                 Some college credit, no degree
               </label>
@@ -360,7 +360,7 @@ function Demographics({ onNext, onBack }) {
                 value="Trade/technical/vocational training"
               />
               <label
-                for="degreeBtn6"
+                htmlFor="degreeBtn6"
                 className="labelMargin">
                 Trade/technical/vocational training
               </label>
@@ -375,7 +375,7 @@ function Demographics({ onNext, onBack }) {
                 value="Associate degree"
               />
               <label
-                for="degreeBtn7"
+                htmlFor="degreeBtn7"
                 className="labelMargin">
                 Associate degree
               </label>
@@ -390,7 +390,7 @@ function Demographics({ onNext, onBack }) {
                 value="Bachelor's degree"
               />
               <label
-                for="degreeBtn8"
+                htmlFor="degreeBtn8"
                 className="labelMargin">
                 Bachelor's degree
               </label>
@@ -405,7 +405,7 @@ function Demographics({ onNext, onBack }) {
                 value="Master's degree"
               />
               <label
-                for="degreeBtn9"
+                htmlFor="degreeBtn9"
                 className="labelMargin">
                 Master's degree
               </label>
@@ -420,7 +420,7 @@ function Demographics({ onNext, onBack }) {
                 value="Professional degree"
               />
               <label
-                for="degreeBtn10"
+                htmlFor="degreeBtn10"
                 className="labelMargin">
                 Professional degree
               </label>
@@ -435,7 +435,7 @@ function Demographics({ onNext, onBack }) {
                 value="Doctorate degree"
               />
               <label
-                for="degreeBtn11"
+                htmlFor="degreeBtn11"
                 className="labelMargin">
                 Doctorate degree
               </label>
@@ -725,7 +725,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn1"
+                htmlFor="raceBtn1"
                 className="labelMargin">
                 American Indian or Alaska Native
               </label>
@@ -740,7 +740,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn2"
+                htmlFor="raceBtn2"
                 className="labelMargin">
                 Asian
               </label>
@@ -755,7 +755,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn3"
+                htmlFor="raceBtn3"
                 className="labelMargin">
                 Black or African American
               </label>
@@ -770,7 +770,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn4"
+                htmlFor="raceBtn4"
                 className="labelMargin">
                 Hispanic, Latino, or Spanish
               </label>
@@ -785,7 +785,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn5"
+                htmlFor="raceBtn5"
                 className="labelMargin">
                 Middle Eastern or Arab
               </label>
@@ -800,7 +800,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn6"
+                htmlFor="raceBtn6"
                 className="labelMargin">
                 Native Hawaiian or other Pacific Islander
               </label>
@@ -815,7 +815,7 @@ function Demographics({ onNext, onBack }) {
                 className="smallCheckbox"
               />
               <label
-                for="raceBtn7"
+                htmlFor="raceBtn7"
                 className="labelMargin">
                 White
               </label>
@@ -824,7 +824,7 @@ function Demographics({ onNext, onBack }) {
           <div className="vacationContainer">
             <div className="vacationBox">
               <label
-                for="raceBtn8"
+                htmlFor="raceBtn8"
                 className="labelMargin">
                 Other
               </label>
@@ -848,7 +848,7 @@ function Demographics({ onNext, onBack }) {
                 value="Rural"
               />
               <label
-                for="residenceAreaBtn1"
+                htmlFor="residenceAreaBtn1"
                 className="labelMargin">
                 Rural
               </label>
@@ -863,7 +863,7 @@ function Demographics({ onNext, onBack }) {
                 value="Suburban"
               />
               <label
-                for="residenceAreaBtn2"
+                htmlFor="residenceAreaBtn2"
                 className="labelMargin">
                 Suburban
               </label>
@@ -878,7 +878,7 @@ function Demographics({ onNext, onBack }) {
                 value="Urban"
               />
               <label
-                for="residenceAreaBtn3"
+                htmlFor="residenceAreaBtn3"
                 className="labelMargin">
                 Urban
               </label>
@@ -895,7 +895,7 @@ function Demographics({ onNext, onBack }) {
                 value="Yes"
               />
               <label
-                for="internetAccessBtn1"
+                htmlFor="internetAccessBtn1"
                 className="labelMargin">
                 Yes
               </label>
@@ -910,7 +910,7 @@ function Demographics({ onNext, onBack }) {
                 value="No"
               />
               <label
-                for="internetAccessBtn2"
+                htmlFor="internetAccessBtn2"
                 className="labelMargin">
                 No
               </label>
@@ -929,7 +929,7 @@ function Demographics({ onNext, onBack }) {
                 value="Almost every day"
               />
               <label
-                for="internetLookupBtn1"
+                htmlFor="internetLookupBtn1"
                 className="labelMargin">
                 Almost every day
               </label>
@@ -944,7 +944,7 @@ function Demographics({ onNext, onBack }) {
                 value="A few times each week"
               />
               <label
-                for="internetLookupBtn2"
+                htmlFor="internetLookupBtn2"
                 className="labelMargin">
                 A few times each week
               </label>
@@ -959,7 +959,7 @@ function Demographics({ onNext, onBack }) {
                 value="Between once a week and once a month"
               />
               <label
-                for="internetLookupBtn3"
+                htmlFor="internetLookupBtn3"
                 className="labelMargin">
                 Between once a week and once a month
               </label>
@@ -974,7 +974,7 @@ function Demographics({ onNext, onBack }) {
                 value="Less than once a month"
               />
               <label
-                for="internetLookupBtn4"
+                htmlFor="internetLookupBtn4"
                 className="labelMargin">
                 Less than once a month
               </label>
@@ -989,7 +989,7 @@ function Demographics({ onNext, onBack }) {
                 value="Never"
               />
               <label
-                for="internetLookupBtn5"
+                htmlFor="internetLookupBtn5"
                 className="labelMargin">
                 Never
               </label>
@@ -1008,7 +1008,7 @@ function Demographics({ onNext, onBack }) {
                 value="Almost every day"
               />
               <label
-                for="eCommunicationUseBtn1"
+                htmlFor="eCommunicationUseBtn1"
                 className="labelMargin">
                 Almost every day
               </label>
@@ -1023,7 +1023,7 @@ function Demographics({ onNext, onBack }) {
                 value="A few times each week"
               />
               <label
-                for="eCommunicationUseBtn2"
+                htmlFor="eCommunicationUseBtn2"
                 className="labelMargin">
                 A few times each week
               </label>
@@ -1038,7 +1038,7 @@ function Demographics({ onNext, onBack }) {
                 value="Between once a week and once a month"
               />
               <label
-                for="eCommunicationUseBtn3"
+                htmlFor="eCommunicationUseBtn3"
                 className="labelMargin">
                 Between once a week and once a month
               </label>
@@ -1053,7 +1053,7 @@ function Demographics({ onNext, onBack }) {
                 value="Less than once a month"
               />
               <label
-                for="eCommunicationUseBtn4"
+                htmlFor="eCommunicationUseBtn4"
                 className="labelMargin">
                 Less than once a month
               </label>
@@ -1068,7 +1068,7 @@ function Demographics({ onNext, onBack }) {
                 value="Never"
               />
               <label
-                for="eCommunicationUseBtn5"
+                htmlFor="eCommunicationUseBtn5"
                 className="labelMargin">
                 Never
               </label>

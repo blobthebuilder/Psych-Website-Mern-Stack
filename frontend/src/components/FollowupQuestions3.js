@@ -1,16 +1,36 @@
 import React from "react";
 
-function FollowupQuestions3({ onNext }) {
+function FollowupQuestions3({ onNext, agent }) {
   return (
     <div className="followupQuestions3">
       <p className="topMargin">‎</p>
-      <p
-        className="postInstructions"
-        id="identificationQuestionnaire1">
-        Please answer the following questions about your
-        <strong>personal travel agent.</strong> Your answer to these questions
-        will help us provide useful recommendations to future users.
-      </p>
+      {agent.length === 8 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your{" "}
+          <strong>personal travel agent.</strong> Your answer to these questions
+          will help us provide useful recommendations to future users.
+        </p>
+      )}
+      {agent.length === 7 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your experiences using the{" "}
+          <strong>general travel agent.</strong> Your answer to these questions
+          will help us provide useful recommendations to future users.
+        </p>
+      )}
+      {agent.length === 12 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your experiences using the{" "}
+          <strong>unprogrammed travel agent.</strong> Your answer to these
+          questions will help us provide useful recommendations to future users.
+        </p>
+      )}
       <p
         className="instructions"
         id="questionnaire2"
@@ -40,7 +60,7 @@ function FollowupQuestions3({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I feel my personal travel agent reflects who I am.
+          I feel my {agent.toLowerCase()} travel agent reflects who I am.
         </div>
         <div className="questionnaireScale">
           <input
@@ -81,7 +101,7 @@ function FollowupQuestions3({ onNext }) {
 
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I can identify with my personal travel agent.
+          I can identify with my {agent.toLowerCase()} travel agent.
         </div>
         <div className="questionnaireScale">
           <input
@@ -121,7 +141,7 @@ function FollowupQuestions3({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I feel a personal connection to my personal travel agent.
+          I feel a personal connection to my {agent.toLowerCase()} travel agent.
         </div>
         <div className="questionnaireScale">
           <input
@@ -161,8 +181,8 @@ function FollowupQuestions3({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I can use my personal travel agent to communicate who I am to other
-          people.
+          I can use my {agent.toLowerCase()} travel agent to communicate who I
+          am to other people.
         </div>
         <div className="questionnaireScale">
           <input
@@ -202,8 +222,8 @@ function FollowupQuestions3({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I think my personal travel agent could help me become the type of
-          person I want to be.
+          I think my {agent.toLowerCase()} travel agent could help me become the
+          type of person I want to be.
         </div>
         <div className="questionnaireScale">
           <input
@@ -243,9 +263,9 @@ function FollowupQuestions3({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I consider my personal travel agent to be “me” (it reflects who I
-          consider myself to be or the way that I want to present myself to
-          others).
+          I consider my {agent.toLowerCase()} travel agent to be “me” (it
+          reflects who I consider myself to be or the way that I want to present
+          myself to others).
         </div>
         <div className="questionnaireScale">
           <input
@@ -285,7 +305,7 @@ function FollowupQuestions3({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I feel my personal travel agent suits me well.
+          I feel my {agent.toLowerCase()} travel agent suits me well.
         </div>
         <div className="questionnaireScale">
           <input

@@ -1,20 +1,23 @@
 import React from "react";
 
-function AttentionCheckAnswer({ correct, onNext }) {
+function AttentionCheckAnswer({ selection, curAgent, onNext }) {
+  console.log(selection, curAgent);
   return (
     <div className="correctAttentionCheck">
-      {correct && (
+      {selection.length === curAgent.length && (
         <p
           className="instructions"
           id="correctAttentionCheckText">
-          Correct
+          Correct! You will be using the {curAgent} Travel Agent to answer this
+          next set of questions.
         </p>
       )}
-      {!correct && (
+      {selection.length !== curAgent.length && (
         <p
           className="instructions"
           id="incorrectAttentionCheckText">
-          Incorrect
+          Incorrect! You will be using the {curAgent} Travel Agent to answer
+          this next set of questions.
         </p>
       )}
       <button

@@ -1,16 +1,36 @@
 import React from "react";
 
-function FollowupQuestionsGreen({ onNext }) {
+function FollowupQuestionsGreen({ onNext, agent }) {
   return (
     <div className="followupQuestionsGreenScale">
       <p className="topMargin">‎</p>
-      <p
-        className="postInstructions"
-        id="greenQuestionnaire1">
-        Please answer the following questions about your
-        <strong>personal travel agent.</strong> Your answer to these questions
-        will help us provide useful recommendations to future users.
-      </p>
+      {agent.length === 8 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your{" "}
+          <strong>personal travel agent.</strong> Your answer to these questions
+          will help us provide useful recommendations to future users.
+        </p>
+      )}
+      {agent.length === 7 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your experiences using the{" "}
+          <strong>general travel agent.</strong> Your answer to these questions
+          will help us provide useful recommendations to future users.
+        </p>
+      )}
+      {agent.length === 12 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your experiences using the{" "}
+          <strong>unprogrammed travel agent.</strong> Your answer to these
+          questions will help us provide useful recommendations to future users.
+        </p>
+      )}
       <p
         className="instructions"
         id="questionnaire2"

@@ -1,16 +1,37 @@
 import React from "react";
 
-function FollowupQuestions2({ onNext }) {
+function FollowupQuestions2({ onNext, agent }) {
   return (
     <div className="followupQuestions2">
       <p className="topMargin">‎</p>
-      <p
-        className="postInstructions"
-        id="questionnaire1">
-        Please answer the following questions about your
-        <strong>personal travel agent.</strong> Your answer to these questions
-        will help us provide useful recommendations to future users.
-      </p>
+      {agent.length === 8 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your{" "}
+          <strong>personal travel agent.</strong> Your answer to these questions
+          will help us provide useful recommendations to future users.
+        </p>
+      )}
+      {agent.length === 7 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your experiences using the{" "}
+          <strong>general travel agent.</strong> Your answer to these questions
+          will help us provide useful recommendations to future users.
+        </p>
+      )}
+      {agent.length === 12 && (
+        <p
+          className="postInstructions"
+          id="questionnaire1">
+          Please answer the following questions about your experiences using the{" "}
+          <strong>unprogrammed travel agent.</strong> Your answer to these
+          questions will help us provide useful recommendations to future users.
+        </p>
+      )}
+
       <p
         className="instructions"
         id="questionnaire2"
@@ -46,8 +67,8 @@ function FollowupQuestions2({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my personal travel agent would enhance my effectiveness of
-          choosing the best travel option
+          Using my {agent.toLowerCase()} travel agent would enhance my
+          effectiveness of choosing the best travel option
         </div>
         <div className="questionnaireScale">
           <input
@@ -102,8 +123,8 @@ function FollowupQuestions2({ onNext }) {
 
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my personal travel agent would make it easier for me to choose
-          the best travel option
+          Using my {agent.toLowerCase()} travel agent would make it easier for
+          me to choose the best travel option
         </div>
         <div className="questionnaireScale">
           <input
@@ -157,8 +178,8 @@ function FollowupQuestions2({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my personal travel agent would enable me to choose a travel
-          option more quickly
+          Using my {agent.toLowerCase()} travel agent would enable me to choose
+          a travel option more quickly
         </div>
         <div className="questionnaireScale">
           <input
@@ -212,8 +233,8 @@ function FollowupQuestions2({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my personal travel agent for my travel choices would increase my
-          productivity
+          Using my {agent.toLowerCase()} travel agent for my travel choices
+          would increase my productivity
         </div>
         <div className="questionnaireScale">
           <input
@@ -267,8 +288,8 @@ function FollowupQuestions2({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my personal travel agent would improve my travel choice
-          performance
+          Using my {agent.toLowerCase()} travel agent would improve my travel
+          choice performance
         </div>
         <div className="questionnaireScale">
           <input
@@ -322,8 +343,8 @@ function FollowupQuestions2({ onNext }) {
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Overall my personal travel agent would be useful for me to utilize
-          while choosing travel options
+          Overall my {agent.toLowerCase()} travel agent would be useful for me
+          to utilize while choosing travel options
         </div>
         <div className="questionnaireScale">
           <input

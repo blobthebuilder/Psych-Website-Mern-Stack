@@ -38,6 +38,8 @@ import {
   shuffleAccommodation,
   shuffleCommunication,
   shuffleCuisine,
+  randomizeItineraryFeatures,
+  randomizeRecommendedAndEco,
 } from "./utils.js";
 function App() {
   const [step, setStep] = useState(1);
@@ -51,6 +53,17 @@ function App() {
   const [accommodationArr, setAccommodationArr] = useState([]);
   const [communicationArr, setCommunicationArr] = useState([]);
   const [cuisineArr, setCuisineArr] = useState([]);
+
+  const [itineraryFeatures, setItineraryFeatures] = useState([]);
+  const [recommendedAndEco, setRecommendedAndEco] = useState([]);
+
+  const [agent1, setAgent1] = useState("Personal");
+  const [agent2, setAgent2] = useState("General");
+  const [agent3, setAgent3] = useState("Unprogrammed");
+
+  const [curAgent, setCurAgent] = useState("Personal");
+  const [attentionCheckSelection, setAttentionCheckSelection] =
+    useState("null");
 
   const handleNext = () => {
     setStep(step + 1);
@@ -69,6 +82,16 @@ function App() {
   const handleNextChangeHeader = () => {
     handleNext();
     setShowHeader(!showHeader);
+  };
+
+  const handleAttentionCheckChange = (value) => {
+    setAttentionCheckSelection(value);
+  };
+
+  const startSurvey = () => {
+    setCurAgent(agent1);
+    setRecommendedAndEco(randomizeRecommendedAndEco);
+    handleNext();
   };
 
   // show alert when closing or refreshing
@@ -108,15 +131,41 @@ function App() {
     setAccommodationArr(shuffleAccommodation);
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
+    setItineraryFeatures(randomizeItineraryFeatures);
 
     fetchUsers();
-  }, [totalUsers]);
+    if (totalUsers % 6 === 0) {
+      setAgent1("Personal");
+      setAgent2("General");
+      setAgent3("Unprogrammed");
+    } else if (totalUsers % 6 === 1) {
+      setAgent1("Personal");
+      setAgent2("Unprogrammed");
+      setAgent3("General");
+    } else if (totalUsers % 6 === 2) {
+      setAgent1("General");
+      setAgent2("Personal");
+      setAgent3("Unprogrammed");
+    } else if (totalUsers % 6 === 3) {
+      setAgent1("General");
+      setAgent2("Unprogrammed");
+      setAgent3("Personal");
+    } else if (totalUsers % 6 === 4) {
+      setAgent1("Unprogrammed");
+      setAgent2("General");
+      setAgent3("Personal");
+    } else if (totalUsers % 6 === 5) {
+      setAgent1("Unprogrammed");
+      setAgent2("Pesronal");
+      setAgent3("General");
+    }
+  }, [totalUsers, agent1]);
 
   return (
     <div className="App">
       <p>Test: {totalUsers}</p>
       {showHeader && <PersonalityHeader />}
-      {step === 1 && <LandingPage onNext={handleNext} />}
+      {step === 1 && <LandingPage onNext={startSurvey} />}
       {step === 2 && (
         <ConsentFormPage
           onNext={handleNext}
@@ -195,18 +244,251 @@ function App() {
       )}
       {step === 15 && <SubmitPage onNext={handleNext} />}
       {step === 16 && <Loading onNext={handleNext} />}
-      {step === 17 && <Instructions1 onNext={handleNext} />}
-      {step === 18 && <Instructions2 onNext={handleNext} />}
-      {step === 19 && <AttentionCheck onNext={handleNext} />}
-      {step === 20 && <AttentionCheckAnswer onNext={handleNext} />}
-      {step === 21 && <Itinerary onNext={handleNext} />}
-      {step === 22 && <FollowupQuestions1 onNext={handleNext} />}
-      {step === 23 && <FollowupQuestions2 onNext={handleNext} />}
-      {step === 24 && <FollowupQuestions3 onNext={handleNext} />}
-      {step === 25 && <FollowupQuestionsGreen onNext={handleNext} />}
-      {step === 26 && <AlgorithmKnowledge onNext={handleNext} />}
-      {step === 27 && <AlgorithmAwareness onNext={handleNext} />}
-      {step === 28 && <End />}
+      {step === 17 && (
+        <Instructions1
+          onNext={handleNext}
+          agent={agent1}
+        />
+      )}
+      {step === 18 && (
+        <Instructions2
+          onNext={handleNext}
+          agent={agent1}
+        />
+      )}
+      {step === 19 && (
+        <AttentionCheck
+          onNext={handleNext}
+          agent={agent1}
+          onRadioChange={handleAttentionCheckChange}
+        />
+      )}
+      {step === 20 && (
+        <AttentionCheckAnswer
+          onNext={handleNext}
+          selection={attentionCheckSelection}
+          curAgent={curAgent}
+        />
+      )}
+      {step === 21 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Flight"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 22 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Rental Car"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 23 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Hotel"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 24 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Dinner"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 25 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Lunch"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 26 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Breakfast"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 27 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Museums"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 28 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Markets"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 29 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Flamenco Shows"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 30 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Public Transportation (Short)"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 31 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Public Transportation (Long)"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 32 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Coffee"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 33 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Bakery"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 34 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Night Life"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 35 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Bars"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 36 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Groceries"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 37 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Souveneirs"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 38 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Shopping"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 39 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"International Phone Service"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 40 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Currency Exchange"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 41 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Luggage"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 42 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Day Trip"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 43 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Travel Insurance"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 44 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Travel Plug Adapter"}
+          features={itineraryFeatures}
+          recommendedAndEco={recommendedAndEco}
+        />
+      )}
+      {step === 45 && (
+        <FollowupQuestions1
+          onNext={handleNext}
+          agent={agent1}
+        />
+      )}
+      {step === 46 && (
+        <FollowupQuestions2
+          onNext={handleNext}
+          agent={agent1}
+        />
+      )}
+      {step === 47 && (
+        <FollowupQuestions3
+          onNext={handleNext}
+          agent={agent1}
+        />
+      )}
+      {step === 48 && (
+        <FollowupQuestionsGreen
+          onNext={handleNext}
+          agent={agent1}
+        />
+      )}
+      {step === 49 && <AlgorithmKnowledge onNext={handleNext} />}
+      {step === 50 && <AlgorithmAwareness onNext={handleNext} />}
+      {step === 51 && <End />}
     </div>
   );
 }

@@ -1,23 +1,59 @@
 import React from "react";
 
-function FollowupQuestions({ onNext }) {
+function FollowupQuestions({ onNext, agent }) {
   return (
     <div className="followupQuestions">
       <p className="topMargin">‎</p>
-      <p
-        className="postInstructions"
-        id="interactivityQuestionnaire1">
-        Please answer the following questions about your
-        <strong>personal travel agent.</strong> Your answer to these questions
-        will help us provide useful recommendations to future users.
-      </p>
+      {agent.length === 8 && (
+        <p
+          className="postInstructions"
+          id="interactivityQuestionnaire1">
+          Think about your experience while using the{" "}
+          <strong>personal travel agent.</strong> The personal travel agent is
+          the version of Smart Traveler that was designed to make
+          recommendations based on{" "}
+          <strong>
+            <u>your personal assessment.</u>
+          </strong>
+        </p>
+      )}
+      {agent.length === 7 && (
+        <p
+          className="postInstructions"
+          id="interactivityQuestionnaire1">
+          Think about your experience while using the{" "}
+          <strong>general travel agent</strong>. The general travel agent is the
+          version of Smart Traveler that was designed to make recommendations
+          based on{" "}
+          <strong>
+            <u>previous users' personal assessments.</u>
+          </strong>
+        </p>
+      )}
+      {agent.length === 12 && (
+        <p
+          className="postInstructions"
+          id="interactivityQuestionnaire1">
+          Think about your experience while using the{" "}
+          <strong>unprogrammed travel agent</strong>. The unprogrammed travel
+          agent is the version of Smart Traveler that was designed to make
+          recommendations{" "}
+          <strong>
+            <u>at random.</u>
+          </strong>
+        </p>
+      )}
+
       <p
         className="instructions"
         id="questionnaire2"
         hidden></p>
       <p
         className="postInstructions"
-        id="questionnaire3"></p>
+        id="questionnaire3">
+        During the experiment, the process of developing and then using my{" "}
+        {agent.toLowerCase()} travel agent…
+      </p>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions"></div>
         <div className="questionnaireScale">
