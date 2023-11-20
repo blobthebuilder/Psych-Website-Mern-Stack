@@ -29,9 +29,28 @@ import AlgorithmKnowledge from "./components/AlgorithmKnowledge.js";
 import AlgorithmAwareness from "./components/AlgorithmAwareness.js";
 import End from "./components/End.js";
 
+import {
+  shuffleAfternoon,
+  shuffleHotels,
+  shuffleRestaurants,
+  shuffleVacations,
+  shuffleActivities,
+  shuffleAccommodation,
+  shuffleCommunication,
+  shuffleCuisine,
+} from "./utils.js";
 function App() {
   const [step, setStep] = useState(1);
   const [showHeader, setShowHeader] = useState(false);
+  const [totalUsers, setTotalUsers] = useState(0);
+  const [hotelsArr, setHotelsArr] = useState([]);
+  const [afternoonArr, setAfternoonArr] = useState([]);
+  const [restaurantArr, setRestaurantArr] = useState([]);
+  const [vacationsArr, setVacationsArr] = useState([]);
+  const [activitiesArr, setActivitiesArr] = useState([]);
+  const [accommodationArr, setAccommodationArr] = useState([]);
+  const [communicationArr, setCommunicationArr] = useState([]);
+  const [cuisineArr, setCuisineArr] = useState([]);
 
   const handleNext = () => {
     setStep(step + 1);
@@ -40,6 +59,7 @@ function App() {
 
   const handleBack = () => {
     setStep(step - 1);
+    window.scrollTo(0, 0);
   };
 
   const reload = () => {
@@ -64,8 +84,37 @@ function App() {
   };
   */
 
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const res = await fetch("http://localhost:4000/api/data");
+        const json = await res.json();
+
+        if (res.ok) {
+          setTotalUsers(json[0].totalUsers);
+        } else {
+          throw Error;
+        }
+      } catch (error) {
+        console.log("Fetch failed");
+      }
+    };
+
+    setHotelsArr(shuffleHotels);
+    setAfternoonArr(shuffleAfternoon);
+    setRestaurantArr(shuffleRestaurants);
+    setVacationsArr(shuffleVacations);
+    setActivitiesArr(shuffleActivities);
+    setAccommodationArr(shuffleAccommodation);
+    setCommunicationArr(shuffleCommunication);
+    setCuisineArr(shuffleCuisine);
+
+    fetchUsers();
+  }, [totalUsers]);
+
   return (
     <div className="App">
+      <p>Test: {totalUsers}</p>
       {showHeader && <PersonalityHeader />}
       {step === 1 && <LandingPage onNext={handleNext} />}
       {step === 2 && (
@@ -104,24 +153,32 @@ function App() {
         <Question2A
           onNext={handleNext}
           onBack={handleBack}
+          arr={hotelsArr}
         />
       )}
       {step === 10 && (
         <Question2B
           onNext={handleNext}
           onBack={handleBack}
+          arr={afternoonArr}
         />
       )}
       {step === 11 && (
         <Question2C
           onNext={handleNext}
           onBack={handleBack}
+          arr={restaurantArr}
         />
       )}
       {step === 12 && (
         <Question3
           onNext={handleNext}
           onBack={handleBack}
+          vacationsArr={vacationsArr}
+          activitiesArr={activitiesArr}
+          accommodationArr={accommodationArr}
+          communicationArr={communicationArr}
+          cuisinesArr={cuisineArr}
         />
       )}
       {step === 13 && (

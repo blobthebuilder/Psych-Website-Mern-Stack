@@ -1,6 +1,207 @@
 import React from "react";
 
-function Question3({ onNext, onBack }) {
+function Question3({
+  onNext,
+  onBack,
+  vacationsArr,
+  activitiesArr,
+  accommodationArr,
+  communicationArr,
+  cuisinesArr,
+}) {
+  const vacationOneValue = vacationsArr[0][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationTwoValue = vacationsArr[1][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationThreeValue = vacationsArr[2][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationFourValue = vacationsArr[3][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationFiveValue = vacationsArr[4][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationSixValue = vacationsArr[5][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationSevenValue = vacationsArr[6][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationEightValue = vacationsArr[7][0].substring(
+    0,
+    vacationsArr[0][0].indexOf(":")
+  );
+  const vacationOneText = {
+    __html: "<strong>" + vacationsArr[0][0] + "</strong>" + vacationsArr[0][1],
+  };
+  const vacationTwoText = {
+    __html: "<strong>" + vacationsArr[1][0] + "</strong>" + vacationsArr[1][1],
+  };
+  const vacationThreeText = {
+    __html: "<strong>" + vacationsArr[2][0] + "</strong>" + vacationsArr[2][1],
+  };
+  const vacationFourText = {
+    __html: "<strong>" + vacationsArr[3][0] + "</strong>" + vacationsArr[3][1],
+  };
+  const vacationFiveText = {
+    __html: "<strong>" + vacationsArr[4][0] + "</strong>" + vacationsArr[4][1],
+  };
+  const vacationSixText = {
+    __html: "<strong>" + vacationsArr[5][0] + "</strong>" + vacationsArr[5][1],
+  };
+  const vacationSevenText = {
+    __html: "<strong>" + vacationsArr[6][0] + "</strong>" + vacationsArr[6][1],
+  };
+  const vacationEightText = {
+    __html: "<strong>" + vacationsArr[7][0] + "</strong>" + vacationsArr[7][1],
+  };
+
+  const activitiesOneValue = activitiesArr[0][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesTwoValue = activitiesArr[1][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesThreeValue = activitiesArr[2][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesFourValue = activitiesArr[3][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesFiveValue = activitiesArr[4][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesSixValue = activitiesArr[5][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesSevenValue = activitiesArr[6][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesEightValue = activitiesArr[7][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesNineValue = activitiesArr[8][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesTenValue = activitiesArr[9][0].substring(
+    0,
+    activitiesArr[0][0].indexOf(":")
+  );
+  const activitiesOneText = {
+    __html:
+      "<strong>" + activitiesArr[0][0] + "</strong>" + activitiesArr[0][1],
+  };
+  const activitiesTwoText = {
+    __html:
+      "<strong>" + activitiesArr[1][0] + "</strong>" + activitiesArr[1][1],
+  };
+  const activitiesThreeText = {
+    __html:
+      "<strong>" + activitiesArr[2][0] + "</strong>" + activitiesArr[2][1],
+  };
+  const activitiesFourText = {
+    __html:
+      "<strong>" + activitiesArr[3][0] + "</strong>" + activitiesArr[3][1],
+  };
+  const activitiesFiveText = {
+    __html:
+      "<strong>" + activitiesArr[4][0] + "</strong>" + activitiesArr[4][1],
+  };
+  const activitiesSixText = {
+    __html:
+      "<strong>" + activitiesArr[5][0] + "</strong>" + activitiesArr[5][1],
+  };
+  const activitiesSevenText = {
+    __html:
+      "<strong>" + activitiesArr[6][0] + "</strong>" + activitiesArr[6][1],
+  };
+  const activitiesEightText = {
+    __html:
+      "<strong>" + activitiesArr[7][0] + "</strong>" + activitiesArr[7][1],
+  };
+  const activitiesNineText = {
+    __html:
+      "<strong>" + activitiesArr[8][0] + "</strong>" + activitiesArr[8][1],
+  };
+  const activitiesTenText = {
+    __html:
+      "<strong>" + activitiesArr[9][0] + "</strong>" + activitiesArr[9][1],
+  };
+
+  const accommodationOne = accommodationArr[0];
+  const accommodationTwo = accommodationArr[1];
+  const accommodationThree = accommodationArr[2];
+  const accommodationFour = accommodationArr[3];
+  const accommodationFive = accommodationArr[4];
+
+  const communicationOne = communicationArr[0];
+  const communicationTwo = communicationArr[1];
+  const communicationThree = communicationArr[2];
+  const communicationFour = communicationArr[3];
+  const communicationFive = communicationArr[4];
+
+  const cuisineOneValue = cuisinesArr[0][0].substring(
+    0,
+    cuisinesArr[0][0].indexOf(":")
+  );
+  const cuisineTwoValue = cuisinesArr[1][0].substring(
+    0,
+    cuisinesArr[0][0].indexOf(":")
+  );
+  const cuisineThreeValue = cuisinesArr[2][0].substring(
+    0,
+    cuisinesArr[0][0].indexOf(":")
+  );
+  const cuisineFourValue = cuisinesArr[3][0].substring(
+    0,
+    cuisinesArr[0][0].indexOf(":")
+  );
+  const cuisineFiveValue = cuisinesArr[4][0].substring(
+    0,
+    cuisinesArr[0][0].indexOf(":")
+  );
+  const cuisineSixValue = cuisinesArr[5][0].substring(
+    0,
+    cuisinesArr[0][0].indexOf(":")
+  );
+  const cuisineOneText = {
+    __html: "<strong>" + cuisinesArr[0][0] + "</strong>" + cuisinesArr[0][1],
+  };
+  const cuisineTwoText = {
+    __html: "<strong>" + cuisinesArr[1][0] + "</strong>" + cuisinesArr[1][1],
+  };
+  const cuisineThreeText = {
+    __html: "<strong>" + cuisinesArr[2][0] + "</strong>" + cuisinesArr[2][1],
+  };
+  const cuisineFourText = {
+    __html: "<strong>" + cuisinesArr[3][0] + "</strong>" + cuisinesArr[3][1],
+  };
+  const cuisineFiveText = {
+    __html: "<strong>" + cuisinesArr[4][0] + "</strong>" + cuisinesArr[4][1],
+  };
+  const cuisineSixText = {
+    __html: "<strong>" + cuisinesArr[5][0] + "</strong>" + cuisinesArr[5][1],
+  };
+
   return (
     <div className="survey">
       <div className="q3">
@@ -14,12 +215,13 @@ function Question3({ onNext, onBack }) {
               id="preferredVacationBtn1"
               type="radio"
               name="preferredVacation"
-              value="adventure"
+              value={vacationOneValue}
             />
             <label
-              for="preferredVacationBtn1"
+              htmlFor="preferredVacationBtn1"
               name="preferredVacation1"
-              className="labelMargin"></label>
+              className="labelMargin"
+              dangerouslySetInnerHTML={vacationOneText}></label>
           </div>
           <div className="vacationContainer">
             <div className="vacationBox">
@@ -27,12 +229,13 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn2"
                 type="radio"
                 name="preferredVacation"
-                value="beach"
+                value={vacationTwoValue}
               />
               <label
-                for="preferredVacationBtn2"
+                htmlFor="preferredVacationBtn2"
                 name="preferredVacation2"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationTwoText}></label>
             </div>
           </div>
           <div className="vacationContainer">
@@ -41,13 +244,14 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn3"
                 type="radio"
                 name="preferredVacation"
-                value="city break"
+                value={vacationThreeValue}
               />
 
               <label
-                for="preferredVacationBtn3"
+                htmlFor="preferredVacationBtn3"
                 name="preferredVacation3"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationThreeText}></label>
             </div>
           </div>
           <div className="vacationContainer">
@@ -56,13 +260,14 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn4"
                 type="radio"
                 name="preferredVacation"
-                value="cultural"
+                value={vacationFourValue}
               />
 
               <label
-                for="preferredVacationBtn4"
+                htmlFor="preferredVacationBtn4"
                 name="preferredVacation4"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationFourText}></label>
             </div>
           </div>
           <div className="vacationContainer">
@@ -71,13 +276,14 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn5"
                 type="radio"
                 name="preferredVacation"
-                value="family"
+                value={vacationFiveValue}
               />
 
               <label
-                for="preferredVacationBtn5"
+                htmlFor="preferredVacationBtn5"
                 name="preferredVacation5"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationFiveText}></label>
             </div>
           </div>
           <div className="vacationContainer">
@@ -86,13 +292,14 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn6"
                 type="radio"
                 name="preferredVacation"
-                value="luxury"
+                value={vacationSixValue}
               />
 
               <label
-                for="preferredVacationBtn6"
+                htmlFor="preferredVacationBtn6"
                 name="preferredVacation6"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationSixText}></label>
             </div>
           </div>
           <div className="vacationContainer">
@@ -101,13 +308,14 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn7"
                 type="radio"
                 name="preferredVacation"
-                value="romantic"
+                value={vacationSevenValue}
               />
 
               <label
-                for="preferredVacationBtn7"
+                htmlFor="preferredVacationBtn7"
                 name="preferredVacation7"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationSevenText}></label>
             </div>
           </div>
           <div className="vacationContainer">
@@ -116,13 +324,14 @@ function Question3({ onNext, onBack }) {
                 id="preferredVacationBtn8"
                 type="radio"
                 name="preferredVacation"
-                value="rural"
+                value={vacationEightValue}
               />
 
               <label
-                for="preferredVacationBtn8"
+                htmlFor="preferredVacationBtn8"
                 name="preferredVacation8"
-                className="labelMargin"></label>
+                className="labelMargin"
+                dangerouslySetInnerHTML={vacationEightText}></label>
             </div>
           </div>
 
@@ -136,7 +345,7 @@ function Question3({ onNext, onBack }) {
               value="500"
             />
             <label
-              for="500"
+              htmlFor="500"
               className="labelMargin">
               Less than $500
             </label>
@@ -149,7 +358,7 @@ function Question3({ onNext, onBack }) {
               value="500-1000"
             />
             <label
-              for="500-1000"
+              htmlFor="500-1000"
               className="labelMargin">
               $500-$1,000
             </label>
@@ -162,7 +371,7 @@ function Question3({ onNext, onBack }) {
               value="1000-2500"
             />
             <label
-              for="1000-2500"
+              htmlFor="1000-2500"
               className="labelMargin">
               $1,000-$2,500
             </label>
@@ -175,7 +384,7 @@ function Question3({ onNext, onBack }) {
               value="2500-5000"
             />
             <label
-              for="2500-5000"
+              htmlFor="2500-5000"
               className="labelMargin">
               $2,500-$5,000
             </label>
@@ -188,7 +397,7 @@ function Question3({ onNext, onBack }) {
               value="5000-10000"
             />
             <label
-              for="5000-10000"
+              htmlFor="5000-10000"
               className="labelMargin">
               $5,000-$10,000
             </label>
@@ -201,7 +410,7 @@ function Question3({ onNext, onBack }) {
               value=">10000"
             />
             <label
-              for=">10000"
+              htmlFor=">10000"
               className="labelMargin">
               More than $10,000
             </label>
@@ -217,13 +426,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn1"
               type="checkbox"
               name="outdoor activities"
-              value="outdoor activities"
+              value={activitiesOneValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn1"
+              htmlFor="outdooractivitiesBtn1"
               className="labelMargin"
-              name="outdooractivities1"></label>
+              name="outdooractivities1"
+              dangerouslySetInnerHTML={activitiesOneText}></label>
           </div>
 
           <div className="vacationBox">
@@ -231,13 +441,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn2"
               type="checkbox"
               name="cultural experiences"
-              value="cultural experiences"
+              value={activitiesTwoValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn2"
+              htmlFor="outdooractivitiesBtn2"
               className="labelMargin"
-              name="outdooractivities2"></label>
+              name="outdooractivities2"
+              dangerouslySetInnerHTML={activitiesTwoText}></label>
           </div>
 
           <div className="vacationBox">
@@ -246,12 +457,13 @@ function Question3({ onNext, onBack }) {
               type="checkbox"
               className="smallCheckbox"
               name="relaxation"
-              value="relaxation"
+              value={activitiesThreeValue}
             />
             <label
-              for="outdooractivitiesBtn3"
+              htmlFor="outdooractivitiesBtn3"
               className="labelMargin"
-              name="outdooractivities3"></label>
+              name="outdooractivities3"
+              dangerouslySetInnerHTML={activitiesThreeText}></label>
           </div>
 
           <div className="vacationBox">
@@ -260,12 +472,13 @@ function Question3({ onNext, onBack }) {
               type="checkbox"
               className="smallCheckbox"
               name="adventure"
-              value="adventure"
+              value={activitiesFourValue}
             />
             <label
-              for="outdooractivitiesBtn4"
+              htmlFor="outdooractivitiesBtn4"
               className="labelMargin"
-              name="outdooractivities4"></label>
+              name="outdooractivities4"
+              dangerouslySetInnerHTML={activitiesFourText}></label>
           </div>
 
           <div className="vacationBox">
@@ -273,13 +486,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn5"
               type="checkbox"
               name="sports"
-              value="sports"
+              value={activitiesFiveValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn5"
+              htmlFor="outdooractivitiesBtn5"
               className="labelMargin"
-              name="outdooractivities5"></label>
+              name="outdooractivities5"
+              dangerouslySetInnerHTML={activitiesFiveText}></label>
           </div>
 
           <div className="vacationBox">
@@ -287,13 +501,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn6"
               type="checkbox"
               name="history and heritage"
-              value="history and heritage"
+              value={activitiesSixValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn6"
+              htmlFor="outdooractivitiesBtn6"
               className="labelMargin"
-              name="outdooractivities6"></label>
+              name="outdooractivities6"
+              dangerouslySetInnerHTML={activitiesSixText}></label>
           </div>
 
           <div className="vacationBox">
@@ -301,13 +516,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn7"
               type="checkbox"
               name="food and wine"
-              value="food and wine"
+              value={activitiesSevenValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn7"
+              htmlFor="outdooractivitiesBtn7"
               className="labelMargin"
-              name="outdooractivities7"></label>
+              name="outdooractivities7"
+              dangerouslySetInnerHTML={activitiesSevenText}></label>
           </div>
 
           <div className="vacationBox">
@@ -315,13 +531,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn8"
               type="checkbox"
               name="nightlife and entertainment"
-              value="nightlife and  entertainment"
+              value={activitiesEightValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn8"
+              htmlFor="outdooractivitiesBtn8"
               className="labelMargin"
-              name="outdooractivities8"></label>
+              name="outdooractivities8"
+              dangerouslySetInnerHTML={activitiesEightText}></label>
           </div>
 
           <div className="vacationBox">
@@ -329,13 +546,14 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn9"
               type="checkbox"
               name="shopping"
-              value="shopping"
+              value={activitiesNineValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn9"
+              htmlFor="outdooractivitiesBtn9"
               className="labelMargin"
-              name="outdooractivities9"></label>
+              name="outdooractivities9"
+              dangerouslySetInnerHTML={activitiesNineText}></label>
           </div>
 
           <div className="vacationBox">
@@ -343,17 +561,18 @@ function Question3({ onNext, onBack }) {
               id="outdooractivitiesBtn10"
               type="checkbox"
               name="volunteer tourism"
-              value="volunteer tourism"
+              value={activitiesTenValue}
               className="smallCheckbox"
             />
             <label
-              for="outdooractivitiesBtn10"
+              htmlFor="outdooractivitiesBtn10"
               className="labelMargin"
-              name="outdooractivities10"></label>
+              name="outdooractivities10"
+              dangerouslySetInnerHTML={activitiesTenText}></label>
           </div>
 
           <h3 className="leftQuestion">
-            What is your preferred acommodation type?
+            What is your preferred accommodation type?
           </h3>
 
           <div className="vacationBox">
@@ -361,60 +580,70 @@ function Question3({ onNext, onBack }) {
               id="accomodationBtn1"
               type="radio"
               name="accomodation"
-              value="hotel"
+              value={accommodationOne}
             />
             <label
-              for="accomodationBtn1"
+              htmlFor="accomodationBtn1"
               id="accomodation1"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {accommodationOne}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="accomodationBtn2"
               type="radio"
               name="accomodation"
-              value="resort"
+              value={accommodationTwo}
             />
             <label
-              for="accomodationBtn2"
+              htmlFor="accomodationBtn2"
               id="accomodation2"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {accommodationTwo}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="accomodationBtn3"
               type="radio"
               name="accomodation"
-              value="airbnb"
+              value={accommodationThree}
             />
             <label
-              for="accomodationBtn3"
+              htmlFor="accomodationBtn3"
               id="accomodation3"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {accommodationThree}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="accomodationBtn4"
               type="radio"
               name="accomodation"
-              value="vacation rental"
+              value={accommodationFour}
             />
             <label
-              for="accomodationBtn4"
+              htmlFor="accomodationBtn4"
               id="accomodation4"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {accommodationFour}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="accomodationBtn5"
               type="radio"
               name="accomodation"
-              value="camping"
+              value={accommodationFive}
             />
             <label
-              for="accomodationBtn5"
+              htmlFor="accomodationBtn5"
               id="accomodation5"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {accommodationFive}
+            </label>
           </div>
 
           <h3 className="leftQuestion">
@@ -429,7 +658,7 @@ function Question3({ onNext, onBack }) {
               value="low"
             />
             <label
-              for="activityBtn1"
+              htmlFor="activityBtn1"
               className="labelMargin">
               <strong>Low: </strong>I prefer leisurely activities such as
               sightseeing, relaxing, and easy walks.
@@ -443,7 +672,7 @@ function Question3({ onNext, onBack }) {
               value="moderate"
             />
             <label
-              for="activityBtn2"
+              htmlFor="activityBtn2"
               className="labelMargin">
               <strong>Moderate: </strong>I enjoy some physical activity such as
               hiking, biking, and walking tours.
@@ -457,7 +686,7 @@ function Question3({ onNext, onBack }) {
               value="high"
             />
             <label
-              for="activityBtn3"
+              htmlFor="activityBtn3"
               className="labelMargin">
               <strong>High</strong>I prefer more strenuous activities such as
               trekking, climbing, and water sports.
@@ -471,7 +700,7 @@ function Question3({ onNext, onBack }) {
               value="very high"
             />
             <label
-              for="activityBtn4"
+              htmlFor="activityBtn4"
               className="labelMargin">
               <strong>Very High: </strong>I seek out extreme physical activities
               such as skydiving, bungee jumping, and white-water rafting.
@@ -485,7 +714,7 @@ function Question3({ onNext, onBack }) {
               value="none"
             />
             <label
-              for="activityBtn5"
+              htmlFor="activityBtn5"
               className="labelMargin">
               <strong>None: </strong>I prefer a trip focused solely on
               relaxation and downtime, with no physical activity involved.
@@ -506,7 +735,7 @@ function Question3({ onNext, onBack }) {
               value="not at all"
             />
             <label
-              for="cultureBtn1"
+              htmlFor="cultureBtn1"
               id="culture1"
               className="labelMargin">
               Not at all important
@@ -520,7 +749,7 @@ function Question3({ onNext, onBack }) {
               value="slightly important"
             />
             <label
-              for="cultureBtn2"
+              htmlFor="cultureBtn2"
               id="culture2"
               className="labelMargin">
               Slightly important
@@ -534,7 +763,7 @@ function Question3({ onNext, onBack }) {
               value="moderately important"
             />
             <label
-              for="cultureBtn3"
+              htmlFor="cultureBtn3"
               id="culture3"
               className="labelMargin">
               Moderately important
@@ -548,7 +777,7 @@ function Question3({ onNext, onBack }) {
               value="important"
             />
             <label
-              for="cultureBtn4"
+              htmlFor="cultureBtn4"
               id="culture4"
               className="labelMargin">
               Important
@@ -562,7 +791,7 @@ function Question3({ onNext, onBack }) {
               value="very important"
             />
             <label
-              for="cultureBtn5"
+              htmlFor="cultureBtn5"
               id="culture5"
               className="labelMargin">
               Very important
@@ -632,60 +861,70 @@ function Question3({ onNext, onBack }) {
               id="communicationBtn1"
               type="radio"
               name="communication"
-              value="phone"
+              value={communicationOne}
             />
             <label
-              for="communicationBtn1"
+              htmlFor="communicationBtn1"
               id="communication1"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {communicationOne}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="communicationBtn2"
               type="radio"
               name="communication"
-              value="email"
+              value={communicationTwo}
             />
             <label
-              for="communicationBtn2"
+              htmlFor="communicationBtn2"
               id="communication2"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {communicationTwo}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="communicationBtn3"
               type="radio"
               name="communication"
-              value="social media"
+              value={communicationThree}
             />
             <label
-              for="communicationBtn3"
+              htmlFor="communicationBtn3"
               id="communication3"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {communicationThree}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="communicationBtn4"
               type="radio"
               name="communication"
-              value="messaging apps"
+              value={communicationFour}
             />
             <label
-              for="communicationBtn4"
+              htmlFor="communicationBtn4"
               id="communication4"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {communicationFour}
+            </label>
           </div>
           <div className="vacationBox">
             <input
               id="communicationBtn5"
               type="radio"
               name="communication"
-              value="mail"
+              value={communicationFive}
             />
             <label
-              for="communicationBtn5"
+              htmlFor="communicationBtn5"
               id="communication5"
-              className="labelMargin"></label>
+              className="labelMargin">
+              {communicationFive}
+            </label>
           </div>
 
           <h3 className="leftQuestion">
@@ -701,7 +940,7 @@ function Question3({ onNext, onBack }) {
               value="very uncomfortable"
             />
             <label
-              for="languageBtn1"
+              htmlFor="languageBtn1"
               className="labelMargin">
               Very uncomfortable
             </label>
@@ -714,7 +953,7 @@ function Question3({ onNext, onBack }) {
               value="little uncomfortable"
             />
             <label
-              for="languageBtn2"
+              htmlFor="languageBtn2"
               className="labelMargin">
               A little uncomfortable
             </label>
@@ -727,7 +966,7 @@ function Question3({ onNext, onBack }) {
               value="neither"
             />
             <label
-              for="languageBtn3"
+              htmlFor="languageBtn3"
               className="labelMargin">
               Neither comfortable nor uncomfortable
             </label>
@@ -740,7 +979,7 @@ function Question3({ onNext, onBack }) {
               value="somewhat comfortable"
             />
             <label
-              for="languageBtn4"
+              htmlFor="languageBtn4"
               className="labelMargin">
               Somewhat uncomfortable
             </label>
@@ -753,7 +992,7 @@ function Question3({ onNext, onBack }) {
               value="very comfortable"
             />
             <label
-              for="languageBtn5"
+              htmlFor="languageBtn5"
               className="labelMargin">
               Very comfortable
             </label>
@@ -768,72 +1007,78 @@ function Question3({ onNext, onBack }) {
               id="cuisineBtn1"
               type="radio"
               name="cuisine"
-              value="local"
+              value={cuisineOneValue}
             />
             <label
-              for="cuisineBtn1"
+              htmlFor="cuisineBtn1"
               className="labelMargin"
-              name="cuisine1"></label>
+              name="cuisine1"
+              dangerouslySetInnerHTML={cuisineOneText}></label>
           </div>
           <div className="vacationBox">
             <input
               id="cuisineBtn2"
               type="radio"
               name="cuisine"
-              value="western"
+              value={cuisineTwoValue}
             />
             <label
-              for="cuisineBtn2"
+              htmlFor="cuisineBtn2"
               className="labelMargin"
-              name="cuisine2"></label>
+              name="cuisine2"
+              dangerouslySetInnerHTML={cuisineTwoText}></label>
           </div>
           <div className="vacationBox">
             <input
               id="cuisineBtn3"
               type="radio"
               name="cuisine"
-              value="vegetarian"
+              value={cuisineThreeValue}
             />
             <label
-              for="cuisineBtn3"
+              htmlFor="cuisineBtn3"
               className="labelMargin"
-              name="cuisine3"></label>
+              name="cuisine3"
+              dangerouslySetInnerHTML={cuisineThreeText}></label>
           </div>
           <div className="vacationBox">
             <input
               id="cuisineBtn4"
               type="radio"
               name="cuisine"
-              value="seafood"
+              value={cuisineFourValue}
             />
             <label
-              for="cuisineBtn4"
+              htmlFor="cuisineBtn4"
               className="labelMargin"
-              name="cuisine4"></label>
+              name="cuisine4"
+              dangerouslySetInnerHTML={cuisineFourText}></label>
           </div>
           <div className="vacationBox">
             <input
               id="cuisineBtn5"
               type="radio"
               name="cuisine"
-              value="fusion"
+              value={cuisineFiveValue}
             />
             <label
-              for="cuisineBtn5"
+              htmlFor="cuisineBtn5"
               className="labelMargin"
-              name="cuisine5"></label>
+              name="cuisine5"
+              dangerouslySetInnerHTML={cuisineFiveText}></label>
           </div>
           <div className="vacationBox">
             <input
               id="cuisineBtn6"
               type="radio"
               name="cuisine"
-              value="street food"
+              value={cuisineSixValue}
             />
             <label
-              for="cuisineBtn6"
+              htmlFor="cuisineBtn6"
               className="labelMargin"
-              name="cuisine6"></label>
+              name="cuisine6"
+              dangerouslySetInnerHTML={cuisineSixText}></label>
           </div>
 
           <h3 className="leftQuestion">
@@ -848,7 +1093,7 @@ function Question3({ onNext, onBack }) {
               value="not at all"
             />
             <label
-              for="relaxationBtn1"
+              htmlFor="relaxationBtn1"
               className="labelMargin">
               Not at all important
             </label>
@@ -861,7 +1106,7 @@ function Question3({ onNext, onBack }) {
               value="slightly"
             />
             <label
-              for="relaxationBtn2"
+              htmlFor="relaxationBtn2"
               className="labelMargin">
               Slightly important
             </label>
@@ -874,7 +1119,7 @@ function Question3({ onNext, onBack }) {
               value="moderately"
             />
             <label
-              for="relaxationBtn3"
+              htmlFor="relaxationBtn3"
               className="labelMargin">
               Moderately important
             </label>
@@ -887,7 +1132,7 @@ function Question3({ onNext, onBack }) {
               value="important"
             />
             <label
-              for="relaxationBtn4"
+              htmlFor="relaxationBtn4"
               className="labelMargin">
               Important
             </label>
@@ -900,7 +1145,7 @@ function Question3({ onNext, onBack }) {
               value="very important"
             />
             <label
-              for="relaxationBtn5"
+              htmlFor="relaxationBtn5"
               className="labelMargin">
               Very important
             </label>
