@@ -1,7 +1,6 @@
 import React from "react";
 
 function AttentionCheckAnswer({ selection, curAgent, onNext }) {
-  console.log(selection, curAgent);
   return (
     <div className="correctAttentionCheck">
       {selection.length === curAgent.length && (

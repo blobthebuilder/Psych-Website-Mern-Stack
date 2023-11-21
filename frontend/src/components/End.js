@@ -29,7 +29,7 @@ function End() {
         previous participants' personality assessments. In reality, the
         recommendations were made randomly, and were not based on any
         personality data. We also withheld our goal of studying the number of
-        eco-friendly decisions made during the study. Withholding this
+        eco-friendly decisions made during the study. Withholding this{" "}
         information was necessary for us to understand how just being
         <i>told</i> that software is based on your personality influences your
         preferences (both general and eco-friendly), regardless of how accurate

@@ -67,6 +67,9 @@ function App() {
 
   const [curAgent, setCurAgent] = useState("Personal");
   const [attentionCheckSelection, setAttentionCheckSelection] = useState("");
+  const [correctAttentionCheck1, setCorrectAttentionCheck1] = useState(false);
+  const [correctAttentionCheck2, setCorrectAttentionCheck2] = useState(false);
+  const [correctAttentionCheck3, setCorrectAttentionCheck3] = useState(false);
 
   const [ruggedSelection, setRuggedSelection] = useState("");
   const [excitedSelection, setExcitedSelection] = useState("");
@@ -116,7 +119,7 @@ function App() {
   const [communicationSelection, setCommunicationSelection] = useState("");
   const [languageSelection, setLanguageSelection] = useState("");
   const [cuisineSelection, setCuisineSelection] = useState("");
-  const [relaxationSelection, setRelaxationSelection] = useState("");
+  const [relaxationLevelSelection, setRelaxationLevelSelection] = useState("");
 
   const [interestsSelection, setInterestsSelection] = useState({
     adventuretravel: false,
@@ -184,12 +187,21 @@ function App() {
   const [economicSelection, setEconomicSelection] = useState("");
   const [socialSelection, setSocialSelection] = useState("");
   const [ageSelection, setAgeSelection] = useState("");
-  const [raceSelection, setRaceSelection] = useState({});
+  const [raceSelection, setRaceSelection] = useState({
+    "american indian or alaska native": false,
+    asian: false,
+    "black or african american": false,
+    "hispanic latino or spanish": false,
+    "middle eastern or arab": false,
+    "native hawaiian or other pacific islander": false,
+    white: false,
+  });
   const [raceText, setRaceText] = useState("");
   const [residenceSelection, setResidenceSelection] = useState("");
   const [internetAccessSelection, setInternetAccessSelection] = useState("");
   const [internetLookupSelection, setInternetLookupSelection] = useState("");
-  const [eCommunicationUse, setECommunicationUseSelection] = useState("");
+  const [eCommunicationUseSelection, setECommunicationUseSelection] =
+    useState("");
 
   const [flightSelection1, setFlightSelection1] = useState("");
   const [flightSelection2, setFlightSelection2] = useState("");
@@ -577,7 +589,7 @@ function App() {
     setLanguageSelection(value);
   };
   const handleRelaxationChange = (value) => {
-    setRelaxationSelection(value);
+    setRelaxationLevelSelection(value);
   };
   const handleInterestsChange = (event) => {
     const { name, checked } = event.target;
@@ -1185,7 +1197,7 @@ function App() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("http://localhost:4000/api/data");
+        const res = await fetch("https://psych-website.onrender.com/api/data");
         const json = await res.json();
 
         if (res.ok) {
@@ -1272,10 +1284,231 @@ function App() {
     const time = Date.now() - startTime;
     setTimeElapsed(msToTime(time));
     handleNext();
+    const uploadUser = async () => {
+      const user = {
+        userId: totalUsers,
+        orderOfAgents: agentPath,
+        timeElapsed,
+        rugged: ruggedSelection,
+        excited: excitedSelection,
+        uncomfortable: uncomfortableSelection,
+        dominating: dominatingSelection,
+        thrifty: thriftySelection,
+        pleasant: pleasantSelection,
+        contemporary: contemporarySelection,
+        organized: organizedSelection,
+        rational: rationalSelection,
+        youthful: youthfulSelection,
+        formal: formalSelection,
+        orthodox: orthodoxSelection,
+        complex: complexSelection,
+        colorless: colorlessSelection,
+        modest: modestSelection,
+        hotels: hotelSelection,
+        afternoons: afternoonSelection,
+        restaurants: restaurantSelection,
+        vacationType: vacationSelection,
+        budgetSelection: budgetSelection,
+        nightLife: activitiesSelection["nightlife and entertainment"],
+        outdoor: activitiesSelection["outdoor activities"],
+        cultural: activitiesSelection["cultural experiences"],
+        relaxation: activitiesSelection["relaxation"],
+        adventure: activitiesSelection["adventure"],
+        sports: activitiesSelection["sports"],
+        history: activitiesSelection["history and heritage"],
+        food: activitiesSelection["food and wine"],
+        shopping: activitiesSelection["shopping"],
+        volunteer: activitiesSelection["volunteer tourism"],
+        accommodation: accommodationSelection,
+        activityLevel: activityLevelSelection,
+        culturalImmersion: cultureSelection,
+        beatenPath: pathSelection,
+        preferredCommunication: communicationSelection,
+        languageBarriers: languageSelection,
+        preferredCuisines: cuisineSelection,
+        downtimeImportance: relaxationLevelSelection,
+        adventureTravelInterest: interestsSelection["adventuretravel"],
+        artDesignInterest: interestsSelection["art&design"],
+        artsCraftsInterest: interestsSelection["arts&crafts"],
+        beautyGroomingInterest: interestsSelection["beauty&grooming"],
+        booksInterest: interestsSelection["books"],
+        cameraasInterest: interestsSelection["cameras"],
+        campingInterest: interestsSelection["camping"],
+        computersInterest: interestsSelection["computers"],
+        cookingInterest: interestsSelection["cooking"],
+        diyInterest: interestsSelection["diy"],
+        dogsInterest: interestsSelection["dogs"],
+        electronicsInterest: interestsSelection["electronics"],
+        fallFashionInterest: interestsSelection["fallfashion"],
+        fashionAccessoriesInterest: interestsSelection["fashionaccessories"],
+        fitnessInterest: interestsSelection["fitness"],
+        foodDrinkInterest: interestsSelection["food&drink"],
+        funHobbiesInterest: interestsSelection["fun&hobbies"],
+        giftIdeasInterest: interestsSelection["giftideas"],
+        healthWellnessInterest: interestsSelection["health&wellness"],
+        healthyFoodInterest: interestsSelection["healthyfood"],
+        hikingInterest: interestsSelection["hiking"],
+        homeGardenInterest: interestsSelection["home&garden"],
+        homeDecorInterest: interestsSelection["homedecor"],
+        homeImprovementInterest: interestsSelection["homeimprovement"],
+        interiorDesignInterest: interestsSelection["interiordesign"],
+        kidsParentingInterest: interestsSelection["kids&parenting"],
+        kitchensInterest: interestsSelection["kitchens"],
+        makeupInterest: interestsSelection["makeup"],
+        mensFashionInterest: interestsSelection["mensfashion"],
+        moviesTVInterest: interestsSelection["movies&tv"],
+        musicInterest: interestsSelection["music"],
+        outdoorActivitiesInterest: interestsSelection["outdooractivities"],
+        outdoorsInterest: interestsSelection["outdoors"],
+        petCareInterest: interestsSelection["petcare"],
+        petsAnimalsInterest: interestsSelection["pets&animals"],
+        photographyInterest: interestsSelection["photography"],
+        recipesInterest: interestsSelection["recipes"],
+        shoesInterest: interestsSelection["shoes"],
+        skinCareInterest: interestsSelection["skincare"],
+        sportsInterest: interestsSelection["sport"],
+        strangeFindsInterest: interestsSelection["strangefinds"],
+        styleFashionInterest: interestsSelection["style&fashion"],
+        technologyInterest: interestsSelection["technology"],
+        toysGamesInterest: interestsSelection["toys&games"],
+        travelInterest: interestsSelection["travel"],
+        womensAccessoriesInterest: interestsSelection["womensaccessories"],
+        womensFashionInterest: interestsSelection["womensfashion"],
+        female: genderSelection["female"],
+        male: genderSelection["male"],
+        genderqueer:
+          genderSelection["genderqueer gender nonbinary or genderfluid"],
+        transFemale: genderSelection["Transgender female"],
+        transMale: genderSelection["Transgender male"],
+        noResponseGender: genderSelection["Prefer not to answer"],
+        genderOther: genderText,
+        income: incomeSelection,
+        ladder: ladderSelection,
+        education: educationSelection,
+        political: politicalSelection,
+        economic: economicSelection,
+        social: socialSelection,
+        age: ageSelection,
+        indian: raceSelection["american indian or alaska native"],
+        asian: raceSelection["asian"],
+        african: raceSelection["black or african american"],
+        hispanic: raceSelection["hispanic latino or spanish"],
+        arab: raceSelection["middle eastern or arab"],
+        hawaiian: raceSelection["native hawaiian or other pacific islander"],
+        white: raceSelection["white"],
+        otherRace: raceText,
+        residence: residenceSelection,
+        internetAccess: internetAccessSelection,
+        internetLookup: internetLookupSelection,
+        eCommunicationUse: eCommunicationUseSelection,
+        attentionCheck1: correctAttentionCheck1,
+        flight1: flightSelection1,
+        rentalCar1: rentalCarSelection1,
+        hotel1: hotelSelection1,
+        dinner1: dinnerSelection1,
+        lunch1: lunchSelection1,
+        breakfast1: breakfastSelection1,
+        museums1: museumsSelection1,
+        markets1: marketsSelection1,
+        flamencoShows1: flamencoShowsSelection1,
+        publicTransportationShort1: publicTransportationShortSelection1,
+        publicTransportationLong1: publicTransportationLongSelection1,
+        coffee1: coffeeSelection1,
+        bakery1: bakerySelection1,
+        nightLife1: nightLifeSelection1,
+        bars1: barsSelection1,
+        groceries1: groceriesSelection1,
+        souveneirs1: souveneirsSelection1,
+        shopping1: shoppingSelection1,
+        internationalPhoneService1: internationalPhoneServiceSelection1,
+        currencyExchange1: currencyExchangeSelection1,
+        luggage1: luggageSelection1,
+        dayTrip1: dayTripSelection1,
+        travelInsurance1: travelInsuranceSelection1,
+        travelPlugAdapter1: travelPlugAdapterSelection1,
+        choose1: chooseSelection1,
+        charge1: chargeSelection1,
+        account1: accountSelection1,
+        wait1: waitSelection1,
+        sense1: senseSelection1,
+        help1: helpSelection1,
+        understood1: understoodSelection1,
+        listen1: listenSelection1,
+        effectiveness1: effectivenessSelection1,
+        bestOption1: bestOptionSelection1,
+        optionQuickly1: optionQuicklySelection1,
+        productivity1: productivitySelection1,
+        performance1: performanceSelection1,
+        utilize1: utilizeSelection1,
+        reflect1: reflectSelection1,
+        identify1: identifySelection1,
+        connection1: connectionSelection1,
+        agentCommunicate1: agentCommunicateSelection1,
+        typePerson1: typePersonSelection1,
+        agentMe1: agentMeSelection1,
+        suits1: suitsSelection1,
+        productsFollowup1: productsFollowupSelection1,
+        actionsFollowup1: actionsFollowupSelection1,
+        purchaseFollowup1: purchaseFollowupSelection1,
+        resourcesFollowup1: resourcesFollowupSelection1,
+        responsibleFollowup1: responsibleFollowupSelection1,
+        inconvenienceFollowup1: inconvenienceFollowupSelection1,
+        recognizeAlgorithm: recognizeSelection,
+        developAlgorithm: developSelection,
+        influenceAlgorithm: influenceSelection,
+        databaseAlgorithm: databaseSelection,
+        searchAlgorithm: searchSelection,
+        contentAlgorithm: contentSelection,
+        thinkAlgorithm: thinkSelection,
+        censorshipAlgorithm: censorshipSelection,
+        chancesAlgorithm: chancesSelection,
+        reportsAlgorithm: reportsSelection,
+        humansAlgorithm: humansSelection,
+        alexaAlgorithm: alexaSelection,
+        tvAlgorithm: tvSelection,
+        wearableAlgorithm: wearableSelection,
+        browserAlgorithm: browserSelection,
+        paymentAlgorithm: paymentSelection,
+        towersAlgorithm: towersSelection,
+        gamesAlgorithm: gamesSelection,
+        radiosAlgorithm: radiosSelection,
+        forecastAlgorithm: forecastSelection,
+        recommendationAlgorithm: recommendationSelection,
+        newsAlgorithm: newsSelection,
+        advertisementAlgorithm: advertisementSelection,
+      };
+      const res = await fetch("https://psych-website.onrender.com/api/user", {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const json = await res.json();
+
+      if (!res.ok) {
+        console.log(json.error);
+      } else {
+        console.log("Successfully uploaded");
+      }
+      console.log(advertisementSelection);
+    };
+    const incUsers = async () => {
+      const res = await fetch("https://psych-website.onrender.com/api/data", {
+        method: "POST",
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        console.log(json.error);
+      } else {
+        console.log("Successfully incremented");
+      }
+    };
+    uploadUser();
+    incUsers();
   };
   return (
     <div className="App">
-      <p>Test: {totalUsers}</p>
       {showHeader && <PersonalityHeader />}
       {showItineraryHeader && <ItineraryHeader agent={curAgent} />}
       {step === 1 && <LandingPage onNext={startSurvey} />}
@@ -1647,7 +1880,7 @@ function App() {
       )}
       {step === 44 && (
         <Itinerary
-          onNext={handleNext}
+          onNext={handleNextChangeItineraryHeader}
           type={"Travel Plug Adapter"}
           features={itineraryFeatures}
           recommendedAndEco={recommendedAndEco}
@@ -1695,7 +1928,7 @@ function App() {
       )}
       {step === 48 && (
         <FollowupQuestionsGreen
-          onNext={handleNextChangeItineraryHeader}
+          onNext={handleNext}
           agent={agent1}
           onProductsFollowupChange={handleProductsFollowupSelection1}
           onActionsFollowupChange={handleActionsFollowupSelection1}
