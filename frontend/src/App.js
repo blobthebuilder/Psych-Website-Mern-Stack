@@ -41,6 +41,7 @@ import {
   shuffleCuisine,
   randomizeItineraryFeatures,
   randomizeRecommendedAndEco,
+  msToTime,
 } from "./utils.js";
 function App() {
   const [step, setStep] = useState(1);
@@ -59,6 +60,7 @@ function App() {
   const [itineraryFeatures, setItineraryFeatures] = useState([]);
   const [recommendedAndEco, setRecommendedAndEco] = useState([]);
 
+  const [agentPath, setAgentPath] = useState(0);
   const [agent1, setAgent1] = useState("Personal");
   const [agent2, setAgent2] = useState("General");
   const [agent3, setAgent3] = useState("Unprogrammed");
@@ -353,35 +355,116 @@ function App() {
   const [listenSelection2, setListenSelection2] = useState("");
   const [listenSelection3, setListenSelection3] = useState("");
 
-  const handleNext = () => {
-    setStep(step + 1);
-    window.scrollTo(0, 0);
-  };
+  const [effectivenessSelection1, setEffectivenessSelection1] = useState("");
+  const [effectivenessSelection2, setEffectivenessSelection2] = useState("");
+  const [effectivenessSelection3, setEffectivenessSelection3] = useState("");
 
-  const handleBack = () => {
-    setStep(step - 1);
-    window.scrollTo(0, 0);
-  };
+  const [bestOptionSelection1, setBestOptionSelection1] = useState("");
+  const [bestOptionSelection2, setBestOptionSelection2] = useState("");
+  const [bestOptionSelection3, setBestOptionSelection3] = useState("");
 
-  const reload = () => {
-    window.location.reload(true);
-  };
+  const [optionQuicklySelection1, setOptionQuicklySelection1] = useState("");
+  const [optionQuicklySelection2, setOptionQuicklySelection2] = useState("");
+  const [optionQuicklySelection3, setOptionQuicklySelection3] = useState("");
 
-  const handleNextChangeHeader = () => {
-    handleNext();
-    setShowHeader(!showHeader);
-  };
+  const [productivitySelection1, setProductivitySelection1] = useState("");
+  const [productivitySelection2, setProductivitySelection2] = useState("");
+  const [productivitySelection3, setProductivitySelection3] = useState("");
 
-  const handleNextChangeItineraryHeader = () => {
-    handleNext();
-    setShowItineraryHeader(!showItineraryHeader);
-  };
+  const [performanceSelection1, setPerformanceSelection1] = useState("");
+  const [performanceSelection2, setPerformanceSelection2] = useState("");
+  const [performanceSelection3, setPerformanceSelection3] = useState("");
 
-  const startSurvey = () => {
-    setCurAgent(agent1);
-    setRecommendedAndEco(randomizeRecommendedAndEco);
-    handleNext();
-  };
+  const [utilizeSelection1, setUtilizeSelection1] = useState("");
+  const [utilizeSelection2, setUtilizeSelection2] = useState("");
+  const [utilizeSelection3, setUtilizeSelection3] = useState("");
+
+  const [reflectSelection1, setReflectSelection1] = useState("");
+  const [reflectSelection2, setReflectSelection2] = useState("");
+  const [reflectSelection3, setReflectSelection3] = useState("");
+  const [identifySelection1, setIdentifySelection1] = useState("");
+  const [identifySelection2, setIdentifySelection2] = useState("");
+  const [identifySelection3, setIdentifySelection3] = useState("");
+  const [connectionSelection1, setConnectionSelection1] = useState("");
+  const [connectionSelection2, setConnectionSelection2] = useState("");
+  const [connectionSelection3, setConnectionSelection3] = useState("");
+  const [agentCommunicateSelection1, setAgentCommunicateSelection1] =
+    useState("");
+  const [agentCommunicateSelection2, setAgentCommunicateSelection2] =
+    useState("");
+  const [agentCommunicateSelection3, setAgentCommunicateSelection3] =
+    useState("");
+  const [typePersonSelection1, setTypePersonSelection1] = useState("");
+  const [typePersonSelection2, setTypePersonSelection2] = useState("");
+  const [typePersonSelection3, setTypePersonSelection3] = useState("");
+  const [agentMeSelection1, setAgentMeSelection1] = useState("");
+  const [agentMeSelection2, setAgentMeSelection2] = useState("");
+  const [agentMeSelection3, setAgentMeSelection3] = useState("");
+  const [suitsSelection1, setSuitsSelection1] = useState("");
+  const [suitsSelection2, setSuitsSelection2] = useState("");
+  const [suitsSelection3, setSuitsSelection3] = useState("");
+  const [productsFollowupSelection1, setProductsFollowupSelection1] =
+    useState("");
+  const [productsFollowupSelection2, setProductsFollowupSelection2] =
+    useState("");
+  const [productsFollowupSelection3, setProductsFollowupSelection3] =
+    useState("");
+  const [actionsFollowupSelection1, setActionsFollowupSelection1] =
+    useState("");
+  const [actionsFollowupSelection2, setActionsFollowupSelection2] =
+    useState("");
+  const [actionsFollowupSelection3, setActionsFollowupSelection3] =
+    useState("");
+  const [purchaseFollowupSelection1, setPurchaseFollowupSelection1] =
+    useState("");
+  const [purchaseFollowupSelection2, setPurchaseFollowupSelection2] =
+    useState("");
+  const [purchaseFollowupSelection3, setPurchaseFollowupSelection3] =
+    useState("");
+  const [resourcesFollowupSelection1, setResourcesFollowupSelection1] =
+    useState("");
+  const [resourcesFollowupSelection2, setResourcesFollowupSelection2] =
+    useState("");
+  const [resourcesFollowupSelection3, setResourcesFollowupSelection3] =
+    useState("");
+  const [responsibleFollowupSelection1, setResponsibleFollowupSelection1] =
+    useState("");
+  const [responsibleFollowupSelection2, setResponsibleFollowupSelection2] =
+    useState("");
+  const [responsibleFollowupSelection3, setResponsibleFollowupSelection3] =
+    useState("");
+  const [inconvenienceFollowupSelection1, setInconvenienceFollowupSelection1] =
+    useState("");
+  const [inconvenienceFollowupSelection2, setInconvenienceFollowupSelection2] =
+    useState("");
+  const [inconvenienceFollowupSelection3, setInconvenienceFollowupSelection3] =
+    useState("");
+  const [recognizeSelection, setRecognizeSelection] = useState("");
+  const [developSelection, setDevelopSelection] = useState("");
+  const [influenceSelection, setInfluenceSelection] = useState("");
+  const [databaseSelection, setDatabaseSelection] = useState("");
+  const [searchSelection, setSearchSelection] = useState("");
+  const [contentSelection, setContentSelection] = useState("");
+  const [thinkSelection, setThinkSelection] = useState("");
+  const [censorshipSelection, setCensorshipSelection] = useState("");
+  const [chancesSelection, setChancesSelection] = useState("");
+  const [reportsSelection, setReportsSelection] = useState("");
+  const [humansSelection, setHumansSelection] = useState("");
+  const [alexaSelection, setAlexaSelection] = useState("");
+  const [tvSelection, setTVSelection] = useState("");
+  const [wearableSelection, setWearableSelection] = useState("");
+  const [browserSelection, setBrowserSelection] = useState("");
+  const [paymentSelection, setPaymentSelection] = useState("");
+  const [towersSelection, setTowersSelection] = useState("");
+  const [gamesSelection, setGamesSelection] = useState("");
+  const [radiosSelection, setRadiosSelection] = useState("");
+  const [forecastSelection, setForecastSelection] = useState("");
+  const [recommendationSelection, setRecommendationSelection] = useState("");
+  const [newsSelection, setNewsSelection] = useState("");
+  const [advertisementSelection, setAdvertisementSelection] = useState("");
+
+  const [startTime, setStartTime] = useState(0);
+  const [timeElapsed, setTimeElapsed] = useState("");
 
   const handleAttentionCheckChange = (value) => {
     setAttentionCheckSelection(value);
@@ -845,6 +928,247 @@ function App() {
   const handleListenSelection3 = (value) => {
     setListenSelection3(value);
   };
+  const handleEffectivenessSelection1 = (value) => {
+    setEffectivenessSelection1(value);
+  };
+  const handleEffectivenessSelection2 = (value) => {
+    setEffectivenessSelection2(value);
+  };
+  const handleEffectivenessSelection3 = (value) => {
+    setEffectivenessSelection3(value);
+  };
+  const handleBestOptionSelection1 = (value) => {
+    setBestOptionSelection1(value);
+  };
+  const handleBestOptionSelection2 = (value) => {
+    setBestOptionSelection2(value);
+  };
+  const handleBestOptionSelection3 = (value) => {
+    setBestOptionSelection3(value);
+  };
+  const handleOptionQuicklySelection1 = (value) => {
+    setOptionQuicklySelection1(value);
+  };
+  const handleOptionQuicklySelection2 = (value) => {
+    setOptionQuicklySelection2(value);
+  };
+  const handleOptionQuicklySelection3 = (value) => {
+    setOptionQuicklySelection3(value);
+  };
+  const handleProductivitySelection1 = (value) => {
+    setProductivitySelection1(value);
+  };
+  const handleProductivitySelection2 = (value) => {
+    setProductivitySelection2(value);
+  };
+  const handleProductivitySelection3 = (value) => {
+    setProductivitySelection3(value);
+  };
+  const handlePerformanceSelection1 = (value) => {
+    setPerformanceSelection1(value);
+  };
+  const handlePerformanceSelection2 = (value) => {
+    setPerformanceSelection2(value);
+  };
+  const handlePerformanceSelection3 = (value) => {
+    setPerformanceSelection3(value);
+  };
+  const handleUtilizeSelection1 = (value) => {
+    setUtilizeSelection1(value);
+  };
+  const handleUtilizeSelection2 = (value) => {
+    setUtilizeSelection2(value);
+  };
+  const handleUtilizeSelection3 = (value) => {
+    setUtilizeSelection3(value);
+  };
+  const handleReflectSelection1 = (value) => {
+    setReflectSelection1(value);
+  };
+  const handleReflectSelection2 = (value) => {
+    setReflectSelection2(value);
+  };
+  const handleReflectSelection3 = (value) => {
+    setReflectSelection3(value);
+  };
+  const handleIdentifySelection1 = (value) => {
+    setIdentifySelection1(value);
+  };
+  const handleIdentifySelection2 = (value) => {
+    setIdentifySelection2(value);
+  };
+  const handleIdentifySelection3 = (value) => {
+    setIdentifySelection3(value);
+  };
+  const handleConnectionSelection1 = (value) => {
+    setConnectionSelection1(value);
+  };
+  const handleConnectionSelection2 = (value) => {
+    setConnectionSelection2(value);
+  };
+  const handleConnectionSelection3 = (value) => {
+    setConnectionSelection3(value);
+  };
+  const handleAgentCommunicateSelection1 = (value) => {
+    setAgentCommunicateSelection1(value);
+  };
+  const handleAgentCommunicateSelection2 = (value) => {
+    setAgentCommunicateSelection2(value);
+  };
+  const handleAgentCommunicateSelection3 = (value) => {
+    setAgentCommunicateSelection3(value);
+  };
+  const handleTypePersonSelection1 = (value) => {
+    setTypePersonSelection1(value);
+  };
+  const handleTypePersonSelection2 = (value) => {
+    setTypePersonSelection2(value);
+  };
+  const handleTypePersonSelection3 = (value) => {
+    setTypePersonSelection3(value);
+  };
+  const handleAgentMeSelection1 = (value) => {
+    setAgentMeSelection1(value);
+  };
+  const handleAgentMeSelection2 = (value) => {
+    setAgentMeSelection2(value);
+  };
+  const handleAgentMeSelection3 = (value) => {
+    setAgentMeSelection3(value);
+  };
+  const handleSuitsSelection1 = (value) => {
+    setSuitsSelection1(value);
+  };
+  const handleSuitsSelection2 = (value) => {
+    setSuitsSelection2(value);
+  };
+  const handleSuitsSelection3 = (value) => {
+    setSuitsSelection3(value);
+  };
+  const handleProductsFollowupSelection1 = (value) => {
+    setProductsFollowupSelection1(value);
+  };
+  const handleProductsFollowupSelection2 = (value) => {
+    setProductsFollowupSelection2(value);
+  };
+  const handleProductsFollowupSelection3 = (value) => {
+    setProductsFollowupSelection3(value);
+  };
+  const handleActionsFollowupSelection1 = (value) => {
+    setActionsFollowupSelection1(value);
+  };
+  const handleActionsFollowupSelection2 = (value) => {
+    setActionsFollowupSelection2(value);
+  };
+  const handleActionsFollowupSelection3 = (value) => {
+    setActionsFollowupSelection3(value);
+  };
+  const handlePurchaseFollowupSelection1 = (value) => {
+    setPurchaseFollowupSelection1(value);
+  };
+  const handlePurchaseFollowupSelection2 = (value) => {
+    setPurchaseFollowupSelection2(value);
+  };
+  const handlePurchaseFollowupSelection3 = (value) => {
+    setPurchaseFollowupSelection3(value);
+  };
+  const handleResourcesFollowupSelection1 = (value) => {
+    setResourcesFollowupSelection1(value);
+  };
+  const handleResourcesFollowupSelection2 = (value) => {
+    setResourcesFollowupSelection2(value);
+  };
+  const handleResourcesFollowupSelection3 = (value) => {
+    setResourcesFollowupSelection3(value);
+  };
+  const handleResponsibleFollowupSelection1 = (value) => {
+    setResponsibleFollowupSelection1(value);
+  };
+  const handleResponsibleFollowupSelection2 = (value) => {
+    setResponsibleFollowupSelection2(value);
+  };
+  const handleResponsibleFollowupSelection3 = (value) => {
+    setResponsibleFollowupSelection3(value);
+  };
+  const handleInconvenienceFollowupSelection1 = (value) => {
+    setInconvenienceFollowupSelection1(value);
+  };
+  const handleInconvenienceFollowupSelection2 = (value) => {
+    setInconvenienceFollowupSelection2(value);
+  };
+  const handleInconvenienceFollowupSelection3 = (value) => {
+    setInconvenienceFollowupSelection3(value);
+  };
+  const handleRecognizeChange = (value) => {
+    setRecognizeSelection(value);
+  };
+  const handleDevelopChange = (value) => {
+    setDevelopSelection(value);
+  };
+  const handleInfluenceChange = (value) => {
+    setInfluenceSelection(value);
+  };
+  const handleDatabaseChange = (value) => {
+    setDatabaseSelection(value);
+  };
+  const handleSearchChange = (value) => {
+    setSearchSelection(value);
+  };
+  const handleContentChange = (value) => {
+    setContentSelection(value);
+  };
+  const handleThinkChange = (value) => {
+    setThinkSelection(value);
+  };
+  const handleCensorshipChange = (value) => {
+    setCensorshipSelection(value);
+  };
+  const handleChancesChange = (value) => {
+    setChancesSelection(value);
+  };
+  const handleReportsChange = (value) => {
+    setReportsSelection(value);
+  };
+  const handleHumansChange = (value) => {
+    setHumansSelection(value);
+  };
+  const handleAlexaChange = (value) => {
+    setAlexaSelection(value);
+  };
+  const handleTVChange = (value) => {
+    setTVSelection(value);
+  };
+  const handleWearableChange = (value) => {
+    setWearableSelection(value);
+  };
+  const handleBrowserChange = (value) => {
+    setBrowserSelection(value);
+  };
+  const handlePaymentChange = (value) => {
+    setPaymentSelection(value);
+  };
+  const handleTowersChange = (value) => {
+    setTowersSelection(value);
+  };
+  const handleGamesChange = (value) => {
+    setGamesSelection(value);
+  };
+  const handleRadiosChange = (value) => {
+    setRadiosSelection(value);
+  };
+  const handleForecastChange = (value) => {
+    setForecastSelection(value);
+  };
+  const handleRecommendationChange = (value) => {
+    setRecommendationSelection(value);
+  };
+  const handleNewsChange = (value) => {
+    setNewsSelection(value);
+  };
+  const handleAdvertisementChange = (value) => {
+    setAdvertisementSelection(value);
+  };
+
   // show alert when closing or refreshing
   /*
   window.onbeforeunload = (event) => {
@@ -866,6 +1190,7 @@ function App() {
 
         if (res.ok) {
           setTotalUsers(json[0].totalUsers);
+          setAgentPath(totalUsers % 6);
         } else {
           throw Error;
         }
@@ -885,6 +1210,7 @@ function App() {
     setItineraryFeatures(randomizeItineraryFeatures);
 
     fetchUsers();
+
     if (totalUsers % 6 === 0) {
       setAgent1("Personal");
       setAgent2("General");
@@ -911,7 +1237,42 @@ function App() {
       setAgent3("General");
     }
   }, [totalUsers, agent1]);
+  const handleNext = () => {
+    setStep(step + 1);
+    window.scrollTo(0, 0);
+  };
 
+  const handleBack = () => {
+    setStep(step - 1);
+    window.scrollTo(0, 0);
+  };
+
+  const reload = () => {
+    window.location.reload(true);
+  };
+
+  const handleNextChangeHeader = () => {
+    handleNext();
+    setShowHeader(!showHeader);
+  };
+
+  const handleNextChangeItineraryHeader = () => {
+    handleNext();
+    setShowItineraryHeader(!showItineraryHeader);
+  };
+
+  const startSurvey = () => {
+    setCurAgent(agent1);
+    setRecommendedAndEco(randomizeRecommendedAndEco);
+    setStartTime(Date.now());
+    handleNext();
+  };
+
+  const endSurvey = () => {
+    const time = Date.now() - startTime;
+    setTimeElapsed(msToTime(time));
+    handleNext();
+  };
   return (
     <div className="App">
       <p>Test: {totalUsers}</p>
@@ -1311,22 +1672,72 @@ function App() {
         <FollowupQuestions2
           onNext={handleNext}
           agent={agent1}
+          onEffectivenessChange={handleEffectivenessSelection1}
+          onBestOptionChange={handleBestOptionSelection1}
+          onOptionQuicklyChange={handleOptionQuicklySelection1}
+          onProductivityChange={handleProductivitySelection1}
+          onPerformanceChange={handlePerformanceSelection1}
+          onUtilizeChange={handleUtilizeSelection1}
         />
       )}
       {step === 47 && (
         <FollowupQuestions3
           onNext={handleNext}
           agent={agent1}
+          onReflectChange={handleReflectSelection1}
+          onIdentifyChange={handleIdentifySelection1}
+          onConnectionChange={handleConnectionSelection1}
+          onAgentCommunicateChange={handleAgentCommunicateSelection1}
+          onTypePersonChange={handleTypePersonSelection1}
+          onAgentMeChange={handleTypePersonSelection1}
+          onSuitsChange={handleSuitsSelection1}
         />
       )}
       {step === 48 && (
         <FollowupQuestionsGreen
           onNext={handleNextChangeItineraryHeader}
           agent={agent1}
+          onProductsFollowupChange={handleProductsFollowupSelection1}
+          onActionsFollowupChange={handleActionsFollowupSelection1}
+          onPurchaseFollowupChange={handlePurchaseFollowupSelection1}
+          onResourcesFollowupChange={handleResourcesFollowupSelection1}
+          onResponsibleFollowupChange={handleResponsibleFollowupSelection1}
+          onInconvenienceFollowupChange={handleInconvenienceFollowupSelection1}
         />
       )}
-      {step === 49 && <AlgorithmKnowledge onNext={handleNext} />}
-      {step === 50 && <AlgorithmAwareness onNext={handleNext} />}
+      {step === 49 && (
+        <AlgorithmKnowledge
+          onNext={handleNext}
+          onRecognizeChange={handleRecognizeChange}
+          onDevelopChange={handleDevelopChange}
+          onInfluenceChange={handleInfluenceChange}
+          onDatabaseChange={handleDatabaseChange}
+          onSearchChange={handleSearchChange}
+          onContentChange={handleContentChange}
+          onThinkChange={handleThinkChange}
+          onCensorshipChange={handleCensorshipChange}
+          onChancesChange={handleChancesChange}
+          onReportsChange={handleReportsChange}
+          onHumansChange={handleHumansChange}
+        />
+      )}
+      {step === 50 && (
+        <AlgorithmAwareness
+          onNext={endSurvey}
+          onAlexaChange={handleAlexaChange}
+          onTVChange={handleTVChange}
+          onWearableChange={handleWearableChange}
+          onBrowserChange={handleBrowserChange}
+          onPaymentChange={handlePaymentChange}
+          onTowersChange={handleTowersChange}
+          onGamesChange={handleGamesChange}
+          onRadiosChange={handleRadiosChange}
+          onForecastChange={handleForecastChange}
+          onRecommendationChange={handleRecommendationChange}
+          onNewsChange={handleNewsChange}
+          onAdvertisementChange={handleAdvertisementChange}
+        />
+      )}
       {step === 51 && <End />}
     </div>
   );

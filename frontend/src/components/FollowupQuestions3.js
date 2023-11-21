@@ -1,6 +1,44 @@
 import React from "react";
 
-function FollowupQuestions3({ onNext, agent }) {
+function FollowupQuestions3({
+  onNext,
+  agent,
+  onReflectChange,
+  onIdentifyChange,
+  onConnectionChange,
+  onAgentCommunicateChange,
+  onTypePersonChange,
+  onAgentMeChange,
+  onSuitsChange,
+}) {
+  const handleReflectChange = (event) => {
+    const { value } = event.target;
+    onReflectChange(value);
+  };
+  const handleIdentifyChange = (event) => {
+    const { value } = event.target;
+    onIdentifyChange(value);
+  };
+  const handleConnectionChange = (event) => {
+    const { value } = event.target;
+    onConnectionChange(value);
+  };
+  const handleAgentCommunicateChange = (event) => {
+    const { value } = event.target;
+    onAgentCommunicateChange(value);
+  };
+  const handleTypePersonChange = (event) => {
+    const { value } = event.target;
+    onTypePersonChange(value);
+  };
+  const handleAgentMeChange = (event) => {
+    const { value } = event.target;
+    onAgentMeChange(value);
+  };
+  const handleSuitsChange = (event) => {
+    const { value } = event.target;
+    onSuitsChange(value);
+  };
   return (
     <div className="followupQuestions3">
       <p className="topMargin">‎</p>
@@ -67,6 +105,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="reflects who I am"
             value="Strongly agree"
+            onChange={handleReflectChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -74,6 +113,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="reflects who I am"
             value="Somewhat agree"
+            onChange={handleReflectChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -81,6 +121,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="reflects who I am"
             value="Neither agree nor disagree"
+            onChange={handleReflectChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -88,6 +129,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="reflects who I am"
             value="Somewhat disagree"
+            onChange={handleReflectChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -95,6 +137,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="reflects who I am"
             value="Strongly disagree"
+            onChange={handleReflectChange}
           />
         </div>
       </div>
@@ -108,6 +151,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can identify with my agent"
             value="Strongly agree"
+            onChange={handleIdentifyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -115,6 +159,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can identify with my agent"
             value="Somewhat agree"
+            onChange={handleIdentifyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -122,6 +167,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can identify with my agent"
             value="Neither agree nor disagree"
+            onChange={handleIdentifyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -129,6 +175,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can identify with my agent"
             value="Somewhat disagree"
+            onChange={handleIdentifyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -136,6 +183,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can identify with my agent"
             value="Strongly disagree"
+            onChange={handleIdentifyChange}
           />
         </div>
       </div>
@@ -148,6 +196,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I feel a personal connection to my agent"
             value="Strongly agree"
+            onChange={handleConnectionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -155,6 +204,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I feel a personal connection to my agent"
             value="Somewhat agree"
+            onChange={handleConnectionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -162,6 +212,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I feel a personal connection to my agent"
             value="Neither agree nor disagree"
+            onChange={handleConnectionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -169,6 +220,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I feel a personal connection to my agent"
             value="Somewhat disagree"
+            onChange={handleConnectionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -176,6 +228,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I feel a personal connection to my agent"
             value="Strongly disagree"
+            onChange={handleConnectionChange}
           />
         </div>
       </div>
@@ -189,6 +242,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can use my agent to communicate who I am to other people"
             value="Strongly agree"
+            onChange={handleAgentCommunicateChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -196,6 +250,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can use my agent to communicate who I am to other people"
             value="Somewhat agree"
+            onChange={handleAgentCommunicateChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -203,6 +258,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can use my agent to communicate who I am to other people"
             value="Neither agree nor disagree"
+            onChange={handleAgentCommunicateChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -210,6 +266,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can use my agent to communicate who I am to other people"
             value="Somewhat disagree"
+            onChange={handleAgentCommunicateChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -217,6 +274,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I can use my agent to communicate who I am to other people"
             value="Strongly disagree"
+            onChange={handleAgentCommunicateChange}
           />
         </div>
       </div>
@@ -230,6 +288,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I think my agent could help me become the type of person I want to be"
             value="Strongly agree"
+            onChange={handleTypePersonChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -237,6 +296,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I think my agent could help me become the type of person I want to be"
             value="Somewhat agree"
+            onChange={handleTypePersonChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -244,6 +304,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I think my agent could help me become the type of person I want to be"
             value="Neither agree nor disagree"
+            onChange={handleTypePersonChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -251,6 +312,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I think my agent could help me become the type of person I want to be"
             value="Somewhat disagree"
+            onChange={handleTypePersonChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -258,6 +320,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I think my agent could help me become the type of person I want to be"
             value="Strongly disagree"
+            onChange={handleTypePersonChange}
           />
         </div>
       </div>
@@ -272,6 +335,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I consider my agent to be me"
             value="Strongly agree"
+            onChange={handleAgentMeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -279,6 +343,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I consider my agent to be me"
             value="Somewhat agree"
+            onChange={handleAgentMeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -286,6 +351,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I consider my agent to be me"
             value="Neither agree nor disagree"
+            onChange={handleAgentMeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -293,6 +359,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I consider my agent to be me"
             value="Somewhat disagree"
+            onChange={handleAgentMeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -300,6 +367,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="I consider my agent to be me"
             value="Strongly disagree"
+            onChange={handleAgentMeChange}
           />
         </div>
       </div>
@@ -312,6 +380,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="My agent suits me well."
             value="Strongly agree"
+            onChange={handleSuitsChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -319,6 +388,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="My agent suits me well."
             value="Somewhat agree"
+            onChange={handleSuitsChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -326,6 +396,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="My agent suits me well."
             value="Neither agree nor disagree"
+            onChange={handleSuitsChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -333,6 +404,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="My agent suits me well."
             value="Somewhat disagree"
+            onChange={handleSuitsChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -340,6 +412,7 @@ function FollowupQuestions3({ onNext, agent }) {
             type="radio"
             name="My agent suits me well."
             value="Strongly disagree"
+            onChange={handleSuitsChange}
           />
         </div>
       </div>

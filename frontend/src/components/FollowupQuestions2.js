@@ -1,6 +1,39 @@
 import React from "react";
 
-function FollowupQuestions2({ onNext, agent }) {
+function FollowupQuestions2({
+  onNext,
+  agent,
+  onEffectivenessChange,
+  onBestOptionChange,
+  onOptionQuicklyChange,
+  onProductivityChange,
+  onPerformanceChange,
+  onUtilizeChange,
+}) {
+  const handleEffectivenessChange = (event) => {
+    const { value } = event.target;
+    onEffectivenessChange(value);
+  };
+  const handleBestOptionChange = (event) => {
+    const { value } = event.target;
+    onBestOptionChange(value);
+  };
+  const handleOptionQuicklyChange = (event) => {
+    const { value } = event.target;
+    onOptionQuicklyChange(value);
+  };
+  const handleProductivityChange = (event) => {
+    const { value } = event.target;
+    onProductivityChange(value);
+  };
+  const handlePerformanceChange = (event) => {
+    const { value } = event.target;
+    onPerformanceChange(value);
+  };
+  const handleUtilizeChange = (event) => {
+    const { value } = event.target;
+    onUtilizeChange(value);
+  };
   return (
     <div className="followupQuestions2">
       <p className="topMargin">‎</p>
@@ -75,6 +108,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Strongly agree"
+            onChange={handleEffectivenessChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -82,6 +116,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Agree"
+            onChange={handleEffectivenessChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -89,6 +124,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Somewhat agree"
+            onChange={handleEffectivenessChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -96,6 +132,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Neither agree nor disagree"
+            onChange={handleEffectivenessChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -103,6 +140,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Somewhat disagree"
+            onChange={handleEffectivenessChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -110,6 +148,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Disagree"
+            onChange={handleEffectivenessChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -117,6 +156,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enhance my effectiveness of choosing the best travel option"
             value="Strongly disagree"
+            onChange={handleEffectivenessChange}
           />
         </div>
       </div>
@@ -131,6 +171,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Strongly agree"
+            onChange={handleBestOptionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -138,6 +179,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Agree"
+            onChange={handleBestOptionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -145,6 +187,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Somewhat agree"
+            onChange={handleBestOptionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -152,6 +195,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Neither agree nor disagree"
+            onChange={handleBestOptionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -159,6 +203,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Somewhat disagree"
+            onChange={handleBestOptionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -166,6 +211,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Disagree"
+            onChange={handleBestOptionChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -173,6 +219,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would make it easier for me to choose the best travel option"
             value="Strongly disagree"
+            onChange={handleBestOptionChange}
           />
         </div>
       </div>
@@ -186,6 +233,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Strongly agree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -193,6 +241,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Agree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -200,6 +249,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Somewhat agree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -207,6 +257,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Neither agree nor disagree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -214,6 +265,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Somewhat disagree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -221,6 +273,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Disagree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -228,6 +281,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would enable me to choose a travel option more quickly"
             value="Strongly disagree"
+            onChange={handleOptionQuicklyChange}
           />
         </div>
       </div>
@@ -241,6 +295,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Strongly agree"
+            onChange={handleProductivityChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -248,6 +303,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Agree"
+            onChange={handleProductivityChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -255,6 +311,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Somewhat agree"
+            onChange={handleProductivityChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -262,6 +319,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Neither agree nor disagree"
+            onChange={handleProductivityChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -269,6 +327,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Somewhat disagree"
+            onChange={handleProductivityChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -276,6 +335,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Disagree"
+            onChange={handleProductivityChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -283,6 +343,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would increase my productivity"
             value="Strongly disagree"
+            onChange={handleProductivityChange}
           />
         </div>
       </div>
@@ -296,6 +357,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Strongly agree"
+            onChange={handlePerformanceChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -303,6 +365,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Agree"
+            onChange={handlePerformanceChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -310,6 +373,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Somewhat agree"
+            onChange={handlePerformanceChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -317,6 +381,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Neither agree nor disagree"
+            onChange={handlePerformanceChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -324,6 +389,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Somewhat disagree"
+            onChange={handlePerformanceChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -331,6 +397,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Disagree"
+            onChange={handlePerformanceChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -338,6 +405,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would improve my travel choice performance"
             value="Strongly disagree"
+            onChange={handlePerformanceChange}
           />
         </div>
       </div>
@@ -351,6 +419,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Strongly agree"
+            onChange={handleUtilizeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -358,6 +427,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Agree"
+            onChange={handleUtilizeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -365,6 +435,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Somewhat agree"
+            onChange={handleUtilizeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -372,6 +443,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Neither agree nor disagree"
+            onChange={handleUtilizeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -379,6 +451,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Somewhat disagree"
+            onChange={handleUtilizeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -386,6 +459,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Disagree"
+            onChange={handleUtilizeChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -393,6 +467,7 @@ function FollowupQuestions2({ onNext, agent }) {
             type="radio"
             name="would be useful for me to utilize while choosing travel options"
             value="Strongly disagree"
+            onChange={handleUtilizeChange}
           />
         </div>
       </div>

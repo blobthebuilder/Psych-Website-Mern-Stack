@@ -1,6 +1,68 @@
 import React from "react";
 
-function AlgorithmAwareness({ onNext }) {
+function AlgorithmAwareness({
+  onNext,
+  onAlexaChange,
+  onTVChange,
+  onWearableChange,
+  onBrowserChange,
+  onPaymentChange,
+  onTowersChange,
+  onGamesChange,
+  onRadiosChange,
+  onForecastChange,
+  onRecommendationChange,
+  onNewsChange,
+  onAdvertisementChange,
+}) {
+  const handleAlexaChange = (event) => {
+    const { value } = event.target;
+    onAlexaChange(value);
+  };
+  const handleTVChange = (event) => {
+    const { value } = event.target;
+    onTVChange(value);
+  };
+  const handleWearableChange = (event) => {
+    const { value } = event.target;
+    onWearableChange(value);
+  };
+  const handleBrowserChange = (event) => {
+    const { value } = event.target;
+    onBrowserChange(value);
+  };
+  const handlePaymentChange = (event) => {
+    const { value } = event.target;
+    onPaymentChange(value);
+  };
+  const handleTowersChange = (event) => {
+    const { value } = event.target;
+    onTowersChange(value);
+  };
+  const handleGamesChange = (event) => {
+    const { value } = event.target;
+    onGamesChange(value);
+  };
+  const handleRadiosChange = (event) => {
+    const { value } = event.target;
+    onRadiosChange(value);
+  };
+  const handleForecastChange = (event) => {
+    const { value } = event.target;
+    onForecastChange(value);
+  };
+  const handleRecommendationChange = (event) => {
+    const { value } = event.target;
+    onRecommendationChange(value);
+  };
+  const handleNewsChange = (event) => {
+    const { value } = event.target;
+    onNewsChange(value);
+  };
+  const handleAdvertisementChange = (event) => {
+    const { value } = event.target;
+    onAdvertisementChange(value);
+  };
   return (
     <div className="algorithmAwareness">
       <p className="topMargin">‎</p>
@@ -39,6 +101,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Smart speaker (e.g., Alexa)"
             value="Is used"
+            onChange={handleAlexaChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -46,6 +109,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Smart speaker (e.g., Alexa)"
             value="Is not used"
+            onChange={handleAlexaChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -53,6 +117,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Smart speaker (e.g., Alexa)"
             value="Don't know"
+            onChange={handleAlexaChange}
           />
         </div>
       </div>
@@ -63,6 +128,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Smart TV"
             value="Is used"
+            onChange={handleTVChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -70,6 +136,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Smart TV"
             value="Is not used"
+            onChange={handleTVChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -77,6 +144,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Smart TV"
             value="Don't know"
+            onChange={handleTVChange}
           />
         </div>
       </div>
@@ -90,6 +158,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Wearable computing devices such as activity trackers and heart rate monitors"
             value="Is used"
+            onChange={handleWearableChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -97,6 +166,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Wearable computing devices such as activity trackers and heart rate monitors"
             value="Is not used"
+            onChange={handleWearableChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -104,6 +174,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Wearable computing devices such as activity trackers and heart rate monitors"
             value="Don't know"
+            onChange={handleWearableChange}
           />
         </div>
       </div>
@@ -116,6 +187,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Internet browsers (e.g., Internet Explorer, Firefox, Google Chrome)"
             value="Is used"
+            onChange={handleBrowserChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -123,6 +195,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Internet browsers (e.g., Internet Explorer, Firefox, Google Chrome)"
             value="Is not used"
+            onChange={handleBrowserChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -130,6 +203,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Internet browsers (e.g., Internet Explorer, Firefox, Google Chrome)"
             value="Don't know"
+            onChange={handleBrowserChange}
           />
         </div>
       </div>
@@ -142,6 +216,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Electronic payment (credit and debit card)"
             value="Is used"
+            onChange={handlePaymentChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -149,6 +224,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Electronic payment (credit and debit card)"
             value="Is not used"
+            onChange={handlePaymentChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -156,6 +232,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Electronic payment (credit and debit card)"
             value="Don't know"
+            onChange={handlePaymentChange}
           />
         </div>
       </div>
@@ -166,6 +243,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Cell phone towers"
             value="Is used"
+            onChange={handleTowersChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -173,6 +251,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Cell phone towers"
             value="Is not used"
+            onChange={handleTowersChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -180,6 +259,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Cell phone towers"
             value="Don't know"
+            onChange={handleTowersChange}
           />
         </div>
       </div>
@@ -190,6 +270,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Computer games"
             value="Is used"
+            onChange={handleGamesChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -197,6 +278,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Computer games"
             value="Is not used"
+            onChange={handleGamesChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -204,6 +286,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="Computer games"
             value="Don't know"
+            onChange={handleGamesChange}
           />
         </div>
       </div>
@@ -214,6 +297,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="FM radios"
             value="Is used"
+            onChange={handleRadiosChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -221,6 +305,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="FM radios"
             value="Is not used"
+            onChange={handleRadiosChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -228,6 +313,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="FM radios"
             value="Don't know"
+            onChange={handleRadiosChange}
           />
         </div>
       </div>
@@ -257,6 +343,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To create weather forecasts"
             value="Are performed"
+            onChange={handleForecastChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -264,6 +351,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To create weather forecasts"
             value="Are not performed"
+            onChange={handleForecastChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -271,6 +359,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To create weather forecasts"
             value="Don't know"
+            onChange={handleForecastChange}
           />
         </div>
       </div>
@@ -283,6 +372,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To make product recommendations"
             value="Are performed"
+            onChange={handleRecommendationChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -290,6 +380,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To make product recommendations"
             value="Are not performed"
+            onChange={handleRecommendationChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -297,6 +388,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To make product recommendations"
             value="Don't know"
+            onChange={handleRecommendationChange}
           />
         </div>
       </div>
@@ -309,6 +401,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To create financial news (stock markets)"
             value="Are performed"
+            onChange={handleNewsChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -316,6 +409,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To create financial news (stock markets)"
             value="Are not performed"
+            onChange={handleNewsChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -323,6 +417,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To create financial news (stock markets)"
             value="Don't know"
+            onChange={handleNewsChange}
           />
         </div>
       </div>
@@ -335,6 +430,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To personalize advertisements"
             value="Are performed"
+            onChange={handleAdvertisementChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -342,6 +438,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To personalize advertisements"
             value="Are not performed"
+            onChange={handleAdvertisementChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -349,6 +446,7 @@ function AlgorithmAwareness({ onNext }) {
             type="radio"
             name="To personalize advertisements"
             value="Don't know"
+            onChange={handleAdvertisementChange}
           />
         </div>
       </div>
