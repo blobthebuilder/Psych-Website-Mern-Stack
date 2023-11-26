@@ -15,6 +15,7 @@ function Itinerary({
     const { value } = event.target;
     onSelectionChange(value);
   };
+
   return (
     <div
       className="itinerary"

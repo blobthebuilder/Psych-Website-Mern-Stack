@@ -26,32 +26,33 @@ function Question3({
   );
   const vacationTwoValue = vacationsArr[1][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[1][0].indexOf(":")
   );
   const vacationThreeValue = vacationsArr[2][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[2][0].indexOf(":")
   );
   const vacationFourValue = vacationsArr[3][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[3][0].indexOf(":")
   );
   const vacationFiveValue = vacationsArr[4][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[4][0].indexOf(":")
   );
   const vacationSixValue = vacationsArr[5][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[5][0].indexOf(":")
   );
   const vacationSevenValue = vacationsArr[6][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[6][0].indexOf(":")
   );
   const vacationEightValue = vacationsArr[7][0].substring(
     0,
-    vacationsArr[0][0].indexOf(":")
+    vacationsArr[7][0].indexOf(":")
   );
+
   const vacationOneText = {
     __html: "<strong>" + vacationsArr[0][0] + "</strong>" + vacationsArr[0][1],
   };
@@ -83,39 +84,39 @@ function Question3({
   );
   const activitiesTwoValue = activitiesArr[1][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[1][0].indexOf(":")
   );
   const activitiesThreeValue = activitiesArr[2][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[2][0].indexOf(":")
   );
   const activitiesFourValue = activitiesArr[3][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[3][0].indexOf(":")
   );
   const activitiesFiveValue = activitiesArr[4][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[4][0].indexOf(":")
   );
   const activitiesSixValue = activitiesArr[5][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[5][0].indexOf(":")
   );
   const activitiesSevenValue = activitiesArr[6][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[6][0].indexOf(":")
   );
   const activitiesEightValue = activitiesArr[7][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[7][0].indexOf(":")
   );
   const activitiesNineValue = activitiesArr[8][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[8][0].indexOf(":")
   );
   const activitiesTenValue = activitiesArr[9][0].substring(
     0,
-    activitiesArr[0][0].indexOf(":")
+    activitiesArr[9][0].indexOf(":")
   );
   const activitiesOneText = {
     __html:
@@ -176,23 +177,23 @@ function Question3({
   );
   const cuisineTwoValue = cuisinesArr[1][0].substring(
     0,
-    cuisinesArr[0][0].indexOf(":")
+    cuisinesArr[1][0].indexOf(":")
   );
   const cuisineThreeValue = cuisinesArr[2][0].substring(
     0,
-    cuisinesArr[0][0].indexOf(":")
+    cuisinesArr[2][0].indexOf(":")
   );
   const cuisineFourValue = cuisinesArr[3][0].substring(
     0,
-    cuisinesArr[0][0].indexOf(":")
+    cuisinesArr[3][0].indexOf(":")
   );
   const cuisineFiveValue = cuisinesArr[4][0].substring(
     0,
-    cuisinesArr[0][0].indexOf(":")
+    cuisinesArr[4][0].indexOf(":")
   );
   const cuisineSixValue = cuisinesArr[5][0].substring(
     0,
-    cuisinesArr[0][0].indexOf(":")
+    cuisinesArr[5][0].indexOf(":")
   );
   const cuisineOneText = {
     __html: "<strong>" + cuisinesArr[0][0] + "</strong>" + cuisinesArr[0][1],
@@ -771,7 +772,7 @@ function Question3({
             <label
               htmlFor="activityBtn3"
               className="labelMargin">
-              <strong>High</strong>I prefer more strenuous activities such as
+              <strong>High: </strong>I prefer more strenuous activities such as
               trekking, climbing, and water sports.
             </label>
           </div>

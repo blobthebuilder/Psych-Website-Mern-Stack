@@ -57,8 +57,6 @@ function App() {
   const [cuisineArr, setCuisineArr] = useState([]);
 
   const [showItineraryHeader, setShowItineraryHeader] = useState(false);
-  const [itineraryFeatures, setItineraryFeatures] = useState([]);
-  const [recommendedAndEco, setRecommendedAndEco] = useState([]);
 
   const [agentPath, setAgentPath] = useState(0);
   const [agent1, setAgent1] = useState("Personal");
@@ -476,7 +474,6 @@ function App() {
   const [advertisementSelection, setAdvertisementSelection] = useState("");
 
   const [startTime, setStartTime] = useState(0);
-  const [timeElapsed, setTimeElapsed] = useState("");
 
   const handleAttentionCheckChange = (value) => {
     setAttentionCheckSelection(value);
@@ -730,7 +727,7 @@ function App() {
     setFlamencoShowsSelection2(value);
   };
   const handleFlamencoShowsSelection3 = (value) => {
-    setPublicTransportationShortSelection3(value);
+    setFlamencoShowsSelection3(value);
   };
   const handlePublicTransportationShortSelection1 = (value) => {
     setPublicTransportationShortSelection1(value);
@@ -1194,10 +1191,12 @@ function App() {
   };
   */
 
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com"
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch("https://psych-website.onrender.com/api/data");
+        const res = await fetch(url + "/api/data");
         const json = await res.json();
 
         if (res.ok) {
@@ -1219,7 +1218,6 @@ function App() {
     setAccommodationArr(shuffleAccommodation);
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
-    setItineraryFeatures(randomizeItineraryFeatures);
 
     fetchUsers();
 
@@ -1249,6 +1247,7 @@ function App() {
       setAgent3("General");
     }
   }, [totalUsers, agent1]);
+
   const handleNext = () => {
     setStep(step + 1);
     window.scrollTo(0, 0);
@@ -1273,22 +1272,34 @@ function App() {
     setShowItineraryHeader(!showItineraryHeader);
   };
 
+  const [recommendedAndEco1, setRecommendedAndEco1] = useState(null);
+  const [recommendedAndEco2, setRecommendedAndEco2] = useState(null);
+  const [recommendedAndEco3, setRecommendedAndEco3] = useState(null);
+
+  const [itineraryFeatures1, setItineraryFeatures1] = useState(null);
+  const [itineraryFeatures2, setItineraryFeatures2] = useState(null);
+  const [itineraryFeatures3, setItineraryFeatures3] = useState(null);
   const startSurvey = () => {
     setCurAgent(agent1);
-    setRecommendedAndEco(randomizeRecommendedAndEco);
     setStartTime(Date.now());
+    setItineraryFeatures1(randomizeItineraryFeatures);
+    setItineraryFeatures2(randomizeItineraryFeatures);
+    setItineraryFeatures3(randomizeItineraryFeatures);
+    setRecommendedAndEco1(randomizeRecommendedAndEco);
+    setRecommendedAndEco2(randomizeRecommendedAndEco);
+    setRecommendedAndEco3(randomizeRecommendedAndEco);
     handleNext();
   };
 
   const endSurvey = () => {
     const time = Date.now() - startTime;
-    setTimeElapsed(msToTime(time));
+    const timeElapsed = msToTime(time);
     handleNext();
     const uploadUser = async () => {
       const user = {
         userId: totalUsers,
         orderOfAgents: agentPath,
-        timeElapsed,
+        timeElapsed: timeElapsed,
         rugged: ruggedSelection,
         excited: excitedSelection,
         uncomfortable: uncomfortableSelection,
@@ -1308,7 +1319,7 @@ function App() {
         afternoons: afternoonSelection,
         restaurants: restaurantSelection,
         vacationType: vacationSelection,
-        budgetSelection: budgetSelection,
+        budget: budgetSelection,
         nightLife: activitiesSelection["nightlife and entertainment"],
         outdoor: activitiesSelection["outdoor activities"],
         cultural: activitiesSelection["cultural experiences"],
@@ -1332,7 +1343,7 @@ function App() {
         artsCraftsInterest: interestsSelection["arts&crafts"],
         beautyGroomingInterest: interestsSelection["beauty&grooming"],
         booksInterest: interestsSelection["books"],
-        cameraasInterest: interestsSelection["cameras"],
+        camerasInterest: interestsSelection["cameras"],
         campingInterest: interestsSelection["camping"],
         computersInterest: interestsSelection["computers"],
         cookingInterest: interestsSelection["cooking"],
@@ -1403,29 +1414,84 @@ function App() {
         eCommunicationUse: eCommunicationUseSelection,
         attentionCheck1: correctAttentionCheck1,
         flight1: flightSelection1,
+        originalFlight1: recommendedAndEco1["Flight"][0],
+        flightEco1: recommendedAndEco1["Flight"][1],
         rentalCar1: rentalCarSelection1,
+        originalRentalCar1: recommendedAndEco1["Rental Car"][0],
+        rentalCarEco1: recommendedAndEco1["Rental Car"][0],
         hotel1: hotelSelection1,
+        originalHotel1: recommendedAndEco1["Hotel"][0],
+        hotelEco1: recommendedAndEco1["Hotel"][0],
         dinner1: dinnerSelection1,
+        originalDinner1: recommendedAndEco1["Dinner"][0],
+        dinnerEco1: recommendedAndEco1["Dinner"][0],
         lunch1: lunchSelection1,
+        originalLunch1: recommendedAndEco1["Lunch"][0],
+        lunchEco1: recommendedAndEco1["Lunch"][0],
         breakfast1: breakfastSelection1,
+        originalBreakfast1: recommendedAndEco1["Breakfast"][0],
+        breakfastEco1: recommendedAndEco1["Breakfast"][0],
         museums1: museumsSelection1,
+        originalMuseums1: recommendedAndEco1["Museums"][0],
+        museumsEco1: recommendedAndEco1["Museums"][0],
         markets1: marketsSelection1,
+        originalMarkets1: recommendedAndEco1["Markets"][0],
+        marketsEco1: recommendedAndEco1["Markets"][0],
         flamencoShows1: flamencoShowsSelection1,
+        originalFlamencoShows1: recommendedAndEco1["Flamenco Shows"][0],
+        flamencoShowsEco1: recommendedAndEco1["Flamenco Shows"][0],
         publicTransportationShort1: publicTransportationShortSelection1,
+        originalPublicTransportationShort1:
+          recommendedAndEco1["Public Transportation (Short)"][0],
+        publicTransportationShortEco1:
+          recommendedAndEco1["Public Transportation (Short)"][0],
         publicTransportationLong1: publicTransportationLongSelection1,
+        originalPublicTransportationLong1:
+          recommendedAndEco1["Public Transportation (Long)"][0],
+        publicTransportationLongEco1:
+          recommendedAndEco1["Public Transportation (Long)"][0],
         coffee1: coffeeSelection1,
+        originalCoffee1: recommendedAndEco1["Coffee"][0],
+        coffeeEco1: recommendedAndEco1["Coffee"][0],
         bakery1: bakerySelection1,
+        originalBakery1: recommendedAndEco1["Bakery"][0],
+        bakeryEco1: recommendedAndEco1["Bakery"][0],
         nightLife1: nightLifeSelection1,
+        originalNightLife1: recommendedAndEco1["Night Life"][0],
+        nightLifeEco1: recommendedAndEco1["Night Life"][0],
         bars1: barsSelection1,
+        originalBars1: recommendedAndEco1["Bars"][0],
+        barsEco1: recommendedAndEco1["Bars"][0],
         groceries1: groceriesSelection1,
+        originalGroceries1: recommendedAndEco1["Groceries"][0],
+        groceriesEco1: recommendedAndEco1["Groceries"][0],
         souveneirs1: souveneirsSelection1,
+        originalSouveneirs1: recommendedAndEco1["Souveneirs"][0],
+        souveneirsEco1: recommendedAndEco1["Souveneirs"][0],
         shopping1: shoppingSelection1,
+        originalShopping1: recommendedAndEco1["Shopping"][0],
+        shoppingEco1: recommendedAndEco1["Shopping"][0],
         internationalPhoneService1: internationalPhoneServiceSelection1,
+        originalInternationalPhoneService1:
+          recommendedAndEco1["International Phone Service"][0],
+        internationalPhoneServiceEco1:
+          recommendedAndEco1["International Phone Service"][0],
         currencyExchange1: currencyExchangeSelection1,
+        originalCurrencyExchange1: recommendedAndEco1["Currency Exchange"][0],
+        currencyExchangeEco1: recommendedAndEco1["Currency Exchange"][0],
         luggage1: luggageSelection1,
+        originalLuggage1: recommendedAndEco1["Luggage"][0],
+        luggageEco1: recommendedAndEco1["Luggage"][0],
         dayTrip1: dayTripSelection1,
+        originalDayTrip1: recommendedAndEco1["Day Trip"][0],
+        dayTripEco1: recommendedAndEco1["Day Trip"][0],
         travelInsurance1: travelInsuranceSelection1,
+        originalTravelInsurance1: recommendedAndEco1["Travel Insurance"][0],
+        travelInsuranceEco1: recommendedAndEco1["Travel Insurance"][0],
         travelPlugAdapter1: travelPlugAdapterSelection1,
+        originalTravelPlugAdapter1:
+          recommendedAndEco1["Travel Plug Adapter"][0],
+        travelPlugAdapterEco1: recommendedAndEco1["Travel Plug Adapter"][0],
         choose1: chooseSelection1,
         charge1: chargeSelection1,
         account1: accountSelection1,
@@ -1477,7 +1543,7 @@ function App() {
         newsAlgorithm: newsSelection,
         advertisementAlgorithm: advertisementSelection,
       };
-      const res = await fetch("https://psych-website.onrender.com/api/user", {
+      const res = await fetch(url + "/api/user", {
         method: "POST",
         body: JSON.stringify(user),
         headers: {
@@ -1491,10 +1557,9 @@ function App() {
       } else {
         console.log("Successfully uploaded");
       }
-      console.log(advertisementSelection);
     };
     const incUsers = async () => {
-      const res = await fetch("https://psych-website.onrender.com/api/data", {
+      const res = await fetch(url + "/api/data", {
         method: "POST",
       });
       const json = await res.json();
@@ -1675,8 +1740,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Flight"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleFlightSelection1}
         />
       )}
@@ -1684,8 +1749,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Rental Car"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleRentalCarSelection1}
         />
       )}
@@ -1693,8 +1758,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Hotel"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleHotelSelection1}
         />
       )}
@@ -1702,8 +1767,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Dinner"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleDinnerSelection1}
         />
       )}
@@ -1711,8 +1776,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Lunch"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleLunchSelection1}
         />
       )}
@@ -1720,8 +1785,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Breakfast"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleBreakfastSelection1}
         />
       )}
@@ -1729,8 +1794,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Museums"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleMuseumsSelection1}
         />
       )}
@@ -1738,8 +1803,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Markets"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleMarketsSelection1}
         />
       )}
@@ -1747,8 +1812,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Flamenco Shows"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleFlamencoShowsSelection1}
         />
       )}
@@ -1756,8 +1821,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Public Transportation (Short)"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handlePublicTransportationShortSelection1}
         />
       )}
@@ -1765,8 +1830,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Public Transportation (Long)"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handlePublicTransportationLongSelection1}
         />
       )}
@@ -1774,8 +1839,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Coffee"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleCoffeeSelection1}
         />
       )}
@@ -1783,8 +1848,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Bakery"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleBakerySelection1}
         />
       )}
@@ -1792,8 +1857,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Night Life"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleNightLifeSelection1}
         />
       )}
@@ -1801,8 +1866,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Bars"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleBarsSelection1}
         />
       )}
@@ -1810,8 +1875,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Groceries"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleGroceriesSelection1}
         />
       )}
@@ -1819,8 +1884,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Souveneirs"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleSouveneirsSelection1}
         />
       )}
@@ -1828,8 +1893,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Shopping"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleShoppingSelection1}
         />
       )}
@@ -1837,8 +1902,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"International Phone Service"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleInternationalPhoneServiceSelection1}
         />
       )}
@@ -1846,8 +1911,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Currency Exchange"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleCurrencyExchangeSelection1}
         />
       )}
@@ -1855,8 +1920,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Luggage"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleLuggageSelection1}
         />
       )}
@@ -1864,8 +1929,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Day Trip"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleDayTripSelection1}
         />
       )}
@@ -1873,8 +1938,8 @@ function App() {
         <Itinerary
           onNext={handleNext}
           type={"Travel Insurance"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleTravelInsuranceSelection1}
         />
       )}
@@ -1882,8 +1947,8 @@ function App() {
         <Itinerary
           onNext={handleNextChangeItineraryHeader}
           type={"Travel Plug Adapter"}
-          features={itineraryFeatures}
-          recommendedAndEco={recommendedAndEco}
+          features={itineraryFeatures1}
+          recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handleTravelPlugAdapterSelection1}
         />
       )}
