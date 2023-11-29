@@ -41,27 +41,30 @@ function FollowupQuestions2({
         <p
           className="postInstructions"
           id="questionnaire1">
-          Please answer the following questions about your{" "}
-          <strong>personal travel agent.</strong> Your answer to these questions
-          will help us provide useful recommendations to future users.
+          Think about your experience while using the{" "}
+          <strong>personal travel agent.</strong> The personal travel agent is
+          the version of Smart Traveler that was designed to make
+          recommendations based on <strong>your personal assessment.</strong>
         </p>
       )}
       {agent.length === 7 && (
         <p
           className="postInstructions"
           id="questionnaire1">
-          Please answer the following questions about your experiences using the{" "}
-          <strong>general travel agent.</strong> Your answer to these questions
-          will help us provide useful recommendations to future users.
+          Think about your experience while using the{" "}
+          <strong>general travel agent.</strong> The general travel agent is the
+          version of Smart Traveler that was designed to make recommendations
+          based on <strong>previous users' personality assessments.</strong>
         </p>
       )}
       {agent.length === 12 && (
         <p
           className="postInstructions"
           id="questionnaire1">
-          Please answer the following questions about your experiences using the{" "}
-          <strong>unprogrammed travel agent.</strong> Your answer to these
-          questions will help us provide useful recommendations to future users.
+          Think about your experience while using the{" "}
+          <strong>unprogrammed travel agent.</strong>
+          The unprogrammed travel agent is the version of Smart Traveler that
+          was designed to make recommendations <strong>at random.</strong>
         </p>
       )}
 

@@ -8,7 +8,7 @@ function FollowupQuestions({
   onAccountChange,
   onWaitChange,
   onSenseChange,
-  onHelpChange,
+  onEngageChange,
   onUnderstoodChange,
   onListenChange,
 }) {
@@ -32,9 +32,9 @@ function FollowupQuestions({
     const { value } = event.target;
     onSenseChange(value);
   };
-  const handleHelpChange = (event) => {
+  const handleEngageChange = (event) => {
     const { value } = event.target;
-    onHelpChange(value);
+    onEngageChange(value);
   };
   const handleUnderstoodChange = (event) => {
     const { value } = event.target;
@@ -49,43 +49,59 @@ function FollowupQuestions({
     <div className="followupQuestions">
       <p className="topMargin">‎</p>
       {agent.length === 8 && (
-        <p
-          className="postInstructions"
-          id="interactivityQuestionnaire1">
-          Think about your experience while using the{" "}
-          <strong>personal travel agent.</strong> The personal travel agent is
-          the version of Smart Traveler that was designed to make
-          recommendations based on{" "}
-          <strong>
-            <u>your personal assessment.</u>
-          </strong>
-        </p>
+        <>
+          <p
+            className="postInstructions"
+            id="interactivityQuestionnaire1">
+            Please answer the following questions about your{" "}
+            <strong>personal travel agent</strong>. Your answer to these
+            questions will help us provide useful recommendations to future
+            users.
+          </p>
+          <p className="postInstructions">
+            Please answer the following questions about your{" "}
+            <strong>personal travel agent.</strong> The personal travel agent is
+            the version of Smart Traveler that was designed to make
+            recommendations based on <strong>your personal assessment.</strong>
+          </p>
+        </>
       )}
       {agent.length === 7 && (
-        <p
-          className="postInstructions"
-          id="interactivityQuestionnaire1">
-          Think about your experience while using the{" "}
-          <strong>general travel agent</strong>. The general travel agent is the
-          version of Smart Traveler that was designed to make recommendations
-          based on{" "}
-          <strong>
-            <u>previous users' personal assessments.</u>
-          </strong>
-        </p>
+        <>
+          <p
+            className="postInstructions"
+            id="interactivityQuestionnaire1">
+            Please answer the following questions about your{" "}
+            <strong>general travel agent</strong>. Your answer to these
+            questions will help us provide useful recommendations to future
+            users.
+          </p>
+          <p className="postInstructions">
+            Please answer the following questions about your{" "}
+            <strong>general travel agent.</strong> The general travel agent is
+            the version of Smart Traveler that was designed to make
+            recommendations based on{" "}
+            <strong>previous users' personality assessments.</strong>
+          </p>
+        </>
       )}
       {agent.length === 12 && (
-        <p
-          className="postInstructions"
-          id="interactivityQuestionnaire1">
-          Think about your experience while using the{" "}
-          <strong>unprogrammed travel agent</strong>. The unprogrammed travel
-          agent is the version of Smart Traveler that was designed to make
-          recommendations{" "}
-          <strong>
-            <u>at random.</u>
-          </strong>
-        </p>
+        <>
+          <p
+            className="postInstructions"
+            id="interactivityQuestionnaire1">
+            Please answer the following questions about your{" "}
+            <strong>unprogrammed travel agent</strong>. Your answer to these
+            questions will help us provide useful recommendations to future
+            users.
+          </p>
+          <p className="postInstructions">
+            Please answer the following questions about your{" "}
+            <strong>unprogrammed travel agent.</strong> The unprogrammed travel
+            agent is the version of Smart Traveler that was designed to make
+            recommendations <strong>at random.</strong>
+          </p>
+        </>
       )}
 
       <p
@@ -343,14 +359,14 @@ function FollowupQuestions({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Felt like someone was helping me
+          Felt like someone was engaging with me
         </div>
         <div className="questionnaireScale">
           <input
             type="radio"
             name="Felt like someone was helping me"
             value="Not at all"
-            onChange={handleHelpChange}
+            onChange={handleEngageChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -358,7 +374,7 @@ function FollowupQuestions({
             type="radio"
             name="Felt like someone was helping me"
             value="To some extent"
-            onChange={handleHelpChange}
+            onChange={handleEngageChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -366,7 +382,7 @@ function FollowupQuestions({
             type="radio"
             name="Felt like someone was helping me"
             value="To a moderate extent"
-            onChange={handleHelpChange}
+            onChange={handleEngageChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -374,7 +390,7 @@ function FollowupQuestions({
             type="radio"
             name="Felt like someone was helping me"
             value="To a great extent"
-            onChange={handleHelpChange}
+            onChange={handleEngageChange}
           />
         </div>
         <div className="questionnaireScale">
@@ -382,7 +398,7 @@ function FollowupQuestions({
             type="radio"
             name="Felt like someone was helping me"
             value="To a very great extent"
-            onChange={handleHelpChange}
+            onChange={handleEngageChange}
           />
         </div>
       </div>

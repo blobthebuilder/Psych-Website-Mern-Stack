@@ -208,6 +208,10 @@ ul {
   width: 75%;
   padding: 0px 100px;
   border-radius: 15px;
+  line-height: 90% !important;
+}
+.conclusion {
+  font-size: 18px !important;
 }
 .greenQuestion {
   text-align: center;
@@ -245,6 +249,9 @@ ul {
 form {
   text-align: center;
   margin: 0 auto;
+}
+.bold {
+  font-weight: 700;
 }
 .bigTextbox {
   border: 3px solid #949494;

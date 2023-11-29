@@ -67,8 +67,10 @@ function AlgorithmAwareness({
     <div className="algorithmAwareness">
       <p className="topMargin">‎</p>
       <p className="postInstructions">
-        Please answer the following questions about algorithms (not about{" "}
-        <i>Smart Traveler</i> specifically).
+        Please answer the following questions about algorithms in general{" "}
+        <strong>
+          (not about <i>Smart Traveler</i> specifically).
+        </strong>
       </p>
       <p
         className="instructions"

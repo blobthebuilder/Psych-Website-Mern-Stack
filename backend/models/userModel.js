@@ -77,6 +77,30 @@ const userSchema = new Schema({
     type: Number,
     default: 1,
   },
+  products: {
+    type: String,
+    default: "",
+  },
+  environDecis: {
+    type: String,
+    default: "",
+  },
+  purchaseEnviron: {
+    type: String,
+    default: "",
+  },
+  resources: {
+    type: String,
+    default: "",
+  },
+  environResp: {
+    type: String,
+    default: "",
+  },
+  inconvenience: {
+    type: String,
+    default: "",
+  },
   hotels: {
     type: String,
     default: "",
@@ -629,7 +653,7 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
-  help1: {
+  engage1: {
     type: String,
     default: "",
   },

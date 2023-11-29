@@ -1088,7 +1088,7 @@ function Question3({
             <label
               htmlFor="languageBtn4"
               className="labelMargin">
-              Somewhat uncomfortable
+              Somewhat comfortable
             </label>
           </div>
           <div className="vacationBox">

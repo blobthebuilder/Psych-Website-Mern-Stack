@@ -149,7 +149,7 @@ export const shuffleAccommodation = () => {
 
 export const shuffleCommunication = () => {
   let communicationText = [
-    "Phone",
+    "Phone calls",
     "Email",
     "Social media",
     "Messaging apps",

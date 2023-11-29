@@ -544,7 +544,13 @@ function Demographics({
             For each of the issues below, please place yourself on a scale from
             0=extremely liberal to 10=extremely conservative
           </h3>
-          <h3 className="subquestion">Political Issues</h3>
+          <h3 className="subquestion">
+            Political Issues{" "}
+            <div style={{ fontWeight: "normal" }}>
+              (for example: political party preference, international relations,
+              etc.)
+            </div>
+          </h3>
           <div className="vacationContainer">
             <p className="leftBox">Extremely liberal</p>
             <div className="box">
@@ -640,7 +646,12 @@ function Demographics({
             </div>
             <p className="rightBox">Extremely conservative</p>
           </div>
-          <h3 className="subquestion">Economic Issues</h3>
+          <h3 className="subquestion">
+            Economic Issues{" "}
+            <div style={{ fontWeight: "normal" }}>
+              (for example: taxes, government support (subsidies), etc.)
+            </div>
+          </h3>
           <div className="vacationContainer">
             <p className="leftBox">Extremely liberal</p>
             <div className="box">
@@ -736,7 +747,12 @@ function Demographics({
             </div>
             <p className="rightBox">Extremely conservative</p>
           </div>
-          <h3 className="subquestion">Social Issues</h3>
+          <h3 className="subquestion">
+            Social Issues Social Issues{" "}
+            <div style={{ fontWeight: "normal" }}>
+              (for example, issues that relate to DEI, people’s “rights,” etc.)
+            </div>
+          </h3>
           <div className="vacationContainer">
             <p className="leftBox">Extremely liberal</p>
             <div className="box">
@@ -844,7 +860,7 @@ function Demographics({
           </div>
 
           <h3 className="leftQuestion">
-            What is your race of origin? (select all that apply)
+            What is your race or origin? (select all that apply)
           </h3>
           <div className="vacationContainer">
             <div className="vacationBox">

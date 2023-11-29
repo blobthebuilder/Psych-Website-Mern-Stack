@@ -10,28 +10,28 @@ function GeneralInstructions2({ onNext, onBack }) {
       </p>
       <ul className="instructions">
         <li>
-          <strong>Unprogrammed Travel Agent:</strong> One version of the
+          <strong>Unprogrammed Travel Agent:</strong> This version of the
           software makes generic travel recommendations (i.e., recommendations
           are made at random)
         </li>
         <li>
-          <strong>General Travel Agent:</strong> One version makes
+          <strong>General Travel Agent:</strong> This version makes
           recommendations based on{" "}
           <strong>
             personality data from all previous testers, but NOT your own.
           </strong>
         </li>
         <li>
-          <strong>Personal Travel Agent:</strong> One version will make
+          <strong>Personal Travel Agent:</strong> This version will make
           recommendations based on{" "}
           <strong>YOUR own personality questionnaire</strong>, which you will
           complete shortly.
         </li>
       </ul>
       <p className="instructions">
-        In other words, after you complete the personality questionnaire, one
-        version of Smart Traveler will recommend products{" "}
-        <strong>you are most likely to endorse.</strong>
+        In other words, after you complete the personality questionnaire,{" "}
+        <u>the personal travel agent</u> version of Smart Traveler will
+        recommend products <strong>you are most likely to endorse.</strong>
       </p>
       <p className="instructions">
         For each version of Smart Traveler, we ask you to view and adjust the

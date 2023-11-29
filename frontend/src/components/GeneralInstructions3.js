@@ -5,8 +5,8 @@ function GeneralInstructions3({ onNext, onBack }) {
     <div className="generalInstructions3">
       <p className="instructions">
         To fill out your personality questionnaire so that Smart Traveler can
-        create an algorithm that recommends products/services you are most
-        likely to endorse, please press “Next.”
+        create a personal travel agent algorithm that recommends
+        products/services you are most likely to endorse, please press “Next.”
       </p>
       <button
         type="button"

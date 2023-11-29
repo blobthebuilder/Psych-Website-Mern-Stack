@@ -38,6 +38,10 @@ function Instructions2({ onNext, agent }) {
           an icon that says “recommended.”
         </p>
       )}
+      <p className="instructions">
+        The image below shows an example of the selection recommended for one
+        travel category.
+      </p>
       <div>
         <img
           src="../../Photos/itineraryScreenshot.png"
@@ -46,6 +50,30 @@ function Instructions2({ onNext, agent }) {
         />
       </div>
 
+      {agent.length === 8 && (
+        <p className="instructions">
+          To help us refine the Smart Traveler software, you will choose among
+          four options provided by the software for each of these travel
+          categories. <i>Smart Traveler</i> will provide one AI-generated
+          recommendation to aid in your selection.
+        </p>
+      )}
+      {agent.length === 7 && (
+        <p className="instructions">
+          To help us refine the Smart Traveler software, you will choose among
+          four options provided by the software for each of these travel
+          categories. <i>Smart Traveler</i> will provide one AI-generated
+          recommendation to aid in your selection.
+        </p>
+      )}
+      {agent.length === 12 && (
+        <p className="instructions">
+          To help us refine the Smart Traveler software, you will choose among
+          four options provided by the software for each of these travel
+          categories. <i>Smart Traveler</i> will provide one AI-generated
+          recommendation to aid in your selection.
+        </p>
+      )}
       <button
         type="button"
         onClick={onNext}

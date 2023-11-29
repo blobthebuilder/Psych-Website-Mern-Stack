@@ -13,7 +13,7 @@ function Instructions1({ onNext, agent }) {
             <strong>
               <u>your</u>
             </strong>{" "}
-            responses to the general assessment, and is now able to recommend
+            responses to the personal assessment, and is now able to recommend
             travel choices to you that{" "}
             <strong>
               <u>you</u>
@@ -25,12 +25,6 @@ function Instructions1({ onNext, agent }) {
             recommendation, it means “Go do this!” So, by{" "}
             <strong>endorse</strong> we mean that the travel choice is one you
             are likely to enjoy.
-          </p>
-          <p className="instructions">
-            To help us refine the Smart Traveler software, you will choose among
-            four options provided by the software for each of these travel
-            categories. <i>Smart Traveler</i> will provide one AI-generated
-            recommendation to aid in your selection.
           </p>
         </>
       )}
@@ -59,12 +53,6 @@ function Instructions1({ onNext, agent }) {
             </strong>{" "}
             are likely to enjoy.
           </p>
-          <p className="instructions">
-            To help us refine the Smart Traveler software, you will choose among
-            four options provided by the software for each of these travel
-            categories. <i>Smart Traveler</i> will provide one AI-generated
-            recommendation to aid in your selection.
-          </p>
         </>
       )}
       {agent.length === 12 && (
@@ -76,12 +64,6 @@ function Instructions1({ onNext, agent }) {
             <strong> NOT been programmed</strong> based on data with data from
             users' personal assessments, and recommends travel choices at
             random.
-          </p>
-          <p className="instructions">
-            To help us refine the Smart Traveler software, you will choose among
-            four options provided by the software for each of these travel
-            categories. <i>Smart Traveler</i> will provide one AI-generated
-            recommendation to aid in your selection.
           </p>
         </>
       )}
