@@ -59,10 +59,9 @@ function FollowupQuestions({
             users.
           </p>
           <p className="postInstructions">
-            Please answer the following questions about your{" "}
-            <strong>personal travel agent.</strong> The personal travel agent is
-            the version of Smart Traveler that was designed to make
-            recommendations based on <strong>your personal assessment.</strong>
+            The personal travel agent is the version of Smart Traveler that was
+            designed to make recommendations based on{" "}
+            <strong>your personal assessment.</strong>
           </p>
         </>
       )}
@@ -77,10 +76,8 @@ function FollowupQuestions({
             users.
           </p>
           <p className="postInstructions">
-            Please answer the following questions about your{" "}
-            <strong>general travel agent.</strong> The general travel agent is
-            the version of Smart Traveler that was designed to make
-            recommendations based on{" "}
+            The general travel agent is the version of Smart Traveler that was
+            designed to make recommendations based on{" "}
             <strong>previous users' personality assessments.</strong>
           </p>
         </>
@@ -96,10 +93,8 @@ function FollowupQuestions({
             users.
           </p>
           <p className="postInstructions">
-            Please answer the following questions about your{" "}
-            <strong>unprogrammed travel agent.</strong> The unprogrammed travel
-            agent is the version of Smart Traveler that was designed to make
-            recommendations <strong>at random.</strong>
+            The unprogrammed travel agent is the version of Smart Traveler that
+            was designed to make recommendations <strong>at random.</strong>
           </p>
         </>
       )}

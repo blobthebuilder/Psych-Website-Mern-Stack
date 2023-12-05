@@ -46,6 +46,7 @@ function FollowupQuestions3({
         <p
           className="postInstructions"
           id="questionnaire1">
+          Please answer the following questions about your{" "}
           <strong>personal travel agent.</strong> The personal travel agent is
           the version of Smart Traveler that was designed to make
           recommendations based on <strong>your personal assessment.</strong>

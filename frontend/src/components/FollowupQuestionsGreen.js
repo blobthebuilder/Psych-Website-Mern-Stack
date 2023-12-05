@@ -37,36 +37,6 @@ function FollowupQuestionsGreen({
   return (
     <div className="followupQuestionsGreenScale">
       <p className="topMargin">‎</p>
-      {agent.length === 8 && (
-        <p
-          className="postInstructions"
-          id="questionnaire1">
-          Think about your experience while using the{" "}
-          <strong>personal travel agent.</strong> The personal travel agent is
-          the version of Smart Traveler that was designed to make
-          recommendations based on <strong>your personal assessment.</strong>
-        </p>
-      )}
-      {agent.length === 7 && (
-        <p
-          className="postInstructions"
-          id="questionnaire1">
-          Think about your experience while using the{" "}
-          <strong>general travel agent.</strong> The general travel agent is the
-          version of Smart Traveler that was designed to make recommendations
-          based on <strong>previous users' personality assessments.</strong>
-        </p>
-      )}
-      {agent.length === 12 && (
-        <p
-          className="postInstructions"
-          id="questionnaire1">
-          Think about your experience while using the{" "}
-          <strong>unprogrammed travel agent.</strong>
-          The unprogrammed travel agent is the version of Smart Traveler that
-          was designed to make recommendations <strong>at random.</strong>
-        </p>
-      )}
       <p
         className="instructions"
         id="questionnaire2"
