@@ -1191,8 +1191,8 @@ function Survey() {
   };
   */
 
-  //const url = "http://localhost:4000";
-  const url = "https://psych-website.onrender.com";
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com";
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -1549,19 +1549,22 @@ function Survey() {
         newsAlgorithm: newsSelection,
         advertisementAlgorithm: advertisementSelection,
       };
-      const res = await fetch(url + "/api/user", {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const json = await res.json();
-
-      if (!res.ok) {
-        console.log(json.error);
-      } else {
-        console.log("Successfully uploaded");
+      try {
+        const res = await fetch(url + "/api/user", {
+          method: "POST",
+          body: JSON.stringify(user),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const json = await res.json();
+        if (!res.ok) {
+          console.log(json.error);
+        } else {
+          console.log("Successfully uploaded");
+        }
+      } catch (error) {
+        console.log("Error");
       }
     };
     const incUsers = async () => {

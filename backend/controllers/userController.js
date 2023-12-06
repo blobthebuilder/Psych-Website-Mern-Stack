@@ -497,4 +497,13 @@ const createEntry = async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 };
-module.exports = { createEntry };
+
+const getAll = async (req, res) => {
+  try {
+    const data = await User.find();
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(500).json({ error: "An error occured " });
+  }
+};
+module.exports = { createEntry, getAll };
