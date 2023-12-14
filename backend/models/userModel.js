@@ -721,7 +721,7 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
-  actionsFollowup11: {
+  actionsFollowup1: {
     type: String,
     default: "",
   },
@@ -738,6 +738,518 @@ const userSchema = new Schema({
     default: "",
   },
   inconvenienceFollowup1: {
+    type: String,
+    default: "",
+  },
+  attentionCheck2: {
+    type: Boolean,
+    default: false,
+  },
+  flight2: {
+    type: Number,
+    default: 0,
+  },
+  originalFlight2: { type: Number, default: 0 },
+  flightEco2: { type: Number, default: 0 },
+  rentalCar2: {
+    type: Number,
+    default: 0,
+  },
+  originalRentalCar2: { type: Number, default: 0 },
+  rentalCarEco2: { type: Number, default: 0 },
+  hotel2: {
+    type: Number,
+    default: 0,
+  },
+  originalHotel2: { type: Number, default: 0 },
+  hotelEco2: { type: Number, default: 0 },
+  dinner2: {
+    type: Number,
+    default: 0,
+  },
+  originalDinner2: { type: Number, default: 0 },
+  dinnerEco2: { type: Number, default: 0 },
+  lunch2: {
+    type: Number,
+    default: 0,
+  },
+  originalLunch2: { type: Number, default: 0 },
+  lunchEco2: { type: Number, default: 0 },
+  breakfast2: {
+    type: Number,
+    default: 0,
+  },
+  originalBreakfast2: { type: Number, default: 0 },
+  breakfastEco2: { type: Number, default: 0 },
+  museums2: {
+    type: Number,
+    default: 0,
+  },
+  originalMuseums2: { type: Number, default: 0 },
+  museumsEco2: { type: Number, default: 0 },
+  markets2: {
+    type: Number,
+    default: 0,
+  },
+  originalMarkets2: { type: Number, default: 0 },
+  marketsEco2: { type: Number, default: 0 },
+  flamencoShows2: {
+    type: Number,
+    default: 0,
+  },
+  originalFlamencoShows2: { type: Number, default: 0 },
+  flamencoShowsEco2: { type: Number, default: 0 },
+  publicTransportationShort2: {
+    type: Number,
+    default: 0,
+  },
+  originalPublicTransportationShort2: { type: Number, default: 0 },
+  publicTransportationShortEco2: { type: Number, default: 0 },
+  publicTransportationLong2: {
+    type: Number,
+    default: 0,
+  },
+  originalPublicTransportationLong2: { type: Number, default: 0 },
+  publicTransportationLongEco2: { type: Number, default: 0 },
+  coffee2: {
+    type: Number,
+    default: 0,
+  },
+  originalCoffee2: { type: Number, default: 0 },
+  coffeeEco2: { type: Number, default: 0 },
+  bakery2: {
+    type: Number,
+    default: 0,
+  },
+  originalBakery2: { type: Number, default: 0 },
+  bakeryEco2: { type: Number, default: 0 },
+  nightLife2: {
+    type: Number,
+    default: 0,
+  },
+  originalNightLife2: { type: Number, default: 0 },
+  nightLifeEco2: { type: Number, default: 0 },
+  bars2: {
+    type: Number,
+    default: 0,
+  },
+  originalBars2: { type: Number, default: 0 },
+  barsEco2: { type: Number, default: 0 },
+  groceries2: {
+    type: Number,
+    default: 0,
+  },
+  originalGroceries2: { type: Number, default: 0 },
+  groceriesEco2: { type: Number, default: 0 },
+  souveneirs2: {
+    type: Number,
+    default: 0,
+  },
+  originalSouveneirs2: { type: Number, default: 0 },
+  souveneirsEco2: { type: Number, default: 0 },
+  shopping2: {
+    type: Number,
+    default: 0,
+  },
+  originalShopping2: { type: Number, default: 0 },
+  shoppingEco2: { type: Number, default: 0 },
+  internationalPhoneService2: {
+    type: Number,
+    default: 0,
+  },
+  originalInternationalPhoneService2: { type: Number, default: 0 },
+  internationalPhoneServiceEco2: { type: Number, default: 0 },
+  currencyExchange2: {
+    type: Number,
+    default: 0,
+  },
+  originalCurrencyExchange2: { type: Number, default: 0 },
+  currencyExchangeEco2: { type: Number, default: 0 },
+  luggage2: {
+    type: Number,
+    default: 0,
+  },
+  originalLuggage2: { type: Number, default: 0 },
+  luggageEco2: { type: Number, default: 0 },
+  dayTrip2: {
+    type: Number,
+    default: 0,
+  },
+  originalDayTrip2: { type: Number, default: 0 },
+  dayTripEco2: { type: Number, default: 0 },
+  travelInsurance2: {
+    type: Number,
+    default: 0,
+  },
+  originalTravelInsurance2: { type: Number, default: 0 },
+  travelInsuranceEco2: { type: Number, default: 0 },
+  travelPlugAdapter2: {
+    type: Number,
+    default: 0,
+  },
+  originalTravelPlugAdapter2: { type: Number, default: 0 },
+  travelPlugAdapterEco2: { type: Number, default: 0 },
+  choose2: {
+    type: String,
+    default: "",
+  },
+  charge2: {
+    type: String,
+    default: "",
+  },
+  account2: {
+    type: String,
+    default: "",
+  },
+  wait2: {
+    type: String,
+    default: "",
+  },
+  sense2: {
+    type: String,
+    default: "",
+  },
+  engage2: {
+    type: String,
+    default: "",
+  },
+  understood2: {
+    type: String,
+    default: "",
+  },
+  listen2: {
+    type: String,
+    default: "",
+  },
+  effectiveness2: {
+    type: String,
+    default: "",
+  },
+  bestOption2: {
+    type: String,
+    default: "",
+  },
+  optionQuickly2: {
+    type: String,
+    default: "",
+  },
+  productivity2: {
+    type: String,
+    default: "",
+  },
+  performance2: {
+    type: String,
+    default: "",
+  },
+  utilize2: {
+    type: String,
+    default: "",
+  },
+  reflect2: {
+    type: String,
+    default: "",
+  },
+  identify2: {
+    type: String,
+    default: "",
+  },
+  connection2: {
+    type: String,
+    default: "",
+  },
+  agentCommunicate2: {
+    type: String,
+    default: "",
+  },
+  typePerson2: {
+    type: String,
+    default: "",
+  },
+  agentMe2: {
+    type: String,
+    default: "",
+  },
+  suits2: {
+    type: String,
+    default: "",
+  },
+  productsFollowup2: {
+    type: String,
+    default: "",
+  },
+  actionsFollowup2: {
+    type: String,
+    default: "",
+  },
+  purchaseFollowup2: {
+    type: String,
+    default: "",
+  },
+  resourcesFollowup2: {
+    type: String,
+    default: "",
+  },
+  responsibleFollowup2: {
+    type: String,
+    default: "",
+  },
+  inconvenienceFollowup2: {
+    type: String,
+    default: "",
+  },
+  attentionCheck3: {
+    type: Boolean,
+    default: false,
+  },
+  flight3: {
+    type: Number,
+    default: 0,
+  },
+  originalFlight3: { type: Number, default: 0 },
+  flightEco3: { type: Number, default: 0 },
+  rentalCar3: {
+    type: Number,
+    default: 0,
+  },
+  originalRentalCar3: { type: Number, default: 0 },
+  rentalCarEco3: { type: Number, default: 0 },
+  hotel3: {
+    type: Number,
+    default: 0,
+  },
+  originalHotel3: { type: Number, default: 0 },
+  hotelEco3: { type: Number, default: 0 },
+  dinner3: {
+    type: Number,
+    default: 0,
+  },
+  originalDinner3: { type: Number, default: 0 },
+  dinnerEco3: { type: Number, default: 0 },
+  lunch3: {
+    type: Number,
+    default: 0,
+  },
+  originalLunch3: { type: Number, default: 0 },
+  lunchEco3: { type: Number, default: 0 },
+  breakfast3: {
+    type: Number,
+    default: 0,
+  },
+  originalBreakfast3: { type: Number, default: 0 },
+  breakfastEco3: { type: Number, default: 0 },
+  museums3: {
+    type: Number,
+    default: 0,
+  },
+  originalMuseums3: { type: Number, default: 0 },
+  museumsEco3: { type: Number, default: 0 },
+  markets3: {
+    type: Number,
+    default: 0,
+  },
+  originalMarkets3: { type: Number, default: 0 },
+  marketsEco3: { type: Number, default: 0 },
+  flamencoShows3: {
+    type: Number,
+    default: 0,
+  },
+  originalFlamencoShows3: { type: Number, default: 0 },
+  flamencoShowsEco3: { type: Number, default: 0 },
+  publicTransportationShort3: {
+    type: Number,
+    default: 0,
+  },
+  originalPublicTransportationShort3: { type: Number, default: 0 },
+  publicTransportationShortEco3: { type: Number, default: 0 },
+  publicTransportationLong3: {
+    type: Number,
+    default: 0,
+  },
+  originalPublicTransportationLong3: { type: Number, default: 0 },
+  publicTransportationLongEco3: { type: Number, default: 0 },
+  coffee3: {
+    type: Number,
+    default: 0,
+  },
+  originalCoffee3: { type: Number, default: 0 },
+  coffeeEco3: { type: Number, default: 0 },
+  bakery3: {
+    type: Number,
+    default: 0,
+  },
+  originalBakery3: { type: Number, default: 0 },
+  bakeryEco3: { type: Number, default: 0 },
+  nightLife3: {
+    type: Number,
+    default: 0,
+  },
+  originalNightLife3: { type: Number, default: 0 },
+  nightLifeEco3: { type: Number, default: 0 },
+  bars3: {
+    type: Number,
+    default: 0,
+  },
+  originalBars3: { type: Number, default: 0 },
+  barsEco3: { type: Number, default: 0 },
+  groceries3: {
+    type: Number,
+    default: 0,
+  },
+  originalGroceries3: { type: Number, default: 0 },
+  groceriesEco3: { type: Number, default: 0 },
+  souveneirs3: {
+    type: Number,
+    default: 0,
+  },
+  originalSouveneirs3: { type: Number, default: 0 },
+  souveneirsEco3: { type: Number, default: 0 },
+  shopping3: {
+    type: Number,
+    default: 0,
+  },
+  originalShopping3: { type: Number, default: 0 },
+  shoppingEco3: { type: Number, default: 0 },
+  internationalPhoneService3: {
+    type: Number,
+    default: 0,
+  },
+  originalInternationalPhoneService3: { type: Number, default: 0 },
+  internationalPhoneServiceEco3: { type: Number, default: 0 },
+  currencyExchange3: {
+    type: Number,
+    default: 0,
+  },
+  originalCurrencyExchange3: { type: Number, default: 0 },
+  currencyExchangeEco3: { type: Number, default: 0 },
+  luggage3: {
+    type: Number,
+    default: 0,
+  },
+  originalLuggage3: { type: Number, default: 0 },
+  luggageEco3: { type: Number, default: 0 },
+  dayTrip3: {
+    type: Number,
+    default: 0,
+  },
+  originalDayTrip3: { type: Number, default: 0 },
+  dayTripEco3: { type: Number, default: 0 },
+  travelInsurance3: {
+    type: Number,
+    default: 0,
+  },
+  originalTravelInsurance3: { type: Number, default: 0 },
+  travelInsuranceEco3: { type: Number, default: 0 },
+  travelPlugAdapter3: {
+    type: Number,
+    default: 0,
+  },
+  originalTravelPlugAdapter3: { type: Number, default: 0 },
+  travelPlugAdapterEco3: { type: Number, default: 0 },
+  choose3: {
+    type: String,
+    default: "",
+  },
+  charge3: {
+    type: String,
+    default: "",
+  },
+  account3: {
+    type: String,
+    default: "",
+  },
+  wait3: {
+    type: String,
+    default: "",
+  },
+  sense3: {
+    type: String,
+    default: "",
+  },
+  engage3: {
+    type: String,
+    default: "",
+  },
+  understood3: {
+    type: String,
+    default: "",
+  },
+  listen3: {
+    type: String,
+    default: "",
+  },
+  effectiveness3: {
+    type: String,
+    default: "",
+  },
+  bestOption3: {
+    type: String,
+    default: "",
+  },
+  optionQuickly3: {
+    type: String,
+    default: "",
+  },
+  productivity3: {
+    type: String,
+    default: "",
+  },
+  performance3: {
+    type: String,
+    default: "",
+  },
+  utilize3: {
+    type: String,
+    default: "",
+  },
+  reflect3: {
+    type: String,
+    default: "",
+  },
+  identify3: {
+    type: String,
+    default: "",
+  },
+  connection3: {
+    type: String,
+    default: "",
+  },
+  agentCommunicate3: {
+    type: String,
+    default: "",
+  },
+  typePerson3: {
+    type: String,
+    default: "",
+  },
+  agentMe3: {
+    type: String,
+    default: "",
+  },
+  suits3: {
+    type: String,
+    default: "",
+  },
+  productsFollowup3: {
+    type: String,
+    default: "",
+  },
+  actionsFollowup3: {
+    type: String,
+    default: "",
+  },
+  purchaseFollowup3: {
+    type: String,
+    default: "",
+  },
+  resourcesFollowup3: {
+    type: String,
+    default: "",
+  },
+  responsibleFollowup3: {
+    type: String,
+    default: "",
+  },
+  inconvenienceFollowup3: {
     type: String,
     default: "",
   },

@@ -736,7 +736,7 @@ function Survey() {
     setPublicTransportationShortSelection2(value);
   };
   const handlePublicTransportationShortSelection3 = (value) => {
-    setPublicTransportationLongSelection3(value);
+    setPublicTransportationShortSelection3(value);
   };
   const handlePublicTransportationLongSelection1 = (value) => {
     setPublicTransportationLongSelection1(value);
@@ -1178,6 +1178,32 @@ function Survey() {
     setAdvertisementSelection(value);
   };
 
+  const handleNextAttentionCheck1 = () => {
+    if (attentionCheckSelection.length === curAgent.length) {
+      setCorrectAttentionCheck1(true);
+    }
+    handleNext();
+  };
+  const handleNextAttentionCheck2 = () => {
+    if (attentionCheckSelection.length === curAgent.length) {
+      setCorrectAttentionCheck2(true);
+    }
+    handleNext();
+  };
+  const handleNextAttentionCheck3 = () => {
+    if (attentionCheckSelection.length === curAgent.length) {
+      setCorrectAttentionCheck3(true);
+    }
+    handleNext();
+  };
+  const handleNextAgent1 = () => {
+    handleNext();
+    setCurAgent(agent2);
+  };
+  const handleNextAgent2 = () => {
+    handleNext();
+    setCurAgent(agent3);
+  };
   // show alert when closing or refreshing
   /*
   window.onbeforeunload = (event) => {
@@ -1424,80 +1450,80 @@ function Survey() {
         flightEco1: recommendedAndEco1["Flight"][1],
         rentalCar1: rentalCarSelection1,
         originalRentalCar1: recommendedAndEco1["Rental Car"][0],
-        rentalCarEco1: recommendedAndEco1["Rental Car"][0],
+        rentalCarEco1: recommendedAndEco1["Rental Car"][1],
         hotel1: hotelSelection1,
         originalHotel1: recommendedAndEco1["Hotel"][0],
-        hotelEco1: recommendedAndEco1["Hotel"][0],
+        hotelEco1: recommendedAndEco1["Hotel"][1],
         dinner1: dinnerSelection1,
         originalDinner1: recommendedAndEco1["Dinner"][0],
-        dinnerEco1: recommendedAndEco1["Dinner"][0],
+        dinnerEco1: recommendedAndEco1["Dinner"][1],
         lunch1: lunchSelection1,
         originalLunch1: recommendedAndEco1["Lunch"][0],
-        lunchEco1: recommendedAndEco1["Lunch"][0],
+        lunchEco1: recommendedAndEco1["Lunch"][1],
         breakfast1: breakfastSelection1,
         originalBreakfast1: recommendedAndEco1["Breakfast"][0],
-        breakfastEco1: recommendedAndEco1["Breakfast"][0],
+        breakfastEco1: recommendedAndEco1["Breakfast"][1],
         museums1: museumsSelection1,
         originalMuseums1: recommendedAndEco1["Museums"][0],
-        museumsEco1: recommendedAndEco1["Museums"][0],
+        museumsEco1: recommendedAndEco1["Museums"][1],
         markets1: marketsSelection1,
         originalMarkets1: recommendedAndEco1["Markets"][0],
-        marketsEco1: recommendedAndEco1["Markets"][0],
+        marketsEco1: recommendedAndEco1["Markets"][1],
         flamencoShows1: flamencoShowsSelection1,
         originalFlamencoShows1: recommendedAndEco1["Flamenco Shows"][0],
-        flamencoShowsEco1: recommendedAndEco1["Flamenco Shows"][0],
+        flamencoShowsEco1: recommendedAndEco1["Flamenco Shows"][1],
         publicTransportationShort1: publicTransportationShortSelection1,
         originalPublicTransportationShort1:
           recommendedAndEco1["Public Transportation (Short)"][0],
         publicTransportationShortEco1:
-          recommendedAndEco1["Public Transportation (Short)"][0],
+          recommendedAndEco1["Public Transportation (Short)"][1],
         publicTransportationLong1: publicTransportationLongSelection1,
         originalPublicTransportationLong1:
           recommendedAndEco1["Public Transportation (Long)"][0],
         publicTransportationLongEco1:
-          recommendedAndEco1["Public Transportation (Long)"][0],
+          recommendedAndEco1["Public Transportation (Long)"][1],
         coffee1: coffeeSelection1,
         originalCoffee1: recommendedAndEco1["Coffee"][0],
-        coffeeEco1: recommendedAndEco1["Coffee"][0],
+        coffeeEco1: recommendedAndEco1["Coffee"][1],
         bakery1: bakerySelection1,
         originalBakery1: recommendedAndEco1["Bakery"][0],
-        bakeryEco1: recommendedAndEco1["Bakery"][0],
+        bakeryEco1: recommendedAndEco1["Bakery"][1],
         nightLife1: nightLifeSelection1,
         originalNightLife1: recommendedAndEco1["Night Life"][0],
-        nightLifeEco1: recommendedAndEco1["Night Life"][0],
+        nightLifeEco1: recommendedAndEco1["Night Life"][1],
         bars1: barsSelection1,
         originalBars1: recommendedAndEco1["Bars"][0],
-        barsEco1: recommendedAndEco1["Bars"][0],
+        barsEco1: recommendedAndEco1["Bars"][1],
         groceries1: groceriesSelection1,
         originalGroceries1: recommendedAndEco1["Groceries"][0],
-        groceriesEco1: recommendedAndEco1["Groceries"][0],
+        groceriesEco1: recommendedAndEco1["Groceries"][1],
         souveneirs1: souveneirsSelection1,
         originalSouveneirs1: recommendedAndEco1["Souveneirs"][0],
-        souveneirsEco1: recommendedAndEco1["Souveneirs"][0],
+        souveneirsEco1: recommendedAndEco1["Souveneirs"][1],
         shopping1: shoppingSelection1,
         originalShopping1: recommendedAndEco1["Shopping"][0],
-        shoppingEco1: recommendedAndEco1["Shopping"][0],
+        shoppingEco1: recommendedAndEco1["Shopping"][1],
         internationalPhoneService1: internationalPhoneServiceSelection1,
         originalInternationalPhoneService1:
           recommendedAndEco1["International Phone Service"][0],
         internationalPhoneServiceEco1:
-          recommendedAndEco1["International Phone Service"][0],
+          recommendedAndEco1["International Phone Service"][1],
         currencyExchange1: currencyExchangeSelection1,
         originalCurrencyExchange1: recommendedAndEco1["Currency Exchange"][0],
-        currencyExchangeEco1: recommendedAndEco1["Currency Exchange"][0],
+        currencyExchangeEco1: recommendedAndEco1["Currency Exchange"][1],
         luggage1: luggageSelection1,
         originalLuggage1: recommendedAndEco1["Luggage"][0],
-        luggageEco1: recommendedAndEco1["Luggage"][0],
+        luggageEco1: recommendedAndEco1["Luggage"][1],
         dayTrip1: dayTripSelection1,
         originalDayTrip1: recommendedAndEco1["Day Trip"][0],
-        dayTripEco1: recommendedAndEco1["Day Trip"][0],
+        dayTripEco1: recommendedAndEco1["Day Trip"][1],
         travelInsurance1: travelInsuranceSelection1,
         originalTravelInsurance1: recommendedAndEco1["Travel Insurance"][0],
-        travelInsuranceEco1: recommendedAndEco1["Travel Insurance"][0],
+        travelInsuranceEco1: recommendedAndEco1["Travel Insurance"][1],
         travelPlugAdapter1: travelPlugAdapterSelection1,
         originalTravelPlugAdapter1:
           recommendedAndEco1["Travel Plug Adapter"][0],
-        travelPlugAdapterEco1: recommendedAndEco1["Travel Plug Adapter"][0],
+        travelPlugAdapterEco1: recommendedAndEco1["Travel Plug Adapter"][1],
         choose1: chooseSelection1,
         charge1: chargeSelection1,
         account1: accountSelection1,
@@ -1525,6 +1551,220 @@ function Survey() {
         resourcesFollowup1: resourcesFollowupSelection1,
         responsibleFollowup1: responsibleFollowupSelection1,
         inconvenienceFollowup1: inconvenienceFollowupSelection1,
+        attentionCheck2: correctAttentionCheck2,
+        flight2: flightSelection2,
+        originalFlight2: recommendedAndEco2["Flight"][0],
+        flightEco2: recommendedAndEco2["Flight"][1],
+        rentalCar2: rentalCarSelection2,
+        originalRentalCar2: recommendedAndEco2["Rental Car"][0],
+        rentalCarEco2: recommendedAndEco2["Rental Car"][1],
+        hotel2: hotelSelection2,
+        originalHotel2: recommendedAndEco2["Hotel"][0],
+        hotelEco2: recommendedAndEco2["Hotel"][1],
+        dinner2: dinnerSelection2,
+        originalDinner2: recommendedAndEco2["Dinner"][0],
+        dinnerEco2: recommendedAndEco2["Dinner"][1],
+        lunch2: lunchSelection2,
+        originalLunch2: recommendedAndEco2["Lunch"][0],
+        lunchEco2: recommendedAndEco2["Lunch"][1],
+        breakfast2: breakfastSelection2,
+        originalBreakfast2: recommendedAndEco2["Breakfast"][0],
+        breakfastEco2: recommendedAndEco2["Breakfast"][1],
+        museums2: museumsSelection2,
+        originalMuseums2: recommendedAndEco2["Museums"][0],
+        museumsEco2: recommendedAndEco2["Museums"][1],
+        markets2: marketsSelection2,
+        originalMarkets2: recommendedAndEco2["Markets"][0],
+        marketsEco2: recommendedAndEco2["Markets"][1],
+        flamencoShows2: flamencoShowsSelection2,
+        originalFlamencoShows2: recommendedAndEco2["Flamenco Shows"][0],
+        flamencoShowsEco2: recommendedAndEco2["Flamenco Shows"][1],
+        publicTransportationShort2: publicTransportationShortSelection2,
+        originalPublicTransportationShort2:
+          recommendedAndEco2["Public Transportation (Short)"][0],
+        publicTransportationShortEco2:
+          recommendedAndEco2["Public Transportation (Short)"][1],
+        publicTransportationLong2: publicTransportationLongSelection2,
+        originalPublicTransportationLong2:
+          recommendedAndEco2["Public Transportation (Long)"][0],
+        publicTransportationLongEco2:
+          recommendedAndEco2["Public Transportation (Long)"][1],
+        coffee2: coffeeSelection2,
+        originalCoffee2: recommendedAndEco2["Coffee"][0],
+        coffeeEco2: recommendedAndEco2["Coffee"][1],
+        bakery2: bakerySelection2,
+        originalBakery2: recommendedAndEco2["Bakery"][0],
+        bakeryEco2: recommendedAndEco2["Bakery"][1],
+        nightLife2: nightLifeSelection2,
+        originalNightLife2: recommendedAndEco2["Night Life"][0],
+        nightLifeEco2: recommendedAndEco2["Night Life"][1],
+        bars2: barsSelection2,
+        originalBars2: recommendedAndEco2["Bars"][0],
+        barsEco2: recommendedAndEco2["Bars"][1],
+        groceries2: groceriesSelection2,
+        originalGroceries2: recommendedAndEco2["Groceries"][0],
+        groceriesEco2: recommendedAndEco2["Groceries"][1],
+        souveneirs2: souveneirsSelection2,
+        originalSouveneirs2: recommendedAndEco2["Souveneirs"][0],
+        souveneirsEco2: recommendedAndEco2["Souveneirs"][1],
+        shopping2: shoppingSelection2,
+        originalShopping2: recommendedAndEco2["Shopping"][0],
+        shoppingEco2: recommendedAndEco2["Shopping"][1],
+        internationalPhoneService2: internationalPhoneServiceSelection2,
+        originalInternationalPhoneService2:
+          recommendedAndEco2["International Phone Service"][0],
+        internationalPhoneServiceEco2:
+          recommendedAndEco2["International Phone Service"][1],
+        currencyExchange2: currencyExchangeSelection2,
+        originalCurrencyExchange2: recommendedAndEco2["Currency Exchange"][0],
+        currencyExchangeEco2: recommendedAndEco2["Currency Exchange"][1],
+        luggage2: luggageSelection2,
+        originalLuggage2: recommendedAndEco2["Luggage"][0],
+        luggageEco2: recommendedAndEco2["Luggage"][1],
+        dayTrip2: dayTripSelection2,
+        originalDayTrip2: recommendedAndEco2["Day Trip"][0],
+        dayTripEco2: recommendedAndEco2["Day Trip"][1],
+        travelInsurance2: travelInsuranceSelection2,
+        originalTravelInsurance2: recommendedAndEco2["Travel Insurance"][0],
+        travelInsuranceEco2: recommendedAndEco2["Travel Insurance"][1],
+        travelPlugAdapter2: travelPlugAdapterSelection2,
+        originalTravelPlugAdapter2:
+          recommendedAndEco2["Travel Plug Adapter"][0],
+        travelPlugAdapterEco2: recommendedAndEco2["Travel Plug Adapter"][1],
+        choose2: chooseSelection2,
+        charge2: chargeSelection2,
+        account2: accountSelection2,
+        wait2: waitSelection2,
+        sense2: senseSelection2,
+        engage2: engageSelection2,
+        understood2: understoodSelection2,
+        listen2: listenSelection2,
+        effectiveness2: effectivenessSelection2,
+        bestOption2: bestOptionSelection2,
+        optionQuickly2: optionQuicklySelection2,
+        productivity2: productivitySelection2,
+        performance2: performanceSelection2,
+        utilize2: utilizeSelection2,
+        reflect2: reflectSelection2,
+        identify2: identifySelection2,
+        connection2: connectionSelection2,
+        agentCommunicate2: agentCommunicateSelection2,
+        typePerson2: typePersonSelection2,
+        agentMe2: agentMeSelection2,
+        suits2: suitsSelection2,
+        productsFollowup2: productsFollowupSelection2,
+        actionsFollowup2: actionsFollowupSelection2,
+        purchaseFollowup2: purchaseFollowupSelection2,
+        resourcesFollowup2: resourcesFollowupSelection2,
+        responsibleFollowup2: responsibleFollowupSelection2,
+        inconvenienceFollowup2: inconvenienceFollowupSelection2,
+        attentionCheck3: correctAttentionCheck3,
+        flight3: flightSelection3,
+        originalFlight3: recommendedAndEco3["Flight"][0],
+        flightEco3: recommendedAndEco3["Flight"][1],
+        rentalCar3: rentalCarSelection3,
+        originalRentalCar3: recommendedAndEco3["Rental Car"][0],
+        rentalCarEco3: recommendedAndEco3["Rental Car"][1],
+        hotel3: hotelSelection3,
+        originalHotel3: recommendedAndEco3["Hotel"][0],
+        hotelEco3: recommendedAndEco3["Hotel"][1],
+        dinner3: dinnerSelection3,
+        originalDinner3: recommendedAndEco3["Dinner"][0],
+        dinnerEco3: recommendedAndEco3["Dinner"][1],
+        lunch3: lunchSelection3,
+        originalLunch3: recommendedAndEco3["Lunch"][0],
+        lunchEco3: recommendedAndEco3["Lunch"][1],
+        breakfast3: breakfastSelection3,
+        originalBreakfast3: recommendedAndEco3["Breakfast"][0],
+        breakfastEco3: recommendedAndEco3["Breakfast"][1],
+        museums3: museumsSelection3,
+        originalMuseums3: recommendedAndEco3["Museums"][0],
+        museumsEco3: recommendedAndEco3["Museums"][1],
+        markets3: marketsSelection3,
+        originalMarkets3: recommendedAndEco3["Markets"][0],
+        marketsEco3: recommendedAndEco3["Markets"][1],
+        flamencoShows3: flamencoShowsSelection3,
+        originalFlamencoShows3: recommendedAndEco3["Flamenco Shows"][0],
+        flamencoShowsEco3: recommendedAndEco3["Flamenco Shows"][1],
+        publicTransportationShort3: publicTransportationShortSelection3,
+        originalPublicTransportationShort3:
+          recommendedAndEco3["Public Transportation (Short)"][0],
+        publicTransportationShortEco3:
+          recommendedAndEco3["Public Transportation (Short)"][1],
+        publicTransportationLong3: publicTransportationLongSelection3,
+        originalPublicTransportationLong3:
+          recommendedAndEco3["Public Transportation (Long)"][0],
+        publicTransportationLongEco3:
+          recommendedAndEco3["Public Transportation (Long)"][1],
+        coffee3: coffeeSelection3,
+        originalCoffee3: recommendedAndEco3["Coffee"][0],
+        coffeeEco3: recommendedAndEco3["Coffee"][1],
+        bakery3: bakerySelection3,
+        originalBakery3: recommendedAndEco3["Bakery"][0],
+        bakeryEco3: recommendedAndEco3["Bakery"][1],
+        nightLife3: nightLifeSelection3,
+        originalNightLife3: recommendedAndEco3["Night Life"][0],
+        nightLifeEco3: recommendedAndEco3["Night Life"][1],
+        bars3: barsSelection3,
+        originalBars3: recommendedAndEco3["Bars"][0],
+        barsEco3: recommendedAndEco3["Bars"][1],
+        groceries3: groceriesSelection3,
+        originalGroceries3: recommendedAndEco3["Groceries"][0],
+        groceriesEco3: recommendedAndEco3["Groceries"][1],
+        souveneirs3: souveneirsSelection3,
+        originalSouveneirs3: recommendedAndEco3["Souveneirs"][0],
+        souveneirsEco3: recommendedAndEco3["Souveneirs"][1],
+        shopping3: shoppingSelection3,
+        originalShopping3: recommendedAndEco3["Shopping"][0],
+        shoppingEco3: recommendedAndEco3["Shopping"][1],
+        internationalPhoneService3: internationalPhoneServiceSelection3,
+        originalInternationalPhoneService3:
+          recommendedAndEco3["International Phone Service"][0],
+        internationalPhoneServiceEco3:
+          recommendedAndEco3["International Phone Service"][1],
+        currencyExchange3: currencyExchangeSelection3,
+        originalCurrencyExchange3: recommendedAndEco3["Currency Exchange"][0],
+        currencyExchangeEco3: recommendedAndEco3["Currency Exchange"][1],
+        luggage3: luggageSelection3,
+        originalLuggage3: recommendedAndEco3["Luggage"][0],
+        luggageEco3: recommendedAndEco3["Luggage"][1],
+        dayTrip3: dayTripSelection3,
+        originalDayTrip3: recommendedAndEco3["Day Trip"][0],
+        dayTripEco3: recommendedAndEco3["Day Trip"][1],
+        travelInsurance3: travelInsuranceSelection3,
+        originalTravelInsurance3: recommendedAndEco3["Travel Insurance"][0],
+        travelInsuranceEco3: recommendedAndEco3["Travel Insurance"][1],
+        travelPlugAdapter3: travelPlugAdapterSelection3,
+        originalTravelPlugAdapter3:
+          recommendedAndEco3["Travel Plug Adapter"][0],
+        travelPlugAdapterEco3: recommendedAndEco3["Travel Plug Adapter"][1],
+        choose3: chooseSelection3,
+        charge3: chargeSelection3,
+        account3: accountSelection3,
+        wait3: waitSelection3,
+        sense3: senseSelection3,
+        engage3: engageSelection3,
+        understood3: understoodSelection3,
+        listen3: listenSelection3,
+        effectiveness3: effectivenessSelection3,
+        bestOption3: bestOptionSelection3,
+        optionQuickly3: optionQuicklySelection3,
+        productivity3: productivitySelection3,
+        performance3: performanceSelection3,
+        utilize3: utilizeSelection3,
+        reflect3: reflectSelection3,
+        identify3: identifySelection3,
+        connection3: connectionSelection3,
+        agentCommunicate3: agentCommunicateSelection3,
+        typePerson3: typePersonSelection3,
+        agentMe3: agentMeSelection3,
+        suits3: suitsSelection3,
+        productsFollowup3: productsFollowupSelection3,
+        actionsFollowup3: actionsFollowupSelection3,
+        purchaseFollowup3: purchaseFollowupSelection3,
+        resourcesFollowup3: resourcesFollowupSelection3,
+        responsibleFollowup3: responsibleFollowupSelection3,
+        inconvenienceFollowup3: inconvenienceFollowupSelection3,
         recognizeAlgorithm: recognizeSelection,
         developAlgorithm: developSelection,
         influenceAlgorithm: influenceSelection,
@@ -1733,7 +1973,7 @@ function Survey() {
       )}
       {step === 19 && (
         <AttentionCheck
-          onNext={handleNext}
+          onNext={handleNextAttentionCheck1}
           agent={agent1}
           onRadioChange={handleAttentionCheckChange}
         />
@@ -1996,13 +2236,13 @@ function Survey() {
           onConnectionChange={handleConnectionSelection1}
           onAgentCommunicateChange={handleAgentCommunicateSelection1}
           onTypePersonChange={handleTypePersonSelection1}
-          onAgentMeChange={handleTypePersonSelection1}
+          onAgentMeChange={handleAgentMeSelection1}
           onSuitsChange={handleSuitsSelection1}
         />
       )}
       {step === 48 && (
         <FollowupQuestionsGreen
-          onNext={handleNext}
+          onNext={handleNextAgent1}
           agent={agent1}
           onProductsFollowupChange={handleProductsFollowupSelection1}
           onActionsFollowupChange={handleActionsFollowupSelection1}
@@ -2013,6 +2253,592 @@ function Survey() {
         />
       )}
       {step === 49 && (
+        <Instructions1
+          onNext={handleNext}
+          agent={agent2}
+        />
+      )}
+      {step === 50 && (
+        <Instructions2
+          onNext={handleNext}
+          agent={agent2}
+        />
+      )}
+      {step === 51 && (
+        <AttentionCheck
+          onNext={handleNextAttentionCheck2}
+          agent={agent2}
+          onRadioChange={handleAttentionCheckChange}
+        />
+      )}
+      {step === 52 && (
+        <AttentionCheckAnswer
+          onNext={handleNextChangeItineraryHeader}
+          selection={attentionCheckSelection}
+          curAgent={curAgent}
+        />
+      )}
+      {step === 53 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Flight"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleFlightSelection2}
+        />
+      )}
+      {step === 54 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Rental Car"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleRentalCarSelection2}
+        />
+      )}
+      {step === 55 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Hotel"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleHotelSelection2}
+        />
+      )}
+      {step === 56 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Dinner"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleDinnerSelection2}
+        />
+      )}
+      {step === 57 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Lunch"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleLunchSelection2}
+        />
+      )}
+      {step === 58 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Breakfast"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleBreakfastSelection2}
+        />
+      )}
+      {step === 59 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Museums"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleMuseumsSelection2}
+        />
+      )}
+      {step === 60 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Markets"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleMarketsSelection2}
+        />
+      )}
+      {step === 61 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Flamenco Shows"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleFlamencoShowsSelection2}
+        />
+      )}
+      {step === 62 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Public Transportation (Short)"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handlePublicTransportationShortSelection2}
+        />
+      )}
+      {step === 63 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Public Transportation (Long)"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handlePublicTransportationLongSelection2}
+        />
+      )}
+      {step === 64 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Coffee"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleCoffeeSelection2}
+        />
+      )}
+      {step === 65 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Bakery"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleBakerySelection2}
+        />
+      )}
+      {step === 66 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Night Life"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleNightLifeSelection2}
+        />
+      )}
+      {step === 67 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Bars"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleBarsSelection2}
+        />
+      )}
+      {step === 68 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Groceries"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleGroceriesSelection2}
+        />
+      )}
+      {step === 69 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Souveneirs"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleSouveneirsSelection2}
+        />
+      )}
+      {step === 70 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Shopping"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleShoppingSelection2}
+        />
+      )}
+      {step === 71 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"International Phone Service"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleInternationalPhoneServiceSelection2}
+        />
+      )}
+      {step === 72 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Currency Exchange"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleCurrencyExchangeSelection2}
+        />
+      )}
+      {step === 73 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Luggage"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleLuggageSelection2}
+        />
+      )}
+      {step === 74 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Day Trip"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleDayTripSelection2}
+        />
+      )}
+      {step === 75 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Travel Insurance"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleTravelInsuranceSelection2}
+        />
+      )}
+      {step === 76 && (
+        <Itinerary
+          onNext={handleNextChangeItineraryHeader}
+          type={"Travel Plug Adapter"}
+          features={itineraryFeatures2}
+          recommendedAndEco={recommendedAndEco2}
+          onSelectionChange={handleTravelPlugAdapterSelection2}
+        />
+      )}
+      {step === 77 && (
+        <FollowupQuestions1
+          onNext={handleNext}
+          agent={agent2}
+          onChooseChange={handleChooseSelection2}
+          onChargeChange={handleChargeSelection2}
+          onAccountChange={handleAccountSelection2}
+          onWaitChange={handleWaitSelection2}
+          onSenseChange={handleSenseSelection2}
+          onEngageChange={handleEngageSelection2}
+          onUnderstoodChange={handleUnderstoodSelection2}
+          onListenChange={handleListenSelection2}
+        />
+      )}
+      {step === 78 && (
+        <FollowupQuestions2
+          onNext={handleNext}
+          agent={agent2}
+          onEffectivenessChange={handleEffectivenessSelection2}
+          onBestOptionChange={handleBestOptionSelection2}
+          onOptionQuicklyChange={handleOptionQuicklySelection2}
+          onProductivityChange={handleProductivitySelection2}
+          onPerformanceChange={handlePerformanceSelection2}
+          onUtilizeChange={handleUtilizeSelection2}
+        />
+      )}
+      {step === 79 && (
+        <FollowupQuestions3
+          onNext={handleNext}
+          agent={agent2}
+          onReflectChange={handleReflectSelection2}
+          onIdentifyChange={handleIdentifySelection2}
+          onConnectionChange={handleConnectionSelection2}
+          onAgentCommunicateChange={handleAgentCommunicateSelection2}
+          onTypePersonChange={handleTypePersonSelection2}
+          onAgentMeChange={handleAgentMeSelection2}
+          onSuitsChange={handleSuitsSelection2}
+        />
+      )}
+      {step === 80 && (
+        <FollowupQuestionsGreen
+          onNext={handleNextAgent2}
+          agent={agent2}
+          onProductsFollowupChange={handleProductsFollowupSelection2}
+          onActionsFollowupChange={handleActionsFollowupSelection2}
+          onPurchaseFollowupChange={handlePurchaseFollowupSelection2}
+          onResourcesFollowupChange={handleResourcesFollowupSelection2}
+          onResponsibleFollowupChange={handleResponsibleFollowupSelection2}
+          onInconvenienceFollowupChange={handleInconvenienceFollowupSelection2}
+        />
+      )}
+      {step === 81 && (
+        <Instructions1
+          onNext={handleNext}
+          agent={agent3}
+        />
+      )}
+      {step === 82 && (
+        <Instructions2
+          onNext={handleNext}
+          agent={agent3}
+        />
+      )}
+      {step === 83 && (
+        <AttentionCheck
+          onNext={handleNextAttentionCheck3}
+          agent={agent3}
+          onRadioChange={handleAttentionCheckChange}
+        />
+      )}
+      {step === 84 && (
+        <AttentionCheckAnswer
+          onNext={handleNextChangeItineraryHeader}
+          selection={attentionCheckSelection}
+          curAgent={curAgent}
+        />
+      )}
+      {step === 85 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Flight"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleFlightSelection3}
+        />
+      )}
+      {step === 86 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Rental Car"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleRentalCarSelection3}
+        />
+      )}
+      {step === 87 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Hotel"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleHotelSelection3}
+        />
+      )}
+      {step === 88 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Dinner"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleDinnerSelection3}
+        />
+      )}
+      {step === 89 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Lunch"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleLunchSelection3}
+        />
+      )}
+      {step === 90 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Breakfast"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleBreakfastSelection3}
+        />
+      )}
+      {step === 91 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Museums"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleMuseumsSelection3}
+        />
+      )}
+      {step === 92 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Markets"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleMarketsSelection3}
+        />
+      )}
+      {step === 93 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Flamenco Shows"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleFlamencoShowsSelection3}
+        />
+      )}
+      {step === 94 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Public Transportation (Short)"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handlePublicTransportationShortSelection3}
+        />
+      )}
+      {step === 95 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Public Transportation (Long)"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handlePublicTransportationLongSelection3}
+        />
+      )}
+      {step === 96 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Coffee"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleCoffeeSelection3}
+        />
+      )}
+      {step === 97 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Bakery"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleBakerySelection3}
+        />
+      )}
+      {step === 98 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Night Life"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleNightLifeSelection3}
+        />
+      )}
+      {step === 99 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Bars"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleBarsSelection3}
+        />
+      )}
+      {step === 100 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Groceries"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleGroceriesSelection3}
+        />
+      )}
+      {step === 101 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Souveneirs"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleSouveneirsSelection3}
+        />
+      )}
+      {step === 102 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Shopping"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleShoppingSelection3}
+        />
+      )}
+      {step === 103 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"International Phone Service"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleInternationalPhoneServiceSelection3}
+        />
+      )}
+      {step === 104 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Currency Exchange"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleCurrencyExchangeSelection3}
+        />
+      )}
+      {step === 105 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Luggage"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleLuggageSelection3}
+        />
+      )}
+      {step === 106 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Day Trip"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleDayTripSelection3}
+        />
+      )}
+      {step === 107 && (
+        <Itinerary
+          onNext={handleNext}
+          type={"Travel Insurance"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleTravelInsuranceSelection3}
+        />
+      )}
+      {step === 108 && (
+        <Itinerary
+          onNext={handleNextChangeItineraryHeader}
+          type={"Travel Plug Adapter"}
+          features={itineraryFeatures3}
+          recommendedAndEco={recommendedAndEco3}
+          onSelectionChange={handleTravelPlugAdapterSelection3}
+        />
+      )}
+      {step === 109 && (
+        <FollowupQuestions1
+          onNext={handleNext}
+          agent={agent3}
+          onChooseChange={handleChooseSelection3}
+          onChargeChange={handleChargeSelection3}
+          onAccountChange={handleAccountSelection3}
+          onWaitChange={handleWaitSelection3}
+          onSenseChange={handleSenseSelection3}
+          onEngageChange={handleEngageSelection3}
+          onUnderstoodChange={handleUnderstoodSelection3}
+          onListenChange={handleListenSelection3}
+        />
+      )}
+      {step === 110 && (
+        <FollowupQuestions2
+          onNext={handleNext}
+          agent={agent3}
+          onEffectivenessChange={handleEffectivenessSelection3}
+          onBestOptionChange={handleBestOptionSelection3}
+          onOptionQuicklyChange={handleOptionQuicklySelection3}
+          onProductivityChange={handleProductivitySelection3}
+          onPerformanceChange={handlePerformanceSelection3}
+          onUtilizeChange={handleUtilizeSelection3}
+        />
+      )}
+      {step === 111 && (
+        <FollowupQuestions3
+          onNext={handleNext}
+          agent={agent3}
+          onReflectChange={handleReflectSelection3}
+          onIdentifyChange={handleIdentifySelection3}
+          onConnectionChange={handleConnectionSelection3}
+          onAgentCommunicateChange={handleAgentCommunicateSelection3}
+          onTypePersonChange={handleTypePersonSelection3}
+          onAgentMeChange={handleAgentMeSelection3}
+          onSuitsChange={handleSuitsSelection3}
+        />
+      )}
+      {step === 112 && (
+        <FollowupQuestionsGreen
+          onNext={handleNext}
+          agent={agent3}
+          onProductsFollowupChange={handleProductsFollowupSelection3}
+          onActionsFollowupChange={handleActionsFollowupSelection3}
+          onPurchaseFollowupChange={handlePurchaseFollowupSelection3}
+          onResourcesFollowupChange={handleResourcesFollowupSelection3}
+          onResponsibleFollowupChange={handleResponsibleFollowupSelection3}
+          onInconvenienceFollowupChange={handleInconvenienceFollowupSelection3}
+        />
+      )}
+      {step === 113 && (
         <AlgorithmKnowledge
           onNext={handleNext}
           onRecognizeChange={handleRecognizeChange}
@@ -2028,7 +2854,7 @@ function Survey() {
           onHumansChange={handleHumansChange}
         />
       )}
-      {step === 50 && (
+      {step === 114 && (
         <AlgorithmAwareness
           onNext={endSurvey}
           onAlexaChange={handleAlexaChange}
@@ -2045,7 +2871,7 @@ function Survey() {
           onAdvertisementChange={handleAdvertisementChange}
         />
       )}
-      {step === 51 && <End />}
+      {step === 115 && <End />}
     </div>
   );
 }
