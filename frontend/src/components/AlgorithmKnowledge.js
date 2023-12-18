@@ -332,6 +332,7 @@ function AlgorithmKnowledge({
           <input
             type="radio"
             name="Algorithms present both chances and risks"
+            value="True"
             onChange={handleChancesChange}
           />
         </div>

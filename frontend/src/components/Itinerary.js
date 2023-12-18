@@ -34,6 +34,7 @@ function Itinerary({
               className="bigCheckbox"
               defaultChecked={0 === recommended}
               onChange={handleSelectionChange}
+              value={0}
             />
           </div>
           <div className="itineraryBox">
@@ -79,6 +80,7 @@ function Itinerary({
               className="bigCheckbox"
               defaultChecked={1 === recommended}
               onChange={handleSelectionChange}
+              value={1}
             />
           </div>
           <div className="itineraryBox">
@@ -124,6 +126,7 @@ function Itinerary({
               className="bigCheckbox"
               defaultChecked={2 === recommended}
               onChange={handleSelectionChange}
+              value={2}
             />
           </div>
           <div className="itineraryBox">
@@ -169,6 +172,7 @@ function Itinerary({
               className="bigCheckbox"
               defaultChecked={3 === recommended}
               onChange={handleSelectionChange}
+              value={3}
             />
           </div>
           <div className="itineraryBox">

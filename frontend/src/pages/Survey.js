@@ -98,16 +98,16 @@ function Survey() {
 
   const [vacationSelection, setVacationSelection] = useState("");
   const [activitiesSelection, setActivitiesSelection] = useState({
-    "outdoor activities": false,
-    "cultural experiences": false,
-    relaxation: false,
-    adventure: false,
-    sports: false,
-    "history and heritage": false,
-    "food and wine": false,
-    "nightlife and entertainment": false,
-    shopping: false,
-    "volunteer tourism": false,
+    "Outdoor activities": false,
+    "Cultural experiences": false,
+    Relaxation: false,
+    Adventure: false,
+    Sports: false,
+    "History and heritage": false,
+    "Food and wine": false,
+    "Nightlife and entertainment": false,
+    Shopping: false,
+    "Volunteer tourism": false,
   });
   const [budgetSelection, setBudgetSelection] = useState("");
   const [accommodationSelection, setAccommodationSelection] = useState("");
@@ -1217,8 +1217,8 @@ function Survey() {
   };
   */
 
-  //const url = "http://localhost:4000";
-  const url = "https://psych-website.onrender.com";
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com";
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -1352,16 +1352,16 @@ function Survey() {
         restaurants: restaurantSelection,
         vacationType: vacationSelection,
         budget: budgetSelection,
-        nightLife: activitiesSelection["nightlife and entertainment"],
-        outdoor: activitiesSelection["outdoor activities"],
-        cultural: activitiesSelection["cultural experiences"],
-        relaxation: activitiesSelection["relaxation"],
-        adventure: activitiesSelection["adventure"],
-        sports: activitiesSelection["sports"],
-        history: activitiesSelection["history and heritage"],
-        food: activitiesSelection["food and wine"],
-        shopping: activitiesSelection["shopping"],
-        volunteer: activitiesSelection["volunteer tourism"],
+        nightLife: activitiesSelection["Nightlife and entertainment"],
+        outdoor: activitiesSelection["Outdoor activities"],
+        cultural: activitiesSelection["Cultural experiences"],
+        relaxation: activitiesSelection["Relaxation"],
+        adventure: activitiesSelection["Adventure"],
+        sports: activitiesSelection["Sports"],
+        history: activitiesSelection["History and heritage"],
+        food: activitiesSelection["Food and wine"],
+        shopping: activitiesSelection["Shopping"],
+        volunteer: activitiesSelection["Volunteer tourism"],
         accommodation: accommodationSelection,
         activityLevel: activityLevelSelection,
         culturalImmersion: cultureSelection,
