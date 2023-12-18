@@ -8,7 +8,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Survey />}
+            element={<Results />}
           />
           <Route
             path="/results"
