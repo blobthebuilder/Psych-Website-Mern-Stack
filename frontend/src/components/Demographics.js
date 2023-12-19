@@ -542,7 +542,7 @@ function Demographics({
           </div>
           <h3 className="leftQuestion">
             For each of the issues below, please place yourself on a scale from
-            0=extremely liberal to 10=extremely conservative
+            1=extremely liberal to 10=extremely conservative
           </h3>
           <h3 className="subquestion">
             Political Issues{" "}
