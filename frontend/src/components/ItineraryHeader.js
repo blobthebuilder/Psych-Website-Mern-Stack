@@ -14,7 +14,7 @@ function ItineraryHeader({ agent }) {
             Below is your <strong>personalized travel itinerary</strong>.{" "}
             <i>Smart Traveler</i> has identified the top four options for
             flights, rental cars, hotels, restaurants, shopping, activities, and
-            more, for your trip.
+            more, for your trip to Madrid.
           </p>
           <p
             id="agentSubTitle2"
@@ -49,7 +49,7 @@ function ItineraryHeader({ agent }) {
             Below is the <strong>general travel itinerary</strong>.{" "}
             <i>Smart Traveler</i> has identified the top four options for
             flights, rental cars, hotels, restaurants, shopping, activities, and
-            more, for your trip.
+            more, for your trip to Madrid.
           </p>
           <p
             id="agentSubTitle2"
@@ -84,7 +84,7 @@ function ItineraryHeader({ agent }) {
             Below is the <strong>unprogrammed travel itinerary</strong>. Smart
             Traveler has identified the top four options for flights, rental
             cars, hotels, restaurants, shopping, activities, and more, for your
-            trip.
+            trip to Madrid.
           </p>
           <p
             id="agentSubTitle2"

@@ -446,6 +446,7 @@ const createEntry = async (req, res) => {
     recommendationAlgorithm,
     newsAlgorithm,
     advertisementAlgorithm,
+    feedback,
   } = req.body;
   try {
     const newUser = await User.create({
@@ -893,6 +894,8 @@ const createEntry = async (req, res) => {
       recommendationAlgorithm,
       newsAlgorithm,
       advertisementAlgorithm,
+
+      feedback,
     });
     res.status(200).json(newUser);
   } catch (error) {

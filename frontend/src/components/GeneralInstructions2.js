@@ -34,10 +34,9 @@ function GeneralInstructions2({ onNext, onBack }) {
         recommend products <strong>you are most likely to endorse.</strong>
       </p>
       <p className="instructions">
-        For each version of Smart Traveler, we ask you to view and adjust the
-        travel choices to your preferences, and then fill out a questionnaire
-        about your experiences using the software. Further detailed instructions
-        will be provided throughout.
+        *To endorse is to give support. When someone endorses a recommendation,
+        it means “Go do this!” So, by <strong>endorse</strong> we mean that the
+        travel choice is one you are likely to enjoy.
       </p>
       <button
         type="button"

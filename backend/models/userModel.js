@@ -1345,6 +1345,7 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
+  feedback: { type: String, default: "" },
 });
 
 module.exports = mongoose.model("user", userSchema);

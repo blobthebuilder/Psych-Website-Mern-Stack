@@ -5,10 +5,10 @@ function Instructions2({ onNext, agent }) {
     <div className="personalAgentInstructions2">
       {agent.length === 8 && (
         <p className="instructions">
-          On the following pages, you will see a list of 25 travel categories
-          with 4 options each. For each category, your{" "}
-          <strong>personal travel agent</strong> has made recommendations for
-          the selection it recommends{" "}
+          On the following pages, you will see a list of 20 travel categories
+          with 4 options each, to assist you in planning an itinerary for
+          Madrid. For each category, your <strong>personal travel agent</strong>{" "}
+          has made recommendations for the selection it recommends{" "}
           <strong>based on your personality assessment.</strong> The choices
           recommended by your personal agent will be preselected for you and
           will appear next to an icon that says “recommended.”
@@ -16,10 +16,10 @@ function Instructions2({ onNext, agent }) {
       )}
       {agent.length === 7 && (
         <p className="instructions">
-          On the following pages, you will see a list of 25 travel categories
-          with 4 options each. For each category, the{" "}
-          <strong>general travel agent</strong> has made recommendations for the
-          selection it recommends{" "}
+          On the following pages, you will see a list of 20 travel categories
+          with 4 options each, to assist you in planning an itinerary for
+          Madrid. For each category, the <strong>general travel agent</strong>{" "}
+          has made recommendations for the selection it recommends{" "}
           <strong>
             based on the personality assessments of previous users (not your
             own).{" "}
@@ -30,8 +30,9 @@ function Instructions2({ onNext, agent }) {
       )}
       {agent.length === 12 && (
         <p className="instructions">
-          On the following pages, you will see a list of 25 travel categories
-          with 4 options each. For each category, your{" "}
+          On the following pages, you will see a list of 20 travel categories
+          with 4 options each, to assist you in planning an itinerary for
+          Madrid. For each category, your{" "}
           <strong>unprogrammed travel agent</strong> has made recommendations
           for the selection it recommends. The choices recommended by the
           unprogrammed agent will be preselected for you and will appear next to
