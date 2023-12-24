@@ -2074,7 +2074,7 @@ function Survey() {
       {step === 30 && (
         <Itinerary
           onNext={handleNext}
-          type={"Public Transportation (Long)"}
+          type={"Public Transportation"}
           features={itineraryFeatures1}
           recommendedAndEco={recommendedAndEco1}
           onSelectionChange={handlePublicTransportationLongSelection1}
@@ -2322,7 +2322,7 @@ function Survey() {
       {step === 57 && (
         <Itinerary
           onNext={handleNext}
-          type={"Public Transportation (Long)"}
+          type={"Public Transportation"}
           features={itineraryFeatures2}
           recommendedAndEco={recommendedAndEco2}
           onSelectionChange={handlePublicTransportationLongSelection2}
@@ -2570,7 +2570,7 @@ function Survey() {
       {step === 84 && (
         <Itinerary
           onNext={handleNext}
-          type={"Public Transportation (Long)"}
+          type={"Public Transportation"}
           features={itineraryFeatures3}
           recommendedAndEco={recommendedAndEco3}
           onSelectionChange={handlePublicTransportationLongSelection3}

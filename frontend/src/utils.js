@@ -361,7 +361,7 @@ let features = {
     ["Stars", ["3.9", "3.5", "3.4", "3.6"]],
     ["Price", ["$", "$$", "$", "$$"]],
   ],
-  "Public Transportation (Long)": [
+  "Public Transportation": [
     ["Title", ["Madrid Autobus", "Eurail", "M Tram", "Madrid Metro"]],
     ["Business", ["Medium", "Busy", "Busy", "Not Busy"]],
     ["Duration", ["0h45m", "0h25m", "0h30m", "0h25m"]],
