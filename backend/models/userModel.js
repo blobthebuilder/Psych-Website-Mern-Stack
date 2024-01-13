@@ -17,6 +17,10 @@ const userSchema = new Schema({
     type: String,
     default: "-1",
   },
+  timeStamp: {
+    type: String,
+    default: "-1",
+  },
   rugged: {
     type: Number,
     default: 1,
