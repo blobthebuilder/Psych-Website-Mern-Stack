@@ -1486,9 +1486,9 @@ function Survey() {
           recommendedAndEco1["Public Transportation (Short)"][1],
         publicTransportationLong1: publicTransportationLongSelection1,
         originalPublicTransportationLong1:
-          recommendedAndEco1["Public Transportation (Long)"][0],
+          recommendedAndEco1["Public Transportation"][0],
         publicTransportationLongEco1:
-          recommendedAndEco1["Public Transportation (Long)"][1],
+          recommendedAndEco1["Public Transportation"][1],
         coffee1: coffeeSelection1,
         originalCoffee1: recommendedAndEco1["Coffee"][0],
         coffeeEco1: recommendedAndEco1["Coffee"][1],
@@ -1593,9 +1593,9 @@ function Survey() {
           recommendedAndEco2["Public Transportation (Short)"][1],
         publicTransportationLong2: publicTransportationLongSelection2,
         originalPublicTransportationLong2:
-          recommendedAndEco2["Public Transportation (Long)"][0],
+          recommendedAndEco2["Public Transportation"][0],
         publicTransportationLongEco2:
-          recommendedAndEco2["Public Transportation (Long)"][1],
+          recommendedAndEco2["Public Transportation"][1],
         coffee2: coffeeSelection2,
         originalCoffee2: recommendedAndEco2["Coffee"][0],
         coffeeEco2: recommendedAndEco2["Coffee"][1],
@@ -1700,9 +1700,9 @@ function Survey() {
           recommendedAndEco3["Public Transportation (Short)"][1],
         publicTransportationLong3: publicTransportationLongSelection3,
         originalPublicTransportationLong3:
-          recommendedAndEco3["Public Transportation (Long)"][0],
+          recommendedAndEco3["Public Transportation"][0],
         publicTransportationLongEco3:
-          recommendedAndEco3["Public Transportation (Long)"][1],
+          recommendedAndEco3["Public Transportation"][1],
         coffee3: coffeeSelection3,
         originalCoffee3: recommendedAndEco3["Coffee"][0],
         coffeeEco3: recommendedAndEco3["Coffee"][1],
@@ -1810,6 +1810,7 @@ function Survey() {
           console.log(json.error);
         } else {
           console.log("Successfully uploaded");
+          incUsers();
         }
       } catch (error) {
         console.log("Error");
@@ -1827,7 +1828,6 @@ function Survey() {
       }
     };
     uploadUser();
-    incUsers();
   };
   return (
     <div className="App">
