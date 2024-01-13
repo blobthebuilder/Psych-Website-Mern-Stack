@@ -1327,14 +1327,27 @@ function Survey() {
   const endSurvey = () => {
     const time = Date.now() - startTime;
     const timeElapsed = msToTime(time);
-    const timeFinished = msToTime(Date.now());
+    var currentdate = new Date();
+    const datetime =
+      currentdate.getDate() +
+      "/" +
+      (currentdate.getMonth() + 1) +
+      "/" +
+      currentdate.getFullYear() +
+      " @ " +
+      currentdate.getHours() +
+      ":" +
+      currentdate.getMinutes() +
+      ":" +
+      currentdate.getSeconds();
+    console.log(datetime);
     handleNext();
     const uploadUser = async () => {
       const user = {
         userId: totalUsers,
         orderOfAgents: agentPath,
         timeElapsed: timeElapsed,
-        timeStamp: timeFinished,
+        timeStamp: datetime,
         rugged: ruggedSelection,
         excited: excitedSelection,
         uncomfortable: uncomfortableSelection,
