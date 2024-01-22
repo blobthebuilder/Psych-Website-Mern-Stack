@@ -216,119 +216,25 @@ function Demographics({
             the ladder.
           </h3>
           <div className="vacationContainer">
-            <div className="box">
+            <div className="vacationBox">
               <input
                 type="radio"
                 name="ladder"
-                value="1"
+                value="10"
                 className="radioLeftMargin"
                 onChange={handleLadderChange}
               />
               <div>
                 <img
-                  src="../../Photos/Ladder/ladder1.jpg"
+                  src="../../Photos/Ladder/ladder10.jpg"
                   width="60px"
-                  alt="1"
+                  alt="10"
                 />
               </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="2"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder2.jpg"
-                  width="60px"
-                  alt="2"
-                />
-              </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="3"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder3.jpg"
-                  width="60px"
-                  alt="3"
-                />
-              </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="4"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder4.jpg"
-                  width="60px"
-                  alt="4"
-                />
-              </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="5"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder5.jpg"
-                  width="60px"
-                  alt="5"
-                />
-              </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="6"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder6.jpg"
-                  width="60px"
-                  alt="6"
-                />
-              </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="7"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder7.jpg"
-                  width="60px"
-                  alt="7"
-                />
-              </div>
-              <input
-                type="radio"
-                name="ladder"
-                value="8"
-                className="radioLeftMargin"
-                onChange={handleLadderChange}
-              />
-              <div>
-                <img
-                  src="../../Photos/Ladder/ladder8.jpg"
-                  width="60px"
-                  alt="8"
-                />
-              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
               <input
                 type="radio"
                 name="ladder"
@@ -343,18 +249,148 @@ function Demographics({
                   alt="9"
                 />
               </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
               <input
                 type="radio"
                 name="ladder"
-                value="10"
+                value="8"
                 className="radioLeftMargin"
                 onChange={handleLadderChange}
               />
               <div>
                 <img
-                  src="../../Photos/Ladder/ladder10.jpg"
+                  src="../../Photos/Ladder/ladder8.jpg"
                   width="60px"
-                  alt="10"
+                  alt="8"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="7"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder7.jpg"
+                  width="60px"
+                  alt="7"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="6"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder6.jpg"
+                  width="60px"
+                  alt="6"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="5"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder5.jpg"
+                  width="60px"
+                  alt="5"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="4"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder4.jpg"
+                  width="60px"
+                  alt="4"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="3"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder3.jpg"
+                  width="60px"
+                  alt="3"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="2"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder2.jpg"
+                  width="60px"
+                  alt="2"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="vacationContainer">
+            <div className="vacationBox">
+              <input
+                type="radio"
+                name="ladder"
+                value="1"
+                className="radioLeftMargin"
+                onChange={handleLadderChange}
+              />
+              <div>
+                <img
+                  src="../../Photos/Ladder/ladder1.jpg"
+                  width="60px"
+                  alt="1"
                 />
               </div>
             </div>
