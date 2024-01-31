@@ -53,7 +53,9 @@ function End() {
       </div>
       <div className="instructions bold">
         <p>You must click on the following link to receive SONA credit:</p>
-        <a href="https://ucsb.co1.qualtrics.com/jfe/form/SV_e3yUXbVKQyt8xHo">
+        <a
+          href="https://ucsb.co1.qualtrics.com/jfe/form/SV_e3yUXbVKQyt8xHo"
+          target="_blank">
           SONA credit
         </a>
       </div>
