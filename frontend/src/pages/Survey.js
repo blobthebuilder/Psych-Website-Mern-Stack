@@ -1305,6 +1305,28 @@ function Survey() {
     setShowItineraryHeader(!showItineraryHeader);
   };
 
+  const handleNextStartServer = () => {
+    const startServer = async () => {
+      try {
+        const res = await fetch(url + "/api/data", {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const json = await res.json();
+        if (!res.ok) {
+          console.log(json.error);
+        } else {
+          console.log("Successfully etched");
+        }
+      } catch (error) {
+        console.log("Error");
+      }
+    };
+    startServer();
+    handleNext();
+  };
+
   const [recommendedAndEco1, setRecommendedAndEco1] = useState(null);
   const [recommendedAndEco2, setRecommendedAndEco2] = useState(null);
   const [recommendedAndEco3, setRecommendedAndEco3] = useState(null);
@@ -2750,7 +2772,7 @@ function Survey() {
       )}
       {step === 100 && (
         <AlgorithmAwareness
-          onNext={handleNext}
+          onNext={handleNextStartServer}
           onAlexaChange={handleAlexaChange}
           onTVChange={handleTVChange}
           onWearableChange={handleWearableChange}
