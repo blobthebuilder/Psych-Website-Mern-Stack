@@ -2756,7 +2756,7 @@ function Survey() {
       )}
       {step === 99 && (
         <AlgorithmKnowledge
-          onNext={handleNext}
+          onNext={handleNextStartServer}
           onRecognizeChange={handleRecognizeChange}
           onDevelopChange={handleDevelopChange}
           onInfluenceChange={handleInfluenceChange}
