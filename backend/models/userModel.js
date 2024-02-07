@@ -121,10 +121,6 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
-  budget: {
-    type: String,
-    default: "",
-  },
   relaxation: {
     type: String,
     default: "",
@@ -541,22 +537,6 @@ const userSchema = new Schema({
   },
   originalMarkets1: { type: Number, default: 0 },
   marketsEco1: { type: Number, default: 0 },
-  flamencoShows1: {
-    type: Number,
-    default: 0,
-  },
-  originalFlamencoShows1: { type: Number, default: 0 },
-  flamencoShowsEco1: { type: Number, default: 0 },
-  publicTransportationShort1: {
-    type: Number,
-    default: 0,
-  },
-  originalPublicTransportationShort1: { type: Number, default: 0 },
-  publicTransportationShortEco1: { type: Number, default: 0 },
-  publicTransportationLong1: {
-    type: Number,
-    default: 0,
-  },
   originalPublicTransportationLong1: { type: Number, default: 0 },
   publicTransportationLongEco1: { type: Number, default: 0 },
   coffee1: {
@@ -577,12 +557,6 @@ const userSchema = new Schema({
   },
   originalNightLife1: { type: Number, default: 0 },
   nightLifeEco1: { type: Number, default: 0 },
-  bars1: {
-    type: Number,
-    default: 0,
-  },
-  originalBars1: { type: Number, default: 0 },
-  barsEco1: { type: Number, default: 0 },
   groceries1: {
     type: Number,
     default: 0,
@@ -601,12 +575,6 @@ const userSchema = new Schema({
   },
   originalShopping1: { type: Number, default: 0 },
   shoppingEco1: { type: Number, default: 0 },
-  internationalPhoneService1: {
-    type: Number,
-    default: 0,
-  },
-  originalInternationalPhoneService1: { type: Number, default: 0 },
-  internationalPhoneServiceEco1: { type: Number, default: 0 },
   currencyExchange1: {
     type: Number,
     default: 0,
@@ -625,12 +593,6 @@ const userSchema = new Schema({
   },
   originalDayTrip1: { type: Number, default: 0 },
   dayTripEco1: { type: Number, default: 0 },
-  travelInsurance1: {
-    type: Number,
-    default: 0,
-  },
-  originalTravelInsurance1: { type: Number, default: 0 },
-  travelInsuranceEco1: { type: Number, default: 0 },
   travelPlugAdapter1: {
     type: Number,
     default: 0,
@@ -797,18 +759,6 @@ const userSchema = new Schema({
   },
   originalMarkets2: { type: Number, default: 0 },
   marketsEco2: { type: Number, default: 0 },
-  flamencoShows2: {
-    type: Number,
-    default: 0,
-  },
-  originalFlamencoShows2: { type: Number, default: 0 },
-  flamencoShowsEco2: { type: Number, default: 0 },
-  publicTransportationShort2: {
-    type: Number,
-    default: 0,
-  },
-  originalPublicTransportationShort2: { type: Number, default: 0 },
-  publicTransportationShortEco2: { type: Number, default: 0 },
   publicTransportationLong2: {
     type: Number,
     default: 0,
@@ -833,12 +783,6 @@ const userSchema = new Schema({
   },
   originalNightLife2: { type: Number, default: 0 },
   nightLifeEco2: { type: Number, default: 0 },
-  bars2: {
-    type: Number,
-    default: 0,
-  },
-  originalBars2: { type: Number, default: 0 },
-  barsEco2: { type: Number, default: 0 },
   groceries2: {
     type: Number,
     default: 0,
@@ -857,12 +801,6 @@ const userSchema = new Schema({
   },
   originalShopping2: { type: Number, default: 0 },
   shoppingEco2: { type: Number, default: 0 },
-  internationalPhoneService2: {
-    type: Number,
-    default: 0,
-  },
-  originalInternationalPhoneService2: { type: Number, default: 0 },
-  internationalPhoneServiceEco2: { type: Number, default: 0 },
   currencyExchange2: {
     type: Number,
     default: 0,
@@ -881,12 +819,6 @@ const userSchema = new Schema({
   },
   originalDayTrip2: { type: Number, default: 0 },
   dayTripEco2: { type: Number, default: 0 },
-  travelInsurance2: {
-    type: Number,
-    default: 0,
-  },
-  originalTravelInsurance2: { type: Number, default: 0 },
-  travelInsuranceEco2: { type: Number, default: 0 },
   travelPlugAdapter2: {
     type: Number,
     default: 0,
@@ -1053,18 +985,6 @@ const userSchema = new Schema({
   },
   originalMarkets3: { type: Number, default: 0 },
   marketsEco3: { type: Number, default: 0 },
-  flamencoShows3: {
-    type: Number,
-    default: 0,
-  },
-  originalFlamencoShows3: { type: Number, default: 0 },
-  flamencoShowsEco3: { type: Number, default: 0 },
-  publicTransportationShort3: {
-    type: Number,
-    default: 0,
-  },
-  originalPublicTransportationShort3: { type: Number, default: 0 },
-  publicTransportationShortEco3: { type: Number, default: 0 },
   publicTransportationLong3: {
     type: Number,
     default: 0,
@@ -1089,12 +1009,6 @@ const userSchema = new Schema({
   },
   originalNightLife3: { type: Number, default: 0 },
   nightLifeEco3: { type: Number, default: 0 },
-  bars3: {
-    type: Number,
-    default: 0,
-  },
-  originalBars3: { type: Number, default: 0 },
-  barsEco3: { type: Number, default: 0 },
   groceries3: {
     type: Number,
     default: 0,
@@ -1113,12 +1027,6 @@ const userSchema = new Schema({
   },
   originalShopping3: { type: Number, default: 0 },
   shoppingEco3: { type: Number, default: 0 },
-  internationalPhoneService3: {
-    type: Number,
-    default: 0,
-  },
-  originalInternationalPhoneService3: { type: Number, default: 0 },
-  internationalPhoneServiceEco3: { type: Number, default: 0 },
   currencyExchange3: {
     type: Number,
     default: 0,
@@ -1137,12 +1045,6 @@ const userSchema = new Schema({
   },
   originalDayTrip3: { type: Number, default: 0 },
   dayTripEco3: { type: Number, default: 0 },
-  travelInsurance3: {
-    type: Number,
-    default: 0,
-  },
-  originalTravelInsurance3: { type: Number, default: 0 },
-  travelInsuranceEco3: { type: Number, default: 0 },
   travelPlugAdapter3: {
     type: Number,
     default: 0,
@@ -1352,4 +1254,13 @@ const userSchema = new Schema({
   feedback: { type: String, default: "" },
 });
 
+const User = mongoose.model("User", userSchema);
+
+// Method to delete all documents from the "user" collection
+User.deleteAll = async function () {
+  await this.deleteMany({});
+};
+
 module.exports = mongoose.model("user", userSchema);
+
+// module.exports = User;

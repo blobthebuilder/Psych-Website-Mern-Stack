@@ -174,9 +174,9 @@ function Survey() {
   const [genderSelection, setGenderSelection] = useState({
     female: false,
     male: false,
-    "genderqueer gender nonbinary or genderfluid": false,
-    "Transgender female": false,
-    "Transgender male": false,
+    "Genderqueer, gender non-binary, or gender fluid": false,
+    "Transgender Female": false,
+    "Transgender Male": false,
     "Prefer not to answer": false,
   });
   const [genderText, setGenderText] = useState("");
@@ -188,13 +188,13 @@ function Survey() {
   const [socialSelection, setSocialSelection] = useState("");
   const [ageSelection, setAgeSelection] = useState("");
   const [raceSelection, setRaceSelection] = useState({
-    "american indian or alaska native": false,
-    asian: false,
-    "black or african american": false,
-    "hispanic latino or spanish": false,
-    "middle eastern or arab": false,
-    "native hawaiian or other pacific islander": false,
-    white: false,
+    "American Indian or Alaska Native": false,
+    Asian: false,
+    "Black or African American": false,
+    "Hispanic, Latino, or Spanish": false,
+    "Middle Eastern or Arab": false,
+    "Native Hawaiian or other Pacific Islander": false,
+    White: false,
   });
   const [raceText, setRaceText] = useState("");
   const [residenceSelection, setResidenceSelection] = useState("");
@@ -1224,8 +1224,8 @@ function Survey() {
   };
   */
 
-  //const url = "http://localhost:4000";
-  const url = "https://psych-website.onrender.com";
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com";
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -1395,7 +1395,6 @@ function Survey() {
         afternoons: afternoonSelection,
         restaurants: restaurantSelection,
         vacationType: vacationSelection,
-        budget: budgetSelection,
         nightLife: activitiesSelection["Nightlife and entertainment"],
         outdoor: activitiesSelection["Outdoor activities"],
         cultural: activitiesSelection["Cultural experiences"],
@@ -1464,9 +1463,9 @@ function Survey() {
         female: genderSelection["female"],
         male: genderSelection["male"],
         genderqueer:
-          genderSelection["genderqueer gender nonbinary or genderfluid"],
-        transFemale: genderSelection["Transgender female"],
-        transMale: genderSelection["Transgender male"],
+          genderSelection["Genderqueer, gender non-binary, or gender fluid"],
+        transFemale: genderSelection["Transgender Female"],
+        transMale: genderSelection["Transgender Male"],
         noResponseGender: genderSelection["Prefer not to answer"],
         genderOther: genderText,
         income: incomeSelection,
@@ -1476,13 +1475,13 @@ function Survey() {
         economic: economicSelection,
         social: socialSelection,
         age: ageSelection,
-        indian: raceSelection["american indian or alaska native"],
-        asian: raceSelection["asian"],
-        african: raceSelection["black or african american"],
-        hispanic: raceSelection["hispanic latino or spanish"],
-        arab: raceSelection["middle eastern or arab"],
-        hawaiian: raceSelection["native hawaiian or other pacific islander"],
-        white: raceSelection["white"],
+        indian: raceSelection["American Indian or Alaska Native"],
+        asian: raceSelection["Asian"],
+        african: raceSelection["Black or African American"],
+        hispanic: raceSelection["Hispanic, Latino, or Spanish"],
+        arab: raceSelection["Middle Eastern or Arab"],
+        hawaiian: raceSelection["Native Hawaiian or other Pacific Islander"],
+        white: raceSelection["White"],
         otherRace: raceText,
         residence: residenceSelection,
         internetAccess: internetAccessSelection,
@@ -1513,14 +1512,6 @@ function Survey() {
         markets1: marketsSelection1,
         originalMarkets1: recommendedAndEco1["Markets"][0],
         marketsEco1: recommendedAndEco1["Markets"][1],
-        flamencoShows1: flamencoShowsSelection1,
-        originalFlamencoShows1: recommendedAndEco1["Flamenco Shows"][0],
-        flamencoShowsEco1: recommendedAndEco1["Flamenco Shows"][1],
-        publicTransportationShort1: publicTransportationShortSelection1,
-        originalPublicTransportationShort1:
-          recommendedAndEco1["Public Transportation (Short)"][0],
-        publicTransportationShortEco1:
-          recommendedAndEco1["Public Transportation (Short)"][1],
         publicTransportationLong1: publicTransportationLongSelection1,
         originalPublicTransportationLong1:
           recommendedAndEco1["Public Transportation"][0],
@@ -1535,9 +1526,6 @@ function Survey() {
         nightLife1: nightLifeSelection1,
         originalNightLife1: recommendedAndEco1["Night Life"][0],
         nightLifeEco1: recommendedAndEco1["Night Life"][1],
-        bars1: barsSelection1,
-        originalBars1: recommendedAndEco1["Bars"][0],
-        barsEco1: recommendedAndEco1["Bars"][1],
         groceries1: groceriesSelection1,
         originalGroceries1: recommendedAndEco1["Groceries"][0],
         groceriesEco1: recommendedAndEco1["Groceries"][1],
@@ -1547,11 +1535,6 @@ function Survey() {
         shopping1: shoppingSelection1,
         originalShopping1: recommendedAndEco1["Shopping"][0],
         shoppingEco1: recommendedAndEco1["Shopping"][1],
-        internationalPhoneService1: internationalPhoneServiceSelection1,
-        originalInternationalPhoneService1:
-          recommendedAndEco1["International Phone Service"][0],
-        internationalPhoneServiceEco1:
-          recommendedAndEco1["International Phone Service"][1],
         currencyExchange1: currencyExchangeSelection1,
         originalCurrencyExchange1: recommendedAndEco1["Currency Exchange"][0],
         currencyExchangeEco1: recommendedAndEco1["Currency Exchange"][1],
@@ -1561,9 +1544,6 @@ function Survey() {
         dayTrip1: dayTripSelection1,
         originalDayTrip1: recommendedAndEco1["Day Trip"][0],
         dayTripEco1: recommendedAndEco1["Day Trip"][1],
-        travelInsurance1: travelInsuranceSelection1,
-        originalTravelInsurance1: recommendedAndEco1["Travel Insurance"][0],
-        travelInsuranceEco1: recommendedAndEco1["Travel Insurance"][1],
         travelPlugAdapter1: travelPlugAdapterSelection1,
         originalTravelPlugAdapter1:
           recommendedAndEco1["Travel Plug Adapter"][0],
@@ -1620,14 +1600,6 @@ function Survey() {
         markets2: marketsSelection2,
         originalMarkets2: recommendedAndEco2["Markets"][0],
         marketsEco2: recommendedAndEco2["Markets"][1],
-        flamencoShows2: flamencoShowsSelection2,
-        originalFlamencoShows2: recommendedAndEco2["Flamenco Shows"][0],
-        flamencoShowsEco2: recommendedAndEco2["Flamenco Shows"][1],
-        publicTransportationShort2: publicTransportationShortSelection2,
-        originalPublicTransportationShort2:
-          recommendedAndEco2["Public Transportation (Short)"][0],
-        publicTransportationShortEco2:
-          recommendedAndEco2["Public Transportation (Short)"][1],
         publicTransportationLong2: publicTransportationLongSelection2,
         originalPublicTransportationLong2:
           recommendedAndEco2["Public Transportation"][0],
@@ -1642,9 +1614,6 @@ function Survey() {
         nightLife2: nightLifeSelection2,
         originalNightLife2: recommendedAndEco2["Night Life"][0],
         nightLifeEco2: recommendedAndEco2["Night Life"][1],
-        bars2: barsSelection2,
-        originalBars2: recommendedAndEco2["Bars"][0],
-        barsEco2: recommendedAndEco2["Bars"][1],
         groceries2: groceriesSelection2,
         originalGroceries2: recommendedAndEco2["Groceries"][0],
         groceriesEco2: recommendedAndEco2["Groceries"][1],
@@ -1654,11 +1623,6 @@ function Survey() {
         shopping2: shoppingSelection2,
         originalShopping2: recommendedAndEco2["Shopping"][0],
         shoppingEco2: recommendedAndEco2["Shopping"][1],
-        internationalPhoneService2: internationalPhoneServiceSelection2,
-        originalInternationalPhoneService2:
-          recommendedAndEco2["International Phone Service"][0],
-        internationalPhoneServiceEco2:
-          recommendedAndEco2["International Phone Service"][1],
         currencyExchange2: currencyExchangeSelection2,
         originalCurrencyExchange2: recommendedAndEco2["Currency Exchange"][0],
         currencyExchangeEco2: recommendedAndEco2["Currency Exchange"][1],
@@ -1668,9 +1632,6 @@ function Survey() {
         dayTrip2: dayTripSelection2,
         originalDayTrip2: recommendedAndEco2["Day Trip"][0],
         dayTripEco2: recommendedAndEco2["Day Trip"][1],
-        travelInsurance2: travelInsuranceSelection2,
-        originalTravelInsurance2: recommendedAndEco2["Travel Insurance"][0],
-        travelInsuranceEco2: recommendedAndEco2["Travel Insurance"][1],
         travelPlugAdapter2: travelPlugAdapterSelection2,
         originalTravelPlugAdapter2:
           recommendedAndEco2["Travel Plug Adapter"][0],
@@ -1727,14 +1688,6 @@ function Survey() {
         markets3: marketsSelection3,
         originalMarkets3: recommendedAndEco3["Markets"][0],
         marketsEco3: recommendedAndEco3["Markets"][1],
-        flamencoShows3: flamencoShowsSelection3,
-        originalFlamencoShows3: recommendedAndEco3["Flamenco Shows"][0],
-        flamencoShowsEco3: recommendedAndEco3["Flamenco Shows"][1],
-        publicTransportationShort3: publicTransportationShortSelection3,
-        originalPublicTransportationShort3:
-          recommendedAndEco3["Public Transportation (Short)"][0],
-        publicTransportationShortEco3:
-          recommendedAndEco3["Public Transportation (Short)"][1],
         publicTransportationLong3: publicTransportationLongSelection3,
         originalPublicTransportationLong3:
           recommendedAndEco3["Public Transportation"][0],
@@ -1749,9 +1702,6 @@ function Survey() {
         nightLife3: nightLifeSelection3,
         originalNightLife3: recommendedAndEco3["Night Life"][0],
         nightLifeEco3: recommendedAndEco3["Night Life"][1],
-        bars3: barsSelection3,
-        originalBars3: recommendedAndEco3["Bars"][0],
-        barsEco3: recommendedAndEco3["Bars"][1],
         groceries3: groceriesSelection3,
         originalGroceries3: recommendedAndEco3["Groceries"][0],
         groceriesEco3: recommendedAndEco3["Groceries"][1],
@@ -1761,11 +1711,6 @@ function Survey() {
         shopping3: shoppingSelection3,
         originalShopping3: recommendedAndEco3["Shopping"][0],
         shoppingEco3: recommendedAndEco3["Shopping"][1],
-        internationalPhoneService3: internationalPhoneServiceSelection3,
-        originalInternationalPhoneService3:
-          recommendedAndEco3["International Phone Service"][0],
-        internationalPhoneServiceEco3:
-          recommendedAndEco3["International Phone Service"][1],
         currencyExchange3: currencyExchangeSelection3,
         originalCurrencyExchange3: recommendedAndEco3["Currency Exchange"][0],
         currencyExchangeEco3: recommendedAndEco3["Currency Exchange"][1],
@@ -1775,9 +1720,6 @@ function Survey() {
         dayTrip3: dayTripSelection3,
         originalDayTrip3: recommendedAndEco3["Day Trip"][0],
         dayTripEco3: recommendedAndEco3["Day Trip"][1],
-        travelInsurance3: travelInsuranceSelection3,
-        originalTravelInsurance3: recommendedAndEco3["Travel Insurance"][0],
-        travelInsuranceEco3: recommendedAndEco3["Travel Insurance"][1],
         travelPlugAdapter3: travelPlugAdapterSelection3,
         originalTravelPlugAdapter3:
           recommendedAndEco3["Travel Plug Adapter"][0],
