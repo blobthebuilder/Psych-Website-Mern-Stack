@@ -30,6 +30,7 @@ import AlgorithmKnowledge from "../components/AlgorithmKnowledge.js";
 import AlgorithmAwareness from "../components/AlgorithmAwareness.js";
 import Experiences from "../components/Experiences.js";
 import End from "../components/End.js";
+import EndWait from "../components/EndWait.js";
 
 import {
   shuffleAfternoon,
@@ -46,6 +47,8 @@ import {
 } from "../utils.js";
 import GeneralInstructions4 from "../components/GeneralInstructions4.js";
 function Survey() {
+  const [uploaded, setUploaded] = useState(false);
+
   const [step, setStep] = useState(1);
   const [showHeader, setShowHeader] = useState(false);
   const [totalUsers, setTotalUsers] = useState(0);
@@ -1224,8 +1227,8 @@ function Survey() {
   };
   */
 
-  const url = "http://localhost:4000";
-  //const url = "https://psych-website.onrender.com";
+  //const url = "http://localhost:4000";
+  const url = "https://psych-website.onrender.com";
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -1364,6 +1367,734 @@ function Survey() {
       currentdate.getSeconds();
     console.log(datetime);
     handleNext();
+
+    const flightSelectDefault1 =
+      flightSelection1 === recommendedAndEco1["Flight"][0] ||
+      flightSelection1 === ""
+        ? true
+        : false;
+    const flightSelectEco1 =
+      flightSelection1 === recommendedAndEco1["Flight"][1] ||
+      (flightSelection1 === "" &&
+        recommendedAndEco1["Flight"][0] === recommendedAndEco1["Flight"][1])
+        ? true
+        : false;
+
+    const rentalCarSelectDefault1 =
+      rentalCarSelection1 === recommendedAndEco1["Rental Car"][0] ||
+      rentalCarSelection1 === ""
+        ? true
+        : false;
+    const rentalCarSelectEco1 =
+      rentalCarSelection1 === recommendedAndEco1["Rental Car"][1] ||
+      (rentalCarSelection1 === "" &&
+        recommendedAndEco1["Rental Car"][0] ===
+          recommendedAndEco1["Rental Car"][1])
+        ? true
+        : false;
+
+    const hotelSelectDefault1 =
+      hotelSelection1 === recommendedAndEco1["Hotel"][0] ||
+      hotelSelection1 === ""
+        ? true
+        : false;
+    const hotelSelectEco1 =
+      hotelSelection1 === recommendedAndEco1["Hotel"][1] ||
+      (hotelSelection1 === "" &&
+        recommendedAndEco1["Hotel"][0] === recommendedAndEco1["Hotel"][1])
+        ? true
+        : false;
+
+    const dinnerSelectDefault1 =
+      dinnerSelection1 === recommendedAndEco1["Dinner"][0] ||
+      dinnerSelection1 === ""
+        ? true
+        : false;
+    const dinnerSelectEco1 =
+      dinnerSelection1 === recommendedAndEco1["Dinner"][1] ||
+      (dinnerSelection1 === "" &&
+        recommendedAndEco1["Dinner"][0] === recommendedAndEco1["Dinner"][1])
+        ? true
+        : false;
+
+    const lunchSelectDefault1 =
+      lunchSelection1 === recommendedAndEco1["Lunch"][0] ||
+      lunchSelection1 === ""
+        ? true
+        : false;
+    const lunchSelectEco1 =
+      lunchSelection1 === recommendedAndEco1["Lunch"][1] ||
+      (lunchSelection1 === "" &&
+        recommendedAndEco1["Lunch"][0] === recommendedAndEco1["Lunch"][1])
+        ? true
+        : false;
+
+    const breakfastSelectDefault1 =
+      breakfastSelection1 === recommendedAndEco1["Breakfast"][0] ||
+      breakfastSelection1 === ""
+        ? true
+        : false;
+    const breakfastSelectEco1 =
+      breakfastSelection1 === recommendedAndEco1["Breakfast"][1] ||
+      (breakfastSelection1 === "" &&
+        recommendedAndEco1["Breakfast"][0] ===
+          recommendedAndEco1["Breakfast"][1])
+        ? true
+        : false;
+
+    const museumsSelectDefault1 =
+      museumsSelection1 === recommendedAndEco1["Museums"][0] ||
+      museumsSelection1 === ""
+        ? true
+        : false;
+
+    const museumsSelectEco1 =
+      museumsSelection1 === recommendedAndEco1["Museums"][1] ||
+      (museumsSelection1 === "" &&
+        recommendedAndEco1["Museums"][0] === recommendedAndEco1["Museums"][1])
+        ? true
+        : false;
+
+    const marketsSelectDefault1 =
+      marketsSelection1 === recommendedAndEco1["Markets"][0] ||
+      marketsSelection1 === ""
+        ? true
+        : false;
+    const marketsSelectEco1 =
+      marketsSelection1 === recommendedAndEco1["Markets"][1] ||
+      (marketsSelection1 === "" &&
+        recommendedAndEco1["Markets"][0] === recommendedAndEco1["Markets"][1])
+        ? true
+        : false;
+
+    const publicTransportationLongSelectDefault1 =
+      publicTransportationLongSelection1 ===
+        recommendedAndEco1["Public Transportation"][0] ||
+      publicTransportationLongSelection1 === ""
+        ? true
+        : false;
+    const publicTransportationLongSelectEco1 =
+      publicTransportationLongSelection1 ===
+        recommendedAndEco1["Public Transportation"][1] ||
+      (publicTransportationLongSelection1 === "" &&
+        recommendedAndEco1["Public Transportation"][0] ===
+          recommendedAndEco1["Public Transportation"][1])
+        ? true
+        : false;
+
+    const coffeeSelectDefault1 =
+      coffeeSelection1 === recommendedAndEco1["Coffee"][0] ||
+      coffeeSelection1 === ""
+        ? true
+        : false;
+    const coffeeSelectEco1 =
+      coffeeSelection1 === recommendedAndEco1["Coffee"][1] ||
+      (coffeeSelection1 === "" &&
+        recommendedAndEco1["Coffee"][0] === recommendedAndEco1["Coffee"][1])
+        ? true
+        : false;
+
+    const bakerySelectDefault1 =
+      bakerySelection1 === recommendedAndEco1["Bakery"][0] ||
+      bakerySelection1 === ""
+        ? true
+        : false;
+    const bakerySelectEco1 =
+      bakerySelection1 === recommendedAndEco1["Bakery"][1] ||
+      (bakerySelection1 === "" &&
+        recommendedAndEco1["Bakery"][0] === recommendedAndEco1["Bakery"][1])
+        ? true
+        : false;
+
+    const nightLifeSelectDefault1 =
+      nightLifeSelection1 === recommendedAndEco1["Night Life"][0] ||
+      nightLifeSelection1 === ""
+        ? true
+        : false;
+    const nightLifeSelectEco1 =
+      nightLifeSelection1 === recommendedAndEco1["Night Life"][1] ||
+      (nightLifeSelection1 === "" &&
+        recommendedAndEco1["Night Life"][0] ===
+          recommendedAndEco1["Night Life"][1])
+        ? true
+        : false;
+
+    const groceriesSelectDefault1 =
+      groceriesSelection1 === recommendedAndEco1["Groceries"][0] ||
+      groceriesSelection1 === ""
+        ? true
+        : false;
+    const groceriesSelectEco1 =
+      groceriesSelection1 === recommendedAndEco1["Groceries"][1] ||
+      (groceriesSelection1 === "" &&
+        recommendedAndEco1["Groceries"][0] ===
+          recommendedAndEco1["Groceries"][1])
+        ? true
+        : false;
+
+    const souveneirsSelectDefault1 =
+      souveneirsSelection1 === recommendedAndEco1["Souveneirs"][0] ||
+      souveneirsSelection1 === ""
+        ? true
+        : false;
+    const souveneirsSelectEco1 =
+      souveneirsSelection1 === recommendedAndEco1["Souveneirs"][1] ||
+      (souveneirsSelection1 === "" &&
+        recommendedAndEco1["Souveneirs"][0] ===
+          recommendedAndEco1["Souveneirs"][1])
+        ? true
+        : false;
+
+    const shoppingSelectDefault1 =
+      shoppingSelection1 === recommendedAndEco1["Shopping"][0] ||
+      shoppingSelection1 === ""
+        ? true
+        : false;
+    const shoppingSelectEco1 =
+      shoppingSelection1 === recommendedAndEco1["Shopping"][1] ||
+      (shoppingSelection1 === "" &&
+        recommendedAndEco1["Shopping"][0] === recommendedAndEco1["Shopping"][1])
+        ? true
+        : false;
+
+    const currencyExchangeSelectDefault1 =
+      currencyExchangeSelection1 ===
+        recommendedAndEco1["Currency Exchange"][0] ||
+      currencyExchangeSelection1 === ""
+        ? true
+        : false;
+    const currencyExchangeSelectEco1 =
+      currencyExchangeSelection1 ===
+        recommendedAndEco1["Currency Exchange"][1] ||
+      (currencyExchangeSelection1 === "" &&
+        recommendedAndEco1["Currency Exchange"][0] ===
+          recommendedAndEco1["Currency Exchange"][1])
+        ? true
+        : false;
+
+    const luggageSelectDefault1 =
+      luggageSelection1 === recommendedAndEco1["Luggage"][0] ||
+      luggageSelection1 === ""
+        ? true
+        : false;
+    const luggageSelectEco1 =
+      luggageSelection1 === recommendedAndEco1["Luggage"][1] ||
+      (luggageSelection1 === "" &&
+        recommendedAndEco1["Luggage"][0] === recommendedAndEco1["Luggage"][1])
+        ? true
+        : false;
+
+    const dayTripSelectDefault1 =
+      dayTripSelection1 === recommendedAndEco1["Day Trip"][0] ||
+      dayTripSelection1 === ""
+        ? true
+        : false;
+    const dayTripSelectEco1 =
+      dayTripSelection1 === recommendedAndEco1["Day Trip"][1] ||
+      (dayTripSelection1 === "" &&
+        recommendedAndEco1["Day Trip"][0] === recommendedAndEco1["Day Trip"][1])
+        ? true
+        : false;
+
+    const travelPlugAdapterSelectDefault1 =
+      travelPlugAdapterSelection1 ===
+        recommendedAndEco1["Travel Plug Adapter"][0] ||
+      travelPlugAdapterSelection1 === ""
+        ? true
+        : false;
+    const travelPlugAdapterSelectEco1 =
+      travelPlugAdapterSelection1 ===
+        recommendedAndEco1["Travel Plug Adapter"][1] ||
+      (travelPlugAdapterSelection1 === "" &&
+        recommendedAndEco1["Travel Plug Adapter"][0] ===
+          recommendedAndEco1["Travel Plug Adapter"][1])
+        ? true
+        : false;
+
+    const flightSelectDefault2 =
+      flightSelection2 === recommendedAndEco2["Flight"][0] ||
+      flightSelection2 === ""
+        ? true
+        : false;
+    const flightSelectEco2 =
+      flightSelection2 === recommendedAndEco2["Flight"][1] ||
+      (flightSelection2 === "" &&
+        recommendedAndEco2["Flight"][0] === recommendedAndEco2["Flight"][1])
+        ? true
+        : false;
+
+    const rentalCarSelectDefault2 =
+      rentalCarSelection2 === recommendedAndEco2["Rental Car"][0] ||
+      rentalCarSelection2 === ""
+        ? true
+        : false;
+    const rentalCarSelectEco2 =
+      rentalCarSelection2 === recommendedAndEco2["Rental Car"][1] ||
+      (rentalCarSelection2 === "" &&
+        recommendedAndEco2["Rental Car"][0] ===
+          recommendedAndEco2["Rental Car"][1])
+        ? true
+        : false;
+
+    const hotelSelectDefault2 =
+      hotelSelection2 === recommendedAndEco2["Hotel"][0] ||
+      hotelSelection2 === ""
+        ? true
+        : false;
+    const hotelSelectEco2 =
+      hotelSelection2 === recommendedAndEco2["Hotel"][1] ||
+      (hotelSelection2 === "" &&
+        recommendedAndEco2["Hotel"][0] === recommendedAndEco2["Hotel"][1])
+        ? true
+        : false;
+
+    const dinnerSelectDefault2 =
+      dinnerSelection2 === recommendedAndEco2["Dinner"][0] ||
+      dinnerSelection2 === ""
+        ? true
+        : false;
+    const dinnerSelectEco2 =
+      dinnerSelection2 === recommendedAndEco2["Dinner"][1] ||
+      (dinnerSelection2 === "" &&
+        recommendedAndEco2["Dinner"][0] === recommendedAndEco2["Dinner"][1])
+        ? true
+        : false;
+
+    const lunchSelectDefault2 =
+      lunchSelection2 === recommendedAndEco2["Lunch"][0] ||
+      lunchSelection2 === ""
+        ? true
+        : false;
+    const lunchSelectEco2 =
+      lunchSelection2 === recommendedAndEco2["Lunch"][1] ||
+      (lunchSelection2 === "" &&
+        recommendedAndEco2["Lunch"][0] === recommendedAndEco2["Lunch"][1])
+        ? true
+        : false;
+
+    const breakfastSelectDefault2 =
+      breakfastSelection2 === recommendedAndEco2["Breakfast"][0] ||
+      breakfastSelection2 === ""
+        ? true
+        : false;
+    const breakfastSelectEco2 =
+      breakfastSelection2 === recommendedAndEco2["Breakfast"][1] ||
+      (breakfastSelection2 === "" &&
+        recommendedAndEco2["Breakfast"][0] ===
+          recommendedAndEco2["Breakfast"][1])
+        ? true
+        : false;
+
+    const museumsSelectDefault2 =
+      museumsSelection2 === recommendedAndEco2["Museums"][0] ||
+      museumsSelection2 === ""
+        ? true
+        : false;
+    const museumsSelectEco2 =
+      museumsSelection2 === recommendedAndEco2["Museums"][1] ||
+      (museumsSelection2 === "" &&
+        recommendedAndEco2["Museums"][0] === recommendedAndEco2["Museums"][1])
+        ? true
+        : false;
+
+    const marketsSelectDefault2 =
+      marketsSelection2 === recommendedAndEco2["Markets"][0] ||
+      marketsSelection2 === ""
+        ? true
+        : false;
+    const marketsSelectEco2 =
+      marketsSelection2 === recommendedAndEco2["Markets"][1] ||
+      (marketsSelection2 === "" &&
+        recommendedAndEco2["Markets"][0] === recommendedAndEco2["Markets"][1])
+        ? true
+        : false;
+
+    const publicTransportationLongSelectDefault2 =
+      publicTransportationLongSelection2 ===
+        recommendedAndEco2["Public Transportation"][0] ||
+      publicTransportationLongSelection2 === ""
+        ? true
+        : false;
+    const publicTransportationLongSelectEco2 =
+      publicTransportationLongSelection2 ===
+        recommendedAndEco2["Public Transportation"][1] ||
+      (publicTransportationLongSelection2 === "" &&
+        recommendedAndEco2["Public Transportation"][0] ===
+          recommendedAndEco2["Public Transportation"][1])
+        ? true
+        : false;
+
+    const coffeeSelectDefault2 =
+      coffeeSelection2 === recommendedAndEco2["Coffee"][0] ||
+      coffeeSelection2 === ""
+        ? true
+        : false;
+    const coffeeSelectEco2 =
+      coffeeSelection2 === recommendedAndEco2["Coffee"][1] ||
+      (coffeeSelection2 === "" &&
+        recommendedAndEco2["Coffee"][0] === recommendedAndEco2["Coffee"][1])
+        ? true
+        : false;
+
+    const bakerySelectDefault2 =
+      bakerySelection2 === recommendedAndEco2["Bakery"][0] ||
+      bakerySelection2 === ""
+        ? true
+        : false;
+    const bakerySelectEco2 =
+      bakerySelection2 === recommendedAndEco2["Bakery"][1] ||
+      (bakerySelection2 === "" &&
+        recommendedAndEco2["Bakery"][0] === recommendedAndEco2["Bakery"][1])
+        ? true
+        : false;
+
+    const nightLifeSelectDefault2 =
+      nightLifeSelection2 === recommendedAndEco2["Night Life"][0] ||
+      nightLifeSelection2 === ""
+        ? true
+        : false;
+    const nightLifeSelectEco2 =
+      nightLifeSelection2 === recommendedAndEco2["Night Life"][1] ||
+      (nightLifeSelection2 === "" &&
+        recommendedAndEco2["Night Life"][0] ===
+          recommendedAndEco2["Night Life"][1])
+        ? true
+        : false;
+
+    const groceriesSelectDefault2 =
+      groceriesSelection2 === recommendedAndEco2["Groceries"][0] ||
+      groceriesSelection2 === ""
+        ? true
+        : false;
+    const groceriesSelectEco2 =
+      groceriesSelection2 === recommendedAndEco2["Groceries"][1] ||
+      (groceriesSelection2 === "" &&
+        recommendedAndEco2["Groceries"][0] ===
+          recommendedAndEco2["Groceries"][1])
+        ? true
+        : false;
+
+    const souveneirsSelectDefault2 =
+      souveneirsSelection2 === recommendedAndEco2["Souveneirs"][0] ||
+      souveneirsSelection2 === ""
+        ? true
+        : false;
+    const souveneirsSelectEco2 =
+      souveneirsSelection2 === recommendedAndEco2["Souveneirs"][1] ||
+      (souveneirsSelection2 === "" &&
+        recommendedAndEco2["Souveneirs"][0] ===
+          recommendedAndEco2["Souveneirs"][1])
+        ? true
+        : false;
+
+    const shoppingSelectDefault2 =
+      shoppingSelection2 === recommendedAndEco2["Shopping"][0] ||
+      shoppingSelection2 === ""
+        ? true
+        : false;
+    const shoppingSelectEco2 =
+      shoppingSelection2 === recommendedAndEco2["Shopping"][1] ||
+      (shoppingSelection2 === "" &&
+        recommendedAndEco2["Shopping"][0] === recommendedAndEco2["Shopping"][1])
+        ? true
+        : false;
+
+    const currencyExchangeSelectDefault2 =
+      currencyExchangeSelection2 ===
+        recommendedAndEco2["Currency Exchange"][0] ||
+      currencyExchangeSelection2 === ""
+        ? true
+        : false;
+    const currencyExchangeSelectEco2 =
+      currencyExchangeSelection2 ===
+        recommendedAndEco2["Currency Exchange"][1] ||
+      (currencyExchangeSelection2 === "" &&
+        recommendedAndEco2["Currency Exchange"][0] ===
+          recommendedAndEco2["Currency Exchange"][1])
+        ? true
+        : false;
+
+    const luggageSelectDefault2 =
+      luggageSelection2 === recommendedAndEco2["Luggage"][0] ||
+      luggageSelection2 === ""
+        ? true
+        : false;
+    const luggageSelectEco2 =
+      luggageSelection2 === recommendedAndEco2["Luggage"][1] ||
+      (luggageSelection2 === "" &&
+        recommendedAndEco2["Luggage"][0] === recommendedAndEco2["Luggage"][1])
+        ? true
+        : false;
+
+    const dayTripSelectDefault2 =
+      dayTripSelection2 === recommendedAndEco2["Day Trip"][0] ||
+      dayTripSelection2 === ""
+        ? true
+        : false;
+    const dayTripSelectEco2 =
+      dayTripSelection2 === recommendedAndEco2["Day Trip"][1] ||
+      (dayTripSelection2 === "" &&
+        recommendedAndEco2["Day Trip"][0] === recommendedAndEco2["Day Trip"][1])
+        ? true
+        : false;
+
+    const travelPlugAdapterSelectDefault2 =
+      travelPlugAdapterSelection2 ===
+        recommendedAndEco2["Travel Plug Adapter"][0] ||
+      travelPlugAdapterSelection2 === ""
+        ? true
+        : false;
+    const travelPlugAdapterSelectEco2 =
+      travelPlugAdapterSelection2 ===
+        recommendedAndEco2["Travel Plug Adapter"][1] ||
+      (travelPlugAdapterSelection2 === "" &&
+        recommendedAndEco2["Travel Plug Adapter"][0] ===
+          recommendedAndEco2["Travel Plug Adapter"][1])
+        ? true
+        : false;
+
+    const flightSelectDefault3 =
+      flightSelection3 === recommendedAndEco3["Flight"][0] ||
+      flightSelection3 === ""
+        ? true
+        : false;
+    const flightSelectEco3 =
+      flightSelection3 === recommendedAndEco3["Flight"][1] ||
+      (flightSelection3 === "" &&
+        recommendedAndEco3["Flight"][0] === recommendedAndEco3["Flight"][1])
+        ? true
+        : false;
+
+    const rentalCarSelectDefault3 =
+      rentalCarSelection3 === recommendedAndEco3["Rental Car"][0] ||
+      rentalCarSelection3 === ""
+        ? true
+        : false;
+    const rentalCarSelectEco3 =
+      rentalCarSelection3 === recommendedAndEco3["Rental Car"][1] ||
+      (rentalCarSelection3 === "" &&
+        recommendedAndEco3["Rental Car"][0] ===
+          recommendedAndEco3["Rental Car"][1])
+        ? true
+        : false;
+
+    const hotelSelectDefault3 =
+      hotelSelection3 === recommendedAndEco3["Hotel"][0] ||
+      hotelSelection3 === ""
+        ? true
+        : false;
+    const hotelSelectEco3 =
+      hotelSelection3 === recommendedAndEco3["Hotel"][1] ||
+      (hotelSelection3 === "" &&
+        recommendedAndEco3["Hotel"][0] === recommendedAndEco3["Hotel"][1])
+        ? true
+        : false;
+
+    const dinnerSelectDefault3 =
+      dinnerSelection3 === recommendedAndEco3["Dinner"][0] ||
+      dinnerSelection3 === ""
+        ? true
+        : false;
+    const dinnerSelectEco3 =
+      dinnerSelection3 === recommendedAndEco3["Dinner"][1] ||
+      (dinnerSelection3 === "" &&
+        recommendedAndEco3["Dinner"][0] === recommendedAndEco3["Dinner"][1])
+        ? true
+        : false;
+
+    const lunchSelectDefault3 =
+      lunchSelection3 === recommendedAndEco3["Lunch"][0] ||
+      lunchSelection3 === ""
+        ? true
+        : false;
+    const lunchSelectEco3 =
+      lunchSelection3 === recommendedAndEco3["Lunch"][1] ||
+      (lunchSelection3 === "" &&
+        recommendedAndEco3["Lunch"][0] === recommendedAndEco3["Lunch"][1])
+        ? true
+        : false;
+
+    const breakfastSelectDefault3 =
+      breakfastSelection3 === recommendedAndEco3["Breakfast"][0] ||
+      breakfastSelection3 === ""
+        ? true
+        : false;
+    const breakfastSelectEco3 =
+      breakfastSelection3 === recommendedAndEco3["Breakfast"][1] ||
+      (breakfastSelection3 === "" &&
+        recommendedAndEco3["Breakfast"][0] ===
+          recommendedAndEco3["Breakfast"][1])
+        ? true
+        : false;
+
+    const museumsSelectDefault3 =
+      museumsSelection3 === recommendedAndEco3["Museums"][0] ||
+      museumsSelection3 === ""
+        ? true
+        : false;
+    const museumsSelectEco3 =
+      museumsSelection3 === recommendedAndEco3["Museums"][1] ||
+      (museumsSelection3 === "" &&
+        recommendedAndEco3["Museums"][0] === recommendedAndEco3["Museums"][1])
+        ? true
+        : false;
+
+    const marketsSelectDefault3 =
+      marketsSelection3 === recommendedAndEco3["Markets"][0] ||
+      marketsSelection3 === ""
+        ? true
+        : false;
+    const marketsSelectEco3 =
+      marketsSelection3 === recommendedAndEco3["Markets"][1] ||
+      (marketsSelection3 === "" &&
+        recommendedAndEco3["Markets"][0] === recommendedAndEco3["Markets"][1])
+        ? true
+        : false;
+
+    const publicTransportationLongSelectDefault3 =
+      publicTransportationLongSelection3 ===
+        recommendedAndEco3["Public Transportation"][0] ||
+      publicTransportationLongSelection3 === ""
+        ? true
+        : false;
+    const publicTransportationLongSelectEco3 =
+      publicTransportationLongSelection3 ===
+        recommendedAndEco3["Public Transportation"][1] ||
+      (publicTransportationLongSelection3 === "" &&
+        recommendedAndEco3["Public Transportation"][0] ===
+          recommendedAndEco3["Public Transportation"][1])
+        ? true
+        : false;
+
+    const coffeeSelectDefault3 =
+      coffeeSelection3 === recommendedAndEco3["Coffee"][0] ||
+      coffeeSelection3 === ""
+        ? true
+        : false;
+    const coffeeSelectEco3 =
+      coffeeSelection3 === recommendedAndEco3["Coffee"][1] ||
+      (coffeeSelection3 === "" &&
+        recommendedAndEco3["Coffee"][0] === recommendedAndEco3["Coffee"][1])
+        ? true
+        : false;
+
+    const bakerySelectDefault3 =
+      bakerySelection3 === recommendedAndEco3["Bakery"][0] ||
+      bakerySelection3 === ""
+        ? true
+        : false;
+    const bakerySelectEco3 =
+      bakerySelection3 === recommendedAndEco3["Bakery"][1] ||
+      (bakerySelection3 === "" &&
+        recommendedAndEco3["Bakery"][0] === recommendedAndEco3["Bakery"][1])
+        ? true
+        : false;
+
+    const nightLifeSelectDefault3 =
+      nightLifeSelection3 === recommendedAndEco3["Night Life"][0] ||
+      nightLifeSelection3 === ""
+        ? true
+        : false;
+    const nightLifeSelectEco3 =
+      nightLifeSelection3 === recommendedAndEco3["Night Life"][1] ||
+      (nightLifeSelection3 === "" &&
+        recommendedAndEco3["Night Life"][0] ===
+          recommendedAndEco3["Night Life"][1])
+        ? true
+        : false;
+
+    const groceriesSelectDefault3 =
+      groceriesSelection3 === recommendedAndEco3["Groceries"][0] ||
+      groceriesSelection3 === ""
+        ? true
+        : false;
+    const groceriesSelectEco3 =
+      groceriesSelection3 === recommendedAndEco3["Groceries"][1] ||
+      (groceriesSelection3 === "" &&
+        recommendedAndEco3["Groceries"][0] ===
+          recommendedAndEco3["Groceries"][1])
+        ? true
+        : false;
+
+    const souveneirsSelectDefault3 =
+      souveneirsSelection3 === recommendedAndEco3["Souveneirs"][0] ||
+      souveneirsSelection3 === ""
+        ? true
+        : false;
+    const souveneirsSelectEco3 =
+      souveneirsSelection3 === recommendedAndEco3["Souveneirs"][1] ||
+      (souveneirsSelection3 === "" &&
+        recommendedAndEco3["Souveneirs"][0] ===
+          recommendedAndEco3["Souveneirs"][1])
+        ? true
+        : false;
+
+    const shoppingSelectDefault3 =
+      shoppingSelection3 === recommendedAndEco3["Shopping"][0] ||
+      shoppingSelection3 === ""
+        ? true
+        : false;
+    const shoppingSelectEco3 =
+      shoppingSelection3 === recommendedAndEco3["Shopping"][1] ||
+      (shoppingSelection3 === "" &&
+        recommendedAndEco3["Shopping"][0] === recommendedAndEco3["Shopping"][1])
+        ? true
+        : false;
+
+    const currencyExchangeSelectDefault3 =
+      currencyExchangeSelection3 ===
+        recommendedAndEco3["Currency Exchange"][0] ||
+      currencyExchangeSelection3 === ""
+        ? true
+        : false;
+    const currencyExchangeSelectEco3 =
+      currencyExchangeSelection3 ===
+        recommendedAndEco3["Currency Exchange"][1] ||
+      (currencyExchangeSelection3 === "" &&
+        recommendedAndEco3["Currency Exchange"][0] ===
+          recommendedAndEco3["Currency Exchange"][1])
+        ? true
+        : false;
+
+    const luggageSelectDefault3 =
+      luggageSelection3 === recommendedAndEco3["Luggage"][0] ||
+      luggageSelection3 === ""
+        ? true
+        : false;
+    const luggageSelectEco3 =
+      luggageSelection3 === recommendedAndEco3["Luggage"][1] ||
+      (luggageSelection3 === "" &&
+        recommendedAndEco3["Luggage"][0] === recommendedAndEco3["Luggage"][1])
+        ? true
+        : false;
+
+    const dayTripSelectDefault3 =
+      dayTripSelection3 === recommendedAndEco3["Day Trip"][0] ||
+      dayTripSelection3 === ""
+        ? true
+        : false;
+    const dayTripSelectEco3 =
+      dayTripSelection3 === recommendedAndEco3["Day Trip"][1] ||
+      (dayTripSelection3 === "" &&
+        recommendedAndEco3["Day Trip"][0] === recommendedAndEco3["Day Trip"][1])
+        ? true
+        : false;
+
+    const travelPlugAdapterSelectDefault3 =
+      travelPlugAdapterSelection3 ===
+        recommendedAndEco3["Travel Plug Adapter"][0] ||
+      travelPlugAdapterSelection3 === ""
+        ? true
+        : false;
+    const travelPlugAdapterSelectEco3 =
+      travelPlugAdapterSelection3 ===
+        recommendedAndEco3["Travel Plug Adapter"][1] ||
+      (travelPlugAdapterSelection1 === "" &&
+        recommendedAndEco1["Travel Plug Adapter"][0] ===
+          recommendedAndEco1["Travel Plug Adapter"][1])
+        ? true
+        : false;
+
     const uploadUser = async () => {
       const user = {
         userId: totalUsers,
@@ -1491,63 +2222,101 @@ function Survey() {
         flight1: flightSelection1,
         originalFlight1: recommendedAndEco1["Flight"][0],
         flightEco1: recommendedAndEco1["Flight"][1],
+        flightSelectDefault1,
+        flightSelectEco1,
         rentalCar1: rentalCarSelection1,
         originalRentalCar1: recommendedAndEco1["Rental Car"][0],
         rentalCarEco1: recommendedAndEco1["Rental Car"][1],
+        rentalCarSelectDefault1,
+        rentalCarSelectEco1,
         hotel1: hotelSelection1,
         originalHotel1: recommendedAndEco1["Hotel"][0],
         hotelEco1: recommendedAndEco1["Hotel"][1],
+        hotelSelectDefault1,
+        hotelSelectEco1,
         dinner1: dinnerSelection1,
         originalDinner1: recommendedAndEco1["Dinner"][0],
         dinnerEco1: recommendedAndEco1["Dinner"][1],
+        dinnerSelectDefault1,
+        dinnerSelectEco1,
         lunch1: lunchSelection1,
         originalLunch1: recommendedAndEco1["Lunch"][0],
         lunchEco1: recommendedAndEco1["Lunch"][1],
+        lunchSelectDefault1,
+        lunchSelectEco1,
         breakfast1: breakfastSelection1,
         originalBreakfast1: recommendedAndEco1["Breakfast"][0],
         breakfastEco1: recommendedAndEco1["Breakfast"][1],
+        breakfastSelectDefault1,
+        breakfastSelectEco1,
         museums1: museumsSelection1,
         originalMuseums1: recommendedAndEco1["Museums"][0],
         museumsEco1: recommendedAndEco1["Museums"][1],
+        museumsSelectDefault1,
+        museumsSelectEco1,
         markets1: marketsSelection1,
         originalMarkets1: recommendedAndEco1["Markets"][0],
         marketsEco1: recommendedAndEco1["Markets"][1],
+        marketsSelectDefault1,
+        marketsSelectEco1,
         publicTransportationLong1: publicTransportationLongSelection1,
         originalPublicTransportationLong1:
           recommendedAndEco1["Public Transportation"][0],
         publicTransportationLongEco1:
           recommendedAndEco1["Public Transportation"][1],
+        publicTransportationLongSelectDefault1,
+        publicTransportationLongSelectEco1,
         coffee1: coffeeSelection1,
         originalCoffee1: recommendedAndEco1["Coffee"][0],
         coffeeEco1: recommendedAndEco1["Coffee"][1],
+        coffeeSelectDefault1,
+        coffeeSelectEco1,
         bakery1: bakerySelection1,
         originalBakery1: recommendedAndEco1["Bakery"][0],
         bakeryEco1: recommendedAndEco1["Bakery"][1],
+        bakerySelectDefault1,
+        bakerySelectEco1,
         nightLife1: nightLifeSelection1,
         originalNightLife1: recommendedAndEco1["Night Life"][0],
         nightLifeEco1: recommendedAndEco1["Night Life"][1],
+        nightLifeSelectDefault1,
+        nightLifeSelectEco1,
         groceries1: groceriesSelection1,
         originalGroceries1: recommendedAndEco1["Groceries"][0],
         groceriesEco1: recommendedAndEco1["Groceries"][1],
+        groceriesSelectDefault1,
+        groceriesSelectEco1,
         souveneirs1: souveneirsSelection1,
         originalSouveneirs1: recommendedAndEco1["Souveneirs"][0],
         souveneirsEco1: recommendedAndEco1["Souveneirs"][1],
+        souveneirsSelectDefault1,
+        souveneirsSelectEco1,
         shopping1: shoppingSelection1,
         originalShopping1: recommendedAndEco1["Shopping"][0],
         shoppingEco1: recommendedAndEco1["Shopping"][1],
+        shoppingSelectDefault1,
+        shoppingSelectEco1,
         currencyExchange1: currencyExchangeSelection1,
         originalCurrencyExchange1: recommendedAndEco1["Currency Exchange"][0],
         currencyExchangeEco1: recommendedAndEco1["Currency Exchange"][1],
+        currencyExchangeSelectDefault1,
+        currencyExchangeSelectEco1,
         luggage1: luggageSelection1,
         originalLuggage1: recommendedAndEco1["Luggage"][0],
         luggageEco1: recommendedAndEco1["Luggage"][1],
+        luggageSelectDefault1,
+        luggageSelectEco1,
         dayTrip1: dayTripSelection1,
         originalDayTrip1: recommendedAndEco1["Day Trip"][0],
         dayTripEco1: recommendedAndEco1["Day Trip"][1],
+        dayTripSelectDefault1,
+        dayTripSelectEco1,
         travelPlugAdapter1: travelPlugAdapterSelection1,
         originalTravelPlugAdapter1:
           recommendedAndEco1["Travel Plug Adapter"][0],
         travelPlugAdapterEco1: recommendedAndEco1["Travel Plug Adapter"][1],
+        travelPlugAdapterSelectDefault1,
+        travelPlugAdapterSelectEco1,
         choose1: chooseSelection1,
         charge1: chargeSelection1,
         account1: accountSelection1,
@@ -1579,63 +2348,101 @@ function Survey() {
         flight2: flightSelection2,
         originalFlight2: recommendedAndEco2["Flight"][0],
         flightEco2: recommendedAndEco2["Flight"][1],
+        flightSelectDefault2,
+        flightSelectEco2,
         rentalCar2: rentalCarSelection2,
         originalRentalCar2: recommendedAndEco2["Rental Car"][0],
         rentalCarEco2: recommendedAndEco2["Rental Car"][1],
+        rentalCarSelectDefault2,
+        rentalCarSelectEco2,
         hotel2: hotelSelection2,
         originalHotel2: recommendedAndEco2["Hotel"][0],
         hotelEco2: recommendedAndEco2["Hotel"][1],
+        hotelSelectDefault2,
+        hotelSelectEco2,
         dinner2: dinnerSelection2,
         originalDinner2: recommendedAndEco2["Dinner"][0],
         dinnerEco2: recommendedAndEco2["Dinner"][1],
+        dinnerSelectDefault2,
+        dinnerSelectEco2,
         lunch2: lunchSelection2,
         originalLunch2: recommendedAndEco2["Lunch"][0],
         lunchEco2: recommendedAndEco2["Lunch"][1],
+        lunchSelectDefault2,
+        lunchSelectEco2,
         breakfast2: breakfastSelection2,
         originalBreakfast2: recommendedAndEco2["Breakfast"][0],
         breakfastEco2: recommendedAndEco2["Breakfast"][1],
+        breakfastSelectDefault2,
+        breakfastSelectEco2,
         museums2: museumsSelection2,
         originalMuseums2: recommendedAndEco2["Museums"][0],
         museumsEco2: recommendedAndEco2["Museums"][1],
+        museumsSelectDefault2,
+        museumsSelectEco2,
         markets2: marketsSelection2,
         originalMarkets2: recommendedAndEco2["Markets"][0],
         marketsEco2: recommendedAndEco2["Markets"][1],
+        marketsSelectDefault2,
+        marketsSelectEco2,
         publicTransportationLong2: publicTransportationLongSelection2,
         originalPublicTransportationLong2:
           recommendedAndEco2["Public Transportation"][0],
         publicTransportationLongEco2:
           recommendedAndEco2["Public Transportation"][1],
+        publicTransportationLongSelectDefault2,
+        publicTransportationLongSelectEco2,
         coffee2: coffeeSelection2,
         originalCoffee2: recommendedAndEco2["Coffee"][0],
         coffeeEco2: recommendedAndEco2["Coffee"][1],
+        coffeeSelectDefault2,
+        coffeeSelectEco2,
         bakery2: bakerySelection2,
         originalBakery2: recommendedAndEco2["Bakery"][0],
         bakeryEco2: recommendedAndEco2["Bakery"][1],
+        bakerySelectDefault2,
+        bakerySelectEco2,
         nightLife2: nightLifeSelection2,
         originalNightLife2: recommendedAndEco2["Night Life"][0],
         nightLifeEco2: recommendedAndEco2["Night Life"][1],
+        nightLifeSelectDefault2,
+        nightLifeSelectEco2,
         groceries2: groceriesSelection2,
         originalGroceries2: recommendedAndEco2["Groceries"][0],
         groceriesEco2: recommendedAndEco2["Groceries"][1],
+        groceriesSelectDefault2,
+        groceriesSelectEco2,
         souveneirs2: souveneirsSelection2,
         originalSouveneirs2: recommendedAndEco2["Souveneirs"][0],
         souveneirsEco2: recommendedAndEco2["Souveneirs"][1],
+        souveneirsSelectDefault2,
+        souveneirsSelectEco2,
         shopping2: shoppingSelection2,
         originalShopping2: recommendedAndEco2["Shopping"][0],
         shoppingEco2: recommendedAndEco2["Shopping"][1],
+        shoppingSelectDefault2,
+        shoppingSelectEco2,
         currencyExchange2: currencyExchangeSelection2,
         originalCurrencyExchange2: recommendedAndEco2["Currency Exchange"][0],
         currencyExchangeEco2: recommendedAndEco2["Currency Exchange"][1],
+        currencyExchangeSelectDefault2,
+        currencyExchangeSelectEco2,
         luggage2: luggageSelection2,
         originalLuggage2: recommendedAndEco2["Luggage"][0],
         luggageEco2: recommendedAndEco2["Luggage"][1],
+        luggageSelectDefault2,
+        luggageSelectEco2,
         dayTrip2: dayTripSelection2,
         originalDayTrip2: recommendedAndEco2["Day Trip"][0],
         dayTripEco2: recommendedAndEco2["Day Trip"][1],
+        dayTripSelectDefault2,
+        dayTripSelectEco2,
         travelPlugAdapter2: travelPlugAdapterSelection2,
         originalTravelPlugAdapter2:
           recommendedAndEco2["Travel Plug Adapter"][0],
         travelPlugAdapterEco2: recommendedAndEco2["Travel Plug Adapter"][1],
+        travelPlugAdapterSelectDefault2,
+        travelPlugAdapterSelectEco2,
         choose2: chooseSelection2,
         charge2: chargeSelection2,
         account2: accountSelection2,
@@ -1667,63 +2474,101 @@ function Survey() {
         flight3: flightSelection3,
         originalFlight3: recommendedAndEco3["Flight"][0],
         flightEco3: recommendedAndEco3["Flight"][1],
+        flightSelectDefault3,
+        flightSelectEco3,
         rentalCar3: rentalCarSelection3,
         originalRentalCar3: recommendedAndEco3["Rental Car"][0],
         rentalCarEco3: recommendedAndEco3["Rental Car"][1],
+        rentalCarSelectDefault3,
+        rentalCarSelectEco3,
         hotel3: hotelSelection3,
         originalHotel3: recommendedAndEco3["Hotel"][0],
         hotelEco3: recommendedAndEco3["Hotel"][1],
+        hotelSelectDefault3,
+        hotelSelectEco3,
         dinner3: dinnerSelection3,
         originalDinner3: recommendedAndEco3["Dinner"][0],
         dinnerEco3: recommendedAndEco3["Dinner"][1],
+        dinnerSelectDefault3,
+        dinnerSelectEco3,
         lunch3: lunchSelection3,
         originalLunch3: recommendedAndEco3["Lunch"][0],
         lunchEco3: recommendedAndEco3["Lunch"][1],
+        lunchSelectDefault3,
+        lunchSelectEco3,
         breakfast3: breakfastSelection3,
         originalBreakfast3: recommendedAndEco3["Breakfast"][0],
         breakfastEco3: recommendedAndEco3["Breakfast"][1],
+        breakfastSelectDefault3,
+        breakfastSelectEco3,
         museums3: museumsSelection3,
         originalMuseums3: recommendedAndEco3["Museums"][0],
         museumsEco3: recommendedAndEco3["Museums"][1],
+        museumsSelectDefault3,
+        museumsSelectEco3,
         markets3: marketsSelection3,
         originalMarkets3: recommendedAndEco3["Markets"][0],
         marketsEco3: recommendedAndEco3["Markets"][1],
+        marketsSelectDefault3,
+        marketsSelectEco3,
         publicTransportationLong3: publicTransportationLongSelection3,
         originalPublicTransportationLong3:
           recommendedAndEco3["Public Transportation"][0],
         publicTransportationLongEco3:
           recommendedAndEco3["Public Transportation"][1],
+        publicTransportationLongSelectDefault3,
+        publicTransportationLongSelectEco3,
         coffee3: coffeeSelection3,
         originalCoffee3: recommendedAndEco3["Coffee"][0],
         coffeeEco3: recommendedAndEco3["Coffee"][1],
+        coffeeSelectDefault3,
+        coffeeSelectEco3,
         bakery3: bakerySelection3,
         originalBakery3: recommendedAndEco3["Bakery"][0],
         bakeryEco3: recommendedAndEco3["Bakery"][1],
+        bakerySelectDefault3,
+        bakerySelectEco3,
         nightLife3: nightLifeSelection3,
         originalNightLife3: recommendedAndEco3["Night Life"][0],
         nightLifeEco3: recommendedAndEco3["Night Life"][1],
+        nightLifeSelectDefault3,
+        nightLifeSelectEco3,
         groceries3: groceriesSelection3,
         originalGroceries3: recommendedAndEco3["Groceries"][0],
         groceriesEco3: recommendedAndEco3["Groceries"][1],
+        groceriesSelectDefault3,
+        groceriesSelectEco3,
         souveneirs3: souveneirsSelection3,
         originalSouveneirs3: recommendedAndEco3["Souveneirs"][0],
         souveneirsEco3: recommendedAndEco3["Souveneirs"][1],
+        souveneirsSelectDefault3,
+        souveneirsSelectEco3,
         shopping3: shoppingSelection3,
         originalShopping3: recommendedAndEco3["Shopping"][0],
         shoppingEco3: recommendedAndEco3["Shopping"][1],
+        shoppingSelectDefault3,
+        shoppingSelectEco3,
         currencyExchange3: currencyExchangeSelection3,
         originalCurrencyExchange3: recommendedAndEco3["Currency Exchange"][0],
         currencyExchangeEco3: recommendedAndEco3["Currency Exchange"][1],
+        currencyExchangeSelectDefault3,
+        currencyExchangeSelectEco3,
         luggage3: luggageSelection3,
         originalLuggage3: recommendedAndEco3["Luggage"][0],
         luggageEco3: recommendedAndEco3["Luggage"][1],
+        luggageSelectDefault3,
+        luggageSelectEco3,
         dayTrip3: dayTripSelection3,
         originalDayTrip3: recommendedAndEco3["Day Trip"][0],
         dayTripEco3: recommendedAndEco3["Day Trip"][1],
+        dayTripSelectDefault3,
+        dayTripSelectEco3,
         travelPlugAdapter3: travelPlugAdapterSelection3,
         originalTravelPlugAdapter3:
           recommendedAndEco3["Travel Plug Adapter"][0],
         travelPlugAdapterEco3: recommendedAndEco3["Travel Plug Adapter"][1],
+        travelPlugAdapterSelectDefault3,
+        travelPlugAdapterSelectEco3,
         choose3: chooseSelection3,
         charge3: chargeSelection3,
         account3: accountSelection3,
@@ -1789,6 +2634,7 @@ function Survey() {
           console.log(json.error);
         } else {
           console.log("Successfully uploaded");
+          setUploaded(true);
           incUsers();
         }
       } catch (error) {
@@ -2735,7 +3581,8 @@ function Survey() {
           onExperienceChange={handleExperienceChange}
         />
       )}
-      {step === 102 && <End />}
+      {step === 102 && !uploaded && <EndWait />}
+      {step === 102 && uploaded && <End />}
     </div>
   );
 }
