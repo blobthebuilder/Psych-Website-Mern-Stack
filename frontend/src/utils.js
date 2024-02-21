@@ -1,3 +1,5 @@
+import { sampleSize } from "lodash";
+
 export const shuffle = (array) => {
   let currentIndex = array.length,
     randomIndex;
@@ -568,13 +570,23 @@ export const randomizeItineraryFeatures = () => {
 
 export const randomizeRecommendedAndEco = () => {
   const tmp = {};
+  const featureKeys = Object.keys(features);
+  const equalKeys = sampleSize(featureKeys, 9); // current # of keys is 19 so sample 9/19
+  console.log(equalKeys);
   for (let className in features) {
-    if (className in features) {
+    if (equalKeys.includes(className)) {
+      let a = Math.floor(Math.random() * 4);
+      tmp[className] = [a, a];
+    } else {
       let a = Math.floor(Math.random() * 4);
       let b = Math.floor(Math.random() * 4);
+      while (a === b) {
+        b = Math.floor(Math.random() * 4);
+      }
       tmp[className] = [a, b];
     }
   }
+  console.log(tmp);
   return tmp;
 };
 
