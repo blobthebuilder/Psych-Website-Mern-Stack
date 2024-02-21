@@ -496,6 +496,7 @@ const userSchema = new Schema({
   originalFlight1: { type: Number, default: 0 },
   flightEco1: { type: Number, default: 0 },
   flightSelectDefault1: { type: Boolean, default: false },
+  flightSelectDefaultAndEco1: { type: Boolean, default: false },
   flightSelectEco1: { type: Boolean, default: false },
   rentalCar1: {
     type: Number,
@@ -504,6 +505,7 @@ const userSchema = new Schema({
   originalRentalCar1: { type: Number, default: 0 },
   rentalCarEco1: { type: Number, default: 0 },
   rentalCarSelectDefault1: { type: Boolean, default: false },
+  rentalCarSelectDefaultAndEco1: { type: Boolean, default: false },
   rentalCarSelectEco1: { type: Boolean, default: false },
   hotel1: {
     type: Number,
@@ -512,6 +514,7 @@ const userSchema = new Schema({
   originalHotel1: { type: Number, default: 0 },
   hotelEco1: { type: Number, default: 0 },
   hotelSelectDefault1: { type: Boolean, default: false },
+  hotelSelectDefaultAndEco1: { type: Boolean, default: false },
   hotelSelectEco1: { type: Boolean, default: false },
   dinner1: {
     type: Number,
@@ -520,6 +523,7 @@ const userSchema = new Schema({
   originalDinner1: { type: Number, default: 0 },
   dinnerEco1: { type: Number, default: 0 },
   dinnerSelectDefault1: { type: Boolean, default: false },
+  dinnerSelectDefaultAndEco1: { type: Boolean, default: false },
   dinnerSelectEco1: { type: Boolean, default: false },
   lunch1: {
     type: Number,
@@ -528,6 +532,7 @@ const userSchema = new Schema({
   originalLunch1: { type: Number, default: 0 },
   lunchEco1: { type: Number, default: 0 },
   lunchSelectDefault1: { type: Boolean, default: false },
+  lunchSelectDefaultAndEco1: { type: Boolean, default: false },
   lunchSelectEco1: { type: Boolean, default: false },
   breakfast1: {
     type: Number,
@@ -536,6 +541,7 @@ const userSchema = new Schema({
   originalBreakfast1: { type: Number, default: 0 },
   breakfastEco1: { type: Number, default: 0 },
   breakfastSelectDefault1: { type: Boolean, default: false },
+  breakfastSelectDefaultAndEco1: { type: Boolean, default: false },
   breakfastSelectEco1: { type: Boolean, default: false },
   museums1: {
     type: Number,
@@ -544,6 +550,7 @@ const userSchema = new Schema({
   originalMuseums1: { type: Number, default: 0 },
   museumsEco1: { type: Number, default: 0 },
   museumsSelectDefault1: { type: Boolean, default: false },
+  museumsSelectDefaultAndEco1: { type: Boolean, default: false },
   museumsSelectEco1: { type: Boolean, default: false },
   markets1: {
     type: Number,
@@ -551,10 +558,17 @@ const userSchema = new Schema({
   },
   originalMarkets1: { type: Number, default: 0 },
   marketsEco1: { type: Number, default: 0 },
+  marketsSelectDefault: { type: Number, default: 0 },
+  marketsSelectDefaultAndEco1: { type: Number, default: 0 },
+  marketsSelectEco1: { type: Boolean, default: false },
   publicTransportationLong1: { type: Number, default: 0 },
   originalPublicTransportationLong1: { type: Number, default: 0 },
   publicTransportationLongEco1: { type: Number, default: 0 },
   publicTransportationLongSelectDefault1: { type: Boolean, default: false },
+  publicTransportationLongSelectDefaultAndEco1: {
+    type: Boolean,
+    default: false,
+  },
   publicTransportationLongSelectEco1: { type: Boolean, default: false },
   coffee1: {
     type: Number,
@@ -563,6 +577,7 @@ const userSchema = new Schema({
   originalCoffee1: { type: Number, default: 0 },
   coffeeEco1: { type: Number, default: 0 },
   coffeeSelectDefault1: { type: Boolean, default: false },
+  coffeeSelectDefaultAndEco1: { type: Boolean, default: false },
   coffeeSelectEco1: { type: Boolean, default: false },
   bakery1: {
     type: Number,
@@ -571,6 +586,7 @@ const userSchema = new Schema({
   originalBakery1: { type: Number, default: 0 },
   bakeryEco1: { type: Number, default: 0 },
   bakerySelectDefault1: { type: Boolean, default: false },
+  bakerySelectDefaultAndEco1: { type: Boolean, default: false },
   bakerySelectEco1: { type: Boolean, default: false },
   nightLife1: {
     type: Number,
@@ -579,6 +595,7 @@ const userSchema = new Schema({
   originalNightLife1: { type: Number, default: 0 },
   nightLifeEco1: { type: Number, default: 0 },
   nightLifeSelectDefault1: { type: Boolean, default: false },
+  nightLifeSelectDefaultAndEco1: { type: Boolean, default: false },
   nightLifeSelectEco1: { type: Boolean, default: false },
   groceries1: {
     type: Number,
@@ -587,7 +604,8 @@ const userSchema = new Schema({
   originalGroceries1: { type: Number, default: 0 },
   groceriesEco1: { type: Number, default: 0 },
   groceriesSelectDefault1: { type: Boolean, default: false },
-  groceriesSelectEco1: { type: Boolean, default: false },
+  groceriesSelectDefaultAndEco1: { type: Boolean, default: false },
+  groceriesSelectEco3: { type: Boolean, default: false },
   souveneirs1: {
     type: Number,
     default: 0,
@@ -595,6 +613,7 @@ const userSchema = new Schema({
   originalSouveneirs1: { type: Number, default: 0 },
   souveneirsEco1: { type: Number, default: 0 },
   souveneirsSelectDefault1: { type: Boolean, default: false },
+  souveneirsSelectDefaultAndEco1: { type: Boolean, default: false },
   souveneirsSelectEco1: { type: Boolean, default: false },
   shopping1: {
     type: Number,
@@ -603,6 +622,7 @@ const userSchema = new Schema({
   originalShopping1: { type: Number, default: 0 },
   shoppingEco1: { type: Number, default: 0 },
   shoppingSelectDefault1: { type: Boolean, default: false },
+  shoppingSelectDefaultAndEco1: { type: Boolean, default: false },
   shoppingSelectEco1: { type: Boolean, default: false },
   currencyExchange1: {
     type: Number,
@@ -610,8 +630,9 @@ const userSchema = new Schema({
   },
   originalCurrencyExchange1: { type: Number, default: 0 },
   currencyExchangeEco1: { type: Number, default: 0 },
-  currencySelectDefault1: { type: Boolean, default: false },
-  currencySelectEco1: { type: Boolean, default: false },
+  currencyExchangeSelectDefault1: { type: Boolean, default: false },
+  currencyExchangeSelectDefaultAndEco1: { type: Boolean, default: false },
+  currencyExchangeSelectEco1: { type: Boolean, default: false },
   luggage1: {
     type: Number,
     default: 0,
@@ -619,6 +640,7 @@ const userSchema = new Schema({
   originalLuggage1: { type: Number, default: 0 },
   luggageEco1: { type: Number, default: 0 },
   luggageSelectDefault1: { type: Boolean, default: false },
+  luggageSelectDefaultAndEco1: { type: Boolean, default: false },
   luggageSelectEco1: { type: Boolean, default: false },
   dayTrip1: {
     type: Number,
@@ -627,6 +649,7 @@ const userSchema = new Schema({
   originalDayTrip1: { type: Number, default: 0 },
   dayTripEco1: { type: Number, default: 0 },
   dayTripSelectDefault1: { type: Boolean, default: false },
+  dayTripSelectDefaultAndEco1: { type: Boolean, default: false },
   dayTripSelectEco1: { type: Boolean, default: false },
   travelPlugAdapter1: {
     type: Number,
@@ -635,6 +658,7 @@ const userSchema = new Schema({
   originalTravelPlugAdapter1: { type: Number, default: 0 },
   travelPlugAdapterEco1: { type: Number, default: 0 },
   travelPlugAdapterSelectDefault1: { type: Boolean, default: false },
+  travelPlugAdapterSelectDefaultAndEco1: { type: Boolean, default: false },
   travelPlugAdapterSelectEco1: { type: Boolean, default: false },
   choose1: {
     type: String,
@@ -755,6 +779,7 @@ const userSchema = new Schema({
   originalFlight2: { type: Number, default: 0 },
   flightEco2: { type: Number, default: 0 },
   flightSelectDefault2: { type: Boolean, default: false },
+  flightSelectDefaultAndEco2: { type: Boolean, default: false },
   flightSelectEco2: { type: Boolean, default: false },
   rentalCar2: {
     type: Number,
@@ -763,7 +788,8 @@ const userSchema = new Schema({
   originalRentalCar2: { type: Number, default: 0 },
   rentalCarEco2: { type: Number, default: 0 },
   rentalCarSelectDefault2: { type: Boolean, default: false },
-  rentalCarSelectEco2: { type: Boolean, default: false },
+  rentalCarSelectDefaultAndEco2: { type: Boolean, default: false },
+  flightSelectEco2: { type: Boolean, default: false },
   hotel2: {
     type: Number,
     default: 0,
@@ -771,6 +797,7 @@ const userSchema = new Schema({
   originalHotel2: { type: Number, default: 0 },
   hotelEco2: { type: Number, default: 0 },
   hotelSelectDefault2: { type: Boolean, default: false },
+  hotelSelectDefaultAndEco2: { type: Boolean, default: false },
   hotelSelectEco2: { type: Boolean, default: false },
   dinner2: {
     type: Number,
@@ -779,6 +806,7 @@ const userSchema = new Schema({
   originalDinner2: { type: Number, default: 0 },
   dinnerEco2: { type: Number, default: 0 },
   dinnerSelectDefault2: { type: Boolean, default: false },
+  dinnerSelectDefaultAndEco2: { type: Boolean, default: false },
   dinnerSelectEco2: { type: Boolean, default: false },
   lunch2: {
     type: Number,
@@ -787,6 +815,7 @@ const userSchema = new Schema({
   originalLunch2: { type: Number, default: 0 },
   lunchEco2: { type: Number, default: 0 },
   lunchSelectDefault2: { type: Boolean, default: false },
+  lunchSelectDefaultAndEco2: { type: Boolean, default: false },
   lunchSelectEco2: { type: Boolean, default: false },
   breakfast2: {
     type: Number,
@@ -795,6 +824,7 @@ const userSchema = new Schema({
   originalBreakfast2: { type: Number, default: 0 },
   breakfastEco2: { type: Number, default: 0 },
   breakfastSelectDefault2: { type: Boolean, default: false },
+  breakfastSelectDefaultAndEco2: { type: Boolean, default: false },
   breakfastSelectEco2: { type: Boolean, default: false },
   museums2: {
     type: Number,
@@ -803,6 +833,7 @@ const userSchema = new Schema({
   originalMuseums2: { type: Number, default: 0 },
   museumsEco2: { type: Number, default: 0 },
   museumsSelectDefault2: { type: Boolean, default: false },
+  museumsSelectDefaultAndEco2: { type: Boolean, default: false },
   museumsSelectEco2: { type: Boolean, default: false },
   markets2: {
     type: Number,
@@ -811,6 +842,7 @@ const userSchema = new Schema({
   originalMarkets2: { type: Number, default: 0 },
   marketsEco2: { type: Number, default: 0 },
   marketsSelectDefault2: { type: Boolean, default: false },
+  marketsSelectDefaultAndEco2: { type: Boolean, default: false },
   marketsSelectEco2: { type: Boolean, default: false },
   publicTransportationLong2: {
     type: Number,
@@ -819,6 +851,10 @@ const userSchema = new Schema({
   originalPublicTransportationLong2: { type: Number, default: 0 },
   publicTransportationLongEco2: { type: Number, default: 0 },
   publicTransportationLongSelectDefault2: { type: Boolean, default: false },
+  publicTransportationLongSelectDefaultAndEco2: {
+    type: Boolean,
+    default: false,
+  },
   publicTransportationLongSelectEco2: { type: Boolean, default: false },
   coffee2: {
     type: Number,
@@ -827,6 +863,7 @@ const userSchema = new Schema({
   originalCoffee2: { type: Number, default: 0 },
   coffeeEco2: { type: Number, default: 0 },
   coffeeSelectDefault2: { type: Boolean, default: false },
+  coffeeSelectDefaultAndEco2: { type: Boolean, default: false },
   coffeeSelectEco2: { type: Boolean, default: false },
   bakery2: {
     type: Number,
@@ -835,6 +872,7 @@ const userSchema = new Schema({
   originalBakery2: { type: Number, default: 0 },
   bakeryEco2: { type: Number, default: 0 },
   bakerySelectDefault2: { type: Boolean, default: false },
+  bakerySelectDefaultAndEco2: { type: Boolean, default: false },
   bakerySelectEco2: { type: Boolean, default: false },
   nightLife2: {
     type: Number,
@@ -843,6 +881,7 @@ const userSchema = new Schema({
   originalNightLife2: { type: Number, default: 0 },
   nightLifeEco2: { type: Number, default: 0 },
   nightLifeSelectDefault2: { type: Boolean, default: false },
+  nightLifeSelectDefaultAndEco2: { type: Boolean, default: false },
   nightLifeSelectEco2: { type: Boolean, default: false },
   groceries2: {
     type: Number,
@@ -851,6 +890,7 @@ const userSchema = new Schema({
   originalGroceries2: { type: Number, default: 0 },
   groceriesEco2: { type: Number, default: 0 },
   groceriesSelectDefault2: { type: Boolean, default: false },
+  groceriesSelectDefaultAndEco2: { type: Boolean, default: false },
   groceriesSelectEco2: { type: Boolean, default: false },
   souveneirs2: {
     type: Number,
@@ -859,6 +899,7 @@ const userSchema = new Schema({
   originalSouveneirs2: { type: Number, default: 0 },
   souveneirsEco2: { type: Number, default: 0 },
   souveneirsSelectDefault2: { type: Boolean, default: false },
+  souveneirsSelectDefaultAndEco2: { type: Boolean, default: false },
   souveneirsSelectEco2: { type: Boolean, default: false },
   shopping2: {
     type: Number,
@@ -867,6 +908,7 @@ const userSchema = new Schema({
   originalShopping2: { type: Number, default: 0 },
   shoppingEco2: { type: Number, default: 0 },
   shoppingSelectDefault2: { type: Boolean, default: false },
+  shoppingSelectDefaultAndEco2: { type: Boolean, default: false },
   shoppingSelectEco2: { type: Boolean, default: false },
   currencyExchange2: {
     type: Number,
@@ -875,6 +917,7 @@ const userSchema = new Schema({
   originalCurrencyExchange2: { type: Number, default: 0 },
   currencyExchangeEco2: { type: Number, default: 0 },
   currencyExchangeSelectDefault2: { type: Boolean, default: false },
+  currencyExchangeSelectDefaultAndEco2: { type: Boolean, default: false },
   currencyExchangeSelectEco2: { type: Boolean, default: false },
   luggage2: {
     type: Number,
@@ -883,6 +926,7 @@ const userSchema = new Schema({
   originalLuggage2: { type: Number, default: 0 },
   luggageEco2: { type: Number, default: 0 },
   luggageSelectDefault2: { type: Boolean, default: false },
+  luggageSelectDefaultAndEco2: { type: Boolean, default: false },
   luggageSelectEco2: { type: Boolean, default: false },
   dayTrip2: {
     type: Number,
@@ -891,6 +935,7 @@ const userSchema = new Schema({
   originalDayTrip2: { type: Number, default: 0 },
   dayTripEco2: { type: Number, default: 0 },
   dayTripSelectDefault2: { type: Boolean, default: false },
+  dayTripSelectDefaultAndEco2: { type: Boolean, default: false },
   dayTripSelectEco2: { type: Boolean, default: false },
   travelPlugAdapter2: {
     type: Number,
@@ -899,6 +944,7 @@ const userSchema = new Schema({
   originalTravelPlugAdapter2: { type: Number, default: 0 },
   travelPlugAdapterEco2: { type: Number, default: 0 },
   travelPlugAdapterSelectDefault2: { type: Boolean, default: false },
+  travelPlugAdapterSelectDefaultAndEco2: { type: Boolean, default: false },
   travelPlugAdapterSelectEco2: { type: Boolean, default: false },
   choose2: {
     type: String,
@@ -1019,6 +1065,7 @@ const userSchema = new Schema({
   originalFlight3: { type: Number, default: 0 },
   flightEco3: { type: Number, default: 0 },
   flightSelectDefault3: { type: Boolean, default: false },
+  flightSelectDefaultAndEco3: { type: Boolean, default: false },
   flightSelectEco3: { type: Boolean, default: false },
   rentalCar3: {
     type: Number,
@@ -1027,6 +1074,7 @@ const userSchema = new Schema({
   originalRentalCar3: { type: Number, default: 0 },
   rentalCarEco3: { type: Number, default: 0 },
   rentalCarSelectDefault3: { type: Boolean, default: false },
+  rentalCarSelectDefaultAndEco3: { type: Boolean, default: false },
   rentalCarSelectEco3: { type: Boolean, default: false },
   hotel3: {
     type: Number,
@@ -1035,6 +1083,7 @@ const userSchema = new Schema({
   originalHotel3: { type: Number, default: 0 },
   hotelEco3: { type: Number, default: 0 },
   hotelSelectDefault3: { type: Boolean, default: false },
+  hotelSelectDefaultAndEco3: { type: Boolean, default: false },
   hotelSelectEco3: { type: Boolean, default: false },
   dinner3: {
     type: Number,
@@ -1043,6 +1092,7 @@ const userSchema = new Schema({
   originalDinner3: { type: Number, default: 0 },
   dinnerEco3: { type: Number, default: 0 },
   dinnerSelectDefault3: { type: Boolean, default: false },
+  dinnerSelectDefaultAndEco3: { type: Boolean, default: false },
   dinnerSelectEco3: { type: Boolean, default: false },
   lunch3: {
     type: Number,
@@ -1051,6 +1101,7 @@ const userSchema = new Schema({
   originalLunch3: { type: Number, default: 0 },
   lunchEco3: { type: Number, default: 0 },
   lunchSelectDefault3: { type: Boolean, default: false },
+  lunchSelectDefaultAndEco3: { type: Boolean, default: false },
   lunchSelectEco3: { type: Boolean, default: false },
   breakfast3: {
     type: Number,
@@ -1059,6 +1110,7 @@ const userSchema = new Schema({
   originalBreakfast3: { type: Number, default: 0 },
   breakfastEco3: { type: Number, default: 0 },
   breakfastSelectDefault3: { type: Boolean, default: false },
+  breakfastSelectDefaultAndEco3: { type: Boolean, default: false },
   breakfastSelectEco3: { type: Boolean, default: false },
   museums3: {
     type: Number,
@@ -1067,6 +1119,7 @@ const userSchema = new Schema({
   originalMuseums3: { type: Number, default: 0 },
   museumsEco3: { type: Number, default: 0 },
   museumsSelectDefault3: { type: Boolean, default: false },
+  museumsSelectDefaultAndEco3: { type: Boolean, default: false },
   museumsSelectEco3: { type: Boolean, default: false },
   markets3: {
     type: Number,
@@ -1075,6 +1128,7 @@ const userSchema = new Schema({
   originalMarkets3: { type: Number, default: 0 },
   marketsEco3: { type: Number, default: 0 },
   marketsSelectDefault3: { type: Boolean, default: false },
+  marketsSelectDefaultAndEco3: { type: Boolean, default: false },
   marketsSelectEco3: { type: Boolean, default: false },
   publicTransportationLong3: {
     type: Number,
@@ -1083,6 +1137,10 @@ const userSchema = new Schema({
   originalPublicTransportationLong3: { type: Number, default: 0 },
   publicTransportationLongEco3: { type: Number, default: 0 },
   publicTransportationLongSelectDefault3: { type: Boolean, default: false },
+  publicTransportationLongSelectDefaultAndEco3: {
+    type: Boolean,
+    default: false,
+  },
   publicTransportationLongSelectEco3: { type: Boolean, default: false },
   coffee3: {
     type: Number,
@@ -1091,6 +1149,7 @@ const userSchema = new Schema({
   originalCoffee3: { type: Number, default: 0 },
   coffeeEco3: { type: Number, default: 0 },
   coffeeSelectDefault3: { type: Boolean, default: false },
+  coffeeSelectDefaultAndEco3: { type: Boolean, default: false },
   coffeeSelectEco3: { type: Boolean, default: false },
   bakery3: {
     type: Number,
@@ -1099,6 +1158,7 @@ const userSchema = new Schema({
   originalBakery3: { type: Number, default: 0 },
   bakeryEco3: { type: Number, default: 0 },
   bakerySelectDefault3: { type: Boolean, default: false },
+  bakerySelectDefaultAndEco3: { type: Boolean, default: false },
   bakerySelectEco3: { type: Boolean, default: false },
   nightLife3: {
     type: Number,
@@ -1107,6 +1167,7 @@ const userSchema = new Schema({
   originalNightLife3: { type: Number, default: 0 },
   nightLifeEco3: { type: Number, default: 0 },
   nightLifeSelectDefault3: { type: Boolean, default: false },
+  nightLifeSelectDefaultAndEco3: { type: Boolean, default: false },
   nightLifeSelectEco3: { type: Boolean, default: false },
   groceries3: {
     type: Number,
@@ -1115,6 +1176,7 @@ const userSchema = new Schema({
   originalGroceries3: { type: Number, default: 0 },
   groceriesEco3: { type: Number, default: 0 },
   groceriesSelectDefault3: { type: Boolean, default: false },
+  groceriesSelectDefaultAndEco3: { type: Boolean, default: false },
   groceriesSelectEco3: { type: Boolean, default: false },
   souveneirs3: {
     type: Number,
@@ -1123,6 +1185,7 @@ const userSchema = new Schema({
   originalSouveneirs3: { type: Number, default: 0 },
   souveneirsEco3: { type: Number, default: 0 },
   souveneirsSelectDefault3: { type: Boolean, default: false },
+  souveneirsSelectDefaultAndEco3: { type: Boolean, default: false },
   souveneirsSelectEco3: { type: Boolean, default: false },
   shopping3: {
     type: Number,
@@ -1131,6 +1194,7 @@ const userSchema = new Schema({
   originalShopping3: { type: Number, default: 0 },
   shoppingEco3: { type: Number, default: 0 },
   shoppingSelectDefault3: { type: Boolean, default: false },
+  shoppingSelectDefaultAndEco3: { type: Boolean, default: false },
   shoppingSelectEco3: { type: Boolean, default: false },
   currencyExchange3: {
     type: Number,
@@ -1139,6 +1203,7 @@ const userSchema = new Schema({
   originalCurrencyExchange3: { type: Number, default: 0 },
   currencyExchangeEco3: { type: Number, default: 0 },
   currencyExchangeSelectDefault3: { type: Boolean, default: false },
+  currencyExchangeSelectDefaultAndEco3: { type: Boolean, default: false },
   currencyExchangeSelectEco3: { type: Boolean, default: false },
   luggage3: {
     type: Number,
@@ -1147,6 +1212,7 @@ const userSchema = new Schema({
   originalLuggage3: { type: Number, default: 0 },
   luggageEco3: { type: Number, default: 0 },
   luggageSelectDefault3: { type: Boolean, default: false },
+  luggageSelectDefaultAndEco3: { type: Boolean, default: false },
   luggageSelectEco3: { type: Boolean, default: false },
   dayTrip3: {
     type: Number,
@@ -1155,6 +1221,7 @@ const userSchema = new Schema({
   originalDayTrip3: { type: Number, default: 0 },
   dayTripEco3: { type: Number, default: 0 },
   dayTripSelectDefault3: { type: Boolean, default: false },
+  dayTripSelectDefaultAndEco3: { type: Boolean, default: false },
   dayTripSelectEco3: { type: Boolean, default: false },
   travelPlugAdapter3: {
     type: Number,
@@ -1163,6 +1230,7 @@ const userSchema = new Schema({
   originalTravelPlugAdapter3: { type: Number, default: 0 },
   travelPlugAdapterEco3: { type: Number, default: 0 },
   travelPlugAdapterSelectDefault3: { type: Boolean, default: false },
+  travelPlugAdapterSelectDefaultAndEco3: { type: Boolean, default: false },
   travelPlugAdapterSelectEco3: { type: Boolean, default: false },
   choose3: {
     type: String,

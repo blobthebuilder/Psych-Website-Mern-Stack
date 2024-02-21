@@ -2,8 +2,8 @@ import React from "react";
 import { json2csv } from "json-2-csv";
 
 function ResultsPage() {
-  //const url = "http://localhost:4000";
-  const url = "https://psych-website.onrender.com";
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com";
   const getData = async () => {
     try {
       const res = await fetch(url + "/api/user");
