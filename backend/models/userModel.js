@@ -558,8 +558,8 @@ const userSchema = new Schema({
   },
   originalMarkets1: { type: Number, default: 0 },
   marketsEco1: { type: Number, default: 0 },
-  marketsSelectDefault: { type: Number, default: 0 },
-  marketsSelectDefaultAndEco1: { type: Number, default: 0 },
+  marketsSelectDefault1: { type: Boolean, default: false },
+  marketsSelectDefaultAndEco1: { type: Boolean, default: false },
   marketsSelectEco1: { type: Boolean, default: false },
   publicTransportationLong1: { type: Number, default: 0 },
   originalPublicTransportationLong1: { type: Number, default: 0 },
@@ -605,7 +605,7 @@ const userSchema = new Schema({
   groceriesEco1: { type: Number, default: 0 },
   groceriesSelectDefault1: { type: Boolean, default: false },
   groceriesSelectDefaultAndEco1: { type: Boolean, default: false },
-  groceriesSelectEco3: { type: Boolean, default: false },
+  groceriesSelectEco1: { type: Boolean, default: false },
   souveneirs1: {
     type: Number,
     default: 0,
@@ -789,7 +789,7 @@ const userSchema = new Schema({
   rentalCarEco2: { type: Number, default: 0 },
   rentalCarSelectDefault2: { type: Boolean, default: false },
   rentalCarSelectDefaultAndEco2: { type: Boolean, default: false },
-  flightSelectEco2: { type: Boolean, default: false },
+  rentalCarSelectEco2: { type: Boolean, default: false },
   hotel2: {
     type: Number,
     default: 0,

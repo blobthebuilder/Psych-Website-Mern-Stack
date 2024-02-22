@@ -1228,8 +1228,8 @@ function Survey() {
   };
   */
 
-  const url = "http://localhost:4000";
-  //const url = "https://psych-website.onrender.com";
+  //const url = "http://localhost:4000";
+  const url = "https://psych-website.onrender.com";
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -1308,7 +1308,90 @@ function Survey() {
     handleNext();
     setShowItineraryHeader(!showItineraryHeader);
   };
+  const stringToInt = () => {
+    console.log("converted");
+    setFlightSelection1(parseInt(flightSelection1));
+    setFlightSelection2(parseInt(flightSelection2));
+    setFlightSelection3(parseInt(flightSelection3));
 
+    setRentalCarSelection1(parseInt(rentalCarSelection1));
+    setRentalCarSelection2(parseInt(rentalCarSelection2));
+    setRentalCarSelection3(parseInt(rentalCarSelection3));
+
+    setHotelSelection1(parseInt(hotelSelection1));
+    setHotelSelection2(parseInt(hotelSelection2));
+    setHotelSelection3(parseInt(hotelSelection3));
+
+    setDinnerSelection1(parseInt(dinnerSelection1));
+    setDinnerSelection2(parseInt(dinnerSelection2));
+    setDinnerSelection3(parseInt(dinnerSelection3));
+
+    setLunchSelection1(parseInt(lunchSelection1));
+    setLunchSelection2(parseInt(lunchSelection2));
+    setLunchSelection3(parseInt(lunchSelection3));
+
+    setBreakfastSelection1(parseInt(breakfastSelection1));
+    setBreakfastSelection2(parseInt(breakfastSelection2));
+    setBreakfastSelection3(parseInt(breakfastSelection3));
+
+    setMuseumsSelection1(parseInt(museumsSelection1));
+    setMuseumsSelection2(parseInt(museumsSelection2));
+    setMuseumsSelection3(parseInt(museumsSelection3));
+
+    setMarketsSelection1(parseInt(marketsSelection1));
+    setMarketsSelection2(parseInt(marketsSelection2));
+    setMarketsSelection3(parseInt(marketsSelection3));
+
+    setPublicTransportationLongSelection1(
+      parseInt(publicTransportationLongSelection1)
+    );
+    setPublicTransportationLongSelection2(
+      parseInt(publicTransportationLongSelection2)
+    );
+    setPublicTransportationLongSelection3(
+      parseInt(publicTransportationLongSelection3)
+    );
+
+    setCoffeeSelection1(parseInt(coffeeSelection1));
+    setCoffeeSelection2(parseInt(coffeeSelection2));
+    setCoffeeSelection3(parseInt(coffeeSelection3));
+
+    setBakerySelection1(parseInt(bakerySelection1));
+    setBakerySelection2(parseInt(bakerySelection2));
+    setBakerySelection3(parseInt(bakerySelection3));
+
+    setNightLifeSelection1(parseInt(nightLifeSelection1));
+    setNightLifeSelection2(parseInt(nightLifeSelection2));
+    setNightLifeSelection3(parseInt(nightLifeSelection3));
+
+    setGroceriesSelection1(parseInt(groceriesSelection1));
+    setGroceriesSelection2(parseInt(groceriesSelection2));
+    setGroceriesSelection3(parseInt(groceriesSelection3));
+
+    setSouveneirsSelection1(parseInt(souveneirsSelection1));
+    setSouveneirsSelection2(parseInt(souveneirsSelection2));
+    setSouveneirsSelection3(parseInt(souveneirsSelection3));
+
+    setShoppingSelection1(parseInt(shoppingSelection1));
+    setShoppingSelection2(parseInt(shoppingSelection2));
+    setShoppingSelection3(parseInt(shoppingSelection3));
+
+    setCurrencyExchangeSelection1(parseInt(currencyExchangeSelection1));
+    setCurrencyExchangeSelection2(parseInt(currencyExchangeSelection2));
+    setCurrencyExchangeSelection3(parseInt(currencyExchangeSelection3));
+
+    setLuggageSelection1(parseInt(luggageSelection1));
+    setLuggageSelection2(parseInt(luggageSelection2));
+    setLuggageSelection3(parseInt(luggageSelection3));
+
+    setDayTripSelection1(parseInt(dayTripSelection1));
+    setDayTripSelection2(parseInt(dayTripSelection2));
+    setDayTripSelection3(parseInt(dayTripSelection3));
+
+    setTravelPlugAdapterSelection1(parseInt(travelPlugAdapterSelection1));
+    setTravelPlugAdapterSelection2(parseInt(travelPlugAdapterSelection2));
+    setTravelPlugAdapterSelection3(parseInt(travelPlugAdapterSelection3));
+  };
   const handleNextStartServer = () => {
     const startServer = async () => {
       try {
@@ -1329,6 +1412,7 @@ function Survey() {
     };
     startServer();
     handleNext();
+    stringToInt();
   };
 
   const [recommendedAndEco1, setRecommendedAndEco1] = useState(null);
@@ -1340,7 +1424,6 @@ function Survey() {
   const [itineraryFeatures3, setItineraryFeatures3] = useState(null);
   // initialize default values
   const initializeVals = () => {
-    console.log(recommendedAndEco1);
     setFlightSelection1(recommendedAndEco1["Flight"][0]);
     setFlightSelection2(recommendedAndEco2["Flight"][0]);
     setFlightSelection3(recommendedAndEco3["Flight"][0]);
@@ -1710,7 +1793,9 @@ function Survey() {
         ? true
         : false;
     const rentalCarSelectEco2 =
-      rentalCarSelection2 === recommendedAndEco2["Flight"][1] ? true : false;
+      rentalCarSelection2 === recommendedAndEco2["Rental Car"][1]
+        ? true
+        : false;
 
     const hotelSelectDefault2 =
       hotelSelection2 === recommendedAndEco2["Hotel"][0] ? true : false;
@@ -1720,7 +1805,7 @@ function Survey() {
         ? true
         : false;
     const hotelSelectEco2 =
-      hotelSelection2 === recommendedAndEco2["Rental Car"][1] ? true : false;
+      hotelSelection2 === recommendedAndEco2["Hotel"][1] ? true : false;
 
     const dinnerSelectDefault2 =
       dinnerSelection2 === recommendedAndEco2["Dinner"][0] ? true : false;
@@ -1935,7 +2020,9 @@ function Survey() {
         ? true
         : false;
     const rentalCarSelectEco3 =
-      flightSelection3 === recommendedAndEco3["Rental Car"][1] ? true : false;
+      rentalCarSelection3 === recommendedAndEco3["Rental Car"][1]
+        ? true
+        : false;
 
     const hotelSelectDefault3 =
       hotelSelection3 === recommendedAndEco3["Hotel"][0] ? true : false;
