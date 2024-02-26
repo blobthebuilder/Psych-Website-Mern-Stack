@@ -1216,7 +1216,7 @@ function Survey() {
     setCurAgent(agent3);
   };
   // show alert when closing or refreshing
-  /*
+
   window.onbeforeunload = (event) => {
     const e = event || window.event;
     // Cancel the event
@@ -1226,7 +1226,6 @@ function Survey() {
     }
     return ""; // Legacy method for cross browser support
   };
-  */
 
   //const url = "http://localhost:4000";
   const url = "https://psych-website.onrender.com";
