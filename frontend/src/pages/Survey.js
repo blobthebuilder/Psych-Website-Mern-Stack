@@ -1512,6 +1512,17 @@ function Survey() {
     );
   };
 
+  const incUsers = async () => {
+    const res = await fetch(url + "/api/data", {
+      method: "POST",
+    });
+    const json = await res.json();
+    if (!res.ok) {
+      console.log(json.error);
+    } else {
+      console.log("Successfully incremented");
+    }
+  };
   const startSurvey = () => {
     setCurAgent(agent1);
     setStartTime(Date.now());
@@ -1522,6 +1533,7 @@ function Survey() {
     setRecommendedAndEco2(randomizeRecommendedAndEco);
     setRecommendedAndEco3(randomizeRecommendedAndEco);
     handleNext();
+    incUsers();
     //setTimeout(initializeVals, 20000);
   };
 
@@ -2822,21 +2834,9 @@ function Survey() {
         } else {
           console.log("Successfully uploaded");
           setUploaded(true);
-          incUsers();
         }
       } catch (error) {
         console.log("Error");
-      }
-    };
-    const incUsers = async () => {
-      const res = await fetch(url + "/api/data", {
-        method: "POST",
-      });
-      const json = await res.json();
-      if (!res.ok) {
-        console.log(json.error);
-      } else {
-        console.log("Successfully incremented");
       }
     };
     uploadUser();
