@@ -9,9 +9,9 @@ const userSchema = new Schema({
     default: 0,
   },
   prolificId: {
-    type: Number,
+    type: String,
     required: true,
-    default: 0,
+    default: "0",
   },
   orderOfAgents: {
     type: Number,

@@ -11,6 +11,7 @@ const app = express();
 // middleware
 
 // npm run dev
+
 /*
 const corsOptions = {
   origin: "http://localhost:3000", // frontend URI (ReactJS)
