@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PersonalityHeader from "../components/PersonalityHeader";
 import LandingPage from "../components/LandingPage";
 import ConsentFormPage from "../components/ConsentFormPage";
+import Prolific from "../components/Prolific.js";
 import GeneralInstructions1 from "../components/GeneralInstructions1";
 import GeneralInstructions2 from "../components/GeneralInstructions2";
 import GeneralInstructions3 from "../components/GeneralInstructions3";
@@ -101,6 +102,7 @@ function Survey() {
   const [afternoonSelection, setAfternoonSelection] = useState("");
   const [restaurantSelection, setRestaurantSelection] = useState("");
 
+  const [prolificId, setProlificId] = useState("");
   const [vacationSelection, setVacationSelection] = useState("");
   const [activitiesSelection, setActivitiesSelection] = useState({
     "Outdoor activities": false,
@@ -641,6 +643,11 @@ function Survey() {
   };
   const handleRaceTextChange = (value) => {
     setRaceText(value);
+  };
+
+  const handleProlificIdChange = (value) => {
+    setProlificId(value);
+    console.log(prolificId);
   };
   const handleResidenceChange = (value) => {
     setResidenceSelection(value);
@@ -1227,6 +1234,7 @@ function Survey() {
     return ""; // Legacy method for cross browser support
   };
 
+  // npm start
   //const url = "http://localhost:4000";
   const url = "https://psych-website.onrender.com";
   useEffect(() => {
@@ -2240,6 +2248,7 @@ function Survey() {
     const uploadUser = async () => {
       const user = {
         userId: totalUsers,
+        prolificId: prolificId,
         orderOfAgents: agentPath,
         timeElapsed: timeElapsed,
         timeStamp: datetime,
@@ -2853,31 +2862,37 @@ function Survey() {
         />
       )}
       {step === 3 && (
+        <Prolific
+          onNext={handleNext}
+          onIdChange={handleProlificIdChange}
+        />
+      )}
+      {step === 4 && (
         <GeneralInstructions1
           onNext={handleNext}
           onBack={handleBack}
         />
       )}
-      {step === 4 && (
+      {step === 5 && (
         <GeneralInstructions2
           onNext={handleNext}
           onBack={handleBack}
         />
       )}
-      {step === 5 && (
+      {step === 6 && (
         <GeneralInstructions4
           onNext={handleNext}
           onBack={handleBack}
         />
       )}
-      {step === 6 && (
+      {step === 7 && (
         <GeneralInstructions3
           onNext={handleNext}
           onBack={handleBack}
         />
       )}
-      {step === 7 && <Introduction onNext={handleNextChangeHeader} />}
-      {step === 8 && (
+      {step === 8 && <Introduction onNext={handleNextChangeHeader} />}
+      {step === 9 && (
         <Question1
           onNext={handleNext}
           onRuggedChange={handleRuggedChange}
@@ -2897,7 +2912,7 @@ function Survey() {
           onModestChange={handleModestChange}
         />
       )}
-      {step === 9 && (
+      {step === 10 && (
         <GreenQuestion
           onNext={handleNext}
           onBack={handleBack}
@@ -2909,7 +2924,7 @@ function Survey() {
           onInconvenienceChange={handleInconvenienceChange}
         />
       )}
-      {step === 10 && (
+      {step === 11 && (
         <Question2A
           onNext={handleNext}
           onBack={handleBack}
@@ -2917,7 +2932,7 @@ function Survey() {
           onHotelChange={handleHotelChange}
         />
       )}
-      {step === 11 && (
+      {step === 12 && (
         <Question2B
           onNext={handleNext}
           onBack={handleBack}
@@ -2925,7 +2940,7 @@ function Survey() {
           onAfternoonChange={handleAfternoonChange}
         />
       )}
-      {step === 12 && (
+      {step === 13 && (
         <Question2C
           onNext={handleNext}
           onBack={handleBack}
@@ -2933,7 +2948,7 @@ function Survey() {
           onRestaurantChange={handleRestaurantChange}
         />
       )}
-      {step === 13 && (
+      {step === 14 && (
         <Question3
           onNext={handleNext}
           onBack={handleBack}
@@ -2955,14 +2970,14 @@ function Survey() {
           onRelaxationChange={handleRelaxationChange}
         />
       )}
-      {step === 14 && (
+      {step === 15 && (
         <Question4
           onNext={handleNext}
           onBack={handleBack}
           onInterestsChange={handleInterestsChange}
         />
       )}
-      {step === 15 && (
+      {step === 16 && (
         <Demographics
           onNext={handleNextChangeHeader}
           onBack={handleBack}
@@ -2983,41 +2998,32 @@ function Survey() {
           onECommunicationUseChange={handleECommunicationUseChange}
         />
       )}
-      {step === 16 && <SubmitPage onNext={handleNext} />}
-      {step === 17 && <Loading onNext={handleNext} />}
-      {step === 18 && (
+      {step === 17 && <SubmitPage onNext={handleNext} />}
+      {step === 18 && <Loading onNext={handleNext} />}
+      {step === 19 && (
         <Instructions1
           onNext={handleNext}
           agent={agent1}
         />
       )}
-      {step === 19 && (
+      {step === 20 && (
         <Instructions2
           onNext={handleNext}
           agent={agent1}
         />
       )}
-      {step === 20 && (
+      {step === 21 && (
         <AttentionCheck
           onNext={handleNextAttentionCheck1}
           agent={agent1}
           onRadioChange={handleAttentionCheckChange}
         />
       )}
-      {step === 21 && (
+      {step === 22 && (
         <AttentionCheckAnswer
           onNext={handleNextChangeItineraryHeader}
           selection={attentionCheckSelection}
           curAgent={curAgent}
-        />
-      )}
-      {step === 22 && (
-        <Itinerary
-          onNext={handleNext}
-          type={"Flight"}
-          features={itineraryFeatures1}
-          recommendedAndEco={recommendedAndEco1}
-          onSelectionChange={handleFlightSelection1}
         />
       )}
       {step === 23 && (
@@ -3259,16 +3265,8 @@ function Survey() {
           curAgent={curAgent}
         />
       )}
+
       {step === 49 && (
-        <Itinerary
-          onNext={handleNext}
-          type={"Flight"}
-          features={itineraryFeatures2}
-          recommendedAndEco={recommendedAndEco2}
-          onSelectionChange={handleFlightSelection2}
-        />
-      )}
-      {step === 50 && (
         <Itinerary
           onNext={handleNext}
           type={"Rental Car"}
@@ -3277,7 +3275,7 @@ function Survey() {
           onSelectionChange={handleRentalCarSelection2}
         />
       )}
-      {step === 51 && (
+      {step === 50 && (
         <Itinerary
           onNext={handleNext}
           type={"Hotel"}
@@ -3286,7 +3284,7 @@ function Survey() {
           onSelectionChange={handleHotelSelection2}
         />
       )}
-      {step === 52 && (
+      {step === 51 && (
         <Itinerary
           onNext={handleNext}
           type={"Dinner"}
@@ -3295,7 +3293,7 @@ function Survey() {
           onSelectionChange={handleDinnerSelection2}
         />
       )}
-      {step === 53 && (
+      {step === 52 && (
         <Itinerary
           onNext={handleNext}
           type={"Lunch"}
@@ -3304,7 +3302,7 @@ function Survey() {
           onSelectionChange={handleLunchSelection2}
         />
       )}
-      {step === 54 && (
+      {step === 53 && (
         <Itinerary
           onNext={handleNext}
           type={"Breakfast"}
@@ -3313,7 +3311,7 @@ function Survey() {
           onSelectionChange={handleBreakfastSelection2}
         />
       )}
-      {step === 55 && (
+      {step === 54 && (
         <Itinerary
           onNext={handleNext}
           type={"Museums"}
@@ -3322,7 +3320,7 @@ function Survey() {
           onSelectionChange={handleMuseumsSelection2}
         />
       )}
-      {step === 56 && (
+      {step === 55 && (
         <Itinerary
           onNext={handleNext}
           type={"Markets"}
@@ -3331,7 +3329,7 @@ function Survey() {
           onSelectionChange={handleMarketsSelection2}
         />
       )}
-      {step === 57 && (
+      {step === 56 && (
         <Itinerary
           onNext={handleNext}
           type={"Public Transportation"}
@@ -3340,7 +3338,7 @@ function Survey() {
           onSelectionChange={handlePublicTransportationLongSelection2}
         />
       )}
-      {step === 58 && (
+      {step === 57 && (
         <Itinerary
           onNext={handleNext}
           type={"Coffee"}
@@ -3349,7 +3347,7 @@ function Survey() {
           onSelectionChange={handleCoffeeSelection2}
         />
       )}
-      {step === 59 && (
+      {step === 58 && (
         <Itinerary
           onNext={handleNext}
           type={"Bakery"}
@@ -3358,7 +3356,7 @@ function Survey() {
           onSelectionChange={handleBakerySelection2}
         />
       )}
-      {step === 60 && (
+      {step === 59 && (
         <Itinerary
           onNext={handleNext}
           type={"Night Life"}
@@ -3367,7 +3365,7 @@ function Survey() {
           onSelectionChange={handleNightLifeSelection2}
         />
       )}
-      {step === 61 && (
+      {step === 60 && (
         <Itinerary
           onNext={handleNext}
           type={"Groceries"}
@@ -3376,7 +3374,7 @@ function Survey() {
           onSelectionChange={handleGroceriesSelection2}
         />
       )}
-      {step === 62 && (
+      {step === 61 && (
         <Itinerary
           onNext={handleNext}
           type={"Souveneirs"}
@@ -3385,7 +3383,7 @@ function Survey() {
           onSelectionChange={handleSouveneirsSelection2}
         />
       )}
-      {step === 63 && (
+      {step === 62 && (
         <Itinerary
           onNext={handleNext}
           type={"Shopping"}
@@ -3394,7 +3392,7 @@ function Survey() {
           onSelectionChange={handleShoppingSelection2}
         />
       )}
-      {step === 64 && (
+      {step === 63 && (
         <Itinerary
           onNext={handleNext}
           type={"Currency Exchange"}
@@ -3403,7 +3401,7 @@ function Survey() {
           onSelectionChange={handleCurrencyExchangeSelection2}
         />
       )}
-      {step === 65 && (
+      {step === 64 && (
         <Itinerary
           onNext={handleNext}
           type={"Luggage"}
@@ -3412,7 +3410,7 @@ function Survey() {
           onSelectionChange={handleLuggageSelection2}
         />
       )}
-      {step === 66 && (
+      {step === 65 && (
         <Itinerary
           onNext={handleNext}
           type={"Day Trip"}
@@ -3421,7 +3419,7 @@ function Survey() {
           onSelectionChange={handleDayTripSelection2}
         />
       )}
-      {step === 67 && (
+      {step === 66 && (
         <Itinerary
           onNext={handleNextChangeItineraryHeader}
           type={"Travel Plug Adapter"}
@@ -3430,7 +3428,7 @@ function Survey() {
           onSelectionChange={handleTravelPlugAdapterSelection2}
         />
       )}
-      {step === 68 && (
+      {step === 67 && (
         <FollowupQuestions1
           onNext={handleNext}
           agent={agent2}
@@ -3444,7 +3442,7 @@ function Survey() {
           onListenChange={handleListenSelection2}
         />
       )}
-      {step === 69 && (
+      {step === 68 && (
         <FollowupQuestions2
           onNext={handleNext}
           agent={agent2}
@@ -3456,7 +3454,7 @@ function Survey() {
           onUtilizeChange={handleUtilizeSelection2}
         />
       )}
-      {step === 70 && (
+      {step === 69 && (
         <FollowupQuestions3
           onNext={handleNext}
           agent={agent2}
@@ -3469,7 +3467,7 @@ function Survey() {
           onSuitsChange={handleSuitsSelection2}
         />
       )}
-      {step === 71 && (
+      {step === 70 && (
         <FollowupQuestionsGreen
           onNext={handleNextAgent2}
           agent={agent2}
@@ -3481,42 +3479,33 @@ function Survey() {
           onInconvenienceFollowupChange={handleInconvenienceFollowupSelection2}
         />
       )}
-      {step === 72 && (
+      {step === 71 && (
         <Instructions1
           onNext={handleNext}
           agent={agent3}
         />
       )}
-      {step === 73 && (
+      {step === 72 && (
         <Instructions2
           onNext={handleNext}
           agent={agent3}
         />
       )}
-      {step === 74 && (
+      {step === 73 && (
         <AttentionCheck
           onNext={handleNextAttentionCheck3}
           agent={agent3}
           onRadioChange={handleAttentionCheckChange}
         />
       )}
-      {step === 75 && (
+      {step === 74 && (
         <AttentionCheckAnswer
           onNext={handleNextChangeItineraryHeader}
           selection={attentionCheckSelection}
           curAgent={curAgent}
         />
       )}
-      {step === 76 && (
-        <Itinerary
-          onNext={handleNext}
-          type={"Flight"}
-          features={itineraryFeatures3}
-          recommendedAndEco={recommendedAndEco3}
-          onSelectionChange={handleFlightSelection3}
-        />
-      )}
-      {step === 77 && (
+      {step === 75 && (
         <Itinerary
           onNext={handleNext}
           type={"Rental Car"}
@@ -3525,7 +3514,7 @@ function Survey() {
           onSelectionChange={handleRentalCarSelection3}
         />
       )}
-      {step === 78 && (
+      {step === 76 && (
         <Itinerary
           onNext={handleNext}
           type={"Hotel"}
@@ -3534,7 +3523,7 @@ function Survey() {
           onSelectionChange={handleHotelSelection3}
         />
       )}
-      {step === 79 && (
+      {step === 77 && (
         <Itinerary
           onNext={handleNext}
           type={"Dinner"}
@@ -3543,7 +3532,7 @@ function Survey() {
           onSelectionChange={handleDinnerSelection3}
         />
       )}
-      {step === 80 && (
+      {step === 78 && (
         <Itinerary
           onNext={handleNext}
           type={"Lunch"}
@@ -3552,7 +3541,7 @@ function Survey() {
           onSelectionChange={handleLunchSelection3}
         />
       )}
-      {step === 81 && (
+      {step === 79 && (
         <Itinerary
           onNext={handleNext}
           type={"Breakfast"}
@@ -3561,7 +3550,7 @@ function Survey() {
           onSelectionChange={handleBreakfastSelection3}
         />
       )}
-      {step === 82 && (
+      {step === 80 && (
         <Itinerary
           onNext={handleNext}
           type={"Museums"}
@@ -3570,7 +3559,7 @@ function Survey() {
           onSelectionChange={handleMuseumsSelection3}
         />
       )}
-      {step === 83 && (
+      {step === 81 && (
         <Itinerary
           onNext={handleNext}
           type={"Markets"}
@@ -3579,7 +3568,7 @@ function Survey() {
           onSelectionChange={handleMarketsSelection3}
         />
       )}
-      {step === 84 && (
+      {step === 82 && (
         <Itinerary
           onNext={handleNext}
           type={"Public Transportation"}
@@ -3588,7 +3577,7 @@ function Survey() {
           onSelectionChange={handlePublicTransportationLongSelection3}
         />
       )}
-      {step === 85 && (
+      {step === 83 && (
         <Itinerary
           onNext={handleNext}
           type={"Coffee"}
@@ -3597,7 +3586,7 @@ function Survey() {
           onSelectionChange={handleCoffeeSelection3}
         />
       )}
-      {step === 86 && (
+      {step === 84 && (
         <Itinerary
           onNext={handleNext}
           type={"Bakery"}
@@ -3606,7 +3595,7 @@ function Survey() {
           onSelectionChange={handleBakerySelection3}
         />
       )}
-      {step === 87 && (
+      {step === 85 && (
         <Itinerary
           onNext={handleNext}
           type={"Night Life"}
@@ -3615,7 +3604,7 @@ function Survey() {
           onSelectionChange={handleNightLifeSelection3}
         />
       )}
-      {step === 88 && (
+      {step === 86 && (
         <Itinerary
           onNext={handleNext}
           type={"Groceries"}
@@ -3624,7 +3613,7 @@ function Survey() {
           onSelectionChange={handleGroceriesSelection3}
         />
       )}
-      {step === 89 && (
+      {step === 87 && (
         <Itinerary
           onNext={handleNext}
           type={"Souveneirs"}
@@ -3633,7 +3622,7 @@ function Survey() {
           onSelectionChange={handleSouveneirsSelection3}
         />
       )}
-      {step === 90 && (
+      {step === 88 && (
         <Itinerary
           onNext={handleNext}
           type={"Shopping"}
@@ -3642,7 +3631,7 @@ function Survey() {
           onSelectionChange={handleShoppingSelection3}
         />
       )}
-      {step === 91 && (
+      {step === 89 && (
         <Itinerary
           onNext={handleNext}
           type={"Currency Exchange"}
@@ -3651,7 +3640,7 @@ function Survey() {
           onSelectionChange={handleCurrencyExchangeSelection3}
         />
       )}
-      {step === 92 && (
+      {step === 90 && (
         <Itinerary
           onNext={handleNext}
           type={"Luggage"}
@@ -3660,7 +3649,7 @@ function Survey() {
           onSelectionChange={handleLuggageSelection3}
         />
       )}
-      {step === 93 && (
+      {step === 91 && (
         <Itinerary
           onNext={handleNext}
           type={"Day Trip"}
@@ -3669,7 +3658,7 @@ function Survey() {
           onSelectionChange={handleDayTripSelection3}
         />
       )}
-      {step === 94 && (
+      {step === 92 && (
         <Itinerary
           onNext={handleNextChangeItineraryHeader}
           type={"Travel Plug Adapter"}
@@ -3678,7 +3667,7 @@ function Survey() {
           onSelectionChange={handleTravelPlugAdapterSelection3}
         />
       )}
-      {step === 95 && (
+      {step === 93 && (
         <FollowupQuestions1
           onNext={handleNext}
           agent={agent3}
@@ -3692,7 +3681,7 @@ function Survey() {
           onListenChange={handleListenSelection3}
         />
       )}
-      {step === 96 && (
+      {step === 94 && (
         <FollowupQuestions2
           onNext={handleNext}
           agent={agent3}
@@ -3704,7 +3693,7 @@ function Survey() {
           onUtilizeChange={handleUtilizeSelection3}
         />
       )}
-      {step === 97 && (
+      {step === 95 && (
         <FollowupQuestions3
           onNext={handleNext}
           agent={agent3}
@@ -3717,7 +3706,7 @@ function Survey() {
           onSuitsChange={handleSuitsSelection3}
         />
       )}
-      {step === 98 && (
+      {step === 96 && (
         <FollowupQuestionsGreen
           onNext={handleNext}
           agent={agent3}
@@ -3729,7 +3718,7 @@ function Survey() {
           onInconvenienceFollowupChange={handleInconvenienceFollowupSelection3}
         />
       )}
-      {step === 99 && (
+      {step === 97 && (
         <AlgorithmKnowledge
           onNext={handleNextStartServer}
           onRecognizeChange={handleRecognizeChange}
@@ -3745,7 +3734,7 @@ function Survey() {
           onHumansChange={handleHumansChange}
         />
       )}
-      {step === 100 && (
+      {step === 98 && (
         <AlgorithmAwareness
           onNext={handleNextStartServer}
           onAlexaChange={handleAlexaChange}
@@ -3762,14 +3751,14 @@ function Survey() {
           onAdvertisementChange={handleAdvertisementChange}
         />
       )}
-      {step === 101 && (
+      {step === 99 && (
         <Experiences
           onNext={endSurvey}
           onExperienceChange={handleExperienceChange}
         />
       )}
-      {step === 102 && !uploaded && <EndWait />}
-      {step === 102 && uploaded && <End />}
+      {step === 100 && !uploaded && <EndWait />}
+      {step === 100 && uploaded && <End />}
     </div>
   );
 }

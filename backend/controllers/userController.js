@@ -3,6 +3,7 @@ const mongoose = require("mongoose"); // create new user with their results
 const createEntry = async (req, res) => {
   const {
     userId,
+    prolificId,
     orderOfAgents,
     timeElapsed,
     timeStamp,
@@ -578,6 +579,7 @@ const createEntry = async (req, res) => {
   try {
     const newUser = await User.create({
       userId,
+      prolificId,
       orderOfAgents,
       timeElapsed,
       timeStamp,

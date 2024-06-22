@@ -16,7 +16,8 @@ function ConsentFormPage({ onNext, onBack }) {
         type="button"
         onClick={onNext}
         className="button">
-        Yes, I consent to participate in this study.
+        Yes, I am 18 years old or over, and I consent to participate in this
+        study
       </button>
     </div>
   );

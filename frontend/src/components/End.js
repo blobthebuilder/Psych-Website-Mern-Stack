@@ -4,8 +4,7 @@ function End() {
   return (
     <div className="end">
       <h3>
-        Attention! Make sure to click on the link at the bottom of this page to
-        receive SONA credit.
+        Attention! Your Prolific completion code is at the bottom of this page.
       </h3>
       <div className="conclusion">
         <p className="instructions">
@@ -52,12 +51,8 @@ function End() {
         </p>
       </div>
       <div className="instructions bold">
-        <p>You must click on the following link to receive SONA credit:</p>
-        <a
-          href="https://ucsb.co1.qualtrics.com/jfe/form/SV_e3yUXbVKQyt8xHo"
-          target="_blank">
-          SONA credit
-        </a>
+        <p>Prolific completion code:</p>
+        <p>CU6PUKTS</p>
       </div>
     </div>
   );

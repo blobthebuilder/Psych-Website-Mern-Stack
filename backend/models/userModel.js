@@ -8,6 +8,11 @@ const userSchema = new Schema({
     required: true,
     default: 0,
   },
+  prolificId: {
+    type: Number,
+    required: true,
+    default: 0,
+  },
   orderOfAgents: {
     type: Number,
     required: true,
