@@ -10,7 +10,7 @@ const userSchema = new Schema({
   },
   prolificId: {
     type: String,
-    required: true,
+    required: false,
     default: "0",
   },
   orderOfAgents: {
