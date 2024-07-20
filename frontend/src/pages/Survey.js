@@ -102,7 +102,7 @@ function Survey() {
   const [afternoonSelection, setAfternoonSelection] = useState("");
   const [restaurantSelection, setRestaurantSelection] = useState("");
 
-  const [prolificId, setProlificId] = useState("");
+  const [prolificId, setProlificId] = useState("Empty");
   const [vacationSelection, setVacationSelection] = useState("");
   const [activitiesSelection, setActivitiesSelection] = useState({
     "Outdoor activities": false,
@@ -647,7 +647,6 @@ function Survey() {
 
   const handleProlificIdChange = (value) => {
     setProlificId(value);
-    console.log(prolificId);
   };
   const handleResidenceChange = (value) => {
     setResidenceSelection(value);
