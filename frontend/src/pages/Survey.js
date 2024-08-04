@@ -1264,7 +1264,7 @@ function Survey() {
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 20; i++) {
       if (totalUsers === 0) {
         fetchUsers();
       } else {
