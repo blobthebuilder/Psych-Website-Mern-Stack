@@ -32,6 +32,7 @@ import AlgorithmAwareness from "../components/AlgorithmAwareness.js";
 import Experiences from "../components/Experiences.js";
 import End from "../components/End.js";
 import EndWait from "../components/EndWait.js";
+import UploadError from "../components/UploadError.js";
 
 import {
   shuffleAfternoon,
@@ -48,7 +49,8 @@ import {
 } from "../utils.js";
 import GeneralInstructions4 from "../components/GeneralInstructions4.js";
 function Survey() {
-  const [uploaded, setUploaded] = useState(false);
+  const [uploaded, setUploaded] = useState(0);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const [step, setStep] = useState(1);
   const [showHeader, setShowHeader] = useState(false);
@@ -1262,7 +1264,13 @@ function Survey() {
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
 
-    fetchUsers();
+    for (let i = 0; i < 5; i++) {
+      if (totalUsers === 0) {
+        fetchUsers();
+      } else {
+        break;
+      }
+    }
 
     if (totalUsers % 6 === 0) {
       setAgent1("Personal");
@@ -1410,7 +1418,7 @@ function Survey() {
         if (!res.ok) {
           console.log(json.error);
         } else {
-          console.log("Successfully etched");
+          console.log("Successfully fetched");
         }
       } catch (error) {
         console.log("Error");
@@ -2838,13 +2846,17 @@ function Survey() {
         });
         const json = await res.json();
         if (!res.ok) {
+          setUploaded(2);
+          setErrorMsg(json.error);
           console.log(json.error);
         } else {
           console.log("Successfully uploaded");
-          setUploaded(true);
+          setUploaded(1);
         }
       } catch (error) {
-        console.log("Error");
+        console.log(error);
+        setUploaded(2);
+        setErrorMsg(error.message);
       }
     };
     uploadUser();
@@ -3756,8 +3768,9 @@ function Survey() {
           onExperienceChange={handleExperienceChange}
         />
       )}
-      {step === 100 && !uploaded && <EndWait />}
-      {step === 100 && uploaded && <End />}
+      {step === 100 && uploaded === 0 && <EndWait />}
+      {step === 100 && uploaded === 1 && <End />}
+      {step === 100 && uploaded === 2 && <UploadError errorMsg={errorMsg} />}
     </div>
   );
 }
