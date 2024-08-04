@@ -50,7 +50,7 @@ import {
 import GeneralInstructions4 from "../components/GeneralInstructions4.js";
 function Survey() {
   const [uploaded, setUploaded] = useState(0);
-  const [errorMsg, setErrorMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("Unknown Error");
 
   const [step, setStep] = useState(1);
   const [showHeader, setShowHeader] = useState(false);
