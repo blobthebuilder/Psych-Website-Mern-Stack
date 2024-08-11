@@ -34,6 +34,8 @@ import End from "../components/End.js";
 import EndWait from "../components/EndWait.js";
 import UploadError from "../components/UploadError.js";
 
+import { json2csv } from "json-2-csv";
+
 import {
   shuffleAfternoon,
   shuffleHotels,
@@ -51,6 +53,7 @@ import GeneralInstructions4 from "../components/GeneralInstructions4.js";
 function Survey() {
   const [uploaded, setUploaded] = useState(0);
   const [errorMsg, setErrorMsg] = useState("Unknown Error");
+  const [userJson, setUserJson] = useState(null);
 
   const [step, setStep] = useState(1);
   const [showHeader, setShowHeader] = useState(false);
@@ -1236,8 +1239,8 @@ function Survey() {
   };
 
   // npm start
-  //const url = "http://localhost:4000";
-  const url = "https://psych-website.onrender.com";
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com";
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -2837,7 +2840,7 @@ function Survey() {
         feedback: experienceText,
       };
       try {
-        const res = await fetch(url + "/api/user", {
+        const res = await fetch(url + "/api/users", {
           method: "POST",
           body: JSON.stringify(user),
           headers: {
@@ -2849,6 +2852,7 @@ function Survey() {
           setUploaded(2);
           setErrorMsg(json.error);
           console.log(json.error);
+          setUserJson(user);
         } else {
           console.log("Successfully uploaded");
           setUploaded(1);
@@ -2857,9 +2861,38 @@ function Survey() {
         console.log(error);
         setUploaded(2);
         setErrorMsg(error.message);
+
+        setUserJson(user);
       }
     };
     uploadUser();
+  };
+  function downloadCSV(csvString, filename = "results.csv") {
+    var blob = new Blob([csvString], { type: "text/csv;charset=utf-8;" });
+    var link = document.createElement("a");
+
+    if (link.download !== undefined) {
+      var url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", filename);
+      link.style.visibility = "hidden";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      var csvContent =
+        "data:text/csv;charset=utf-8," + encodeURIComponent(csvString);
+      window.open(csvContent, "_blank");
+    }
+  }
+
+  const handleDownload = () => {
+    if (userJson) {
+      const csvData = json2csv(userJson);
+      downloadCSV(csvData);
+    } else {
+      console.log("No data to download");
+    }
   };
   return (
     <div className="App">
@@ -3770,7 +3803,12 @@ function Survey() {
       )}
       {step === 100 && uploaded === 0 && <EndWait />}
       {step === 100 && uploaded === 1 && <End />}
-      {step === 100 && uploaded === 2 && <UploadError errorMsg={errorMsg} />}
+      {step === 100 && uploaded === 2 && (
+        <UploadError
+          errorMsg={errorMsg}
+          onDownload={handleDownload}
+        />
+      )}
     </div>
   );
 }
