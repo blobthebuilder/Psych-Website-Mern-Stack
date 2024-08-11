@@ -2840,7 +2840,7 @@ function Survey() {
         feedback: experienceText,
       };
       try {
-        const res = await fetch(url + "/api/users", {
+        const res = await fetch(url + "/api/user", {
           method: "POST",
           body: JSON.stringify(user),
           headers: {
