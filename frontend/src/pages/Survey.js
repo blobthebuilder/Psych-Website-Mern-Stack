@@ -1267,14 +1267,10 @@ function Survey() {
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
 
-    for (let i = 0; i < 20; i++) {
-      if (totalUsers === 0) {
-        fetchUsers();
-      } else {
-        break;
-      }
-    }
-
+  
+    fetchUsers();
+    console.log(totalUsers);
+    
     if (totalUsers % 6 === 0) {
       setAgent1("Personal");
       setAgent2("General");

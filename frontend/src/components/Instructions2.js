@@ -5,7 +5,7 @@ function Instructions2({ onNext, agent }) {
     <div className="personalAgentInstructions2">
       {agent.length === 8 && (
         <p className="instructions">
-          On the following pages, you will see a list of 20 travel categories
+          On the following pages, you will see a list of 18 travel categories
           with 4 options each, to assist you in planning an itinerary for
           Madrid. For each category, your <strong>personal travel agent</strong>{" "}
           has made recommendations for the selection it recommends{" "}
