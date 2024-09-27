@@ -1241,23 +1241,9 @@ function Survey() {
   // npm start
   //const url = "http://localhost:4000";
   const url = "https://psych-website.onrender.com";
+  
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const res = await fetch(url + "/api/data");
-        const json = await res.json();
-
-        if (res.ok) {
-          setTotalUsers(json[0].totalUsers);
-          setAgentPath(totalUsers % 6);
-        } else {
-          throw Error;
-        }
-      } catch (error) {
-        console.log("Fetch failed");
-      }
-    };
-
+    // shuffle initial questions
     setHotelsArr(shuffleHotels);
     setAfternoonArr(shuffleAfternoon);
     setRestaurantArr(shuffleRestaurants);
@@ -1266,11 +1252,51 @@ function Survey() {
     setAccommodationArr(shuffleAccommodation);
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
-
+  }, []);
   
-    fetchUsers();
+
+  const handleNext = () => {
+    setStep(step + 1);
+    window.scrollTo(0, 0);
+  };
+
+  const handleBack = () => {
+    setStep(step - 1);
+    window.scrollTo(0, 0);
+  };
+
+  const reload = () => {
+    window.location.reload(true);
+  };
+
+  const fetchUsers = async () => {
+    try {
+      const res = await fetch(url + "/api/data");
+      const json = await res.json();
+
+      if (res.ok) {
+        setTotalUsers(json[0].totalUsers);
+        setAgentPath(totalUsers % 6);
+        console.log("Total Users Fetched")
+      } else {
+        throw Error;
+      }
+    } catch (error) {
+      console.log("Fetch failed");
+    }
+  };
+
+  const handleNextFetchUsers = async () => {
+    handleNext();
+    await fetchUsers();
+  }
+  const handleNextChangeHeader = () => {
+    handleNext();
+    setShowHeader(!showHeader);
+  };
+  
+  const handleNextSetAgents = () => {
     console.log(totalUsers);
-    
     if (totalUsers % 6 === 0) {
       setAgent1("Personal");
       setAgent2("General");
@@ -1293,29 +1319,10 @@ function Survey() {
       setAgent3("Personal");
     } else if (totalUsers % 6 === 5) {
       setAgent1("Unprogrammed");
-      setAgent2("Pesronal");
+      setAgent2("Personal");
       setAgent3("General");
     }
-  }, [totalUsers, agent1]);
-
-  const handleNext = () => {
-    setStep(step + 1);
-    window.scrollTo(0, 0);
-  };
-
-  const handleBack = () => {
-    setStep(step - 1);
-    window.scrollTo(0, 0);
-  };
-
-  const reload = () => {
-    window.location.reload(true);
-  };
-
-  const handleNextChangeHeader = () => {
-    handleNext();
-    setShowHeader(!showHeader);
-  };
+  }
 
   const handleNextChangeItineraryHeader = () => {
     handleNext();
@@ -1417,7 +1424,7 @@ function Survey() {
         if (!res.ok) {
           console.log(json.error);
         } else {
-          console.log("Successfully fetched");
+          console.log("Server active");
         }
       } catch (error) {
         console.log("Error");
@@ -3012,7 +3019,7 @@ function Survey() {
       )}
       {step === 15 && (
         <Question4
-          onNext={handleNext}
+          onNext={handleNextFetchUsers}
           onBack={handleBack}
           onInterestsChange={handleInterestsChange}
         />
@@ -3038,7 +3045,7 @@ function Survey() {
           onECommunicationUseChange={handleECommunicationUseChange}
         />
       )}
-      {step === 17 && <SubmitPage onNext={handleNext} />}
+      {step === 17 && <SubmitPage onNext={handleNextSetAgents} />}
       {step === 18 && <Loading onNext={handleNext} />}
       {step === 19 && (
         <Instructions1
