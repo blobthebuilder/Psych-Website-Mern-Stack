@@ -401,6 +401,10 @@ function Survey() {
   const [utilizeSelection2, setUtilizeSelection2] = useState("");
   const [utilizeSelection3, setUtilizeSelection3] = useState("");
 
+  const [recommendedLikeSelection1, setRecommendedLikeSelection1] = useState("");
+  const [recommendedLikeSelection2, setRecommendedLikeSelection2] = useState("");
+  const [recommendedLikeSelection3, setRecommendedLikeSelection3] = useState("");
+
   const [reflectSelection1, setReflectSelection1] = useState("");
   const [reflectSelection2, setReflectSelection2] = useState("");
   const [reflectSelection3, setReflectSelection3] = useState("");
@@ -485,6 +489,7 @@ function Survey() {
   const [newsSelection, setNewsSelection] = useState("");
   const [advertisementSelection, setAdvertisementSelection] = useState("");
   const [experienceText, setExperience] = useState("");
+  const [accuracy, setAccuracy] = useState("");
 
   const [startTime, setStartTime] = useState(0);
 
@@ -1008,6 +1013,16 @@ function Survey() {
   const handleUtilizeSelection3 = (value) => {
     setUtilizeSelection3(value);
   };
+  const handleRecommendedLikeSelection1 = (value) => {
+    console.log('changed');
+    setRecommendedLikeSelection1(value);
+  }
+  const handleRecommendedLikeSelection2 = (value) => {
+    setRecommendedLikeSelection2(value);
+  }
+  const handleRecommendedLikeSelection3 = (value) => {
+    setRecommendedLikeSelection3(value);
+  }
   const handleReflectSelection1 = (value) => {
     setReflectSelection1(value);
   };
@@ -1199,12 +1214,17 @@ function Survey() {
     setExperience(value);
   };
 
+  const handleAccuracyChange = (value) => {
+    setAccuracy(value);
+  }
+
   const handleNextAttentionCheck1 = () => {
     if (attentionCheckSelection.length === curAgent.length) {
       setCorrectAttentionCheck1(true);
     }
     handleNext();
     initializeVals();
+    console.log(curAgent + ", " + agent1 + ", " + agent2 + ", " + agent3);
   };
   const handleNextAttentionCheck2 = () => {
     if (attentionCheckSelection.length === curAgent.length) {
@@ -1296,28 +1316,35 @@ function Survey() {
   };
   
   const handleNextSetAgents = () => {
+    handleNext();
     console.log(totalUsers);
     if (totalUsers % 6 === 0) {
+      setCurAgent("Personal");
       setAgent1("Personal");
       setAgent2("General");
       setAgent3("Unprogrammed");
     } else if (totalUsers % 6 === 1) {
+      setCurAgent("Personal");
       setAgent1("Personal");
       setAgent2("Unprogrammed");
       setAgent3("General");
     } else if (totalUsers % 6 === 2) {
+      setCurAgent("General");
       setAgent1("General");
       setAgent2("Personal");
       setAgent3("Unprogrammed");
     } else if (totalUsers % 6 === 3) {
+      setCurAgent("Personal");
       setAgent1("General");
       setAgent2("Unprogrammed");
       setAgent3("Personal");
     } else if (totalUsers % 6 === 4) {
+      setCurAgent("Unprogrammed");
       setAgent1("Unprogrammed");
       setAgent2("General");
       setAgent3("Personal");
     } else if (totalUsers % 6 === 5) {
+      setCurAgent("Unprogrammed");
       setAgent1("Unprogrammed");
       setAgent2("Personal");
       setAgent3("General");
@@ -1329,7 +1356,7 @@ function Survey() {
     setShowItineraryHeader(!showItineraryHeader);
   };
   const stringToInt = () => {
-    console.log("converted");
+    
     setFlightSelection1(parseInt(flightSelection1));
     setFlightSelection2(parseInt(flightSelection2));
     setFlightSelection3(parseInt(flightSelection3));
@@ -1411,6 +1438,7 @@ function Survey() {
     setTravelPlugAdapterSelection1(parseInt(travelPlugAdapterSelection1));
     setTravelPlugAdapterSelection2(parseInt(travelPlugAdapterSelection2));
     setTravelPlugAdapterSelection3(parseInt(travelPlugAdapterSelection3));
+    console.log("converted");
   };
   const handleNextStartServer = () => {
     const startServer = async () => {
@@ -1432,7 +1460,12 @@ function Survey() {
     };
     startServer();
     handleNext();
-    stringToInt();
+    try{
+      stringToInt();
+    } catch(error){
+      console.log("stringToInt failed ", error);
+    }
+    
   };
 
   const [recommendedAndEco1, setRecommendedAndEco1] = useState(null);
@@ -1545,7 +1578,6 @@ function Survey() {
     }
   };
   const startSurvey = () => {
-    setCurAgent(agent1);
     setStartTime(Date.now());
     setItineraryFeatures1(randomizeItineraryFeatures);
     setItineraryFeatures2(randomizeItineraryFeatures);
@@ -2514,6 +2546,7 @@ function Survey() {
         productivity1: productivitySelection1,
         performance1: performanceSelection1,
         utilize1: utilizeSelection1,
+        recommendedLike1: recommendedLikeSelection1,
         reflect1: reflectSelection1,
         identify1: identifySelection1,
         connection1: connectionSelection1,
@@ -2659,6 +2692,7 @@ function Survey() {
         productivity2: productivitySelection2,
         performance2: performanceSelection2,
         utilize2: utilizeSelection2,
+        recommendedLike2: recommendedLikeSelection2,
         reflect2: reflectSelection2,
         identify2: identifySelection2,
         connection2: connectionSelection2,
@@ -2804,6 +2838,7 @@ function Survey() {
         productivity3: productivitySelection3,
         performance3: performanceSelection3,
         utilize3: utilizeSelection3,
+        recommendedLike3: recommendedLikeSelection3,
         reflect3: reflectSelection3,
         identify3: identifySelection3,
         connection3: connectionSelection3,
@@ -2841,6 +2876,7 @@ function Survey() {
         newsAlgorithm: newsSelection,
         advertisementAlgorithm: advertisementSelection,
         feedback: experienceText,
+        accuracy: accuracy,
       };
       try {
         const res = await fetch(url + "/api/user", {
@@ -3259,6 +3295,7 @@ function Survey() {
           onProductivityChange={handleProductivitySelection1}
           onPerformanceChange={handlePerformanceSelection1}
           onUtilizeChange={handleUtilizeSelection1}
+          onRecommendedLikeChange={handleRecommendedLikeSelection1}
         />
       )}
       {step === 43 && (
@@ -3499,6 +3536,7 @@ function Survey() {
           onProductivityChange={handleProductivitySelection2}
           onPerformanceChange={handlePerformanceSelection2}
           onUtilizeChange={handleUtilizeSelection2}
+          onRecommendedLikeChange={handleRecommendedLikeSelection2}
         />
       )}
       {step === 69 && (
@@ -3738,6 +3776,7 @@ function Survey() {
           onProductivityChange={handleProductivitySelection3}
           onPerformanceChange={handlePerformanceSelection3}
           onUtilizeChange={handleUtilizeSelection3}
+          onRecommendedLikeChange={handleRecommendedLikeSelection3}
         />
       )}
       {step === 95 && (
@@ -3802,6 +3841,7 @@ function Survey() {
         <Experiences
           onNext={endSurvey}
           onExperienceChange={handleExperienceChange}
+          onAccuracyChange={handleAccuracyChange}
         />
       )}
       {step === 100 && uploaded === 0 && <EndWait />}

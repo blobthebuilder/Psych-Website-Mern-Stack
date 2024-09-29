@@ -19,9 +19,11 @@ const corsOptions = {
 */
 
 
+
 const corsOptions = {
   origin: "https://psych-survey.onrender.com", // frontend URI (ReactJS)
 };
+
 
 
 
@@ -49,4 +51,5 @@ mongoose
 
 app.get("/", (req, res) => {
   res.status(201).json({ message: "Connected to Backend!" });
+  console.log("Connected to backend");
 });

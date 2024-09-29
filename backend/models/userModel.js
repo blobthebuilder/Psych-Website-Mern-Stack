@@ -721,6 +721,10 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
+  recommendedLike1: {
+    type: String,
+    default: "",
+  },
   reflect1: {
     type: String,
     default: "",
@@ -1004,6 +1008,10 @@ const userSchema = new Schema({
     default: "",
   },
   utilize2: {
+    type: String,
+    default: "",
+  },
+  recommendedLike2: {
     type: String,
     default: "",
   },
@@ -1293,6 +1301,10 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
+  recommendedLike3: {
+    type: String,
+    default: "",
+  },
   reflect3: {
     type: String,
     default: "",
@@ -1438,6 +1450,7 @@ const userSchema = new Schema({
     default: "",
   },
   feedback: { type: String, default: "" },
+  accuracy: { type: String, default: "" },
 });
 
 const User = mongoose.model("User", userSchema);

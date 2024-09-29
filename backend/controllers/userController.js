@@ -253,6 +253,7 @@ const createEntry = async (req, res) => {
     productivity1,
     performance1,
     utilize1,
+    recommendedLike1,
     reflect1,
     identify1,
     connection1,
@@ -395,6 +396,7 @@ const createEntry = async (req, res) => {
     productivity2,
     performance2,
     utilize2,
+    recommendedLike2,
     reflect2,
     identify2,
     connection2,
@@ -537,6 +539,7 @@ const createEntry = async (req, res) => {
     productivity3,
     performance3,
     utilize3,
+    recommendedLike3,
     reflect3,
     identify3,
     connection3,
@@ -575,6 +578,7 @@ const createEntry = async (req, res) => {
     newsAlgorithm,
     advertisementAlgorithm,
     feedback,
+    accuracy,
   } = req.body;
   try {
     const newUser = await User.create({
@@ -829,6 +833,7 @@ const createEntry = async (req, res) => {
       productivity1,
       performance1,
       utilize1,
+      recommendedLike1,
       reflect1,
       identify1,
       connection1,
@@ -971,6 +976,7 @@ const createEntry = async (req, res) => {
       productivity2,
       performance2,
       utilize2,
+      recommendedLike2,
       reflect2,
       identify2,
       connection2,
@@ -1113,6 +1119,7 @@ const createEntry = async (req, res) => {
       productivity3,
       performance3,
       utilize3,
+      recommendedLike3,
       reflect3,
       identify3,
       connection3,
@@ -1151,6 +1158,7 @@ const createEntry = async (req, res) => {
       newsAlgorithm,
       advertisementAlgorithm,
       feedback,
+      accuracy,
     });
     res.status(200).json(newUser);
   } catch (error) {

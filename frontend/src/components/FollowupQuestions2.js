@@ -9,6 +9,7 @@ function FollowupQuestions2({
   onProductivityChange,
   onPerformanceChange,
   onUtilizeChange,
+  onRecommendedLikeChange
 }) {
   const handleEffectivenessChange = (event) => {
     const { value } = event.target;
@@ -34,6 +35,10 @@ function FollowupQuestions2({
     const { value } = event.target;
     onUtilizeChange(value);
   };
+  const handleRecommendedLikeChange = (event) => {
+    const {value} = event.target;
+    onRecommendedLikeChange(value);
+  }
   return (
     <div className="followupQuestions2">
       <p className="topMargin">‎</p>
@@ -471,6 +476,67 @@ function FollowupQuestions2({
             name="would be useful for me to utilize while choosing travel options"
             value="Strongly disagree"
             onChange={handleUtilizeChange}
+          />
+        </div>
+      </div>
+      <div className="questionnaireContainer">
+        <div className="questionnaireQuestions">
+          The options recommended for me are for someone like me
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Strongly agree"
+            onChange={handleRecommendedLikeChange}
+          />
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Agree"
+            onChange={handleRecommendedLikeChange}
+          />
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Somewhat agree"
+            onChange={handleRecommendedLikeChange}
+          />
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Neither agree nor disagree"
+            onChange={handleRecommendedLikeChange}
+          />
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Somewhat disagree"
+            onChange={handleRecommendedLikeChange}
+          />
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Disagree"
+            onChange={handleRecommendedLikeChange}
+          />
+        </div>
+        <div className="questionnaireScale">
+          <input
+            type="radio"
+            name="The options recommended for me are for someone like me"
+            value="Strongly disagree"
+            onChange={handleRecommendedLikeChange}
           />
         </div>
       </div>
