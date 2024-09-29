@@ -51,5 +51,4 @@ mongoose
 
 app.get("/", (req, res) => {
   res.status(201).json({ message: "Connected to Backend!" });
-  console.log("Connected to backend");
 });
