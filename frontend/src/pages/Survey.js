@@ -2908,6 +2908,9 @@ function Survey() {
           setUploaded(1);
         }
       } catch (error) {
+        errorJson = {
+          error: true,
+        }
         console.log(error);
         setUploaded(2);
         setErrorMsg(error.message);
