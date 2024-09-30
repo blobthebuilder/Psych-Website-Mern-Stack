@@ -1451,6 +1451,7 @@ const userSchema = new Schema({
   },
   feedback: { type: String, default: "" },
   accuracy: { type: String, default: "" },
+  error: {type: Boolean, default: false }
 });
 
 const User = mongoose.model("User", userSchema);

@@ -2877,7 +2877,11 @@ function Survey() {
         advertisementAlgorithm: advertisementSelection,
         feedback: experienceText,
         accuracy: accuracy,
+        error: false,
       };
+      errorJson = {
+        error: true,
+      }
       try {
         const res = await fetch(url + "/api/user", {
           method: "POST",
@@ -2892,6 +2896,13 @@ function Survey() {
           setErrorMsg(json.error);
           console.log(json.error);
           setUserJson(user);
+          const res = await fetch(url + "/api/user", {
+            method: "POST",
+            body: JSON.stringify(errorJson),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
         } else {
           console.log("Successfully uploaded");
           setUploaded(1);
@@ -2900,8 +2911,14 @@ function Survey() {
         console.log(error);
         setUploaded(2);
         setErrorMsg(error.message);
-
         setUserJson(user);
+        const res = await fetch(url + "/api/user", {
+          method: "POST",
+          body: JSON.stringify(errorJson),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
       }
     };
     uploadUser();
