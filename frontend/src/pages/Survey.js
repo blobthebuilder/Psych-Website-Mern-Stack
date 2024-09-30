@@ -2879,7 +2879,7 @@ function Survey() {
         accuracy: accuracy,
         error: false,
       };
-      errorJson = {
+      const errorJson = {
         error: true,
       }
       try {
@@ -2908,7 +2908,7 @@ function Survey() {
           setUploaded(1);
         }
       } catch (error) {
-        errorJson = {
+        const errorJson = {
           error: true,
         }
         console.log(error);
