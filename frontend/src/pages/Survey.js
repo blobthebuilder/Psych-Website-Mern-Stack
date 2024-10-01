@@ -1260,8 +1260,8 @@ function Survey() {
   };
 
   // npm start
-  const url = "http://localhost:4000";
-  //const url = "https://psych-website.onrender.com";
+  //const url = "http://localhost:4000";
+  const url = "https://psych-website.onrender.com";
   
   useEffect(() => {
     // shuffle initial questions
