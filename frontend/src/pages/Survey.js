@@ -33,6 +33,7 @@ import Experiences from "../components/Experiences.js";
 import End from "../components/End.js";
 import EndWait from "../components/EndWait.js";
 import UploadError from "../components/UploadError.js";
+import ServerWait from "../components/ServerWait.js";
 
 import { json2csv } from "json-2-csv";
 
@@ -51,6 +52,7 @@ import {
 } from "../utils.js";
 import GeneralInstructions4 from "../components/GeneralInstructions4.js";
 function Survey() {
+  const [serverReady, setServerReady] = useState(false);
   const [uploaded, setUploaded] = useState(0);
   const [errorMsg, setErrorMsg] = useState("Unknown Error");
   const [userJson, setUserJson] = useState(null);
@@ -1014,7 +1016,6 @@ function Survey() {
     setUtilizeSelection3(value);
   };
   const handleRecommendedLikeSelection1 = (value) => {
-    console.log('changed');
     setRecommendedLikeSelection1(value);
   }
   const handleRecommendedLikeSelection2 = (value) => {
@@ -1259,8 +1260,8 @@ function Survey() {
   };
 
   // npm start
-  //const url = "http://localhost:4000";
-  const url = "https://psych-website.onrender.com";
+  const url = "http://localhost:4000";
+  //const url = "https://psych-website.onrender.com";
   
   useEffect(() => {
     // shuffle initial questions
@@ -1272,6 +1273,27 @@ function Survey() {
     setAccommodationArr(shuffleAccommodation);
     setCommunicationArr(shuffleCommunication);
     setCuisineArr(shuffleCuisine);
+    const checkServer = async () => {
+      try {
+        const response = await fetch(url); // Replace with your server URL
+        if (response.ok) {
+          setServerReady(true); // Mark the server as ready
+          return true; // Stop polling
+        }
+      } catch (error) {
+        console.log('Server is not ready yet, retrying...');
+      }
+      return false; // Keep polling if not ready
+    };
+    const intervalId = setInterval(async () => {
+      const ready = await checkServer();
+      if (ready) {
+        clearInterval(intervalId); // Stop polling once server is ready
+      }
+    }, 2000);
+
+    // Cleanup: clear interval when component unmounts
+    return () => clearInterval(intervalId);
   }, []);
   
 
@@ -1296,7 +1318,7 @@ function Survey() {
 
       if (res.ok) {
         setTotalUsers(json[0].totalUsers);
-        setAgentPath(totalUsers % 6);
+        setAgentPath(json[0].totalUsers % 6);
         console.log("Total Users Fetched")
       } else {
         throw Error;
@@ -1318,6 +1340,7 @@ function Survey() {
   const handleNextSetAgents = () => {
     handleNext();
     console.log(totalUsers);
+    console.log(agentPath);
     if (totalUsers % 6 === 0) {
       setCurAgent("Personal");
       setAgent1("Personal");
@@ -2957,7 +2980,8 @@ function Survey() {
     <div className="App">
       {showHeader && <PersonalityHeader />}
       {showItineraryHeader && <ItineraryHeader agent={curAgent} />}
-      {step === 1 && <LandingPage onNext={startSurvey} />}
+      {step === 1 && !serverReady && <ServerWait/>}
+      {step === 1 && serverReady && <LandingPage onNext={startSurvey} />}
       {step === 2 && (
         <ConsentFormPage
           onNext={handleNext}

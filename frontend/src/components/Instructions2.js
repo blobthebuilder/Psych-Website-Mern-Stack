@@ -16,7 +16,7 @@ function Instructions2({ onNext, agent }) {
       )}
       {agent.length === 7 && (
         <p className="instructions">
-          On the following pages, you will see a list of 20 travel categories
+          On the following pages, you will see a list of 18 travel categories
           with 4 options each, to assist you in planning an itinerary for
           Madrid. For each category, the <strong>general travel agent</strong>{" "}
           has made recommendations for the selection it recommends{" "}
@@ -30,7 +30,7 @@ function Instructions2({ onNext, agent }) {
       )}
       {agent.length === 12 && (
         <p className="instructions">
-          On the following pages, you will see a list of 20 travel categories
+          On the following pages, you will see a list of 18 travel categories
           with 4 options each, to assist you in planning an itinerary for
           Madrid. For each category, your{" "}
           <strong>unprogrammed travel agent</strong> has made recommendations
