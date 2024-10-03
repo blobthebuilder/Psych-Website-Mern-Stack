@@ -403,9 +403,12 @@ function Survey() {
   const [utilizeSelection2, setUtilizeSelection2] = useState("");
   const [utilizeSelection3, setUtilizeSelection3] = useState("");
 
-  const [recommendedLikeSelection1, setRecommendedLikeSelection1] = useState("");
-  const [recommendedLikeSelection2, setRecommendedLikeSelection2] = useState("");
-  const [recommendedLikeSelection3, setRecommendedLikeSelection3] = useState("");
+  const [recommendedLikeSelection1, setRecommendedLikeSelection1] =
+    useState("");
+  const [recommendedLikeSelection2, setRecommendedLikeSelection2] =
+    useState("");
+  const [recommendedLikeSelection3, setRecommendedLikeSelection3] =
+    useState("");
 
   const [reflectSelection1, setReflectSelection1] = useState("");
   const [reflectSelection2, setReflectSelection2] = useState("");
@@ -1017,13 +1020,13 @@ function Survey() {
   };
   const handleRecommendedLikeSelection1 = (value) => {
     setRecommendedLikeSelection1(value);
-  }
+  };
   const handleRecommendedLikeSelection2 = (value) => {
     setRecommendedLikeSelection2(value);
-  }
+  };
   const handleRecommendedLikeSelection3 = (value) => {
     setRecommendedLikeSelection3(value);
-  }
+  };
   const handleReflectSelection1 = (value) => {
     setReflectSelection1(value);
   };
@@ -1217,7 +1220,7 @@ function Survey() {
 
   const handleAccuracyChange = (value) => {
     setAccuracy(value);
-  }
+  };
 
   const handleNextAttentionCheck1 = () => {
     if (attentionCheckSelection.length === curAgent.length) {
@@ -1262,7 +1265,7 @@ function Survey() {
   // npm start
   //const url = "http://localhost:4000";
   const url = "https://psych-website.onrender.com";
-  
+
   useEffect(() => {
     // shuffle initial questions
     setHotelsArr(shuffleHotels);
@@ -1281,7 +1284,7 @@ function Survey() {
           return true; // Stop polling
         }
       } catch (error) {
-        console.log('Server is not ready yet, retrying...');
+        console.log("Server is not ready yet, retrying...");
       }
       return false; // Keep polling if not ready
     };
@@ -1295,7 +1298,6 @@ function Survey() {
     // Cleanup: clear interval when component unmounts
     return () => clearInterval(intervalId);
   }, []);
-  
 
   const handleNext = () => {
     setStep(step + 1);
@@ -1319,7 +1321,7 @@ function Survey() {
       if (res.ok) {
         setTotalUsers(json[0].totalUsers);
         setAgentPath(json[0].totalUsers % 6);
-        console.log("Total Users Fetched")
+        console.log("Total Users Fetched");
       } else {
         throw Error;
       }
@@ -1331,12 +1333,12 @@ function Survey() {
   const handleNextFetchUsers = async () => {
     handleNext();
     await fetchUsers();
-  }
+  };
   const handleNextChangeHeader = () => {
     handleNext();
     setShowHeader(!showHeader);
   };
-  
+
   const handleNextSetAgents = () => {
     handleNext();
     console.log(totalUsers);
@@ -1357,7 +1359,7 @@ function Survey() {
       setAgent2("Personal");
       setAgent3("Unprogrammed");
     } else if (totalUsers % 6 === 3) {
-      setCurAgent("Personal");
+      setCurAgent("General");
       setAgent1("General");
       setAgent2("Unprogrammed");
       setAgent3("Personal");
@@ -1372,14 +1374,13 @@ function Survey() {
       setAgent2("Personal");
       setAgent3("General");
     }
-  }
+  };
 
   const handleNextChangeItineraryHeader = () => {
     handleNext();
     setShowItineraryHeader(!showItineraryHeader);
   };
   const stringToInt = () => {
-    
     setFlightSelection1(parseInt(flightSelection1));
     setFlightSelection2(parseInt(flightSelection2));
     setFlightSelection3(parseInt(flightSelection3));
@@ -1483,12 +1484,11 @@ function Survey() {
     };
     startServer();
     handleNext();
-    try{
+    try {
       stringToInt();
-    } catch(error){
+    } catch (error) {
       console.log("stringToInt failed ", error);
     }
-    
   };
 
   const [recommendedAndEco1, setRecommendedAndEco1] = useState(null);
@@ -2904,7 +2904,7 @@ function Survey() {
       };
       const errorJson = {
         error: true,
-      }
+      };
       try {
         const res = await fetch(url + "/api/user", {
           method: "POST",
@@ -2933,7 +2933,7 @@ function Survey() {
       } catch (error) {
         const errorJson = {
           error: true,
-        }
+        };
         console.log(error);
         setUploaded(2);
         setErrorMsg(error.message);
@@ -2980,7 +2980,7 @@ function Survey() {
     <div className="App">
       {showHeader && <PersonalityHeader />}
       {showItineraryHeader && <ItineraryHeader agent={curAgent} />}
-      {step === 1 && !serverReady && <ServerWait/>}
+      {step === 1 && !serverReady && <ServerWait />}
       {step === 1 && serverReady && <LandingPage onNext={startSurvey} />}
       {step === 2 && (
         <ConsentFormPage
