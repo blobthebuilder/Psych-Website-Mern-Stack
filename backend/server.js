@@ -18,14 +18,9 @@ const corsOptions = {
 };
 */
 
-
 const corsOptions = {
   origin: "https://psych-survey.onrender.com", // frontend URI (ReactJS)
 };
-
-
-
-
 
 app.use(express.json());
 app.use(cors(corsOptions));

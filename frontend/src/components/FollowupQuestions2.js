@@ -44,7 +44,7 @@ function FollowupQuestions2({
   const [pronoun, setPronoun] = useState("my");
   useEffect(() => {
     if (agent.length !== 8) {
-      setNewVar("the");
+      setPronoun("the");
     }
   }, []);
 

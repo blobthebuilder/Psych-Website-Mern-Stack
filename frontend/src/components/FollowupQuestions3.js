@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function FollowupQuestions3({
   onNext,
@@ -43,7 +44,7 @@ function FollowupQuestions3({
   const [pronoun, setPronoun] = useState("my");
   useEffect(() => {
     if (agent.length !== 8) {
-      setNewVar("the");
+      setPronoun("the");
     }
   }, []);
 
