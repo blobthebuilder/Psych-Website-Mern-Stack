@@ -1609,7 +1609,6 @@ function Survey() {
     setRecommendedAndEco2(randomizeRecommendedAndEco);
     setRecommendedAndEco3(randomizeRecommendedAndEco);
     handleNext();
-    incUsers();
     //setTimeout(initializeVals, 20000);
   };
 
@@ -2929,6 +2928,7 @@ function Survey() {
         } else {
           console.log("Successfully uploaded");
           setUploaded(1);
+          incUsers();
         }
       } catch (error) {
         const errorJson = {

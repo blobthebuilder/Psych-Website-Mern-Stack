@@ -53,8 +53,8 @@ function FollowupQuestions({
           <p
             className="postInstructions"
             id="interactivityQuestionnaire1">
-            Please answer the following questions about your{" "}
-            <strong>personal travel agent</strong>. Your answer to these
+            Please answer the following questions about your experiences using
+            your <strong>personal travel agent</strong>. Your answer to these
             questions will help us provide useful recommendations to future
             users.
           </p>
@@ -70,8 +70,8 @@ function FollowupQuestions({
           <p
             className="postInstructions"
             id="interactivityQuestionnaire1">
-            Please answer the following questions about your{" "}
-            <strong>general travel agent</strong>. Your answer to these
+            Please answer the following questions about your experiences using
+            the <strong>general travel agent</strong>. Your answer to these
             questions will help us provide useful recommendations to future
             users.
           </p>
@@ -87,7 +87,8 @@ function FollowupQuestions({
           <p
             className="postInstructions"
             id="interactivityQuestionnaire1">
-            Please answer the following questions about your{" "}
+            Please answer the following questions about your experiences using
+            the
             <strong>unprogrammed travel agent</strong>. Your answer to these
             questions will help us provide useful recommendations to future
             users.
@@ -106,7 +107,8 @@ function FollowupQuestions({
       <p
         className="postInstructions"
         id="questionnaire3">
-        During the experiment, the process of developing and then using my{" "}
+        During the experiment, the process of developing and then using{" "}
+        {agent.length === 8 && "my"} {agent.length !== 8 && "the"}{" "}
         {agent.toLowerCase()} travel agent…
       </p>
       <div className="questionnaireContainer">

@@ -39,6 +39,14 @@ function FollowupQuestions3({
     const { value } = event.target;
     onSuitsChange(value);
   };
+
+  const [pronoun, setPronoun] = useState("my");
+  useEffect(() => {
+    if (agent.length !== 8) {
+      setNewVar("the");
+    }
+  }, []);
+
   return (
     <div className="followupQuestions3">
       <p className="topMargin">‎</p>
@@ -56,7 +64,7 @@ function FollowupQuestions3({
         <p
           className="postInstructions"
           id="questionnaire1">
-          Please answer the following questions about your{" "}
+          Please answer the following questions about the{" "}
           <strong>general travel agent.</strong> The general travel agent is the
           version of Smart Traveler that was designed to make recommendations
           based on <strong>previous users' personality assessments.</strong>
@@ -66,7 +74,7 @@ function FollowupQuestions3({
         <p
           className="postInstructions"
           id="questionnaire1">
-          Please answer the following questions about your{" "}
+          Please answer the following questions about the{" "}
           <strong>unprogrammed travel agent.</strong>
           The unprogrammed travel agent is the version of Smart Traveler that
           was designed to make recommendations <strong>at random.</strong>
@@ -101,7 +109,7 @@ function FollowupQuestions3({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I feel my {agent.toLowerCase()} travel agent reflects who I am.
+          I feel {pronoun} {agent.toLowerCase()} travel agent reflects who I am.
         </div>
         <div className="questionnaireScale">
           <input
@@ -147,7 +155,7 @@ function FollowupQuestions3({
 
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I can identify with my {agent.toLowerCase()} travel agent.
+          I can identify with {pronoun} {agent.toLowerCase()} travel agent.
         </div>
         <div className="questionnaireScale">
           <input
@@ -192,7 +200,8 @@ function FollowupQuestions3({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I feel a personal connection to my {agent.toLowerCase()} travel agent.
+          I feel a personal connection to {pronoun} {agent.toLowerCase()} travel
+          agent.
         </div>
         <div className="questionnaireScale">
           <input
@@ -237,8 +246,8 @@ function FollowupQuestions3({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I can use my {agent.toLowerCase()} travel agent to communicate who I
-          am to other people.
+          I can use {pronoun} {agent.toLowerCase()} travel agent to communicate
+          who I am to other people.
         </div>
         <div className="questionnaireScale">
           <input
@@ -283,8 +292,8 @@ function FollowupQuestions3({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I think my {agent.toLowerCase()} travel agent could help me become the
-          type of person I want to be.
+          I think {pronoun} {agent.toLowerCase()} travel agent could help me
+          become the type of person I want to be.
         </div>
         <div className="questionnaireScale">
           <input
@@ -329,7 +338,7 @@ function FollowupQuestions3({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I consider my {agent.toLowerCase()} travel agent to be “me” (it
+          I consider {pronoun} {agent.toLowerCase()} travel agent to be “me” (it
           reflects who I consider myself to be or the way that I want to present
           myself to others).
         </div>
@@ -376,7 +385,7 @@ function FollowupQuestions3({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          I feel my {agent.toLowerCase()} travel agent suits me well.
+          I feel {pronoun} {agent.toLowerCase()} travel agent suits me well.
         </div>
         <div className="questionnaireScale">
           <input

@@ -32,7 +32,7 @@ function Instructions2({ onNext, agent }) {
         <p className="instructions">
           On the following pages, you will see a list of 18 travel categories
           with 4 options each, to assist you in planning an itinerary for
-          Madrid. For each category, your{" "}
+          Madrid. For each category, the{" "}
           <strong>unprogrammed travel agent</strong> has made recommendations
           for the selection it recommends. The choices recommended by the
           unprogrammed agent will be preselected for you and will appear next to

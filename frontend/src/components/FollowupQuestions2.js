@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 
 function FollowupQuestions2({
   onNext,
@@ -9,7 +10,7 @@ function FollowupQuestions2({
   onProductivityChange,
   onPerformanceChange,
   onUtilizeChange,
-  onRecommendedLikeChange
+  onRecommendedLikeChange,
 }) {
   const handleEffectivenessChange = (event) => {
     const { value } = event.target;
@@ -36,9 +37,17 @@ function FollowupQuestions2({
     onUtilizeChange(value);
   };
   const handleRecommendedLikeChange = (event) => {
-    const {value} = event.target;
+    const { value } = event.target;
     onRecommendedLikeChange(value);
-  }
+  };
+
+  const [pronoun, setPronoun] = useState("my");
+  useEffect(() => {
+    if (agent.length !== 8) {
+      setNewVar("the");
+    }
+  }, []);
+
   return (
     <div className="followupQuestions2">
       <p className="topMargin">‎</p>
@@ -46,7 +55,7 @@ function FollowupQuestions2({
         <p
           className="postInstructions"
           id="questionnaire1">
-          Think about your experience while using the{" "}
+          Think about your experience while using your{" "}
           <strong>personal travel agent.</strong> The personal travel agent is
           the version of Smart Traveler that was designed to make
           recommendations based on <strong>your personal assessment.</strong>
@@ -108,7 +117,7 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my {agent.toLowerCase()} travel agent would enhance my
+          Using my {agent.toLowerCase()} travel agent would enhance {pronoun}
           effectiveness of choosing the best travel option
         </div>
         <div className="questionnaireScale">
@@ -171,8 +180,8 @@ function FollowupQuestions2({
 
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my {agent.toLowerCase()} travel agent would make it easier for
-          me to choose the best travel option
+          Using {pronoun} {agent.toLowerCase()} travel agent would make it
+          easier for me to choose the best travel option
         </div>
         <div className="questionnaireScale">
           <input
@@ -233,8 +242,8 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my {agent.toLowerCase()} travel agent would enable me to choose
-          a travel option more quickly
+          Using {pronoun} {agent.toLowerCase()} travel agent would enable me to
+          choose a travel option more quickly
         </div>
         <div className="questionnaireScale">
           <input
@@ -295,8 +304,8 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my {agent.toLowerCase()} travel agent for my travel choices
-          would increase my productivity
+          Using {pronoun} {agent.toLowerCase()} travel agent for my travel
+          choices would increase my productivity
         </div>
         <div className="questionnaireScale">
           <input
@@ -357,8 +366,8 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my {agent.toLowerCase()} travel agent would improve my travel
-          choice performance
+          Using {pronoun} {agent.toLowerCase()} travel agent would improve my
+          travel choice performance
         </div>
         <div className="questionnaireScale">
           <input
@@ -419,8 +428,8 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Overall my {agent.toLowerCase()} travel agent would be useful for me
-          to utilize while choosing travel options
+          Overall {pronoun} {agent.toLowerCase()} travel agent would be useful
+          for me to utilize while choosing travel options
         </div>
         <div className="questionnaireScale">
           <input
@@ -481,7 +490,8 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          The options recommended for me are for someone like me
+          The options recommended for me by {pronoun} {agent.toLowerCase()}{" "}
+          travel agent are for someone like me
         </div>
         <div className="questionnaireScale">
           <input
