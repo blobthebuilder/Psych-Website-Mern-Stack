@@ -62,9 +62,9 @@ function FollowupQuestionsGreen({
           className="postInstructions"
           id="questionnaire1">
           Think about your experience while using the{" "}
-          <strong>unprogrammed travel agent.</strong>
-          The unprogrammed travel agent is the version of Smart Traveler that
-          was designed to make recommendations <strong>at random.</strong>
+          <strong>unprogrammed travel agent.</strong> The unprogrammed travel
+          agent is the version of Smart Traveler that was designed to make
+          recommendations <strong>at random.</strong>
         </p>
       )}
       <p

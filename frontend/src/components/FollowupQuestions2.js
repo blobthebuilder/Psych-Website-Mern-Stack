@@ -76,9 +76,9 @@ function FollowupQuestions2({
           className="postInstructions"
           id="questionnaire1">
           Think about your experience while using the{" "}
-          <strong>unprogrammed travel agent.</strong>
-          The unprogrammed travel agent is the version of Smart Traveler that
-          was designed to make recommendations <strong>at random.</strong>
+          <strong>unprogrammed travel agent.</strong> The unprogrammed travel
+          agent is the version of Smart Traveler that was designed to make
+          recommendations <strong>at random.</strong>
         </p>
       )}
 
@@ -117,8 +117,8 @@ function FollowupQuestions2({
       </div>
       <div className="questionnaireContainer">
         <div className="questionnaireQuestions">
-          Using my {agent.toLowerCase()} travel agent would enhance {pronoun}
-          effectiveness of choosing the best travel option
+          Using {pronoun} {agent.toLowerCase()} travel agent would enhance{" "}
+          {pronoun} effectiveness of choosing the best travel option
         </div>
         <div className="questionnaireScale">
           <input

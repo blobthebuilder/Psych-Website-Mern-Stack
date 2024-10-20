@@ -88,8 +88,7 @@ function FollowupQuestions({
             className="postInstructions"
             id="interactivityQuestionnaire1">
             Please answer the following questions about your experiences using
-            the
-            <strong>unprogrammed travel agent</strong>. Your answer to these
+            the <strong>unprogrammed travel agent</strong>. Your answer to these
             questions will help us provide useful recommendations to future
             users.
           </p>
