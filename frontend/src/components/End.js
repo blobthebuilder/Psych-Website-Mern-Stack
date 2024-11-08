@@ -52,7 +52,7 @@ function End() {
       </div>
       <div className="instructions bold">
         <p>Prolific completion code:</p>
-        <p>C1LRVYSZ</p>
+        <p>CV4AOGM4</p>
       </div>
     </div>
   );
